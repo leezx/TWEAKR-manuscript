@@ -1,40 +1,49 @@
-<!--
-CANONICAL SUPPLEMENTARY FIGURE FILE — template. Copy to FigS2.md, … as
-needed, inside the folder of the MAIN figure it relates to.
-Supplementary figures are numbered GLOBALLY (S1, S2, S3, …) across the whole
-manuscript, even though they are filed under their related main figure.
-Panels live in the sibling FigS1/ subfolder, named FigS1a.png, FigS1b.png, …
--->
+<!-- FRAMEWORK ONLY. From GPT/Figure1.md §七. Panels in FigS1/. -->
 
-# Figure S1. <Title>. Related to Figure 1.
+# Figure S1. Atlas construction and metadata. Related to Figure 1.
 
-**Key point:** <one sentence — what this supplementary figure establishes
-in support of Figure 1>
+**Key point:** The integrated CRC epithelial atlas is well constructed and its
+composition supports the cross-cohort claims in Figure 1.
+
+**Status:** framework only — panels and legend text pending.
 
 ## Panels
 
-### Figure S1A. <panel sub-title>
+### Figure S1A. Full integrated atlas UMAP
 
 ![Figure S1A](FigS1/FigS1a.png)
+> _Image pending: `FigS1/FigS1a.png`_
 
-<Legend + statistic.>
+**Legend (draft):** <All cells, integration result, lineage annotation.>
 
-### Figure S1B. <panel sub-title>
+### Figure S1B. Study and sample composition
 
 ![Figure S1B](FigS1/FigS1b.png)
+> _Image pending: `FigS1/FigS1b.png`_
 
-<Legend + statistic.>
+**Legend (draft):** <Per-study cell counts, sample origin, disease context split.>
 
-<!-- add panels c, d, … — supplementary figures often carry many panels;
-that is why they get their own subfolder -->
+### Figure S1C. Patient characteristics
+
+![Figure S1C](FigS1/FigS1c.png)
+> _Image pending: `FigS1/FigS1c.png`_
+
+**Legend (draft):** <Stage, sex, ethnicity, MSI status, treatment history —
+the detailed metadata kept out of Figure 1A.>
+
+### Figure S1D. QC and integration diagnostics
+
+![Figure S1D](FigS1/FigS1d.png)
+> _Image pending: `FigS1/FigS1d.png`_
+
+**Legend (draft):** <Per-sample QC thresholds, batch-mixing metrics, doublet
+handling, epithelial-subset gating.>
 
 ## Full legend (submission form)
 
-**Figure S1. <Title>. Related to Figure 1.**
-**(A)** <…>. **(B)** <…>.
-<Global notes, abbreviations, data sources, method.md pointer.>
+**Figure S1. Atlas construction and metadata. Related to Figure 1.**
+**(A)** <…> **(B)** <…> **(C)** <…> **(D)** <…>
 
 ## Source
 
-- Data / results: `../../TWEAKR-OncoPlacental/results/<step>/…`
-- Plotting code: `../../TWEAKR-OncoPlacental/scripts/<step>/…`
+- Data / results: `../../CRC-Atlas/…`, `../../TWEAKR-OncoPlacental/results/01_inventory/…`

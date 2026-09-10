@@ -14,14 +14,14 @@ not a living doc. The current-state summary lives in `docs/PROJECT_SUMMARY.md`
 |---|---|---|
 | 0. Repo scaffold | done | directory architecture created 2026-09-10 |
 | 0b. git init + GitHub repo | done | private repo leezx/TWEAKR-manuscript, pushed 2026-09-10 |
-| 0c. Reconcile GPT/ figure drafts with Figures/ scaffold | not started | user added GPT/Figure1-5.md |
-| 1. Figure inventory & audit | not started | figures source still TBD |
-| 2. Manuscript outline / target journal | not started | |
-| 3. Draft sections (Intro/Methods/Results/Discussion) | not started | |
-| 4. Figure finalization (print specs, legends) | not started | |
+| 0c. Article framework from GPT/ drafts | done | manuscript.md + Figure1-5.md + 6 supp, framework/placeholder only |
+| 1. Fill panel images (user, one at a time) | in progress | user-driven |
+| 2. Write Results/Intro/Discussion prose from real analysis output | not started | |
+| 3. Methods (STAR) from ../TWEAKR-OncoPlacental scripts/results | not started | |
+| 4. Figure finalization (print specs, final legends) | not started | |
 | 5. References + submission package | not started | |
 
-Overall: scaffolding phase, no analysis/writing content yet.
+Overall: framework in place; all scientific claims still placeholders.
 
 ---
 
@@ -169,3 +169,62 @@ repo `leezx/TWEAKR-manuscript` and pushed `main`.
 **Next**: (1) read `GPT/Figure1-5.md`, reconcile with `Figures/` scaffold —
 one canonical structure; (2) user decision on leftover `_TEMPLATE` files;
 (3) figure-source question / Step 1 figure inventory.
+
+## 2026-09-10 — Session 1: article framework built from GPT/ drafts
+
+**What**: Read `GPT/Figure1.md`–`Figure5.md` (+ `GPT/note.md`) and built the
+manuscript framework — text + image placeholders only, no fabricated results.
+
+**Why**: User instruction — read the GPT figure frameworks/panels and stand up
+the article skeleton; user will fill panel images one at a time; do text +
+image placeholders first.
+
+**How**:
+- `GPT/*.md` are ChatGPT advisory transcripts; each ends with a locked panel
+  list and a conditional title. Extracted those into the repo's figure files.
+- 5-figure narrative arc (from `GPT/note.md`): F1 what is the state · F2 why it
+  matters · F3 what maintains it · F4 is it causal · F5 does it work in vivo.
+- Wrote `Figures/Figure1.md`–`Figure5.md`: per figure — number+title (F2/F3
+  titles flagged conditional), key point, per-panel section (`### Figure NX.`)
+  with a placeholder image link `![…](FigureN/FigNx.png)`, an "_Image pending_"
+  line, a bracketed **Legend (draft)** carrying the intended claim from the GPT
+  doc, an analysis/data-source pointer, a submission-form full-legend stub,
+  related-supp list, and a link back to `../GPT/FigureN.md`.
+  Panel counts: F1 A–H (H optional), F2 A–G, F3 A–G, F4 A–G (G optional),
+  F5 A–F.
+- Wrote 6 supplementary figure files (framework only):
+  `Figure1/FigS1.md` Atlas construction & metadata; `FigS2.md` Robustness of the
+  oncofetal MP; `FigS3.md` Cross-validation & negative controls; `FigS4.md`
+  Pan-cancer extension (optional); `Figure4/FigS5.md` Immune-modulatory
+  transcriptional phenotype (claim ceiling: phenotype, NOT immune evasion);
+  `Figure4/FigS6.md` Placental/trophoblast convergence (exploratory; has an
+  explicit delete stop-rule).
+- Created panel folders `Figures/Figure2..5/`, `Figure1/FigS2..S4/`,
+  `Figure4/FigS5..S6/` (each with `.gitkeep`).
+- Rewrote `manuscript.md`: title options (to be fixed once F2G/F3 land), abstract
+  skeleton keyed to the 5 figures, 4-paragraph Introduction skeleton, Results
+  with 5 declarative-sentence subsections (one per figure, each a bracketed
+  paragraph with panel callouts), Discussion + "Limitations of the study",
+  front/back matter, a figure-legends index table, references pointer.
+- Rewrote `supplementary.md`: supplementary-note stubs + provisional index tables
+  for the 6 supp figures and supp tables.
+
+**Real findings**:
+- User is adding direction notes into the tree as we go:
+  `Figures/Figure4/note.md` now points at the perturbation RNA-seq and
+  TEAD/YAP1 ChIP-seq working dirs under
+  `DATA/2.PROJECTS/1.TWEAKR-oncoFetal/data/external/{Perturbation,TEAD_YAP1_ChIPseq}`
+  — inputs for Figure 4A / Figure S5D.
+- `Figures/Figure1/Note.md` (user's) points at CRC-atlas meta extraction on the
+  Argos cluster — inputs for Figure 1A / Figure S1.
+- No scientific numbers written anywhere; every claim is bracketed placeholder.
+- Conditional-title flags recorded in-file: F2 keeps "TWEAKR-associated" only if
+  Panel 2G holds; F3 title stays at "nominate" (not "drives").
+
+**Review**: n/a.
+
+**Next**: user fills panel PNGs into `Figures/FigureN/`. Then, per figure, write
+the Results paragraph and legend from the actual analysis output in
+`../TWEAKR-OncoPlacental` / the DATA working dirs; build `references.bib`;
+draft Methods. Still pending: user decision on deleting root `_TEMPLATE` files
+and on whether to keep `GPT/` in-repo.

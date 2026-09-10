@@ -1,8 +1,6 @@
 <!--
-Supplementary information: text that supports but is not part of the main
-article. Cell/Nature/Science style. Supplementary FIGURE legends live with
-their figures (Figures/FigureN/FigSN.md); this file is for supplementary
-TEXT, and it indexes the supplementary figures and tables.
+Supplementary information: supplementary TEXT + indices. Supplementary FIGURE
+legends live with their figures (Figures/FigureN/FigSN.md). FRAMEWORK STAGE.
 -->
 
 # Supplementary Information
@@ -15,8 +13,7 @@ TEXT, and it indexes the supplementary figures and tables.
 
 ## Supplementary Note 1: <title>
 
-<Extended background, derivations, or discussion too detailed for the main
-text but needed to fully support a claim.>
+<Extended background / derivation supporting a specific main-text claim.>
 
 ## Supplementary Note 2: <title>
 
@@ -26,19 +23,30 @@ text but needed to fully support a claim.>
 
 ## Supplementary Methods
 
-<Only if some methods are too granular for `method.md`. Otherwise keep
-everything in `method.md` and delete this section.>
+<Only if some methods are too granular for `method.md`; otherwise delete.>
 
 ---
 
 ## Index of supplementary figures
 
-| Figure | Related to | Legend file | Panels |
-|---|---|---|---|
-| Figure S1 | Figure 1 | `Figures/Figure1/FigS1.md` | `Figures/Figure1/FigS1/` |
+Supplementary figures are numbered globally and filed under the related main
+figure. Assignment below is provisional at framework stage.
+
+| Figure | Title | Related to | Legend file | Panels |
+|---|---|---|---|---|
+| Figure S1 | Atlas construction and metadata | Figure 1 | `Figures/Figure1/FigS1.md` | `Figures/Figure1/FigS1/` |
+| Figure S2 | Robustness of the oncofetal meta-program | Figure 1 | `Figures/Figure1/FigS2.md` | `Figures/Figure1/FigS2/` |
+| Figure S3 | Cross-validation and negative controls | Figure 1 | `Figures/Figure1/FigS3.md` | `Figures/Figure1/FigS3/` |
+| Figure S4 | Pan-cancer oncofetal extension (optional) | Figure 1 | `Figures/Figure1/FigS4.md` | `Figures/Figure1/FigS4/` |
+| Figure S5 | Immune-modulatory transcriptional phenotype of the oncofetal state | Figure 4 | `Figures/Figure4/FigS5.md` | `Figures/Figure4/FigS5/` |
+| Figure S6 | Placental/trophoblast transcriptional convergence (exploratory) | Figure 4 | `Figures/Figure4/FigS6.md` | `Figures/Figure4/FigS6/` |
+
+<To be added during drafting: supplementary figures for Figure 2 (per-cohort KM,
+sensitivity analyses) and Figure 3 (full LR-inference tables, per-cohort spatial
+maps), and for Figure 5 (per-mouse QC, tumour-growth curves).>
 
 ## Index of supplementary tables
 
-| Table | Related to | File |
-|---|---|---|
-| Table S1 | <Figure/section> | `Tables/TableS1.md` |
+| Table | Title | Related to | File |
+|---|---|---|---|
+| Table S1 | <title> | <Figure / section> | `Tables/TableS1.md` |
