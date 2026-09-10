@@ -1,0 +1,31 @@
+# Manuscript repo: figure panels (.png/.pdf/.svg/.eps) ARE tracked here.
+# This ignores only large raw-data / binary formats that must never land in the repo.
+
+*.h5ad
+*.h5
+*.loom
+*.rds
+*.mtx
+*.mtx.gz
+*.fastq
+*.fastq.gz
+*.bam
+*.cram
+*.tar.gz
+*.ndpi
+
+# OS / editor / language cruft
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+renv/library/
+
+# Build artefacts from rendering the manuscript
+*.aux
+*.log
+*.out
+*.toc
+_build/
