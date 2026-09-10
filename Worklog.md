@@ -13,7 +13,8 @@ not a living doc. The current-state summary lives in `docs/PROJECT_SUMMARY.md`
 | Step | Status | Notes |
 |---|---|---|
 | 0. Repo scaffold | done | directory architecture created 2026-09-10 |
-| 0b. git init + GitHub repo | not started | needs repo name / visibility / account |
+| 0b. git init + GitHub repo | done | private repo leezx/TWEAKR-manuscript, pushed 2026-09-10 |
+| 0c. Reconcile GPT/ figure drafts with Figures/ scaffold | not started | user added GPT/Figure1-5.md |
 | 1. Figure inventory & audit | not started | figures source still TBD |
 | 2. Manuscript outline / target journal | not started | |
 | 3. Draft sections (Intro/Methods/Results/Discussion) | not started | |
@@ -119,3 +120,52 @@ related main figure; large table data → `Tables/Table<N>/` folder.
 **Next**: (1) user decision on leftover template files; (2) `git init` +
 `.gitignore` + create GitHub repo once repo name/visibility/account given;
 (3) resume figure-source question to start Step 1.
+
+## 2026-09-10 — Session 1: git init + private GitHub repo
+
+**What**: Initialized git, made the first commit, created a **private** GitHub
+repo `leezx/TWEAKR-manuscript` and pushed `main`.
+
+**Why**: User instruction — "新建这个Github仓库" then "把这个Github改为私有".
+
+**How**:
+- `gh auth` active account: **leezx** (scopes: repo, workflow, read:org, gist).
+- Wrote `.gitignore` adapted from `gitignore_template`: keeps figure panels
+  (`.png/.pdf/.svg/.eps`) tracked — this is a manuscript repo — and ignores
+  only large raw-data/binary formats, OS/editor cruft, and LaTeX build artefacts.
+- `git init -b main`; `git add -A`; one commit
+  (`1da4ba6`, Co-Authored-By Claude Sonnet 5).
+- `gh repo create leezx/TWEAKR-manuscript --private --source=. --remote=origin --push`.
+- Verified: `visibility = PRIVATE`, url https://github.com/leezx/TWEAKR-manuscript.
+
+**Real findings**:
+- Between the scaffold step and this commit, the **user added new files** to the
+  working tree; they were picked up by `git add -A` and are now in the first
+  commit:
+  - `GPT/Figure1.md … Figure5.md` + `GPT/note.md` — draft figure plans and the
+    paper's 5-figure narrative arc:
+    F1 "What is the state?" (unbiased discovery + external validation + disease
+    evolution); F2 "Why does the state matter?" (poor outcome + chemo/ICI
+    persistence); F3 "What maintains it?" (TWEAKR + TAM-derived TWEAK + spatial
+    niche); F4 "Is the axis causal?" (public perturbation + TNFSF12 stim +
+    TNFRSF12A KO/RNA-seq); F5 "Does it operate in vivo?" (xenograft scRNA /
+    state remodeling).
+  - `Figures/Figure1/Note.md` — a note addressed to "Codex" about extracting
+    meta from scRNA-seq datasets on the Argos cluster
+    (`DATA/scRNAseq/…`, `projects/TWEAKR/{chemotherapy,Immune}`) into
+    `DATA/scRNAseq/meta_study/` and plotting a cohort-overview figure. This is a
+    data task for a different agent/environment, not the manuscript repo itself.
+  - Example images: `Figures/Figure1/{Example.F1.large.jpg, example.MP.png}`,
+    `Figures/Figure1/FigS1/FigS1a.jpg`.
+- Now TWO figure structures exist in the repo: my `Figures/FigureN.md` +
+  `FigureN/` scaffold, and the user's `GPT/FigureN.md` drafts. These need to be
+  reconciled (Step 0c) — likely fold the GPT/ content into `Figures/FigureN.md`
+  and keep one structure.
+- Leftover `_TEMPLATE` files still at repo root and now committed; still pending
+  user decision on deletion.
+
+**Review**: n/a.
+
+**Next**: (1) read `GPT/Figure1-5.md`, reconcile with `Figures/` scaffold —
+one canonical structure; (2) user decision on leftover `_TEMPLATE` files;
+(3) figure-source question / Step 1 figure inventory.
