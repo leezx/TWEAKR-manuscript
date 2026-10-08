@@ -256,3 +256,18 @@ feasibility next. CP2 HOLD.
 
 **Next**: CP1C metadata/gene-detection check; send the author email after the user
 verifies it; merge to main is not authorised.
+
+## 2026-10-08 — Wang 2026 MFI Checkpoint 1C: Stereo-seq assay feasibility
+
+**What**: Metadata and gene-detection feasibility check of the public COSMOS
+Stereo-seq explorer (no matrix download, no spatial statistics). Script
+`analyses/2026-10-08_wang2026-mfi-checkpoint1a/code/cp1c_spatial_feasibility.py`.
+
+**Result**: Explorer values are transformed, not counts (about 1% integer; 14.9% of
+cells consistent with log-normalised counts; CD163 31% and PECAM1 68% nonzero),
+so they cannot give detection rates. `STOMICS.h5ad` returns 404, and the Box link
+holds only CODEX. Immune cells are pooled with no macrophage label. EVT subtypes,
+mVEC/fVEC and stromal types are resolved. Coordinates, annotation and sample ID are
+complete for 1,077,690 cells in 16 sections (GW18–24 only).
+
+**Decision**: Proposed NOT EVALUABLE WITH PUBLIC DATA (pending review); CP2 HOLD.

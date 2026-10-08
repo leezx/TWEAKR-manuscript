@@ -7,7 +7,7 @@
 | CP0 — data provenance | PASS | complete |
 | CP1A — expression feasibility | EXPLORATORY / PASS WITH LIMITATIONS | complete |
 | CP1B — genotype origin verification | BLOCKED | awaiting author response |
-| CP1C — spatial assay feasibility (metadata and gene detection only) | new | next |
+| CP1C — spatial assay feasibility (metadata and gene detection only) | proposed: NOT EVALUABLE WITH PUBLIC DATA | done, pending review |
 | CP2 — spatial colocalisation | HOLD | not authorised |
 
 ## Approved summary statements

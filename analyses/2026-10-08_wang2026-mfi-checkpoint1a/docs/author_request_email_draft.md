@@ -30,6 +30,10 @@ to share the following minimal metadata? We do not need any sequencing data.
 3. The per-sample correspondence between Souporcell cluster and maternal/fetal origin.
 4. If available, an assignment-confidence value or a flag for ambiguous/unassigned nuclei.
 
+5. *[Optional — include only if the user approves]* The Stereo-seq cell-bin raw count
+   matrix: the `STOMICS.h5ad` download on the COSMOS page currently returns an error, and
+   the explorer serves transformed values.
+
 If sharing the full per-cell table is not convenient, items 2 and 3 alone would let us
 reconstruct the labels consistently with your analysis.
 

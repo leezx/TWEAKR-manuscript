@@ -8,7 +8,8 @@
 - **Date / executor / status:** 2026-10-08 / Claude Code / complete. Human review decision:
   **EXPLORATORY / PASS WITH LIMITATIONS** (`docs/Checkpoint_1A_decision_memo.md`).
 - **Checkpoint state:** CP0 PASS · CP1A EXPLORATORY (complete) · CP1B BLOCKED (author request) ·
-  CP1C spatial assay feasibility (next) · CP2 Stereo-seq colocalisation HOLD.
+  CP1C spatial assay feasibility done; proposed call NOT EVALUABLE WITH PUBLIC DATA, pending
+  review (`docs/Checkpoint_1C_spatial_feasibility.md`) · CP2 Stereo-seq colocalisation HOLD.
 
 ## Inputs
 
@@ -44,6 +45,10 @@ time). REF-008 Supplementary Table 13a/b (author cell-type-level origin).
    direction and trimester-split direction counts are also reported. Trimester is not adjusted.
 6. **Figures.** `code/plot_checkpoint1a_dotplots.py`, Python/matplotlib only, project
    Nature figure rules.
+7. **CP1C (spatial feasibility).** `code/cp1c_spatial_feasibility.py` reads the COSMOS
+   Stereo-seq explorer by HTTP byte range: schema, obs, spatial embedding and 12 gene
+   vectors. It checks gene presence, value type, annotation granularity and coordinate
+   completeness, and writes aggregate tables only. No spatial statistics.
 
 Software: Python 3.12 (`SOFTWARES/envs/python-main/.venv`), anndata 0.12.16, h5py 3.16.0,
 matplotlib 3.10.9. The analysis is deterministic; no random seed is needed.
@@ -57,6 +62,7 @@ $P code/checkpoint1a_expression.py --h5ad $W/scPlacenta_host.h5ad \
   --origin-map tables/author_celltype_origin_map.tsv --out-dir tables \
   --expected-sha256 3b23e56a0f778665fb60df8e2bd0085d5520d0a885eec7356e4d1e61f7e2eb58
 $P code/plot_checkpoint1a_dotplots.py --tables tables --out-dir figures
+$P code/cp1c_spatial_feasibility.py --out-dir tables/cp1c
 ```
 
 ## Outputs
@@ -74,6 +80,8 @@ $P code/plot_checkpoint1a_dotplots.py --tables tables --out-dir figures
 | `figures/CP1A_{TNFSF12,TNFRSF12A}_dotplot/` | SVG/PDF/TIFF/PNG plus source, legend and QA |
 | `docs/Checkpoint_1A_decision_memo.md` | answers, rule mapping, proposed call |
 | `docs/author_request_email_draft.md` | Checkpoint 1B request (not sent) |
+| `docs/Checkpoint_1C_spatial_feasibility.md` | CP1C answers and proposed call |
+| `tables/cp1c/` | Stereo-seq explorer: value QC, nonzero fractions (not detection), coordinate QC, cell-type counts |
 
 ## Main results
 
