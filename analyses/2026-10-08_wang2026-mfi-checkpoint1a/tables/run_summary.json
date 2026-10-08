@@ -1,0 +1,79 @@
+{
+  "input": "scPlacenta_host.h5ad",
+  "input_sha256": "3b23e56a0f778665fb60df8e2bd0085d5520d0a885eec7356e4d1e61f7e2eb58",
+  "shape": [
+    193202,
+    32920
+  ],
+  "obs_fields_used": [
+    "sample_id",
+    "gestational_week",
+    "major_class",
+    "minor_class",
+    "celltype_shortname"
+  ],
+  "donor_field": "sample_id (one sample per donor; Supp Table 1c)",
+  "target_gene_var_index": {
+    "TNFSF12": 21202,
+    "TNFRSF12A": 19915
+  },
+  "matrix_qc": {
+    "x_encoding": "csr_matrix",
+    "n_cells": 193202,
+    "nnz": 378624410,
+    "min_nonzero_value": 0.6931471824645996,
+    "n_negative_values": 0,
+    "max_abs_deviation_expm1_from_integer": 0.0003177574199071387,
+    "interpretation": "X = log1p(raw integer UMI counts) without library-size normalisation",
+    "library_size_quantiles_0_1_50_99_100": [
+      1386.0,
+      1808.0,
+      3727.0,
+      9451.98999999999,
+      13680.0
+    ]
+  },
+  "expression_definition": {
+    "detection": "raw UMI count > 0 (pct_expr)",
+    "mean_log1p_cp10k": "per-nucleus log1p(UMI / library size * 1e4), then arithmetic mean over nuclei",
+    "mean_log1p_cp10k_positive": "same, restricted to nuclei with UMI > 0",
+    "mean_cp10k_per_nucleus": "arithmetic mean of per-nucleus CP10k (linear scale)",
+    "pseudobulk_cp10k": "sum of gene UMIs / sum of library sizes * 1e4 within the group",
+    "library_size": "per-nucleus total UMI reconstructed as sum(round(expm1(X)))"
+  },
+  "contrast_definition": "within-donor group vs all other nuclei; donors need >=20 nuclei on each side; two-sided Wilcoxon signed-rank on donor-level pct_expr and mean_log1p_cp10k; BH across all contrasts of one metric (9); exact two-sided sign test on direction; trimester not adjusted",
+  "origin_definition": "author_cell_type_origin from Supplementary Table 13a/b; NOT per-cell genotype",
+  "min_cells_per_donor_celltype": 20,
+  "donors_per_trimester": {
+    "T1 (GW5-13)": 9,
+    "T2 (GW14-27)": 9,
+    "T3 (GW28-40)": 5
+  },
+  "overall": [
+    {
+      "gene": "TNFSF12",
+      "n_cells": 193202,
+      "n_expr": 1825,
+      "pct_expr": 0.9446071986832434,
+      "total_umis": 1845.0,
+      "mean_log1p_cp10k": 0.010991182515283382,
+      "pseudobulk_cp10k": 0.024113313912073865
+    },
+    {
+      "gene": "TNFRSF12A",
+      "n_cells": 193202,
+      "n_expr": 16161,
+      "pct_expr": 8.364820239956108,
+      "total_umis": 18980.0,
+      "mean_log1p_cp10k": 0.11964338072227039,
+      "pseudobulk_cp10k": 0.24805999894371922
+    }
+  ],
+  "scope_exclusions": [
+    "DEG",
+    "pathway",
+    "spatial",
+    "Stereo-seq",
+    "genotype origin inference"
+  ]
+}

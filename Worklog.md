@@ -228,3 +228,31 @@ the Results paragraph and legend from the actual analysis output in
 `../TWEAKR-OncoPlacental` / the DATA working dirs; build `references.bib`;
 draft Methods. Still pending: user decision on deleting root `_TEMPLATE` files
 and on whether to keep `GPT/` in-repo.
+
+## 2026-10-08 — Wang 2026 MFI Checkpoint 1A: TNFSF12/TNFRSF12A expression feasibility
+
+**What**: First analysis folder under the new policy:
+`analyses/2026-10-08_wang2026-mfi-checkpoint1a/` on branch
+`analysis/20261008-wang2026-mfi-checkpoint1a`.
+
+**Why**: User split Checkpoint 1 into 1A (expression feasibility, unblocked) and
+1B (genotype origin, blocked pending author request).
+
+**How**: QC showed the public X = log1p(raw counts) without normalisation, so
+CP10k was reconstructed. Author cell-type-level origin came from Supp Table 13
+(FB and pvSMC mixed; GC and Ery ambiguous). The analysis produced cell-type,
+donor and trimester summaries, within-donor Wilcoxon contrasts and two Nature-style DotPlots.
+
+**Validation**: Independent anndata re-extraction matched. Coverage assertion
+covers 36 types and 193,202 nuclei. Fonts are editable and embedded; TIFF is 600 dpi.
+
+Added library-size QC, a depth-matched detection sensitivity analysis, a sign test
+and trimester-split direction counts. Renamed the level metric to `mean_log1p_cp10k`
+and added `pseudobulk_cp10k`.
+
+**Decision**: Human review — CP1A EXPLORATORY / PASS WITH LIMITATIONS. CP1B BLOCKED
+(author request drafted to the corresponding authors, not sent). CP1C spatial assay
+feasibility next. CP2 HOLD.
+
+**Next**: CP1C metadata/gene-detection check; send the author email after the user
+verifies it; merge to main is not authorised.

@@ -1,0 +1,4 @@
+role	dataset	path	bytes	sha256	note
+annotated_snRNA_h5ad	DS-013	/Volumes/Stelligen_SSD/Stelligen/DATA/HotData/TWEAKR-oncoFetal/external/Wang_Nature_2026_MFI/scPlacenta_host.h5ad	3050244246	3b23e56a0f778665fb60df8e2bd0085d5520d0a885eec7356e4d1e61f7e2eb58	COSMOS download; X = log1p(raw counts)
+supp_table_13	REF-008	/Volumes/Stelligen_SSD/Stelligen/DATA/HotData/TWEAKR-oncoFetal/external/Wang_Nature_2026_MFI/paper_supplementary_2026-10-08/supp_tables/SuppTable13.xlsx	see SHA256SUMS.txt of MOESM3 zip	-	author cell-type-level fetal (13a) / maternal (13b) lists
+raw_counts_h5ad_crosscheck	DS-013	https://cell.ucsf.edu/snPlacenta/download/snRNA_raw_counts.h5ad	3042755986	-	read remotely by HTTP range for QC only (newBC identical order; 15/15 sampled rows X == log1p(raw))
