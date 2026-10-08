@@ -1,5 +1,8 @@
 # Checkpoint 1E — CORE versus C1Q specificity (DS-013)
 
+**Decision (human review, 2026-10-08): PASS — C1Q association stronger.** DS-013 is CLOSED and
+Level 3 is NOT PURSUED (`DS-013_final_closure.md`).
+
 **Question:** Does the CORE signature provide TNFSF12-associated information beyond the C1Q
 macrophage program?
 
@@ -65,3 +68,12 @@ C1Q-associated macrophage program; the core program's independent contribution i
 robust in the CD14+ macrophage subset.*
 
 Use CORE as an exploratory macrophage-state score, **not** as a TWEAK+ macrophage classifier.
+
+## Final conclusion (review, 2026-10-08)
+
+*TNFSF12 detection is more strongly associated with a C1Q complement-related macrophage program
+than with the independently derived SPP1/TREM2/GPNMB/APOE-associated signature.*
+
+Correction to earlier phrasing: a stronger C1Q association does **not** make C1Q the more
+"fundamental" or upstream explanation, and does not show that C1Q drives TNFSF12 expression. It
+may reflect macrophage differentiation, tissue adaptation or other shared regulation.

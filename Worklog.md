@@ -305,3 +305,15 @@ signature and C1Q the comparator; they are not merged.
 C1Q 1.38 (1.22–1.57). In CD14_M only, CORE 1.18 (0.99–1.40) and C1Q 1.36. Score correlation is
 r = 0.22 (VIF 1.05). CORE adds modest information beyond C1Q that is not robust in CD14_M.
 CORE is an exploratory state score, not a TWEAK+ classifier.
+
+## 2026-10-08 — Wang 2026 MFI (DS-013) final closure
+
+**Decision**: CP1E PASS — C1Q association stronger. DS-013 CLOSED — developmental context
+established; interaction hypothesis unvalidated. Level 3 (donor co-occurrence) and CP2
+(Stereo-seq) NOT PURSUED. No PR, no author contact; branch and results kept as the archive.
+
+**Retained** (two separate observations, not an interaction claim): TNFRSF12A in fetal-derived
+trophoblast, particularly iEVT (16.3%, 13/13 donors; author cell-type-level origin); TNFSF12
+detection in maternal macrophages is modestly associated with the SPP1/TREM2/GPNMB/APOE program
+and more strongly with a C1Q complement program. A stronger C1Q association does not make C1Q
+upstream of TNFSF12. Not a Figure 4 panel. Record: `analyses/2026-10-08_wang2026-mfi-checkpoint1a/docs/DS-013_final_closure.md`.

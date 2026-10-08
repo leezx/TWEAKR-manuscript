@@ -7,14 +7,13 @@
   ligand–receptor reference (supporting). Checkpoint evidence, not a manuscript panel.
 - **Date / executor / status:** 2026-10-08 / Claude Code / complete. Human review decision:
   **EXPLORATORY / PASS WITH LIMITATIONS** (`docs/Checkpoint_1A_decision_memo.md`).
-- **DS-013: CLOSED — exploratory result; spatial hypothesis not evaluable with accessible public data.**
-- **2026-10-08 scoped reopening — CP1D (snRNA macrophage state only): PASS WITH SPECIFICITY
-  LIMITATIONS** (`docs/Checkpoint_1D_contract.md`, `docs/Checkpoint_1D_results.md`).
-  **CP1E** (CORE vs C1Q; `docs/Checkpoint_1E_core_vs_c1q.md`): CORE adds modest information
-  beyond C1Q that is not robust in CD14_M; C1Q is the stronger, stable axis. Level 3: HOLD.
-  Stereo-seq: HOLD.
-- **Checkpoint state:** CP0 PASS · CP1A PASS — exploratory expression evidence · CP1B NOT PURSUED (author request archived, not sent) ·
-  CP1C PASS — not evaluable for spatial interaction (`docs/Checkpoint_1C_spatial_feasibility.md`) ·
+- **DS-013: CLOSED (final, 2026-10-08) — developmental context established; interaction
+  hypothesis unvalidated.** Final status table, retained observations and wording guardrails:
+  `docs/DS-013_final_closure.md`.
+- **Checkpoint state:** CP0 PASS · CP1A PASS — Exploratory · CP1B NOT PURSUED (author request
+  archived, not sent) · CP1C NOT EVALUABLE WITH PUBLIC DATA · CP1D PASS WITH SPECIFICITY
+  LIMITATIONS (`docs/Checkpoint_1D_contract.md`, `docs/Checkpoint_1D_results.md`) · CP1E PASS —
+  C1Q association stronger (`docs/Checkpoint_1E_core_vs_c1q.md`) · Level 3 NOT PURSUED ·
   CP2 NOT PURSUED.
 
 ## Inputs
@@ -120,4 +119,4 @@ $P code/plot_cp1d.py --tables tables/cp1d --cell-dir $LOCAL_WORK_ROOT/results/DS
 
 ## Review
 
-PR: none, by user decision. The branch `analysis/20261008-wang2026-mfi-checkpoint1a` is kept as the archive; not merged. Ledgers: project WorkLog WL-20261008-018/019/020; DS-013 (CLOSED); REF-008.
+PR: none, by user decision. The branch `analysis/20261008-wang2026-mfi-checkpoint1a` is kept as the archive; not merged. Ledgers: project WorkLog WL-20261008-018 to -023; DS-013 (CLOSED); REF-008.

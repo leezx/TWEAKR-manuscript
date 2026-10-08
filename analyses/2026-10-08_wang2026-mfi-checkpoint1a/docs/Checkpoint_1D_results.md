@@ -1,7 +1,9 @@
 # Checkpoint 1D results — TWEAK-associated macrophage state (DS-013, scoped reopening)
 
-**Decision (human review, 2026-10-08): PASS WITH SPECIFICITY LIMITATIONS.** Level 3: HOLD. CP1E
-(CORE vs C1Q) assembled in `Checkpoint_1E_core_vs_c1q.md`. Original proposed call: PASS on the
+**Decision (human review, 2026-10-08): PASS WITH SPECIFICITY LIMITATIONS.** CP1E
+(CORE vs C1Q, `Checkpoint_1E_core_vs_c1q.md`): PASS — C1Q association stronger. Level 3: NOT
+PURSUED; DS-013 CLOSED (`DS-013_final_closure.md`). The Level 3 gate section below is kept as
+the historical record. Original proposed call: PASS on the
 pre-specified criteria for CORE (and EXTENDED), with a specificity caveat. The TNFSF12 association is shared with, and partly
 explained by, a C1Q-complement macrophage axis. The effect is modest.**
 Level 3 is not started and needs separate approval. Stereo-seq is untouched.
