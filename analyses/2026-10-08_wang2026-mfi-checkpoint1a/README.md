@@ -8,6 +8,9 @@
 - **Date / executor / status:** 2026-10-08 / Claude Code / complete. Human review decision:
   **EXPLORATORY / PASS WITH LIMITATIONS** (`docs/Checkpoint_1A_decision_memo.md`).
 - **DS-013: CLOSED — exploratory result; spatial hypothesis not evaluable with accessible public data.**
+- **2026-10-08 scoped reopening — CP1D (snRNA macrophage state only):** proposed PASS on
+  pre-specified criteria with a C1Q-axis specificity caveat (`docs/Checkpoint_1D_contract.md`,
+  `docs/Checkpoint_1D_results.md`). Level 3 is not started; Stereo-seq is untouched.
 - **Checkpoint state:** CP0 PASS · CP1A PASS — exploratory expression evidence · CP1B NOT PURSUED (author request archived, not sent) ·
   CP1C PASS — not evaluable for spatial interaction (`docs/Checkpoint_1C_spatial_feasibility.md`) ·
   CP2 NOT PURSUED.
@@ -64,6 +67,9 @@ $P code/checkpoint1a_expression.py --h5ad $W/scPlacenta_host.h5ad \
   --expected-sha256 3b23e56a0f778665fb60df8e2bd0085d5520d0a885eec7356e4d1e61f7e2eb58
 $P code/plot_checkpoint1a_dotplots.py --tables tables --out-dir figures
 $P code/cp1c_spatial_feasibility.py --out-dir tables/cp1c
+$P code/cp1d_macrophage_state.py --h5ad $W/scPlacenta_host.h5ad --out-dir tables/cp1d \
+  --cell-dir $LOCAL_WORK_ROOT/results/DS-013_CP1D
+$P code/plot_cp1d.py --tables tables/cp1d --cell-dir $LOCAL_WORK_ROOT/results/DS-013_CP1D --out-dir figures
 ```
 
 ## Outputs
@@ -82,6 +88,7 @@ $P code/cp1c_spatial_feasibility.py --out-dir tables/cp1c
 | `docs/Checkpoint_1A_decision_memo.md` | answers, rule mapping, proposed call |
 | `docs/author_request_email_draft.md` | Checkpoint 1B request (not sent) |
 | `docs/Checkpoint_1C_spatial_feasibility.md` | CP1C answers and proposed call |
+| `tables/cp1d/`, `figures/CP1D_*` | CP1D immune landscape, module–TNFSF12 association, matched null, adjusted models (statsmodels 0.14.6, scanpy 1.12.1; seed 0) |
 | `tables/cp1c/` | Stereo-seq explorer: value QC, nonzero fractions (not detection), coordinate QC, cell-type counts |
 
 ## Main results

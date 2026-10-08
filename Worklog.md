@@ -282,3 +282,16 @@ request is archived and was not sent. The branch is kept without a PR.
 **Retained observation**: TNFRSF12A is reproducibly expressed in fetal-derived
 extravillous trophoblast populations (iEVT), with origin based on the authors'
 cell-type-level classification. Not a standalone Figure 4 panel.
+
+## 2026-10-08 — Wang 2026 MFI Checkpoint 1D: TWEAK-associated macrophage state (scoped reopening)
+
+**What**: snRNA-only analysis, pre-registered in `docs/Checkpoint_1D_contract.md`. Scored the
+AOM/DSS Tnfsf12+ TAM core/extended programs plus control modules in maternal decidual
+macrophages, with TNFSF12 as an independent readout.
+
+**Result**: CORE meets all pre-specified PASS criteria: MH OR 1.43, 12/14 donors, OR/SD 1.29,
+beats the matched-random null (p = 0.002), survives lysosomal adjustment and the CD14_M-only
+check. The effect is modest (2.7% vs 1.9% detection). A C1Q complement control module is
+equally associated, so the state is not TWEAK-specific. HB shows no association.
+
+**Decision**: Proposed PASS with a specificity caveat. Level 3 is not started; Stereo-seq untouched.

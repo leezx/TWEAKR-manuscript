@@ -1,0 +1,89 @@
+{
+  "input": "scPlacenta_host.h5ad",
+  "seed": 0,
+  "immune_labels": [
+    "CD14_M",
+    "CD16_M",
+    "HB",
+    "dNK",
+    "T",
+    "B",
+    "cDC"
+  ],
+  "populations": {
+    "maternal_macrophage (CD14_M+CD16_M)": [
+      "CD14_M",
+      "CD16_M"
+    ],
+    "sensitivity: CD14_M only": [
+      "CD14_M"
+    ],
+    "fetal_macrophage (HB)": [
+      "HB"
+    ]
+  },
+  "modules": {
+    "CORE": [
+      "GPNMB",
+      "SPP1",
+      "TREM2",
+      "APOE",
+      "FABP5",
+      "PLD3"
+    ],
+    "EXTENDED": [
+      "GPNMB",
+      "SPP1",
+      "TREM2",
+      "APOE",
+      "FABP5",
+      "PLD3",
+      "CTSD",
+      "CTSB",
+      "CTSS",
+      "ACP5",
+      "C1QA",
+      "C1QB",
+      "C1QC",
+      "LGMN",
+      "LIPA"
+    ],
+    "LYSO_CONTROL": [
+      "CTSD",
+      "CTSB",
+      "CTSS",
+      "ACP5",
+      "LGMN",
+      "LIPA"
+    ],
+    "COMPLEMENT_CONTROL": [
+      "C1QA",
+      "C1QB",
+      "C1QC"
+    ],
+    "MAC_IDENTITY": [
+      "CD68",
+      "CD163",
+      "CSF1R",
+      "CD14",
+      "MRC1"
+    ],
+    "MONO_LIKE": [
+      "FCN1",
+      "S100A8",
+      "S100A9",
+      "LYZ",
+      "VCAN"
+    ]
+  },
+  "n_bins": 25,
+  "ctrl_size": 50,
+  "n_null": 500,
+  "min_donor_cells": 40,
+  "scanpy_equivalence": {
+    "spearman_core_vs_scanpy": 0.9771229523124514
+  },
+  "n_immune_cells": 23938,
+  "umap": "author integrated X_umap (subset); not recomputed",
+  "cell_level_outputs": "/Volumes/Stelligen_SSD/Stelligen/DATA/HotData/TWEAKR-oncoFetal/results/DS-013_CP1D"
+}
