@@ -1,6 +1,6 @@
 # Draft — request for cell-level origin metadata (Checkpoint 1B)
 
-**Status:** draft, approved in principle. **Not sent.**
+**Status: ARCHIVED — NOT SENT (user decision 2026-10-08; DS-013 closed, CP1B/CP2 not pursued).** Item 5 withdrawn.
 **To:** Jingjing Li <Jingjing.Li@ucsf.edu>
 **Cc:** Susan J. Fisher <susan.fisher@ucsf.edu>
 Recipients are the two corresponding authors whose addresses appear in the author

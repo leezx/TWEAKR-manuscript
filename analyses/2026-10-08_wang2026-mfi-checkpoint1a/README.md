@@ -7,9 +7,10 @@
   ligand–receptor reference (supporting). Checkpoint evidence, not a manuscript panel.
 - **Date / executor / status:** 2026-10-08 / Claude Code / complete. Human review decision:
   **EXPLORATORY / PASS WITH LIMITATIONS** (`docs/Checkpoint_1A_decision_memo.md`).
-- **Checkpoint state:** CP0 PASS · CP1A EXPLORATORY (complete) · CP1B BLOCKED (author request) ·
-  CP1C spatial assay feasibility done; proposed call NOT EVALUABLE WITH PUBLIC DATA, pending
-  review (`docs/Checkpoint_1C_spatial_feasibility.md`) · CP2 Stereo-seq colocalisation HOLD.
+- **DS-013: CLOSED — exploratory result; spatial hypothesis not evaluable with accessible public data.**
+- **Checkpoint state:** CP0 PASS · CP1A PASS — exploratory expression evidence · CP1B NOT PURSUED (author request archived, not sent) ·
+  CP1C PASS — not evaluable for spatial interaction (`docs/Checkpoint_1C_spatial_feasibility.md`) ·
+  CP2 NOT PURSUED.
 
 ## Inputs
 
@@ -110,4 +111,4 @@ $P code/cp1c_spatial_feasibility.py --out-dir tables/cp1c
 
 ## Review
 
-PR: not yet opened. Ledgers: project WorkLog WL-20261008-018; DS-013; REF-008.
+PR: none, by user decision. The branch `analysis/20261008-wang2026-mfi-checkpoint1a` is kept as the archive; not merged. Ledgers: project WorkLog WL-20261008-018/019/020; DS-013 (CLOSED); REF-008.

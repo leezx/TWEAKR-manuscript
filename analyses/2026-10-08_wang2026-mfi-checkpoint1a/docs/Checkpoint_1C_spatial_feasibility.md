@@ -1,6 +1,9 @@
 # Checkpoint 1C — Stereo-seq assay feasibility (DS-013)
 
-**Proposed call (for human review): NOT EVALUABLE WITH CURRENTLY PUBLIC DATA → CP2 stays HOLD.**
+**Decision (human review, 2026-10-08): PASS — NOT EVALUABLE.** Not evaluable for the
+proposed TWEAK–TWEAKR cell-type-resolved spatial interaction analysis using currently
+accessible public data. CP2: NOT PURSUED. This is a limitation of data accessibility and
+annotation resolution, **not a negative biological result**.
 
 Scope: metadata and gene-detection feasibility only. No spatial statistics, neighbourhood
 or colocalisation analysis. No spatial matrix was downloaded. The COSMOS Stereo-seq explorer
@@ -13,13 +16,17 @@ outputs: `tables/cp1c/`.
 **Cannot be determined from public data.**
 
 - Both genes are present in the explorer var list (25,794 genes; 1,077,690 cells).
-- The explorer serves **transformed values, not counts**:
+- The transformation and interpretation of the publicly accessible spatial expression
+  values could not be established. The values are not raw counts and are not consistent with
+  conventional log-normalised counts:
   - only ~1% of nonzero values are integers;
   - nonzero values form a continuous range (TNFSF12: 0.05–3.85);
   - only 14.9% of 20,000 tested cells have values whose expm1 are integer multiples of a
     common unit, which is what log-normalised counts would require;
-  - nonzero fractions are biologically implausible as detection (CD163 30.8%, LYVE1 31.3%,
-    PECAM1 68.0%, KRT7 57.3% of all cells).
+  - nonzero fractions are high (CD163 30.8%, LYVE1 31.3%, PECAM1 68.0%, KRT7 57.3% of all
+    cells). This does not prove the data are wrong: transformation, smoothing, imputation or
+    cell-type prediction can all produce it. It does prevent reading the values as per-cell
+    transcript detection.
 - So the explorer nonzero fractions (TNFSF12 9.1%, TNFRSF12A 31.8%) are **not detection
   rates**. They are stored as `pct_nonzero_explorer` for provenance only.
 - Raw spatial counts are not publicly reachable: the portal's `STOMICS.h5ad` link returns
@@ -60,7 +67,7 @@ values in the explorer are transformed, so they cannot support re-annotation eit
   likely to be limiting.
 - To answer Q1 and Q2, the raw Stereo-seq cell-bin count matrix (the object behind the
   broken `STOMICS.h5ad` link) would be needed. It could be added as an optional item to the
-  author request (pending user approval). Even then, the TNFSF12 arm may be uninformative at
-  this depth.
+  author request. The request was **not sent** because DS-013 was closed. Even with raw
+  counts, the TNFSF12 arm may be uninformative at this depth.
 - Otherwise, DS-013 can rest as a snRNA-level expression observation (CP1A). That is the
   outcome already anticipated in the review.

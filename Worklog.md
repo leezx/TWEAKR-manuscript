@@ -271,3 +271,14 @@ mVEC/fVEC and stromal types are resolved. Coordinates, annotation and sample ID 
 complete for 1,077,690 cells in 16 sections (GW18–24 only).
 
 **Decision**: Proposed NOT EVALUABLE WITH PUBLIC DATA (pending review); CP2 HOLD.
+
+## 2026-10-08 — Wang 2026 MFI (DS-013) closed
+
+**Decision**: CP1A PASS (exploratory expression evidence); CP1C PASS — not
+evaluable for spatial interaction with accessible public data; CP1B and CP2 not
+pursued. DS-013 CLOSED as an exploratory developmental reference. The author
+request is archived and was not sent. The branch is kept without a PR.
+
+**Retained observation**: TNFRSF12A is reproducibly expressed in fetal-derived
+extravillous trophoblast populations (iEVT), with origin based on the authors'
+cell-type-level classification. Not a standalone Figure 4 panel.

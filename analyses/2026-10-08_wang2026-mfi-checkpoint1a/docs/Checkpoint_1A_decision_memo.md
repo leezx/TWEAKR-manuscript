@@ -2,17 +2,32 @@
 
 **Decision (human review, 2026-10-08): EXPLORATORY / PASS WITH LIMITATIONS — complete.**
 
+**DS-013: CLOSED — exploratory result; spatial hypothesis not evaluable with accessible public data.**
+A no-go decision is a complete deliverable. Stereo-seq is not pursued, the author request is
+not sent, and the branch is kept without a PR.
+
 | Checkpoint | Decision | Status |
 |---|---|---|
 | CP0 — data provenance | PASS | complete |
 | CP1A — expression feasibility | EXPLORATORY / PASS WITH LIMITATIONS | complete |
-| CP1B — genotype origin verification | BLOCKED | awaiting author response |
-| CP1C — spatial assay feasibility (metadata and gene detection only) | proposed: NOT EVALUABLE WITH PUBLIC DATA | done, pending review |
-| CP2 — spatial colocalisation | HOLD | not authorised |
+| CP1B — genotype origin verification | NOT PURSUED | author request archived, not sent |
+| CP1C — spatial assay feasibility (metadata and gene detection only) | PASS — NOT EVALUABLE | complete |
+| CP2 — spatial colocalisation | NOT PURSUED | closed |
 
 ## Approved summary statements
 
-- TNFSF12 is detectable in maternal macrophages but is neither highly expressed nor macrophage-specific.
+- **Primary retained observation:** TNFRSF12A is reproducibly expressed in fetal-derived
+  extravillous trophoblast populations at the human maternal–fetal interface. "Fetal-derived"
+  rests on the authors' cell-type-level origin classification, not on per-cell genotype
+  re-verified here.
+- TNFSF12 is sparsely detected across multiple maternal–fetal interface cell populations,
+  without consistent macrophage-specific enrichment. The BH q = 0.03 Wilcoxon result is not
+  taken as a stable enrichment claim: 13/23 donors, 9 donors with zero macrophage detection,
+  median Δ +0.36 percentage points, and sensitivity to depth and gestational composition.
+  This does not show that macrophages do not produce TWEAK.
+- Secondary: TNFRSF12A may be gestationally regulated. It is higher in T3 despite lower T3
+  depth, but gestational regulation, subtype composition and donor/batch effects were not
+  separated. No further analysis is planned.
 - TNFRSF12A is reproducibly expressed in fetal trophoblast populations, particularly iEVTs, but is not exclusive to trophoblasts.
 - The data do not support the claim "maternal macrophage-derived TWEAK establishes a fetal
   immune-tolerant niche". They support a broader working hypothesis: TWEAK–TWEAKR
@@ -100,9 +115,25 @@
    activation, recruitment or tolerance.
 3. Cellular origin is not the same as anatomical compartment: iEVT are fetal cells located in maternal decidua.
 
+## Evidence boundary for the TWEAKR manuscript
+
+| Question | Evidence from Wang 2026 | Value |
+|---|---|---|
+| Is TWEAKR present in normal fetal-derived cells? | reproducibly detected in iEVT | moderate |
+| Is TWEAKR fetal-cell-specific? | also expressed in other cell types | weak |
+| Are maternal macrophages the main TWEAK source? | no stable enrichment | weak |
+| Do TWEAK+ macrophages colocalise with TWEAKR+ EVT? | not reliably evaluable | none |
+| Does TWEAK–TWEAKR mediate maternal–fetal tolerance? | no functional evidence | none |
+| Do CRC oncofetal cells recapitulate an EVT program? | not compared | none |
+
+TWEAKR expression in EVT does **not** imply that TWEAKR-high CRC cells reactivate an EVT
+program; that would need a direct transcriptional-program comparison controlled for generic
+EMT, proliferation, stress and ECM programs. A large-scale EVT–CRC comparison is explicitly
+**out of scope**. DS-013 can be reopened if a developmental comparison becomes necessary.
+
 ## Figure 4 implication
 
-This is not core mechanistic evidence. A cautious statement, still to be validated against
+Not a standalone Figure 4 panel. Use as a developmental-context observation (research notes, candidate supplementary analysis, or Discussion background). A cautious statement, still to be validated against
 the CRC oncofetal transcriptional state: *TWEAKR is expressed in fetal trophoblast
 populations at the maternal–fetal interface, suggesting that this receptor is associated
 with cellular programs operating in both developmental and malignant contexts.*
