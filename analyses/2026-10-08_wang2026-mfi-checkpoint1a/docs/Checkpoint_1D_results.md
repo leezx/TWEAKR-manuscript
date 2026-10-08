@@ -1,7 +1,8 @@
 # Checkpoint 1D results — TWEAK-associated macrophage state (DS-013, scoped reopening)
 
-**Proposed call (for human review): PASS on the pre-specified criteria for CORE (and
-EXTENDED), with a specificity caveat. The TNFSF12 association is shared with, and partly
+**Decision (human review, 2026-10-08): PASS WITH SPECIFICITY LIMITATIONS.** Level 3: HOLD. CP1E
+(CORE vs C1Q) assembled in `Checkpoint_1E_core_vs_c1q.md`. Original proposed call: PASS on the
+pre-specified criteria for CORE (and EXTENDED), with a specificity caveat. The TNFSF12 association is shared with, and partly
 explained by, a C1Q-complement macrophage axis. The effect is modest.**
 Level 3 is not started and needs separate approval. Stereo-seq is untouched.
 
@@ -27,7 +28,7 @@ Cell-level UMAP and score files are in `$LOCAL_WORK/results/DS-013_CP1D/` (not i
 | Pre-specified criterion | CORE | EXTENDED |
 |---|---|---|
 | MH OR, score-high vs score-low halves within donor | 1.43 (1.08–1.89) ✓ | 1.52 (1.15–2.01) ✓ |
-| Donors high > low (sign test) | 12/14, 2 lower (p = 0.013) ✓ | 11/14, 2 lower (p = 0.022) ✓ |
+| Donors high > low (exact two-sided sign test; among the 14 donors with detectable TNFSF12 in macrophages) | 12/14, 2 lower (p = 0.013) ✓ | 11/14, 2 lower (p = 0.022) ✓ |
 | Logit OR per SD, donor FE + log library size | 1.29 (1.11–1.50) ✓ | 1.43 (1.24–1.64) ✓ |
 | Matched random-module null (500) | null median 1.01, q95 1.17; p = 0.002 ✓ | p = 0.002 ✓ |
 | Adjusted for LYSO_CONTROL | 1.25 (1.06–1.47) ✓ | 1.86 (1.45–2.37) ✓ |

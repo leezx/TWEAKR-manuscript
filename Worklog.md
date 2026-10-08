@@ -295,3 +295,13 @@ check. The effect is modest (2.7% vs 1.9% detection). A C1Q complement control m
 equally associated, so the state is not TWEAK-specific. HB shows no association.
 
 **Decision**: Proposed PASS with a specificity caveat. Level 3 is not started; Stereo-seq untouched.
+
+## 2026-10-08 — Wang 2026 MFI CP1D review and CP1E (CORE vs C1Q)
+
+**Decision**: CP1D PASS WITH SPECIFICITY LIMITATIONS; Level 3 HOLD. CORE is the primary
+signature and C1Q the comparator; they are not merged.
+
+**CP1E** (assembled from already-fitted models; no rerun): in M3, CORE 1.21 (1.04–1.41) and
+C1Q 1.38 (1.22–1.57). In CD14_M only, CORE 1.18 (0.99–1.40) and C1Q 1.36. Score correlation is
+r = 0.22 (VIF 1.05). CORE adds modest information beyond C1Q that is not robust in CD14_M.
+CORE is an exploratory state score, not a TWEAK+ classifier.

@@ -8,9 +8,11 @@
 - **Date / executor / status:** 2026-10-08 / Claude Code / complete. Human review decision:
   **EXPLORATORY / PASS WITH LIMITATIONS** (`docs/Checkpoint_1A_decision_memo.md`).
 - **DS-013: CLOSED — exploratory result; spatial hypothesis not evaluable with accessible public data.**
-- **2026-10-08 scoped reopening — CP1D (snRNA macrophage state only):** proposed PASS on
-  pre-specified criteria with a C1Q-axis specificity caveat (`docs/Checkpoint_1D_contract.md`,
-  `docs/Checkpoint_1D_results.md`). Level 3 is not started; Stereo-seq is untouched.
+- **2026-10-08 scoped reopening — CP1D (snRNA macrophage state only): PASS WITH SPECIFICITY
+  LIMITATIONS** (`docs/Checkpoint_1D_contract.md`, `docs/Checkpoint_1D_results.md`).
+  **CP1E** (CORE vs C1Q; `docs/Checkpoint_1E_core_vs_c1q.md`): CORE adds modest information
+  beyond C1Q that is not robust in CD14_M; C1Q is the stronger, stable axis. Level 3: HOLD.
+  Stereo-seq: HOLD.
 - **Checkpoint state:** CP0 PASS · CP1A PASS — exploratory expression evidence · CP1B NOT PURSUED (author request archived, not sent) ·
   CP1C PASS — not evaluable for spatial interaction (`docs/Checkpoint_1C_spatial_feasibility.md`) ·
   CP2 NOT PURSUED.
