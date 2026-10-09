@@ -266,3 +266,11 @@ rank range, minimum cells and disk estimate remain intentionally unresolved.
 The workflow is `HOLD_FOR_REVIEW`; the new RDS directory has not been inventoried
 by this task. Recomputing or updating the existing 21 metaprograms is outside
 this PR and requires a separate review.
+
+## 2026-10-09 — NMF review revision A1
+
+Primary ranks changed to 4:9 and minimum cells to 200, with 100/200/500
+sensitivity thresholds. Added an explicit robust-program filtering variant
+using repeated top50 genes (35 within-rank, 10 across-sample, <=10 redundancy)
+and cross-dataset support. Documented RcppML versus author NMF/snMF nrun=10
+differences and that MP clustering remains unimplemented. Analysis stays HOLD.

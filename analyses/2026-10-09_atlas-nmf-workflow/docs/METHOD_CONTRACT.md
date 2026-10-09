@@ -44,7 +44,8 @@ the historical Atlas run and the TNBC workflow's centred non-negative input.
 - Seed: 42 unless changed before approval.
 - Tolerance: `1e-5`.
 - L1 penalty: `c(0.01, 0.01)`.
-- Proposed ranks: 5-10; final ranks remain a review decision.
+- Proposed primary ranks: 4-9; minimum malignant cells/sample: 200.
+- Sensitivity cell thresholds: 100, 200 and 500. Final approval remains pending.
 - A rank is invalid when `rank > number of cells`.
 - Each sample/rank writes W, H, factor assignments, reconstruction error,
   strict marker sets, tolerance-1/2 marker sets and top 50/100/200 lists.

@@ -56,7 +56,9 @@ raw counts (gene x cell)
   -> W/H matrices, factor assignments, reconstruction error and markers
 ```
 
-The default review configuration proposes ranks 5-10 but does not freeze them.
+Revision A1 proposes primary ranks 4-9 and at least 200 malignant cells/sample.
+See `docs/REVIEW_REVISION_A1.md` for the current review contract; it supersedes
+earlier parameter examples and explicitly distinguishes raw GEPs from MPs.
 Ranks, cell filters, metadata columns and dataset aliases must be approved in
 `config/dataset_plan.tsv` before execution.
 

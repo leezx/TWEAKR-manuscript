@@ -62,7 +62,7 @@ preprocess_counts <- function(counts, min_detected_cells, scale_factor) {
   list(matrix = normalized, dropped_zero_library = sum(!keep_cells))
 }
 
-min_cells <- as.integer(Sys.getenv("MIN_CELLS", "20"))
+min_cells <- as.integer(Sys.getenv("MIN_CELLS", "200"))
 min_detected_cells <- as.integer(Sys.getenv("MIN_DETECTED_CELLS", "1"))
 scale_factor <- as.numeric(Sys.getenv("SCALE_FACTOR", "10000"))
 
