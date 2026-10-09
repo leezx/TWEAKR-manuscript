@@ -310,3 +310,11 @@ Proceed to Gate B preparation only: pilot dataset annotations and identity
 mapping must first be checked. EXECUTE_NMF remains 0; no real-data execution or
 PR merge was performed. Multi-seed, cell-threshold sensitivity and real-data
 leave-one-dataset-out are deferred validation, not Gate A blockers.
+
+## 2026-10-09 — Gate B read-only pilot inventory
+
+Inspected actual GSE254249 RDS candidates CRC23_tissue and CRC13_tissue: RNA
+counts valid, source group=Cancer yields 506 and 514 nonzero-library cells.
+Sample/PatientID/Tissue/TimePoint agree with source metadata. Added candidate
+inventory and identity mapping for review only; original Cancer-calling evidence
+and cross-study duplicate review remain pending. No preprocessing or NMF run.

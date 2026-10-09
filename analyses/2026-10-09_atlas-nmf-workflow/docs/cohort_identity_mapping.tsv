@@ -1,0 +1,3 @@
+"dataset_id"	"source_id"	"sample_id"	"biological_sample_id"	"patient_id"	"patient_id_status"	"identity_evidence"	"cross_study_duplicate_review"	"review_status"
+"GSE254249"	"source_0001"	"CRC23_tissue"	"GSE254249:CRC23_tissue"	"GSE254249:RC23"	"confirmed"	"Original metadata PatientID/Ident/Tissue/SampleTimePoint; within-study confirmed"	"pending"	"pending"
+"GSE254249"	"source_0002"	"CRC13_tissue"	"GSE254249:CRC13_tissue"	"GSE254249:RC13"	"confirmed"	"Original metadata PatientID/Ident/Tissue/SampleTimePoint; within-study confirmed"	"pending"	"pending"
