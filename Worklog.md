@@ -337,3 +337,21 @@ non-malignant / uncertain.
   coordinates; `obsm` is empty; no GPU is available, so scVI runs on CPU. Annotation computation has not
   started yet.
 - **Project ledger:** WL-20261009-034, WL-20261009-035.
+
+## 2026-10-09 — Fig. 1B L2: operating parameters fixed before any computation
+
+- **Repository visibility:** the user decided to keep the repository Public.
+- **What was added:**
+  - `docs/L2_implementation_notes.md` turns the approved annotation plan into fixed parameters;
+  - `code/l2_config.yaml` is the machine-readable copy (panels, Atlas fine → L2 crosswalk, thresholds).
+- **Facts found before writing:**
+  - scVI cannot import in `r4p3` (pyro/torch mismatch), so scVI runs in `scvi-env` and the rest stays in
+    `r4p3`;
+  - no scikit-misc, so HVG uses `flavor="seurat"`;
+  - every cohort epithelial cell except 1,797 EEC/tuft cells has an Atlas `Cancer *` label.
+- **Open questions for review:**
+  - Q1: whether to pre-declare a sensitivity analysis for CNV-low, normal-coherent `Cancer *` cells;
+  - Q2: whether continuous L3 scores (only Cycling categorical) are acceptable in v1.
+- **Status:** no job submitted; no annotation result exists.
+- **Project ledger:** WL-20261009-040. The L2 input inventory listed above as a second "-035" is
+  WL-20261009-036.

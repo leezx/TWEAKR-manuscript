@@ -1,0 +1,183 @@
+# Fig. 1B L2 annotation parameters, fixed 2026-10-09 before any L2 computation.
+# Human-readable copy: docs/L2_implementation_notes.md. Do not edit after results are seen;
+# add a dated amendment instead.
+
+paths:
+  h5ad: /home/zz950/DATA/scRNAseq/meta_study/CRC_single_cell_atlas_2025/data/final_crc_atlas-adata.count.only.h5ad
+  cohort_cells: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/fig1b_dataset_screen_20261009/cohort/fig1b_cohort_cells_v1.tsv.gz
+  marker_lineage_dir: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/atlas_major_lineage_20261009
+  run_root: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/fig1b_cytotrace2_20261009/l2_annotation
+  revcsc_gmt: genesets/revCSC.human.gmt   # copied to run_root/inputs/ with checksum
+
+envs:
+  scvi: /home/zz950/softwares/miniconda3/envs/scvi-env/bin/python   # scvi-tools 1.4.1, torch 2.6.0
+  main_python: /home/zz950/softwares/miniconda3/envs/r4p3/bin/python # scanpy 1.9.8, leidenalg, harmonypy
+  main_r: /home/zz950/softwares/miniconda3/envs/r4p3/bin/Rscript     # infercnv 1.14.0
+  r_libs: /home/zz950/softwares/R_lib_4
+
+lineages: [Epithelial, Immune, Stromal]   # cohort column `broad`; Other (Schwann) is counted only
+normalization: {target_sum: 10000, log1p: true}
+
+l1_flags:
+  f1_min_genes: 2
+  f1_min_umi: 2
+  panels:
+    Epithelial: {genes: [EPCAM, KRT8, KRT18, KRT19, CDH1], lineage: Epithelial}
+    TNK: {genes: [CD3D, CD3E, CD2, TRAC, NKG7], lineage: Immune}
+    Myeloid: {genes: [LYZ, C1QA, C1QB, CD68, CD14], lineage: Immune}
+    BPlasma: {genes: [MS4A1, CD79A, JCHAIN, MZB1], lineage: Immune}
+    Fibroblast: {genes: [COL1A1, COL1A2, DCN, LUM], lineage: Stromal}
+    Endothelial: {genes: [PECAM1, VWF, CDH5, EMCN], lineage: Stromal}
+    Mural: {genes: [RGS5, NOTCH3, PDGFRB, MYH11], lineage: Stromal}
+  f2_resolution: 1.0
+  f2_foreign_fraction: 0.50
+
+hvg:
+  n_top_genes: 3000
+  flavor: seurat
+  batch_key: study_id
+  exclude_regex: ['^MT-', '^RP[LS]', '^HB[AB]']
+  exclude_regex_immune: ['^TR[ABDG][VJ]', '^IG[HKL][VJ]']
+  force_panel_genes: true
+
+scvi:
+  batch_key: sample_id
+  categorical_covariate_keys: [study_id]
+  n_latent: 30
+  n_layers: 2
+  n_hidden: 128
+  gene_likelihood: nb
+  max_epochs_rule: min(400, round(20000 / n_cells * 400))
+  early_stopping: true
+  seed: 0
+
+harmony: {n_pcs: 50, key: sample_id, theta: 2, seed: 0}
+
+clustering:
+  n_neighbors: 15
+  resolutions: [0.5, 1.0, 1.5, 2.0]
+  labelling_resolution: 1.0
+  seed: 0
+
+labelling:
+  score_genes: {ctrl_size: 50, n_bins: 25, seed: 0, within: study_id}
+  min_score: 0.10
+  min_margin: 0.10
+  transfer_k: 30
+  transfer_min_share: 0.60
+
+panels_L2:
+  Epithelial:   # normal types; used only for non-malignant cells
+    Stem-like: [LGR5, OLFM4, ASCL2, SMOC2, AXIN2]
+    Enterocyte/colonocyte-like: [KRT20, SLC26A3, CA1, CA2, FABP1, CEACAM7]
+    Goblet-like: [MUC2, TFF3, CLCA1, FCGBP, SPINK4, ZG16]
+    Enteroendocrine: [CHGA, CHGB, NEUROD1, PYY, GCG]
+    Tuft: [POU2F3, TRPM5, DCLK1, SH2D6]
+    Paneth-like: [DEFA5, DEFA6, REG3A, PLA2G2A]
+  Immune:
+    CD4 T: {pos: [CD3D, CD3E, CD4, IL7R], neg: [CD8A, CD8B]}
+    CD8 T: [CD3D, CD3E, CD8A, CD8B]
+    NK: {pos: [NKG7, KLRD1, NCR1, GNLY], neg: [CD3D, CD3E]}
+    B: [MS4A1, CD79A, CD79B, CD19]
+    Plasma: [JCHAIN, MZB1, XBP1, SDC1]
+    Macrophage: [C1QA, C1QB, C1QC, CD68, MERTK, APOE]
+    Monocyte: [FCN1, VCAN, S100A8, S100A9, CD14]
+    Dendritic cell: [FCER1A, CD1C, CLEC10A, CLEC9A, XCR1, LILRA4]
+    Neutrophil: [FCGR3B, CSF3R, CXCR2]
+    Mast: [TPSAB1, TPSB2, CPA3, KIT]
+  Stromal:
+    Fibroblast: [DCN, LUM, COL1A1, COL1A2, PDGFRA]
+    Endothelial: [PECAM1, VWF, CDH5, EMCN]
+    Pericyte: {pos: [RGS5, PDGFRB, CSPG4, MCAM], neg: [MYH11]}
+    Smooth muscle: [MYH11, ACTG2, CNN1, DES]
+
+atlas_fine_to_L2:   # null = no L2 counterpart, casts no transfer vote
+  Cancer BEST4: Malignant epithelial
+  Cancer Colonocyte-like: Malignant epithelial
+  Cancer Crypt-like: Malignant epithelial
+  Cancer Goblet-like: Malignant epithelial
+  Cancer TA-like: Malignant epithelial
+  Enteroendocrine: Enteroendocrine
+  Tuft: Tuft
+  B cell activated: B
+  B cell memory: B
+  B cell naive: B
+  GC B cell: B
+  Plasma IgA: Plasma
+  Plasma IgG: Plasma
+  Plasma IgM: Plasma
+  Plasmablast: Plasma
+  DC mature: Dendritic cell
+  DC3: Dendritic cell
+  cDC1: Dendritic cell
+  cDC2: Dendritic cell
+  pDC: Dendritic cell
+  Macrophage: Macrophage
+  Macrophage cycling: Macrophage
+  Monocyte classical: Monocyte
+  Monocyte non-classical: Monocyte
+  Neutrophil: Neutrophil
+  Mast cell: Mast
+  NK cell: NK
+  ILC: NK
+  T cell CD4: CD4 T
+  T cell CD4 cycling: CD4 T
+  T cell regulatory: CD4 T
+  T cell CD8: CD8 T
+  T cell CD8 cycling: CD8 T
+  Eosinophil: null
+  NKT: null
+  T cell γδ: null
+  Granulocyte progenitor: null
+  Myeloid progenitor: null
+  Endothelial arterial: Endothelial
+  Endothelial venous: Endothelial
+  Endothelial lymphatic: Endothelial
+  Fibroblast S1: Fibroblast
+  Fibroblast S2: Fibroblast
+  Fibroblast S3: Fibroblast
+  Pericyte: Pericyte
+  Schwann cell: null
+
+infercnv:
+  chromosomes: autosomes
+  ref_max_cells: 1500
+  ref_min_cells: 100
+  cutoff: 0.1
+  cluster_by_groups: true
+  denoise: true
+  HMM: false
+  window_length: 101
+  analysis_mode: samples
+  num_threads: 8
+  seed: 0
+  corr_top_fraction: 0.05
+  high_quantile: 0.99
+  low_quantile: 0.95
+  patient_clear_min_high_fraction: 0.20
+  study_poor_max_clear_fraction: 0.50
+
+loso:
+  k: 15
+  weights: distance
+  min_cells: 30
+  min_recall: 0.60
+  pan_crc_min_studies: 3
+
+eligibility: {min_cells_per_patient: 30, main_min_patients: 5, main_min_studies: 3}
+
+l3:
+  cycling: {genes: [MKI67, TOP2A, UBE2C, CDK1], min_score: 0.50}
+  programmes:
+    canonical_stem: [LGR5, ASCL2, OLFM4, SMOC2]
+    proliferation: [MKI67, TOP2A, UBE2C, CDK1]
+    enterocyte: [KRT20, SLC26A3, CA1, FABP1]
+    goblet: [MUC2, TFF3, CLCA1, SPINK4]
+    secretory_endocrine: [CHGA, NEUROD1, ATOH1]
+    treg: [FOXP3, IL2RA]
+    exhaustion: [PDCD1, HAVCR2, TOX]
+    naive_memory: [TCF7, LEF1, CCR7]
+    mycaf_like: [ACTA2, TAGLN, POSTN]
+    icaf_like: [IL6, CXCL1, CXCL12, C3]
+    lymphatic: [PROX1, LYVE1, CCL21]
+  revcsc: from_gmt

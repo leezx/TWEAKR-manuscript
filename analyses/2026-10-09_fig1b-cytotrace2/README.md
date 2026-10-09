@@ -21,7 +21,8 @@
     - any epithelial–stromal conclusion must be read together with the depth-matched and raw-score
       results;
     - no plasticity hierarchy may be claimed from the final-score ordering in immune cells alone.
-  - Full run: on hold until the final technical review of the pilot.
+  - L2 parameters were fixed before any computation in `docs/L2_implementation_notes.md` and
+    `code/l2_config.yaml` (2026-10-09). They are under review; no L2 job has been submitted.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).
 
@@ -49,6 +50,8 @@
 | File | Content |
 |---|---|
 | `docs/Harmonized_annotation_plan.md` | L1/L2/L3 taxonomy, human marker panels, malignancy calls, integration/labelling/validation procedure, L2 eligibility |
+| `docs/L2_implementation_notes.md` | fixed operating parameters for L2 (envs, L1 flags, scVI, Leiden, three-source consensus, infercnv thresholds, LOSO, compute plan) and open questions Q1–Q2 |
+| `code/l2_config.yaml` | machine-readable copy of the L2 parameters, panels and Atlas fine → L2 crosswalk |
 
 ## Tables (`tables/input_validation/`)
 
