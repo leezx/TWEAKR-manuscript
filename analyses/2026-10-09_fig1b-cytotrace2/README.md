@@ -22,7 +22,7 @@
       results;
     - no plasticity hierarchy may be claimed from the final-score ordering in immune cells alone.
   - L2 parameters were fixed before any computation in `docs/L2_implementation_notes.md` and
-    `code/l2_config.yaml` (2026-10-09). They are under review; no L2 job has been submitted.
+    `code/l2_config.yaml` (2026-10-09). Review: Implementation GO with pre-run clarifications C1–C6; no L2 job submitted yet.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).
 

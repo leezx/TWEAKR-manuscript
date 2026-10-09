@@ -223,3 +223,54 @@ read by L2.
   - Not adding it is also acceptable. The cohort is primary tumour only, and the main contrasts are by
     compartment.
 - **Q2.** Is v1 with continuous L3 scores (only `Cycling` categorical) acceptable for the freeze?
+
+## Review outcome and pre-run clarifications (2026-10-09, before any computation)
+
+The reviewer read commit `660fe7a` and gave **Implementation GO**. `annotation_v1` is not yet quality-approved.
+The reviewer allowed the clarifications below to be recorded as pre-run clarifications, without a new
+amendment or a second review. Markers, vote thresholds, Leiden resolution and CNV cutoffs are not changed.
+
+**C1. Q1 answered YES: a pre-declared sensitivity class.**
+- New column `malignancy_sensitivity` (epithelial only). The value is `putative non-malignant epithelial`
+  when a cell meets all of:
+  - Atlas `Cancer *` label;
+  - CNV-low;
+  - coherent normal markers (section 6);
+  - patient with clear CNV structure.
+- Other cells copy `malignancy_confidence`. The name must stay "putative non-malignant", never
+  "high-confidence non-malignant".
+- The primary rule in section 6 is unchanged. The class is used only to test how much the epithelial
+  results depend on the Atlas labels.
+
+**C2. Q2 answered YES.** L3 in v1 stays as continuous scores, with `Cycling` as the only category.
+
+**C3. scVI convergence check (fixed now; decided from loss curves only).**
+- Train with `train_size = 0.9`, `validation_size = 0.1`, and early stopping on `elbo_validation`
+  (patience 45, the scvi default). Save per-epoch train and validation ELBO.
+- A lineage model is **converged** when:
+  - no loss is NaN or infinite; **and**
+  - either early stopping fired, or the mean `elbo_validation` of the last 3 epochs is within 0.5% of the
+    mean of the 3 epochs before them.
+- **Repair rule:** if not converged, retrain from scratch with `max_epochs` doubled, up to two times
+  (×2, then ×4), capped at 400, with the same seed.
+  - If the model still fails, that lineage's L2 is not frozen, and the case goes back for review.
+  - Convergence is never judged from cell-type composition, labels or any CytoTRACE2 output.
+
+**C4. Required report content for the annotation-quality review:**
+- per study: malignant / non-malignant / Uncertain / putative non-malignant shares;
+- patients and cells excluded from the epithelial L2 analysis;
+- per-lineage convergence plots;
+- coverage, marker specificity and cross-study reproducibility.
+
+If Uncertain is large, the epithelial L2 results represent only the high-confidence subset and are not
+extrapolated to the whole malignant epithelial compartment.
+
+**C5. Wording for Methods and reports:**
+- the labelling is "marker-consensus annotation". (a) is aggregated from (c), so the sources are not
+  three independent modalities;
+- LOSO is "cross-study label reproducibility", not out-of-study generalization.
+
+**C6. Smoke test before the full submission:**
+- one small run through steps 1–5 on a subset: 2 studies, 2 patients each;
+- it checks the environment switch, file formats and memory requests;
+- its outputs are discarded and never inspected for labels.

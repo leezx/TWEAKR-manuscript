@@ -49,7 +49,16 @@ scvi:
   gene_likelihood: nb
   max_epochs_rule: min(400, round(20000 / n_cells * 400))
   early_stopping: true
+  early_stopping_monitor: elbo_validation
+  early_stopping_patience: 45
+  train_size: 0.9
+  validation_size: 0.1
   seed: 0
+  convergence:            # C3, pre-run clarification 2026-10-09
+    window: 3
+    max_rel_change: 0.005
+    repair_multipliers: [2, 4]
+    max_epochs_cap: 400
 
 harmony: {n_pcs: 50, key: sample_id, theta: 2, seed: 0}
 
@@ -156,6 +165,12 @@ infercnv:
   low_quantile: 0.95
   patient_clear_min_high_fraction: 0.20
   study_poor_max_clear_fraction: 0.50
+
+malignancy_sensitivity:   # C1, pre-run clarification 2026-10-09; primary rule unchanged
+  label: putative non-malignant epithelial
+  requires: [atlas_cancer_label, cnv_low, normal_marker_coherent, patient_clear_cnv]
+
+smoke_test: {n_studies: 2, n_patients_per_study: 2, outputs_discarded: true}   # C6
 
 loso:
   k: 15

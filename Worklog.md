@@ -355,3 +355,16 @@ non-malignant / uncertain.
 - **Status:** no job submitted; no annotation result exists.
 - **Project ledger:** WL-20261009-040. The L2 input inventory listed above as a second "-035" is
   WL-20261009-036.
+
+## 2026-10-09 — Fig. 1B L2 parameter review: Implementation GO
+
+- **Review:** submitted in the project's ChatGPT review conversation, reading commit `660fe7a`.
+- **Outcome:** Implementation GO. `annotation_v1` is not yet quality-approved.
+- **Pre-run clarifications** (recorded in `docs/L2_implementation_notes.md`, C1–C6):
+  - Q1 sensitivity class `putative non-malignant epithelial`;
+  - L3 stays continuous in v1;
+  - scVI convergence check and repair rule fixed before training;
+  - required uncertainty reporting;
+  - Methods wording;
+  - a smoke test before the full submission.
+- **Project ledger:** WL-20261009-041.
