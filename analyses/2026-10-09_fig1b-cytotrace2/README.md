@@ -10,6 +10,12 @@
   - Validation also showed large within-study depth differences between compartments, which led to
     amendment A1 (depth-matched sensitivity analysis).
   - Pilot (Joanito, Lee, Qin): running on Argos SGE (`all.q`). Technical diagnostics only.
+    - Snapshot at 2026-10-09 ~16:00 EDT (WL-20261009-020):
+      - main run 3654321: 166/166 tasks done, 0 failed;
+      - depth-matched run 3654335: 491/825 done, 0 failed;
+      - still queued: invariance (3654338), selection-only (3654340), patient-pooled (3654341) and
+        seed repeats (3654342–3654344).
+    - No diagnostics have been summarised yet.
   - Full run: on hold until the final technical review of the pilot.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).

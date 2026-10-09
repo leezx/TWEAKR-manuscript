@@ -298,3 +298,12 @@ non-malignant / uncertain.
 - CytoTRACE2 contract A2.1 and the annotation design are APPROVED; no further method amendments.
 - The 3-study pilot is running on `all.q`.
 - The full 13-study run waits for the final technical review of a six-item pilot report.
+
+## 2026-10-09 — Fig. 1B CytoTRACE2 pilot: progress snapshot (running)
+
+- Snapshot at ~16:00 EDT:
+  - main run 3654321: 166/166 tasks done, 0 failed (median 797 s; max 2,407 s);
+  - depth-matched run 3654335: 491/825 done, 0 failed.
+- Still queued: invariance, selection-only, patient-pooled and seed-repeat jobs.
+- No diagnostics have been summarised yet, and no biological result is reported.
+- Project ledger: WL-20261009-020.
