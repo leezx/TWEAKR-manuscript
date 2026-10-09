@@ -244,3 +244,19 @@ A patient is complete with ≥30 cells per compartment; a study passes with ≥5
   cohort only).
 
 **Status**: Pending review. Record: `analyses/2026-10-09_fig1b-dataset-screen/README.md`.
+
+## 2026-10-09 — Fig. 1B cohort freeze, CytoTRACE2 input validation and contract draft
+
+**Decision**: Dataset screen v2 approved. Primary cohort: 13 studies, 222 patients
+(treatment-naive primary CRC; ≥30 cells per compartment, ≥5 patients per study).
+
+**Cohort freeze v1**: 361 samples and 1,003,249 cells, keyed on (study, patient).
+Patient list and manifest: `analyses/2026-10-09_fig1b-dataset-screen/cohort/`; cell list on Argos.
+
+**Input validation** (no CytoTRACE2 scores):
+- All counts are raw integers.
+- Each study covers 90–98% of the 14,271 CytoTRACE2 model features.
+- Compartments differ strongly in sequencing depth within a study. Amendment A1 therefore adds a
+  depth-matched (downsampling) sensitivity analysis.
+
+**Status**: Contract pending review (`analyses/2026-10-09_fig1b-cytotrace2/docs/CytoTRACE2_contract.md`).

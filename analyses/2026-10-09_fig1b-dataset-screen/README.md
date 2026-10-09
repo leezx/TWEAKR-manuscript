@@ -172,6 +172,47 @@ separately (next section).
 
 Core is a review order. It does not certify freedom from sampling bias.
 
+## Review decision and frozen cohort (2026-10-09)
+
+**Screen v2 approved.** The dataset selection is complete. Fixed analysis boundaries:
+- **Primary analysis:** 13 studies, 222 patients, treatment-naive primary CRC; Epithelial / Immune /
+  Stromal with ≥30 cells per patient and ≥5 patients per study. The unit of analysis is the patient.
+- **Core/Extended** tiers are only an ordering for review and display. They are **not** evidence
+  levels and must not be redefined after CytoTRACE2 results are seen.
+- **Sensitivity sets (pre-specified):** stringent 50/10; unsorted-only, recomputed independently;
+  fibroblast-specific; leave-one-study-out; permissive 20/5.
+- **HTAPP HTAN:** separate exploratory analysis only, flagged for possible Pelka overlap; never
+  pooled with the primary analysis.
+
+**Frozen cohort v1** (`code/freeze_cohort.py`, run on the screen code from commit `43bbebb`; script
+SHA256 `4a61ad43…` unchanged since). Selection is keyed on (study, patient) because 2 Joanito patient
+IDs recur under Borras 2023. A first freeze run keyed on patient ID alone wrongly pulled in their
+Borras cells (224 patients); it was fixed and rerun before use.
+
+| Item | Value |
+|---|---|
+| Studies / patients / samples / cells | 13 / 222 / 361 / 1,003,249 |
+| Cells by compartment | Immune 619,337; Epithelial 285,703; Stromal 95,886; Other 2,323 |
+| Patient list (light) | `cohort/fig1b_cohort_patients_v1.csv` (SHA256 `81007177…`) |
+| Cell list (Argos) | `…/fig1b_dataset_screen_20261009/cohort/fig1b_cohort_cells_v1.tsv.gz` (SHA256 `8adff945…`) |
+| Manifest | `cohort/fig1b_cohort_manifest_v1.json` (full hashes, rule, per-study counts) |
+
+Sensitivity membership is stored per patient as `in_*` flags:
+
+| Sensitivity set | Patients |
+|---|---|
+| stringent 50/10 | 162 |
+| unsorted-only 30/5 | 205 |
+| fibroblast 30 | 162 |
+| permissive 20/5 | 233 (the frozen 222 plus 11) |
+
+20/5 vs 30/5 at the patient level: the 30/5 set is a strict subset of the 20/5 set. The 20/5 set adds
+11 patients (Pelka 5, Lee 2, Joanito, Khaliq, Li 2023, Uhlitz 1 each) and removes none. Matching study
+counts therefore do not hide a different patient list.
+
+The 20/5 extras are not in the frozen cohort, so the permissive sensitivity analysis must add them
+from the screen tables. They are listed in the manifest (`permissive_vs_primary`).
+
 ## Outputs (`tables/v2/`; v1 kept in `tables/v1/`)
 
 | File | Content |

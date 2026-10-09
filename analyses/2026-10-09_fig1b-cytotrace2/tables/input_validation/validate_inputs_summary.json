@@ -1,0 +1,21 @@
+{
+ "cohort_cells": 1003249,
+ "non_integer_or_negative_values": 0,
+ "zero_library_cells": 0,
+ "atlas_genes": 28476,
+ "genes_detected_per_study": {
+  "Chen_2024_Cancer_Cell": 24518,
+  "Guo_2022_JCI_Insight": 19402,
+  "Joanito_2022_Nat_Genet": 25755,
+  "Khaliq_2022_Genome_Biol": 22289,
+  "Lee_2020_Nat_Genet": 25290,
+  "Li_2023_Cancer_Cell": 24706,
+  "Liu_2024_Cancer_Res": 23233,
+  "MUI_Innsbruck": 21074,
+  "Pelka_2021_Cell": 25905,
+  "Qi_2022_Nat_Commun": 23047,
+  "Qian_2020_Cell_Res": 24358,
+  "Qin_2023_Cell_Rep_Med": 26741,
+  "Uhlitz_2021_EMBO_Mol_Med": 21239
+ }
+}

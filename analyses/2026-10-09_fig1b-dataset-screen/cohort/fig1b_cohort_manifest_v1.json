@@ -1,0 +1,59 @@
+{
+ "cohort_version": "v1",
+ "approved": "2026-10-09 (user review of screen v2)",
+ "screen_commit": "43bbebb",
+ "h5ad": "/home/zz950/DATA/scRNAseq/meta_study/CRC_single_cell_atlas_2025/data/final_crc_atlas-adata.count.only.h5ad",
+ "scope_tsv": "/home/zz950/DATA/scRNAseq/meta_study/CRC_metadata_extraction/patient_characteristics/crc_patient_metadata.tsv",
+ "rule": "treatment-naive primary tumour samples; >=30 cells in each of Epithelial/Immune/Stromal per patient; study >=5 such patients",
+ "studies": 13,
+ "patients": 222,
+ "cells": 1003249,
+ "samples": 361,
+ "cells_by_broad": {
+  "Immune": 619337,
+  "Epithelial": 285703,
+  "Stromal": 95886,
+  "Other": 2323
+ },
+ "patients_by_study": {
+  "Chen_2024_Cancer_Cell": 19,
+  "Guo_2022_JCI_Insight": 6,
+  "Joanito_2022_Nat_Genet": 30,
+  "Khaliq_2022_Genome_Biol": 7,
+  "Lee_2020_Nat_Genet": 28,
+  "Li_2023_Cancer_Cell": 9,
+  "Liu_2024_Cancer_Res": 12,
+  "MUI_Innsbruck": 12,
+  "Pelka_2021_Cell": 50,
+  "Qi_2022_Nat_Commun": 5,
+  "Qian_2020_Cell_Res": 7,
+  "Qin_2023_Cell_Rep_Med": 27,
+  "Uhlitz_2021_EMBO_Mol_Med": 10
+ },
+ "sensitivity_patients": {
+  "permissive_20_5": 222,
+  "stringent_50_10": 162,
+  "unsorted_30_5": 205,
+  "fibroblast_30": 162
+ },
+ "permissive_vs_primary": {
+  "in_permissive_not_primary": [
+   "Joanito_2022_Nat_Genet|Joanito_2022_Nat_Genet.SC041",
+   "Khaliq_2022_Genome_Biol|Khaliq_2022_Genome_Biol.CAC7",
+   "Lee_2020_Nat_Genet|Lee_2020_Nat_Genet.SMC16",
+   "Lee_2020_Nat_Genet|Lee_2020_Nat_Genet.SMC25",
+   "Li_2023_Cancer_Cell|Li_2023_Cancer_Cell.P24",
+   "Pelka_2021_Cell|Pelka_2021_Cell.C105",
+   "Pelka_2021_Cell|Pelka_2021_Cell.C110",
+   "Pelka_2021_Cell|Pelka_2021_Cell.C118",
+   "Pelka_2021_Cell|Pelka_2021_Cell.C134",
+   "Pelka_2021_Cell|Pelka_2021_Cell.C137",
+   "Uhlitz_2021_EMBO_Mol_Med|Uhlitz_2021_EMBO_Mol_Med.P025"
+  ],
+  "in_primary_not_permissive": []
+ },
+ "files": {
+  "fig1b_cohort_cells_v1.tsv.gz": "8adff9451a331107efc236ac78137b9f1db14062302b60a6a379a586a4a5225e",
+  "fig1b_cohort_patients_v1.csv": "81007177f5aacc0fbb49748efdb2e197a611dc224282cc01c8a45c6e67d76559"
+ }
+}
