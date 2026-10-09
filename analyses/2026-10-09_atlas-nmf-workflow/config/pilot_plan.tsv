@@ -1,0 +1,3 @@
+dataset_id	rds_path	sample_column	cell_filter_column	cell_filter_values	assay	enabled	review_status	notes
+GSE254249	/home/zz950/DATA/HotData/TWEAKR-oncoFetal/external/oncofetal_dataset_inventory_v2_2026-10-07/seurat_counts_rds/GSE254249/CRC23_tissue_counts_meta.rds	sample_id	group	Cancer	RNA	1	approved	Scoped pilot only; source Cancer annotation not independently verified
+GSE254249	/home/zz950/DATA/HotData/TWEAKR-oncoFetal/external/oncofetal_dataset_inventory_v2_2026-10-07/seurat_counts_rds/GSE254249/CRC13_tissue_counts_meta.rds	sample_id	group	Cancer	RNA	1	approved	Scoped pilot only; source Cancer annotation not independently verified

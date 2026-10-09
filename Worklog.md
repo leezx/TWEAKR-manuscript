@@ -326,3 +326,10 @@ paper methods verification; publisher access returned 403 and search indexing
 did not establish the Cancer definition. Recorded unresolved status in
 MALIGNANT_PROVENANCE_CHECK.md. No claim of CNV-confirmed malignancy, no algorithm
 change, no dataset expansion, EXECUTE_NMF remains 0.
+
+## 2026-10-09 — Human-authorized two-sample pilot submitted
+
+User authorized startup; scoped runner uses original group=Cancer only, two
+approved samples, K4:9 and seed42. Submitted SGE job3654435 with pvm2 standard
+resources. Root and commands are in PILOT_EXECUTION.md. General execution guard
+remains 0; no full Atlas run is authorized. Completion/QC remain pending.
