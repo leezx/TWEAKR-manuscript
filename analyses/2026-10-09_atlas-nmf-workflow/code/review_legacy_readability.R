@@ -22,7 +22,7 @@ for (i in seq_len(nrow(tasks))) {
     cell_names_present=FALSE,marker_rows=NA,model_readable=FALSE)
   rows[[i]] <- cbind(r[c('dataset_id','sample_id')],rank=basename(d),result,
     read_error=error, cell_identity_equivalence='not_verified',
-    selector_equivalence='not_verified_regex_vs_exact',reuse_status='pending',enabled=0)
+    selector_equivalence='not_verified_regex_vs_exact',reuse_status='direct_reuse_not_approved',enabled=0)
   cat(i,'/',nrow(tasks),r$sample_id,'readable=',result$model_readable,'\n')
   rm(result);gc()
 }

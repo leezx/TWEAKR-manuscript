@@ -395,3 +395,12 @@ crosswalk commit from the publication branch and replaced it with a status-only
 21 old K5 outputs not approved for direct reuse. All enabled0/EXECUTE_NMF0.
 No patient IDs, grouping aliases, per-patient sample counts or biological identity
 keys in the new public table. Full crosswalk stays on Argos; no QC rerun.
+
+## 2026-10-09 — Source SOFT and limited privacy assessment
+
+Read original SOFT: all53 have unique source-record candidate matches. Private
+join retained mode600, public status contains no linkage. Unique records do not
+prove technical independence. Original c91 method still inaccessible403. Old
+pilot study codes came from author-public metadata; published history remains
+OPEN pending governance assessment, no rewrite. Freeze21 old K5 direct reuse
+not approved/32 coverage unresolved. No repeated QC or analysis, execution0.
