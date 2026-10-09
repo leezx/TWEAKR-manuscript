@@ -293,3 +293,12 @@ __all__ requires a reviewed single-sample assertion. Argos ran 12 Python tests
 plus the R synthetic preprocessing test successfully; raw output and code hashes
 are in docs/A3_Argos_tests.log. Multi-seed and cell-threshold sensitivity drivers
 remain pending. Real Atlas analysis remains HOLD_FOR_REVIEW.
+
+## 2026-10-09 — Review response A4
+
+Restricted cross-rank recurrence to the exact input identity
+(dataset_id, source_id, sample_id). Biological sample IDs are used only for
+subsequent deduplication and independent support, not to let technical libraries
+rescue each other's instability. Added a regression test for cross-source and
+cross-sample-label evidence leakage. Argos raw validation is preserved in
+docs/A4_Argos_tests.log. No real cohort mapping or Atlas analysis was run.

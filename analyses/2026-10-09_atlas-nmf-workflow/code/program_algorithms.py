@@ -60,8 +60,8 @@ def robust(programs, within=35, across=10, redundancy=10):
     stable = []
     for p in programs:
         score = max((overlap(p, q) for q in programs
-                     if (p['dataset_id'], p['biological_sample_id']) ==
-                     (q['dataset_id'], q['biological_sample_id'])
+                     if (p['dataset_id'], p['source_id'], p['sample_id']) ==
+                     (q['dataset_id'], q['source_id'], q['sample_id'])
                      and p['rank'] != q['rank']), default=0)
         if score >= within:
             stable.append(dict(p, within_rank_overlap=score))

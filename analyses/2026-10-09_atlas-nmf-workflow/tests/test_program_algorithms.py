@@ -13,6 +13,24 @@ def program(pid, sample, rank, genes, dataset='D1', patient=None):
 
 
 class AlgorithmTests(unittest.TestCase):
+    def test_cross_rank_evidence_cannot_cross_input_matrices(self):
+        genes = [f'G{i}' for i in range(50)]
+        other = [f'X{i}' for i in range(50)]
+        rows = [program('a4','S1',4,genes), program('a5','S1',5,other),
+                program('b4','S1',4,other), program('b5','S1',5,genes),
+                program('peer4','S2',4,genes), program('peer5','S2',5,genes)]
+        for p in rows[2:4]:
+            p['source_id'] = 'source2'
+        # Both technical inputs are unstable internally, despite cross-source matches.
+        self.assertEqual(robust(rows), [])
+        rows[1]['genes'] = genes
+        selected = robust(rows)
+        self.assertEqual({p['program_id'] for p in selected}, {'a4', 'peer4'})
+        self.assertNotIn('b5', {p['program_id'] for p in selected})
+        # A different sample label in the same source is also a separate matrix.
+        rows[1]['sample_id'] = 'technical_alias'
+        self.assertEqual(robust(rows), [])
+
     def test_cross_dataset_sample_collision(self):
         genes = [f'G{i}' for i in range(50)]
         rows = [program('a','S1',4,genes,'D1'), program('b','S1',5,genes,'D2')]
