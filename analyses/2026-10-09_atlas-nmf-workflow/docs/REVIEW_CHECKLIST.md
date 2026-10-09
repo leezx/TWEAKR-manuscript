@@ -1,16 +1,14 @@
-# Pre-execution review checklist
+# Current pre-pilot checklist
 
-- [ ] Confirm whether the target population is malignant epithelial cells only
-      or all epithelial cells for each dataset.
-- [ ] Review the exact metadata column and accepted values for every RDS.
-- [ ] Approve dataset aliases used to compare the v2 inventory with legacy NMF.
-- [ ] Decide whether ranks 5-10 are required or whether the historical K=5 run
-      should remain the primary analysis with other ranks as sensitivity.
-- [ ] Confirm the minimum cell threshold and the handling of datasets whose
-      samples all fall below it.
-- [ ] Confirm whether each RDS is one sample or may contain multiple samples.
-- [ ] Review assay/layer selection and counts integrity results.
-- [ ] Review expected disk use before materializing preprocessed matrices.
-- [ ] Confirm that metaprograms will be recomputed separately rather than
-      silently projecting new factors onto the old 21 MPs.
-- [ ] Keep `EXECUTE_NMF=0` until all items above are resolved.
+Gate A PASS for algorithm commit 5babfed, per human fourth-round review.
+See GATE_B_READINESS.md; older algorithm review requests are historical.
+
+- [x] Core algorithm, K=4:9, post-QC >=200 cells and synthetic tests reviewed.
+- [ ] Name the small pilot dataset/sample selection.
+- [ ] Verify malignant epithelial annotation fields, values and evidence.
+- [ ] Review canonical biological sample and patient mapping, including repeats.
+- [ ] Record a scoped pilot execution decision after those checks.
+- [x] Keep EXECUTE_NMF=0; no full-scale execution authorization.
+
+Deferred until after pilot: multi-seed stability, 100/200/500 sensitivity,
+real-data leave-one-dataset-out. These do not reopen Gate A.

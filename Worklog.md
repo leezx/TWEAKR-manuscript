@@ -302,3 +302,11 @@ subsequent deduplication and independent support, not to let technical libraries
 rescue each other's instability. Added a regression test for cross-source and
 cross-sample-label evidence leakage. Argos raw validation is preserved in
 docs/A4_Argos_tests.log. No real cohort mapping or Atlas analysis was run.
+
+## 2026-10-09 — Gate A approved by human reviewer
+
+Human review of 5babfed concludes Gate A PASS and closes core algorithm review.
+Proceed to Gate B preparation only: pilot dataset annotations and identity
+mapping must first be checked. EXECUTE_NMF remains 0; no real-data execution or
+PR merge was performed. Multi-seed, cell-threshold sensitivity and real-data
+leave-one-dataset-out are deferred validation, not Gate A blockers.
