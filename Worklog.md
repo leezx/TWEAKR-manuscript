@@ -290,3 +290,11 @@ cohort cells pass the Atlas QC of ≥200 genes).
 **Statistics**: the same 222 patients for all three contrasts; two-stage REML random effects with the
 Hartung–Knapp adjustment. Malignancy is coded as high-confidence malignant / high-confidence
 non-malignant / uncertain.
+
+## 2026-10-09 — Fig. 1B contract A2.1 approved and frozen
+
+**Decision**:
+- Dataset screening and input validation are CLOSED.
+- CytoTRACE2 contract A2.1 and the annotation design are APPROVED; no further method amendments.
+- The 3-study pilot is running on `all.q`.
+- The full 13-study run waits for the final technical review of a six-item pilot report.

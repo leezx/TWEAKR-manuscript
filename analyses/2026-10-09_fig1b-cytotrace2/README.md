@@ -4,12 +4,13 @@
   immune and stromal compartments of treatment-naive primary CRC, across patients and studies?
 - **Figure mapping:** Figure 1B (main); Extended Data heatmap (study × compartment).
 - **Date / executor / status:** 2026-10-09 / Claude Code.
-  - Stage 1, contract and input validation: complete, **pending review**.
+  - Stage 1, contract and input validation: complete. Dataset screening and input validation are
+    CLOSED; contract A2.1 and the annotation design were APPROVED (2026-10-09).
   - Validation passed: integer raw counts; 90–98% model-feature coverage per study.
   - Validation also showed large within-study depth differences between compartments, which led to
     amendment A1 (depth-matched sensitivity analysis).
-  - Pilot (Joanito, Lee, Qin): not started; needs approval of the contract.
-  - Full run: not started.
+  - Pilot (Joanito, Lee, Qin): running on Argos SGE (`all.q`). Technical diagnostics only.
+  - Full run: on hold until the final technical review of the pilot.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).
 

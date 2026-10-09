@@ -1,4 +1,6 @@
-# Fig. 1B harmonized cell annotation plan (amendments A2–A2.1; draft, pending review)
+# Fig. 1B harmonized cell annotation plan (A2–A2.1) — design APPROVED 2026-10-09
+
+The design is approved. Annotation quality is still to be validated on the actual output.
 
 Written on 2026-10-09, before any CytoTRACE2 score was inspected. The L2 annotation is frozen before
 CytoTRACE2 results are interpreted biologically. The annotation is designed **without reference to

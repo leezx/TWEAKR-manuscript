@@ -1,4 +1,15 @@
-# Fig. 1B CytoTRACE2 contract (draft v2.1 with amendments A1–A2.1, pending review)
+# Fig. 1B CytoTRACE2 contract (v2.1, amendments A1–A2.1) — APPROVED and frozen 2026-10-09
+
+**Review decision (2026-10-09):** A2.1 approved and frozen. No further method amendments. The full
+13-study run waits for the final technical review of the 3-study pilot, which will report:
+1. the raw-score invariance test;
+2. whole-sample vs compartment-split agreement;
+3. stability before and after depth matching, across 5 seeds;
+4. sample-wise vs patient-pooled agreement;
+5. the effect of low-gene cells;
+6. failure rate, runtime and memory.
+
+Runs stay on `all.q`.
 
 - **Written:** 2026-10-09, before any CytoTRACE2 score was computed.
 - **Amendments:**
