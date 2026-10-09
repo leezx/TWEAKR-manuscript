@@ -358,3 +358,12 @@ in the build; two have Epi labels needing malignant adjudication; GSE254249
 separates Cancer/Epi. Dataset-level summaries committed; disabled identity draft
 stays remote. Complete legacy Atlas reconciliation and mapping review pending.
 No full execution or algorithm optimization.
+
+## 2026-10-09 — Sample preparation checkpoint
+
+Source metadata identifies26 GSE254249 Cancer and27 GSE236581 c91_Epi_Tumor
+candidate inputs with >=200 annotated cells. Source PatientID/Patient retained
+remotely; no guessed or approved identities. BioProject evidence links two
+datasets to legacy names, with exact sample matching and W-file checks kept
+separate from full QC/biological identity review. Existing downloaded annotations
+are missing in four cohorts; no CNV or NMF was launched. Final gate remains open.
