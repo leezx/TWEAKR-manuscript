@@ -341,3 +341,11 @@ lost dimnames. Restored dimnames explicitly and added regression assertions.
 Shell task reader now strips trailing CR from output paths. Original failure log
 preserved as logs/pilot.first_failed.log. Retried identical scope as job3654441;
 completion still pending. No changes to algorithm parameters or sample selection.
+
+## 2026-10-09 — Pilot completed, results submitted for review
+
+Job3654441 completed all12 runs with zero output validation failures. 78 raw
+GEPs yielded11 robust GEPs and5 pilot MPs, all from one dataset. Runtime98s,
+maximum recorded processRSS470620KiB. Added PILOT_RESULTS_REVIEW.md, validation
+table and raw run log. Full gene tables remain on Argos; no biological claims
+or full Atlas execution approval inferred. Original annotation limits retained.
