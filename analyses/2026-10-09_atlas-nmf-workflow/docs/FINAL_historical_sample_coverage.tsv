@@ -1,0 +1,54 @@
+dataset_id	sample_id	legacy_sample_candidate	match_basis	identity_status	n_task_matches	output_ranks	n_output_dirs	missing_required_files	file_status	reuse_decision	execution_enabled
+GSE254249	CRC02_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC03_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC04_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC05_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC07_T_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC07_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC08_T_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC10_T_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC10_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC11_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC12_T_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC13_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC14_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC15_T_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC15_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC16_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC17_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC18_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC19_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC20_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC22_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC23_M_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC23_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC24_T_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC26_M_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE254249	CRC26_tissue		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC02-N-II		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC02-T-I	Chen_2024.CRC02_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC03-N-III		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC03-T-I	Chen_2024.CRC03_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC03-T-II	Chen_2024.CRC03_T_II	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC03-T-III	Chen_2024.CRC03_T_III	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC04-T-I	Chen_2024.CRC04_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC05-N-II		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC05-T-I	Chen_2024.CRC05_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC05-T-II	Chen_2024.CRC05_T_II	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC09-T-I	Chen_2024.CRC09_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC11-T-I		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC14-T-III	Chen_2024.CRC14_T_III	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC15-T-I	Chen_2024.CRC15_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC15-T-II	Chen_2024.CRC15_T_II	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC16-N-II		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC17-T-I	Chen_2024.CRC17_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC18-T-I	Chen_2024.CRC18_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC18-T-II	Chen_2024.CRC18_T_II	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC19-T-I	Chen_2024.CRC19_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC19-T-III	Chen_2024.CRC19_T_III	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC20-T-I	Chen_2024.CRC20_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC21-T-I	Chen_2024.CRC21_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC22-T-I	Chen_2024.CRC22_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC23-T-I	Chen_2024.CRC23_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0
+GSE236581	CRC24-T-I		no_verified_mapping	unresolved_requires_source_crosswalk	0		0		missing_or_unmatched	unresolved	0
+GSE236581	CRC26-T-I	Chen_2024.CRC26_T_I	BioProject plus hyphen_underscore_only	unresolved_requires_source_crosswalk	1	K5	1		required_files_exist	unresolved	0

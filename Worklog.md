@@ -367,3 +367,12 @@ remotely; no guessed or approved identities. BioProject evidence links two
 datasets to legacy names, with exact sample matching and W-file checks kept
 separate from full QC/biological identity review. Existing downloaded annotations
 are missing in four cohorts; no CNV or NMF was launched. Final gate remains open.
+
+## 2026-10-09 — Actual53-input QC and historical correction
+
+All53 actual RDS passed counts/source/sample/post-zero-library QC:27
+GSE236581 with20412 target cells and26 GSE254249 with28645; zero libraries0.
+Public QC excludes patient identifiers/paths; full mapping remains Argos.
+Truncated historical manifest superseded by real task master:21 name-candidate
+matches with K5 required files;32 unmatched/unverified. Biological crosswalk
+and reuse unresolved. All53 pending/enabled0; no NMF/CNV or algorithm changes.
