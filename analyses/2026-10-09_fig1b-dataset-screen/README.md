@@ -183,8 +183,10 @@ Core is a review order. It does not certify freedom from sampling bias.
 | `lineage_coverage_primary_tumor_naive.csv` | per study: patients with ≥30 cells per lineage; fibroblast share of stroma |
 | `study_design_flags.csv` | platform, sorting class, sample types, treatment, malignant vs normal epithelial cells |
 | `supplemental_objects_study_level.csv` | (v1 only) heuristic lineage counts of supplemental objects |
-| `htapp_vs_pelka_fingerprint.csv`, `htapp_pelka_patient_demographics.csv`, `overlap.log` | HTAPP–Pelka overlap check |
-| `run_summary.json`, `run.log` | identifier checks, scope check, pass counts |
+| `htapp_vs_pelka_fingerprint.csv`, `htapp_pelka_patient_demographics.csv` | HTAPP–Pelka overlap check |
+| `run_summary.json` | identifier checks, scope check, pass counts |
+
+`run.log` and `overlap.log` are git-ignored; they are kept in the Argos run directory.
 
 ## Limitations
 
