@@ -260,3 +260,20 @@ Patient list and manifest: `analyses/2026-10-09_fig1b-dataset-screen/cohort/`; c
   depth-matched (downsampling) sensitivity analysis.
 
 **Status**: Contract pending review (`analyses/2026-10-09_fig1b-cytotrace2/docs/CytoTRACE2_contract.md`).
+
+## 2026-10-09 — Fig. 1B contract amendment A2 and technical pilot launch
+
+**Decision**: Input validation passed. The contract is revised to A2:
+- harmonized L1/L2/L3 annotation (`docs/Harmonized_annotation_plan.md`);
+- study-specific depth targets with no UMI floor and 5 seeds;
+- all three compartment contrasts in one Holm family;
+- cycling defined independently of CytoTRACE2.
+
+**CytoTRACE2 internals** (1.1.0 source): model prediction is cell-intrinsic. Diffusion smoothing,
+within-category rank binning (`binData`) and kNN smoothing depend on the other cells in the same
+input. Consequences:
+- whole-sample runs are the primary unit;
+- compartment-split runs are a diagnostic only;
+- a cell-intrinsic score is added as a pre-specified sensitivity analysis.
+
+**Pilot**: Joanito, Lee and Qin (165 samples) running on Argos. Technical diagnostics only.

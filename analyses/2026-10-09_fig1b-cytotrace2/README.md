@@ -27,6 +27,16 @@
 | `code/cytotrace2_gene_coverage.R` | CytoTRACE2 1.1.0 human→model gene mapping; per-study model-feature coverage | Argos (`r4p3` R, `R_LIBS=/home/zz950/softwares/R_lib_4`) |
 | `code/summarise_depth.py` | median UMI, detected genes and % cells with <500 genes per study × compartment | Argos |
 | `code/run_validate.sh` | SGE wrapper (`qsub -l m_mem_free=48G`, job 3654250) | Argos |
+| `code/depth_targets.py` | study-specific depth target T_s (A2 rule) with cell and patient retention | Argos |
+| `code/export_sample_counts.py` | per-sample raw counts (model genes) as HDF5; optional depth-matched variants (exact downsampling to T_s, seeds 1–5) | Argos SGE (`run_export.sh`) |
+| `code/run_cytotrace2_sample.R` | CytoTRACE2 1.1.0 per sample: whole-sample (primary), cell-intrinsic (`preprocessData` + `predictData`), compartment-split (diagnostic) | Argos SGE array (`run_pilot_task.sh`, `-pe smp 4`) |
+| `code/summarise_pilot.py` | technical pilot diagnostics (no biological contrasts) | Argos |
+
+## Documents (A2)
+
+| File | Content |
+|---|---|
+| `docs/Harmonized_annotation_plan.md` | L1/L2/L3 taxonomy, human marker panels, malignancy calls, integration/labelling/validation procedure, L2 eligibility |
 
 ## Tables (`tables/input_validation/`)
 
