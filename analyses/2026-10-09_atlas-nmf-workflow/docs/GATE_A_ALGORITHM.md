@@ -15,14 +15,10 @@ patient IDs; repeated timepoints from one patient count once for patient support
 Technical replicates must share a biological sample ID. A cohort mapping is
 required; patient IDs are never inferred from filenames.
 
-Input programs TSV fields: program_id, dataset_id, sample_id, patient_id, rank,
-genes (50 harmonized gene IDs separated by |). Cohort TSV fields: dataset_id,
-sample_id, patient_id. All programs must match the approved cohort.
-
-The old task-based `06_filter_robust_programs.py` is retained as historical A1
-code. Use the new cohort-aware entry point for MP discovery. Automated conversion
-from existing task manifests to this harmonized contract remains pending mapping
-review; it must not invent patient/sample identity.
+Current interface is defined in REVIEW_REVISION_A3.md. Both 06 and 07 require
+the same reviewed cohort mapping. 06 creates final robust GEPs with unique IDs;
+07 performs clustering only. The A1 interface is superseded. Consensus uses one
+representative GEP per biological sample, not the former sample gene union.
 
 Sensitivity thresholds 100/200/500 mean separate reruns of cohort-level robust
 filtering and MP discovery after changing eligible samples. Per-sample NMF can be

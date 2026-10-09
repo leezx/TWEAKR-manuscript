@@ -34,7 +34,15 @@ get_counts <- function(object, assay) {
 }
 
 preprocess_counts <- function(counts, min_detected_cells, scale_factor) {
+  if (length(min_detected_cells) != 1L || !is.finite(min_detected_cells) ||
+      min_detected_cells < 1 || min_detected_cells != floor(min_detected_cells)) {
+    stop("MIN_DETECTED_CELLS must be a positive integer")
+  }
+  if (length(scale_factor) != 1L || !is.finite(scale_factor) || scale_factor <= 0) {
+    stop("SCALE_FACTOR must be positive and finite")
+  }
   counts <- as(counts, "dgCMatrix")
+  if (any(!is.finite(counts@x))) stop("Counts contain non-finite values")
   if (any(counts@x < 0)) stop("Counts contain negative values")
   if (any(abs(counts@x - round(counts@x)) > 1e-8)) {
     stop("Counts are not integer-like")
@@ -63,6 +71,7 @@ preprocess_counts <- function(counts, min_detected_cells, scale_factor) {
 }
 
 min_cells <- as.integer(Sys.getenv("MIN_CELLS", "200"))
+if (is.na(min_cells) || min_cells < 1L) stop("MIN_CELLS must be positive")
 min_detected_cells <- as.integer(Sys.getenv("MIN_DETECTED_CELLS", "1"))
 scale_factor <- as.numeric(Sys.getenv("SCALE_FACTOR", "10000"))
 
@@ -83,6 +92,10 @@ object <- subset(object, cells = rownames(metadata)[keep])
 metadata <- object[[]]
 sample_column <- as.character(entry$sample_column)
 if (sample_column == "__all__") {
+  if (!"single_biological_sample_verified" %in% names(entry) ||
+      as.character(entry$single_biological_sample_verified) != "1") {
+    stop("__all__ requires reviewed single_biological_sample_verified=1")
+  }
   sample_ids <- rep("all_cells", nrow(metadata))
 } else {
   if (!sample_column %in% colnames(metadata)) stop("Sample column not found")
@@ -108,6 +121,7 @@ for (sample_id in available_samples) {
   outfile <- ""
   n_features <- NA_integer_
   dropped <- NA_integer_
+  retained_cells <- NA_integer_
 
   if (length(cells) < min_cells) {
     status <- "skipped_too_few_cells"
@@ -115,9 +129,18 @@ for (sample_id in available_samples) {
   } else {
     counts <- get_counts(object, assay)[, cells, drop = FALSE]
     prepared <- preprocess_counts(counts, min_detected_cells, scale_factor)
-    outfile <- file.path(dataset_dir,
+    retained_cells <- ncol(prepared$matrix)
+    if (retained_cells < min_cells) {
+      status <- "skipped_too_few_cells_after_qc"
+      reason <- sprintf("%d retained cells < MIN_CELLS=%d", retained_cells, min_cells)
+    } else if (sum(Matrix::rowSums(prepared$matrix) > 0) < 50L) {
+      status <- "skipped_too_few_effective_genes"
+      reason <- "Fewer than 50 nonzero genes after centering"
+    } else {
+      outfile <- file.path(dataset_dir,
                          paste0(safe_name(sample_id), ".gc.NonNegCenterMat.rds"))
-    saveRDS(prepared$matrix, outfile, compress = FALSE)
+      saveRDS(prepared$matrix, outfile, compress = FALSE)
+    }
     n_features <- nrow(prepared$matrix)
     dropped <- prepared$dropped_zero_library
   }
@@ -128,7 +151,8 @@ for (sample_id in available_samples) {
     sample_id = sample_id,
     rds_path = as.character(entry$rds_path),
     matrix_path = outfile,
-    n_cells = length(cells),
+    n_input_cells = length(cells),
+    n_cells = retained_cells,
     n_features = n_features,
     dropped_zero_library_cells = dropped,
     status = status,

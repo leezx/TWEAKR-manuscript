@@ -281,3 +281,15 @@ Added cohort-aware program algorithms, deterministic complete-link MP clustering
 sample-vote consensus and dataset/patient/sample support summaries. Six tests
 passed in argos-codex on Argos. See GATE_A_ALGORITHM.md and GATE_A_TEST_REPORT.md.
 Real-data execution remains HOLD pending independent review; no pilot launched.
+
+## 2026-10-09 — Actual-code review response A3
+
+Repaired the 06-to-07 interface and removed duplicate robust filtering. Added
+explicit cohort identity validation, canonical biological sample keys, confirmed
+patient counts and separately reported unknown patient samples. Consensus now
+selects one representative GEP per biological sample. Preprocessing checks finite
+counts/parameters and applies the cell threshold after zero-library removal;
+__all__ requires a reviewed single-sample assertion. Argos ran 12 Python tests
+plus the R synthetic preprocessing test successfully; raw output and code hashes
+are in docs/A3_Argos_tests.log. Multi-seed and cell-threshold sensitivity drivers
+remain pending. Real Atlas analysis remains HOLD_FOR_REVIEW.

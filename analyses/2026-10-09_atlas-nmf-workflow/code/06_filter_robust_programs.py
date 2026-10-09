@@ -1,62 +1,45 @@
 #!/usr/bin/env python3
-"""Filter repeated top50 programs; all inputs must use harmonized gene IDs."""
+"""Produce final robust GEPs using an explicitly reviewed identity mapping."""
 import argparse
 import csv
+import json
 from pathlib import Path
+from program_algorithms import IDENTITY, robust, validate_cohort
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--tasks', type=Path, required=True)
+    ap.add_argument('--cohort', type=Path, required=True)
     ap.add_argument('--output', type=Path, required=True)
     args = ap.parse_args()
+    with args.cohort.open() as f:
+        mapping = validate_cohort(list(csv.DictReader(f, delimiter='\t')))
     with args.tasks.open() as f:
         tasks = list(csv.DictReader(f, delimiter='\t'))
     programs = []
     for task in tasks:
+        key = tuple(task[k] for k in ('dataset_id', 'source_id', 'sample_id'))
+        if key not in mapping:
+            raise ValueError('Task absent from reviewed cohort mapping')
         groups = {}
         with (Path(task['output_dir']) / 'deliver.nmf_top50.repeated.csv').open() as f:
             for row in csv.DictReader(f):
                 groups.setdefault(row['factor'], set()).add(row['gene'])
         for factor, genes in groups.items():
-            if len(genes) != 50:
-                raise ValueError('Every program must contain exactly 50 distinct genes')
-            programs.append(dict(task, factor=factor, genes=genes))
-    # Sample identity must be explicitly harmonized across source RDS files.
-    def sample(p):
-        return (p['dataset_id'], p['sample_id'])
-    def overlap(a, b):
-        return len(a['genes'] & b['genes'])
-    stable = []
-    for p in programs:
-        score = max((overlap(p, q) for q in programs
-                     if sample(p) == sample(q) and p['rank'] != q['rank']), default=0)
-        p['within_rank_overlap'] = score
-        if score >= 35:
-            stable.append(p)
-    for p in stable:
-        peers = [q for q in stable if sample(p) != sample(q)]
-        p['across_sample_overlap'] = max((overlap(p, q) for q in peers), default=0)
-        p['supporting_datasets'] = len({q['dataset_id'] for q in peers
-                                        if overlap(p, q) >= 10})
-    chosen = []
-    for key in sorted({sample(p) for p in stable}):
-        candidates = sorted((p for p in stable if sample(p) == key
-                             and p['across_sample_overlap'] >= 10),
-                            key=lambda p: (-p['across_sample_overlap'], int(p['rank']), p['factor']))
-        retained = []
-        for p in candidates:
-            if all(overlap(p, q) <= 10 for q in retained):
-                retained.append(p)
-        chosen.extend(retained)
+            programs.append(dict(mapping[key], rank=int(task['rank']), factor=factor,
+                program_id=json.dumps([*key, int(task['rank']), factor], separators=(',', ':')),
+                genes=sorted(genes)))
+    selected = robust(programs)
+    fields = ['program_id', *IDENTITY, 'rank', 'factor', 'within_rank_overlap',
+              'across_sample_overlap', 'program_stage', 'genes']
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    fields = ['dataset_id', 'sample_id', 'source_id', 'rank', 'factor',
-              'within_rank_overlap', 'across_sample_overlap', 'supporting_datasets', 'genes']
     with args.output.open('w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fields, delimiter='\t')
         writer.writeheader()
-        for p in chosen:
-            writer.writerow({k: '|'.join(sorted(p[k])) if k == 'genes' else p[k] for k in fields})
+        for p in selected:
+            p['program_stage'] = 'robust'
+            writer.writerow({k: '|'.join(p[k]) if k == 'genes' else p[k] for k in fields})
 
 
 if __name__ == '__main__':
