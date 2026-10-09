@@ -404,3 +404,11 @@ prove technical independence. Original c91 method still inaccessible403. Old
 pilot study codes came from author-public metadata; published history remains
 OPEN pending governance assessment, no rewrite. Freeze21 old K5 direct reuse
 not approved/32 coverage unresolved. No repeated QC or analysis, execution0.
+
+## 2026-10-09 — Final eligibility proposal
+
+Metadata-only check of all92 GSE254249 source IDs:26 candidates have one
+patient/tissue/timepoint tuple and no other source sample shares it. Reasonable
+duplication check, not proof of absent unrecorded replication. Propose26 approved
+with original Cancer annotation limitation,23 c91 pending,4 Normal not approved.
+Public evidence excludes patient linkage; final review pending, all execution0.
