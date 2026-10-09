@@ -116,6 +116,6 @@ Those claims require the subsequent audited run and separate review.
 ## Review status
 
 - Branch: `analysis/20261009-atlas-nmf-workflow`
-- Pull request: pending
+- Pull request: https://github.com/leezx/TWEAKR-manuscript/pull/1
 - Analysis execution: not started
 - User approval required before changing `EXECUTE_NMF=1`
