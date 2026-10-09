@@ -349,3 +349,12 @@ GEPs yielded11 robust GEPs and5 pilot MPs, all from one dataset. Runtime98s,
 maximum recorded processRSS470620KiB. Added PILOT_RESULTS_REVIEW.md, validation
 table and raw run log. Full gene tables remain on Argos; no biological claims
 or full Atlas execution approval inferred. Original annotation limits retained.
+
+## 2026-10-09 — Full preparation first inventory checkpoint
+
+Recorded human pilot PASS. Read-only audit of updated RDS manifests found7
+datasets/333 objects/2171819 cells. Four sources lack cell-level annotations
+in the build; two have Epi labels needing malignant adjudication; GSE254249
+separates Cancer/Epi. Dataset-level summaries committed; disabled identity draft
+stays remote. Complete legacy Atlas reconciliation and mapping review pending.
+No full execution or algorithm optimization.
