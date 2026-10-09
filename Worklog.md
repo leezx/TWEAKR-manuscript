@@ -318,3 +318,11 @@ counts valid, source group=Cancer yields 506 and 514 nonzero-library cells.
 Sample/PatientID/Tissue/TimePoint agree with source metadata. Added candidate
 inventory and identity mapping for review only; original Cancer-calling evidence
 and cross-study duplicate review remain pending. No preprocessing or NMF run.
+
+## 2026-10-09 — Malignant annotation provenance access check
+
+Human review accepts pilot inventory and identity mapping. Attempted primary
+paper methods verification; publisher access returned 403 and search indexing
+did not establish the Cancer definition. Recorded unresolved status in
+MALIGNANT_PROVENANCE_CHECK.md. No claim of CNV-confirmed malignancy, no algorithm
+change, no dataset expansion, EXECUTE_NMF remains 0.
