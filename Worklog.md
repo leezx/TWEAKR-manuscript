@@ -307,3 +307,18 @@ non-malignant / uncertain.
 - Still queued: invariance, selection-only, patient-pooled and seed-repeat jobs.
 - No diagnostics have been summarised yet, and no biological result is reported.
 - Project ledger: WL-20261009-020.
+
+## 2026-10-09 — Fig. 1B CytoTRACE2 pilot complete: six-item technical report
+
+- All 8 pilot jobs are complete: 1,200 tasks, 0 failed.
+- Summary job 3654471 produced the light tables in `tables/pilot/`. The report is `docs/Pilot_report.md`.
+- The report covers only six technical items:
+  1. raw-score invariance;
+  2. whole vs compartment-split runs;
+  3. depth matching and seed stability;
+  4. sample-wise vs patient-pooled runs;
+  5. low-gene cells;
+  6. failures and resources.
+- No contrast direction was reported or inspected. No contract amendment is proposed.
+- The full 13-study run and the L2 annotation are on HOLD pending the user's final technical review.
+- Project ledger: WL-20261009-031.

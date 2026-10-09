@@ -1,0 +1,5 @@
+study_id,variant,expected,scored
+Joanito_2022_Nat_Genet,model,99,99
+Lee_2020_Nat_Genet,allgenes,1,1
+Lee_2020_Nat_Genet,model,39,39
+Qin_2023_Cell_Rep_Med,model,27,27

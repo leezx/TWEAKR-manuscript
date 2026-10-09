@@ -19,6 +19,8 @@ A2.1:
                                   (downsampled - sel), whole and raw model scores
   pilot_sample_vs_patient_pool.csv - per-cell and patient-median differences, sample-wise vs pooled run
   pilot_batching_repeats.csv    - per-cell SD of the final score across seeds for samples >10,000 cells
+  pilot_low_gene_effect.csv     - per study x compartment: % cells < 500 detected model genes; unsigned
+                                  change and rank agreement of patient medians when they are dropped
 """
 import argparse
 from pathlib import Path
@@ -175,6 +177,24 @@ def main():
             sd = r.groupby("cell_id").whole_score.std()
             pd.DataFrame({"cells": [len(sd)], "median_cell_sd": [sd.median()], "p95_cell_sd": [sd.quantile(0.95)],
                           "runs": [r.rep.nunique()]}).to_csv(out / "pilot_batching_repeats.csv", index=False)
+
+    # low-gene cells (< 500 detected model genes, CytoTRACE2's own warning): share per study x compartment
+    # and the unsigned change in patient medians when those cells are dropped after scoring
+    low = []
+    d["low"] = d.n_model_genes_detected < 500
+    for (study, b), g in d.groupby(["study_id", "broad"]):
+        allm = g.groupby("patient_id").whole_score.median()
+        hi = g[~g.low]
+        kept = hi.groupby("patient_id").whole_score.agg(["median", "size"])
+        kept = kept[kept["size"] >= 30]["median"]
+        both = pd.concat([allm.rename("all"), kept.rename("kept")], axis=1).dropna()
+        low.append({"study": study, "compartment": b, "cells": len(g),
+                    "lt500_model_genes_pct": round(100 * g.low.mean(), 1),
+                    "patients": allm.size, "patients_still_eligible": kept.size,
+                    "median_abs_change_patient_median": float((both.kept - both["all"]).abs().median())
+                    if len(both) else np.nan,
+                    "rho_patient_medians": rho(both["all"], both.kept) if len(both) > 10 else np.nan})
+    pd.DataFrame(low).to_csv(out / "pilot_low_gene_effect.csv", index=False)
     print("scored files:", int(status.scored.sum()), "of", len(status))
 
 

@@ -9,13 +9,10 @@
   - Validation passed: integer raw counts; 90–98% model-feature coverage per study.
   - Validation also showed large within-study depth differences between compartments, which led to
     amendment A1 (depth-matched sensitivity analysis).
-  - Pilot (Joanito, Lee, Qin): running on Argos SGE (`all.q`). Technical diagnostics only.
-    - Snapshot at 2026-10-09 ~16:00 EDT (WL-20261009-020):
-      - main run 3654321: 166/166 tasks done, 0 failed;
-      - depth-matched run 3654335: 491/825 done, 0 failed;
-      - still queued: invariance (3654338), selection-only (3654340), patient-pooled (3654341) and
-        seed repeats (3654342–3654344).
-    - No diagnostics have been summarised yet.
+  - Pilot (Joanito, Lee, Qin): COMPLETE on Argos SGE (`all.q`): 1,200 tasks, 0 failed.
+    - The six-item technical report is `docs/Pilot_report.md`; it awaits the user's final technical
+      review.
+    - No contract amendment is proposed.
   - Full run: on hold until the final technical review of the pilot.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).
@@ -53,6 +50,11 @@
 | `cytotrace2_model_gene_coverage_by_study.csv` | model features (14,271) covered by detected genes, per study |
 | `cytotrace2_atlas_gene_mapping.tsv.gz` | Atlas gene → CytoTRACE2 model gene mapping |
 | `depth_by_study_compartment.csv` | depth by study × compartment |
+
+## Pilot tables (`tables/pilot/`)
+
+These are the light outputs of `code/summarise_pilot.py` and `code/run_summarise.sh`, SGE job
+3654471. The report that explains them is `docs/Pilot_report.md`.
 
 Per-cell QC (`cohort_cell_qc.tsv.gz`, 13 MB) and per-study gene detection stay on Argos.
 

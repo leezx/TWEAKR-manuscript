@@ -1,0 +1,4 @@
+sample_id,score,max_abs_diff,spearman
+Lee_2020_KUL3.SC029_T,whole_score,0.0,1.0
+Lee_2020_KUL3.SC029_T,intrinsic_score,0.0,1.0
+Lee_2020_KUL3.SC029_T,split_score,0.0,1.0

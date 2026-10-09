@@ -1,0 +1,10 @@
+study_id,broad,median_patient_sd_across_seeds
+Joanito_2022_Nat_Genet,Epithelial,0.0025806782317860755
+Joanito_2022_Nat_Genet,Immune,0.0008469676926382158
+Joanito_2022_Nat_Genet,Stromal,0.006016253133898681
+Lee_2020_Nat_Genet,Epithelial,0.002486594786708286
+Lee_2020_Nat_Genet,Immune,0.0014790014044215526
+Lee_2020_Nat_Genet,Stromal,0.0032641606221055566
+Qin_2023_Cell_Rep_Med,Epithelial,0.0024176352262012747
+Qin_2023_Cell_Rep_Med,Immune,0.0011175275642731693
+Qin_2023_Cell_Rep_Med,Stromal,0.0016153460571908117
