@@ -376,3 +376,22 @@ Public QC excludes patient identifiers/paths; full mapping remains Argos.
 Truncated historical manifest superseded by real task master:21 name-candidate
 matches with K5 required files;32 unmatched/unverified. Biological crosswalk
 and reuse unresolved. All53 pending/enabled0; no NMF/CNV or algorithm changes.
+
+## 2026-10-09 — Identity and historical artifact review
+
+Accepted human53-sample QC PASS; no rerun. Source identity crosswalk yields39
+study-local patient groups as aggregate only; full crosswalk stays private. Four N samples
+have explicit Tissue=Normal, held for annotation review. Read21 historical K5
+artifacts: all readable/finite/nonnegative/dimensions consistent; CRC02-T-I
+has absent gene/cell names and empty markers. Historical cell counts differ
+from current in21/21; regex vs exact selectors not established equivalent.
+No reuse approval or new NMF. Publisher annotation definition still unverified.
+
+## 2026-10-09 — Public/private separation approved
+
+Human decision prohibits public anonymous patient linkage. Removed the unpushed
+crosswalk commit from the publication branch and replaced it with a status-only
+53-sample table. Four Normal samples not approved;49 require final review;
+21 old K5 outputs not approved for direct reuse. All enabled0/EXECUTE_NMF0.
+No patient IDs, grouping aliases, per-patient sample counts or biological identity
+keys in the new public table. Full crosswalk stays on Argos; no QC rerun.
