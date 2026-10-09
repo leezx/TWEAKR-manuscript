@@ -1,0 +1,6 @@
+role	path	status	contains_heavy_data
+new_counts_rds	/home/zz950/DATA/HotData/TWEAKR-oncoFetal/external/oncofetal_dataset_inventory_v2_2026-10-07/seurat_counts_rds/	read_only_candidate	true
+legacy_nmf	/home/zz950/DATA/scRNAseq/meta_study/CRC_single_cell_atlas_2025/NMF/	canonical_legacy	true
+proposed_run_root	/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/atlas_nmf_refresh_20261009/	hold_for_review	true
+argos_environment	/home/zz950/softwares/miniforge3/envs/argos-codex	canonical_runtime	true
+github_analysis	analyses/2026-10-09_atlas-nmf-workflow/	review_source	false

@@ -228,3 +228,41 @@ the Results paragraph and legend from the actual analysis output in
 `../TWEAKR-OncoPlacental` / the DATA working dirs; build `references.bib`;
 draft Methods. Still pending: user decision on deleting root `_TEMPLATE` files
 and on whether to keep `GPT/` in-repo.
+
+## 2026-10-09 — Atlas NMF workflow packaged for review; analysis held
+
+**What**: Added `analyses/2026-10-09_atlas-nmf-workflow/` as a lightweight,
+reviewable implementation of the CRC Atlas per-sample NMF workflow. No new
+Atlas object was analysed and no SGE job was submitted.
+
+**Why**: The updated counts-only Seurat RDS inventory on Argos contains
+candidate datasets that may not be represented in the historical NMF run. The
+user requested that the workflow be committed and reviewed before any new NMF
+analysis, with every approved dataset required to have its own result.
+
+**How**:
+
+- recorded the new RDS root, legacy NMF root, proposed heavy output root and
+  absolute `argos-codex` environment in a path manifest;
+- audited the historical Atlas scripts and the upstream
+  `navinlabcode/tnbc-chemo` workflow at commit
+  `8b8e816a49881bd6a2cd6790a574fd331aa65ab4`;
+- implemented read-only Seurat inventory and legacy-coverage comparison;
+- implemented sparse raw-count preprocessing: library-size normalization,
+  `log1p`, gene-wise centring and negative truncation;
+- implemented deterministic `RcppML` NMF with strict/tolerant marker sets and
+  repeated plus non-redundant top 50/100/200 gene lists;
+- added guarded SGE array wrappers that require `EXECUTE_NMF=1` after review;
+- added hard validation requiring every approved dataset at every approved rank
+  to have at least one complete NMF result; and
+- documented method assumptions, provenance, review decisions and claim ceiling.
+
+**Validation**: Python unit tests, Python compilation, Bash syntax checks, R
+parse checks and a synthetic 40-gene by 24-cell rank-3 NMF smoke test passed.
+The synthetic test is software QA only and is not biological analysis.
+
+**Limitations**: Dataset aliases, malignant/epithelial metadata values, final
+rank range, minimum cells and disk estimate remain intentionally unresolved.
+The workflow is `HOLD_FOR_REVIEW`; the new RDS directory has not been inventoried
+by this task. Recomputing or updating the existing 21 metaprograms is outside
+this PR and requires a separate review.
