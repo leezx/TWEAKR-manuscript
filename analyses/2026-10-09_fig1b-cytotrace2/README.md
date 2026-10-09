@@ -10,9 +10,17 @@
   - Validation also showed large within-study depth differences between compartments, which led to
     amendment A1 (depth-matched sensitivity analysis).
   - Pilot (Joanito, Lee, Qin): COMPLETE on Argos SGE (`all.q`): 1,200 tasks, 0 failed.
-    - The six-item technical report is `docs/Pilot_report.md`; it awaits the user's final technical
-      review.
-    - No contract amendment is proposed.
+    - The six-item technical report is `docs/Pilot_report.md`.
+    - The final technical review on 2026-10-09 gave **GO**; all six items PASS. No A2.2 is needed.
+  - Stage order after the GO:
+    1. L2 harmonized annotation (started; input inventory done);
+    2. annotation QC and freeze of `annotation_v1`;
+    3. full 13-study CytoTRACE2 run under A2.1. It is approved but is submitted only after the L2
+       freeze.
+  - Interpretation constraints from the review:
+    - any epithelial–stromal conclusion must be read together with the depth-matched and raw-score
+      results;
+    - no plasticity hierarchy may be claimed from the final-score ordering in immune cells alone.
   - Full run: on hold until the final technical review of the pilot.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).

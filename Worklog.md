@@ -322,3 +322,18 @@ non-malignant / uncertain.
 - No contrast direction was reported or inspected. No contract amendment is proposed.
 - The full 13-study run and the L2 annotation are on HOLD pending the user's final technical review.
 - Project ledger: WL-20261009-031.
+
+## 2026-10-09 — Fig. 1B pilot: final technical review GO; L2 annotation started
+
+- **Review result:** all six items PASS; A2.1 stays frozen; no A2.2.
+- **Stage order:**
+  1. L2 annotation;
+  2. QC and freeze of `annotation_v1`;
+  3. full 13-study CytoTRACE2 run, which is approved but waits for the L2 freeze.
+- **Constraints from the review:**
+  - epithelial–stromal conclusions need the depth-matched and raw-score results;
+  - no immune plasticity hierarchy may be claimed from final-score ordering alone.
+- **L2 progress:** input inventory only. The Atlas carries labels, SOLO doublet scores and gene
+  coordinates; `obsm` is empty; no GPU is available, so scVI runs on CPU. Annotation computation has not
+  started yet.
+- **Project ledger:** WL-20261009-034, WL-20261009-035.
