@@ -7,6 +7,8 @@
 #   split     - official cytotrace2() run separately per broad compartment (Epithelial/Immune/Stromal)
 # Usage: Rscript run_cytotrace2_sample.R <sample.h5> <cell_labels.tsv> <out.tsv.gz> <ncores> [modes]
 #   modes: comma-separated subset of whole,intrinsic,split (default all three)
+#   seed : CytoTRACE2 seed (default 14; other values only for the A2.1 batching-repeat diagnostic)
+# Note: `intrinsic_*` columns are the raw model score/category (pre-smoothing, pre-binning).
 suppressPackageStartupMessages({ library(CytoTRACE2); library(hdf5r); library(Matrix); library(data.table) })
 args <- commandArgs(trailingOnly = TRUE)
 h <- H5File$new(args[1], mode = "r")
@@ -16,6 +18,7 @@ m <- sparseMatrix(i = h[["indices"]]$read() + 1L, p = h[["indptr"]]$read(), x = 
 h$close_all()
 ncores <- as.integer(args[4])
 modes <- if (length(args) >= 5) strsplit(args[5], ",")[[1]] else c("whole", "intrinsic", "split")
+seed <- if (length(args) >= 6) as.integer(args[6]) else 14L
 labels <- fread(args[2])[cell_id %in% colnames(m)]
 setkey(labels, cell_id)
 dense <- as.data.frame(as.matrix(m))
@@ -23,7 +26,7 @@ t0 <- Sys.time()
 
 res <- data.table(cell_id = colnames(m), n_model_genes_detected = colSums(m > 0))
 if ("whole" %in% modes) {
-  whole <- cytotrace2(dense, species = "human", ncores = ncores, seed = 14)
+  whole <- cytotrace2(dense, species = "human", ncores = ncores, seed = seed)
   res[, `:=`(whole_score = whole[cell_id, "CytoTRACE2_Score"],
              whole_potency = as.character(whole[cell_id, "CytoTRACE2_Potency"]),
              whole_preknn_score = whole[cell_id, "preKNN_CytoTRACE2_Score"])]

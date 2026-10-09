@@ -277,3 +277,16 @@ input. Consequences:
 - a cell-intrinsic score is added as a pre-specified sensitivity analysis.
 
 **Pilot**: Joanito, Lee and Qin (165 samples) running on Argos. Technical diagnostics only.
+
+## 2026-10-09 — Fig. 1B contract amendment A2.1 (technical diagnostics)
+
+**Decision**: A2 principles approved; the pilot continues; the full 13-study run is on HOLD pending
+pilot review.
+
+**A2.1 diagnostics**: raw-score invariance test, matched-cell depth control (selection vs depth
+effect), sample-wise vs patient-pooled runs, batching seed repeats, and a low-gene-cell table (all
+cohort cells pass the Atlas QC of ≥200 genes).
+
+**Statistics**: the same 222 patients for all three contrasts; two-stage REML random effects with the
+Hartung–Knapp adjustment. Malignancy is coded as high-confidence malignant / high-confidence
+non-malignant / uncertain.

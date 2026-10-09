@@ -14,6 +14,11 @@ Outputs (light tables):
   pilot_depth_dependence.csv    - per study x compartment: Spearman of score with detected model genes,
                                   for whole and intrinsic scores, original and depth-matched data
   pilot_depth_matched_seed_spread.csv - per study x compartment: SD across seeds of patient medians
+A2.1:
+  pilot_matched_cell_depth.csv  - same retained cells: selection effect (sel - full) and depth effect
+                                  (downsampled - sel), whole and raw model scores
+  pilot_sample_vs_patient_pool.csv - per-cell and patient-median differences, sample-wise vs pooled run
+  pilot_batching_repeats.csv    - per-cell SD of the final score across seeds for samples >10,000 cells
 """
 import argparse
 from pathlib import Path
@@ -47,6 +52,11 @@ def main():
     ap.add_argument("--ds-counts-dir", default="")
     ap.add_argument("--ds-scores-dir", default="")
     ap.add_argument("--out-dir", required=True)
+    ap.add_argument("--sel-counts-dir", default="")
+    ap.add_argument("--sel-scores-dir", default="")
+    ap.add_argument("--pool-counts-dir", default="")
+    ap.add_argument("--pool-scores-dir", default="")
+    ap.add_argument("--rep-scores-dir", default="")
     a = ap.parse_args()
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -122,6 +132,49 @@ def main():
             lambda g: g.groupby("patient_id").whole_score.std().median()).rename("median_patient_sd_across_seeds") \
             .reset_index().to_csv(out / "pilot_depth_matched_seed_spread.csv", index=False)
     pd.DataFrame(dep).to_csv(out / "pilot_depth_dependence.csv", index=False)
+
+    full = d.set_index("cell_id")
+    if a.sel_counts_dir and a.ds_counts_dir:
+        sman = pd.read_csv(Path(a.sel_counts_dir) / "export_manifest.tsv", sep="\t")
+        sel = load_scores(a.sel_scores_dir, sman).set_index("cell_id")
+        dsm = ds.groupby("cell_id")[["whole_score", "intrinsic_score"]].mean()
+        m = full[["study_id", "broad", "whole_score", "intrinsic_score"]].join(
+            sel[["whole_score"]].rename(columns={"whole_score": "sel_whole"}), how="inner").join(
+            dsm.rename(columns={"whole_score": "ds_whole", "intrinsic_score": "ds_raw"}), how="inner")
+        rows = []
+        for (study, b), g in m.groupby(["study_id", "broad"]):
+            rows.append({"study": study, "compartment": b, "cells": len(g),
+                         "selection_median_shift_whole": float((g.sel_whole - g.whole_score).median()),
+                         "selection_rho_whole": rho(g.sel_whole, g.whole_score),
+                         "depth_median_shift_whole": float((g.ds_whole - g.sel_whole).median()),
+                         "depth_rho_whole": rho(g.ds_whole, g.sel_whole),
+                         "depth_median_shift_raw": float((g.ds_raw - g.intrinsic_score).median()),
+                         "depth_rho_raw": rho(g.ds_raw, g.intrinsic_score)})
+        pd.DataFrame(rows).to_csv(out / "pilot_matched_cell_depth.csv", index=False)
+
+    if a.pool_counts_dir:
+        pman = pd.read_csv(Path(a.pool_counts_dir) / "export_manifest.tsv", sep="\t")
+        pool = load_scores(a.pool_scores_dir, pman).set_index("cell_id")
+        m = full[["study_id", "patient_id", "broad", "whole_score"]].join(
+            pool[["whole_score"]].rename(columns={"whole_score": "pool_whole"}), how="inner")
+        rows = []
+        for (study, patient), g in m.groupby(["study_id", "patient_id"]):
+            pm = g.groupby("broad")[["whole_score", "pool_whole"]].median()
+            rows.append({"study": study, "patient_id": patient, "cells": len(g),
+                         "cell_rho": rho(g.whole_score, g.pool_whole),
+                         "cell_median_abs_diff": float((g.whole_score - g.pool_whole).abs().median()),
+                         **{f"{b}_patient_median_diff": float(pm.loc[b, "pool_whole"] - pm.loc[b, "whole_score"])
+                            for b in pm.index}})
+        pd.DataFrame(rows).to_csv(out / "pilot_sample_vs_patient_pool.csv", index=False)
+
+    if a.rep_scores_dir:
+        reps = [pd.read_csv(f, sep="\t")[["cell_id", "whole_score"]].assign(rep=f.name)
+                for f in Path(a.rep_scores_dir).glob("*.scores.tsv.gz")]
+        if reps:
+            r = pd.concat(reps + [d[d.cell_id.isin(reps[0].cell_id)][["cell_id", "whole_score"]].assign(rep="seed14")])
+            sd = r.groupby("cell_id").whole_score.std()
+            pd.DataFrame({"cells": [len(sd)], "median_cell_sd": [sd.median()], "p95_cell_sd": [sd.quantile(0.95)],
+                          "runs": [r.rep.nunique()]}).to_csv(out / "pilot_batching_repeats.csv", index=False)
     print("scored files:", int(status.scored.sum()), "of", len(status))
 
 

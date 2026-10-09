@@ -1,11 +1,14 @@
-# Fig. 1B CytoTRACE2 contract (draft v2 with amendments A1–A2, pending review)
+# Fig. 1B CytoTRACE2 contract (draft v2.1 with amendments A1–A2.1, pending review)
 
 - **Written:** 2026-10-09, before any CytoTRACE2 score was computed.
 - **Amendments:**
   - **A1** (depth-matched sensitivity) followed input validation.
   - **A2** (harmonized annotation, revised depth rule, CytoTRACE2 internals, contrast family)
     followed user review.
-  - Both were written **before any score existed**.
+  - **A2.1** (raw-score invariance test, matched-cell depth control, sample-wise vs patient-pooled
+    diagnostic, paired-patient and meta-analysis details, malignancy confidence) followed review of
+    A2. A2.1 was written while the technical pilot was running; **no pilot score had been inspected**.
+  - A1 and A2 were written **before any score existed**.
 - **Technical pilot:** started after A2 was drafted. Its outputs are technical only (see the Pilot
   section). Any later change made after scores exist must be logged as a dated amendment that states
   which results had been seen.
@@ -75,10 +78,17 @@ potential across CRC epithelial and tumour-microenvironment cell states.*
 - **Compartment-split runs are not valid for between-compartment contrasts.** `binData` re-spreads
   each compartment's within-category ranks to a uniform distribution, which removes the within-band
   differences between compartments by construction. They are run in the pilot only as a diagnostic.
-- **Cell-intrinsic sensitivity (new, pre-specified):** the model's raw score and potency category
-  from `preprocessData` + `predictData`, before any smoothing or binning. This does not depend on
-  input composition. A primary contrast that is absent from the intrinsic score is reported as
-  depending on CytoTRACE2's within-sample postprocessing.
+- **Raw model score sensitivity (pre-specified; named in A2.1):** the model's raw score and potency
+  category from `preprocessData` + `predictData`, before any smoothing or binning (code columns
+  `intrinsic_*`).
+  - It is called the *raw model score*, never an "intrinsic plasticity" score: a model output is not
+    a cell's true plasticity.
+  - By source it is per-cell: `BinaryModule` applies only stored parameters (weights,
+    `running_mean`, `running_var`, `scale.factors`, background gene sets) to each cell's ranks and
+    log2 CPM, with no statistic computed across cells. This is verified empirically by the A2.1
+    invariance test.
+  - A primary contrast that is absent from the raw model score is reported as depending on
+    CytoTRACE2's within-sample postprocessing.
 
 ## Outputs and metrics
 
@@ -94,6 +104,9 @@ potential across CRC epithelial and tumour-microenvironment cell states.*
 
 ## Statistics (A2)
 
+- **Patients:** all three contrasts use the **same frozen 222 complete patients**, each contributing
+  all three compartments. A contrast is never computed on a different patient subset from the others.
+  Sensitivity sets re-apply this rule within their own patient sets.
 - **Contrasts:** within-patient Δ = patient median(A) − patient median(B).
   - **Primary:** Epithelial − Immune; Epithelial − Stromal.
   - **Secondary:** Stromal − Immune.
@@ -102,9 +115,14 @@ potential across CRC epithelial and tumour-microenvironment cell states.*
 - **Study level:** the mean Δ over the study's patients with a 95% CI (t-interval; patient bootstrap as
   a check). Every study's direction and effect size are shown for all three contrasts, not only the
   pooled p-value.
-- **Pooled:** random-effects meta-analysis (REML), reporting the 95% CI, I², τ² and the 95% prediction
-  interval. Weights follow each study's own uncertainty, so Qi 2022 (5 patients) is not given Pelka's
-  precision.
+- **Pooled (two-stage):**
+  - Stage 1: each study's mean Δ and its standard error from that study's patients.
+  - Stage 2: random-effects meta-analysis of the 13 study estimates (REML) with the Hartung–Knapp
+    adjustment, because several studies have only 5–7 patients and their SEs are unstable.
+  - Reported: study-specific effects with 95% CIs, pooled effect with 95% CI, τ², I², 95% prediction
+    interval, and leave-one-study-out stability. The pooled p-value is never reported alone.
+  - Weights follow each study's own uncertainty, so Qi 2022 (5 patients) is not given Pelka's
+    precision.
 - **Supporting model:** patient-median score ~ compartment + (1 | study) + (1 | study:patient).
 - **Lineage level (L2, secondary):** within-patient contrasts between L2 types with CIs. These are
   descriptive, entered under the L2 eligibility rules.
@@ -118,10 +136,11 @@ potential across CRC epithelial and tumour-microenvironment cell states.*
 | Fibroblast-specific | Fibroblast (L2) instead of broad Stromal (162 patients) |
 | Leave-one-study-out | pooled contrasts with each study removed in turn |
 | Permissive | 20 cells / 5 patients (222 + 11 patients) |
-| Cell-intrinsic (A2) | raw model score and category before smoothing and binning |
+| Raw model score (A2/A2.1) | raw model score and category before smoothing and binning |
 | Depth-matched (A1, revised in A2) | see below |
 | Detection-adjusted (secondary) | contrast adjusted for the compartment difference in median log detected genes (meta-regression). Gene detection may itself carry signal the model uses, so this risks over-adjustment and is never the primary result |
 | Cycling | cycling-positive and cycling-negative cells reported separately; contrasts recomputed on cycling-negative cells |
+| Low-gene cells (A2.1) | cells with <500 detected model genes excluded; eligibility re-applied |
 | HTAPP HTAN | separate exploratory estimate; never pooled; flagged for possible Pelka overlap |
 
 **Depth-matched rule (A2 replaces the A1 rule; written before any score):**
@@ -160,6 +179,30 @@ potential across CRC epithelial and tumour-microenvironment cell states.*
 - Independent of CytoTRACE2: Atlas `phase` (S/G2M from canonical cell-cycle genes) together with
   MKI67/TOP2A detection, fixed in the annotation plan as an L3 state.
 - CytoTRACE2 is never used to define cycling or stem-like states.
+
+## A2.1 technical diagnostics (pilot studies; technical only)
+
+| Diagnostic | Design | Question |
+|---|---|---|
+| Raw-score invariance | fixed cells (150 per compartment, one Lee sample) scored alone and with +3,000 epithelial, +3,000 immune, +3,000 stromal or all three background cells from other Lee samples | is the raw model score identical per cell (expected max diff 0)? How much do the final score and category change? |
+| Matched-cell depth control | per sample, three runs on the same retained cells (library ≥ T_s): (i) full sample, original counts; (ii) retained cells only, original counts (`sel`); (iii) retained cells downsampled to T_s (5 seeds) | (i) vs (ii) = selection effect of dropping shallow cells; (ii) vs (iii) = depth effect on identical cells |
+| Sample-wise vs patient-pooled | patients with ≥2 tumour samples: all samples pooled into one run, compared with sample-wise runs | does the binning reference population (sample vs patient) change per-cell scores and patient medians? |
+| Batching repeats | samples >10,000 cells (one Qin sample, 11,345 cells) re-run with seeds 1, 2, 3 | Monte Carlo variability from random batching |
+| Low-gene cells | cells with <500 detected genes per study × compartment × sample (`tables/input_validation/low_gene_cells_by_*.csv`) | where are they concentrated? Do they pass Atlas QC? |
+
+Low-gene cells (computed; no CytoTRACE2):
+- All cohort cells pass the Atlas QC: the minimum is 200 detected genes in every study except MUI
+  (100, BD Rhapsody). Chen 2024 (561) and Uhlitz (487) carry their original studies' stricter
+  filters.
+- Cells with <500 genes are concentrated in specific study × compartment combinations: Qian epithelial
+  41%, Qi epithelial 39%, Qin immune 33%, Li 2023 immune 20%, Khaliq epithelial 20%. They are 0% in
+  Chen 2024 and Joanito epithelial.
+- They are **not excluded** in the primary analysis, because they pass QC and exclusion would be a
+  post hoc filter. A sensitivity analysis excluding cells with <500 detected model genes is added,
+  with eligibility re-applied.
+
+The depth-target table already reports per-compartment cell retention at T_s
+(`depth_targets.csv`: `*_retained_pct`).
 
 ## Pilot (technical; Joanito 2022, Lee 2020, Qin 2023)
 

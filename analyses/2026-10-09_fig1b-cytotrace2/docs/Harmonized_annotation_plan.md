@@ -1,4 +1,4 @@
-# Fig. 1B harmonized cell annotation plan (amendment A2; draft, pending review)
+# Fig. 1B harmonized cell annotation plan (amendments A2–A2.1; draft, pending review)
 
 Written on 2026-10-09, before any CytoTRACE2 score was inspected. The L2 annotation is frozen before
 CytoTRACE2 results are interpreted biologically. The annotation is designed **without reference to
@@ -16,7 +16,7 @@ not shaped to reproduce any expected ordering of developmental potential.
 | `celltype_L1` | Epithelial / Immune / Stromal (from Atlas harmonized labels; QC only) |
 | `celltype_L2` | consensus cell type (below) |
 | `cellstate_L3` | state within a type (cycling, IFN response, myofibroblast-like, malignant programmes, ...) |
-| `malignancy` | Malignant / Non-malignant / Uncertain (epithelial only) |
+| `malignancy_confidence` | High-confidence malignant / High-confidence non-malignant / Uncertain (epithelial only; A2.1) |
 | `annotation_confidence` | high / medium / low; low-confidence cells stay `Unclassified` |
 | `annotation_method` | which evidence assigned the label |
 | `original_celltype` | Atlas `atlas_cell_type_fine` and study `cell_type_study`, carried for validation |
@@ -115,14 +115,22 @@ Evidence is combined:
 3. The sample type (all cohort cells are primary tumour; adjacent normal is not in the cohort).
 4. Normal-differentiation marker coherence.
 
-| Call | Rule |
+| `malignancy_confidence` | Rule |
 |---|---|
-| Malignant | Atlas Cancer cell and CNV-high, **or** CNV-high clone in a patient with clear CNV structure |
-| Non-malignant | Atlas normal epithelial type and CNV-low, in a patient whose malignant cells are CNV-high |
-| Uncertain | discordant evidence, or a patient without detectable CNV structure (near-diploid tumours) |
+| High-confidence malignant | Atlas Cancer cell **and** CNV-high, in a patient with clear CNV structure |
+| High-confidence non-malignant | Atlas normal epithelial type **and** CNV-low **and** coherent normal-differentiation markers, in a patient whose malignant cells are clearly CNV-high |
+| Uncertain | everything else: discordant evidence, or a patient without detectable CNV structure (near-diploid or MSI tumours), or CNV signal in a study where CNV sensitivity is poor |
 
-CNV-negative is not taken as proof of non-malignancy. Uncertain cells are reported separately and
-excluded from both malignant and non-malignant L2 estimates.
+**A2.1 changes:**
+- Neither the Atlas label nor infercnv is treated as a gold standard. Large-scale CNVs can be absent
+  from CRC cells, normal cells can show technical CNV noise, and CNV sensitivity differs by study and
+  platform.
+- Uncertain cells are never forced into malignant or non-malignant. They are reported separately and
+  excluded from both L2 estimates.
+- Per study and patient, the CNV detection rate and the share of Uncertain cells are reported.
+- Malignancy errors affect only the epithelial L2/L3 interpretation, not the broad compartment
+  contrasts. Malignancy validation therefore runs **in parallel** with the technical pilot and does
+  not gate it.
 
 ## Procedure
 

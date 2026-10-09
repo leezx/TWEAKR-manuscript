@@ -10,6 +10,11 @@ below the study target T_s are dropped, and every other cell is downsampled to e
 without replacement (multivariate hypergeometric over its genes), once per seed, before the
 restriction to model genes.
 
+A2.1 diagnostic variants:
+  --selection-only : with --depth-targets, keep cells >= T_s with their ORIGINAL counts ("sel"), to
+                     separate the selection effect (dropping shallow cells) from the depth effect.
+  --pool-by-patient: one file per patient with >= 2 samples, all samples concatenated ("patientpool").
+
 Usage: python export_sample_counts.py --h5ad ... --cohort-cells ... --mapping ... --studies A,B --out-dir ...
        [--depth-targets depth_targets.csv --seeds 1,2,3,4,5]
 """
@@ -43,6 +48,8 @@ def main():
     ap.add_argument("--all-genes-sample", default="", help="one sample_id also exported with all genes")
     ap.add_argument("--depth-targets", default="", help="depth_targets.csv; exports downsampled variants only")
     ap.add_argument("--seeds", default="1,2,3,4,5")
+    ap.add_argument("--selection-only", action="store_true")
+    ap.add_argument("--pool-by-patient", action="store_true")
     a = ap.parse_args()
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -69,6 +76,10 @@ def main():
         indptr = mat["indptr"][:]
         n_genes = int(mat.attrs["shape"][1])
         manifest = []
+        if a.pool_by_patient:
+            multi = cohort.groupby("patient_id").sample_id.nunique()
+            cohort = cohort[cohort.patient_id.isin(multi[multi >= 2].index)].copy()
+            cohort["sample_id"] = cohort.patient_id + ".POOLED"
         for (study, patient, sample), g in cohort.groupby(["study_id", "patient_id", "sample_id"]):
             rows = np.sort(g.row.to_numpy())
             parts = []
@@ -82,7 +93,13 @@ def main():
             from scipy.sparse import vstack
             x = vstack(parts).tocsr()
             cells = idx[rows].to_numpy()
-            if targets:
+            if targets and a.selection_only:
+                lib = np.asarray(x.sum(axis=1)).ravel()
+                keep = np.flatnonzero(lib >= targets[study])
+                variants = [("sel", keep_genes, x[keep].tocsr(), cells[keep])]
+            elif a.pool_by_patient:
+                variants = [("patientpool", keep_genes, x, cells)]
+            elif targets:
                 lib = np.asarray(x.sum(axis=1)).ravel()
                 keep = np.flatnonzero(lib >= targets[study])
                 variants = []
