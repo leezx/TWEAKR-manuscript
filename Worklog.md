@@ -333,3 +333,11 @@ User authorized startup; scoped runner uses original group=Cancer only, two
 approved samples, K4:9 and seed42. Submitted SGE job3654435 with pvm2 standard
 resources. Root and commands are in PILOT_EXECUTION.md. General execution guard
 remains 0; no full Atlas run is authorized. Completion/QC remain pending.
+
+## 2026-10-09 — Pilot first failure and retry
+
+Job3654435 prepared both inputs but failed on first NMF: sparse multiplication
+lost dimnames. Restored dimnames explicitly and added regression assertions.
+Shell task reader now strips trailing CR from output paths. Original failure log
+preserved as logs/pilot.first_failed.log. Retried identical scope as job3654441;
+completion still pending. No changes to algorithm parameters or sample selection.

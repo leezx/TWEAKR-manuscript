@@ -63,6 +63,7 @@ preprocess_counts <- function(counts, min_detected_cells, scale_factor) {
   if (nrow(counts) == 0L || ncol(counts) == 0L) stop("No matrix remains after QC")
 
   normalized <- counts %*% Matrix::Diagonal(x = scale_factor / library_size)
+  dimnames(normalized) <- dimnames(counts)
   normalized@x <- log1p(normalized@x)
   gene_means <- Matrix::rowMeans(normalized)
   normalized@x <- pmax(normalized@x - gene_means[normalized@i + 1L], 0)

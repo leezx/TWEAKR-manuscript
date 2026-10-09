@@ -13,6 +13,8 @@ x[, 1:185] <- sample(1:5, 60 * 185, replace = TRUE)
 counts <- as(x, "dgCMatrix")
 prepared <- preprocess_counts(counts, 1, 10000)
 stopifnot(ncol(prepared$matrix) == 185, prepared$dropped_zero_library == 20,
+          identical(rownames(prepared$matrix), rownames(counts)),
+          identical(colnames(prepared$matrix), colnames(counts)[1:185]),
           all(is.finite(prepared$matrix@x)), all(prepared$matrix@x >= 0))
 expect_error <- function(expr) stopifnot(inherits(tryCatch(expr, error = identity), "error"))
 bad <- counts

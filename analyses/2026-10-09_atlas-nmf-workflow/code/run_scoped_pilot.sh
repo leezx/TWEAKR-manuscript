@@ -23,6 +23,7 @@ for row in 1 2; do
 done
 "$ENV/bin/python" "$WF/code/04_build_nmf_tasks.py" --prepared-root "$ROOT/prepared" --ranks 4,5,6,7,8,9 --output-root "$ROOT" --prepared-manifest "$ROOT/prepared_manifest.tsv" --tasks "$ROOT/tasks.tsv"
 while IFS=$'\t' read -r task dataset source sample matrix rank output; do
+  output=${output%$'\r'}
   /usr/bin/time -v "$ENV/bin/Rscript" "$WF/code/03_run_fastnmf.R" "$matrix" "$rank" "$output" 42
 done < <(tail -n +2 "$ROOT/tasks.tsv")
 "$ENV/bin/python" "$WF/code/05_validate_nmf_outputs.py" --plan "$WF/config/pilot_plan.tsv" --tasks "$ROOT/tasks.tsv" --ranks 4,5,6,7,8,9 --output "$ROOT/validation.tsv"
