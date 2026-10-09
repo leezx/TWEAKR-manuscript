@@ -274,3 +274,10 @@ sensitivity thresholds. Added an explicit robust-program filtering variant
 using repeated top50 genes (35 within-rank, 10 across-sample, <=10 redundancy)
 and cross-dataset support. Documented RcppML versus author NMF/snMF nrun=10
 differences and that MP clustering remains unimplemented. Analysis stays HOLD.
+
+## 2026-10-09 — Argos synthetic Gate A tests
+
+Added cohort-aware program algorithms, deterministic complete-link MP clustering,
+sample-vote consensus and dataset/patient/sample support summaries. Six tests
+passed in argos-codex on Argos. See GATE_A_ALGORITHM.md and GATE_A_TEST_REPORT.md.
+Real-data execution remains HOLD pending independent review; no pilot launched.

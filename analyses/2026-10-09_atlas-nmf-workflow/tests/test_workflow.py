@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -32,7 +33,7 @@ class WorkflowTests(unittest.TestCase):
             }])
             write_tsv(legacy, [{"dataset": "Study_A", "sample_id": "S1"}])
             subprocess.run([
-                "python3", str(ROOT / "code/01_compare_legacy_coverage.py"),
+                sys.executable, str(ROOT / "code/01_compare_legacy_coverage.py"),
                 "--inventory", str(inventory), "--legacy-manifest", str(legacy),
                 "--output", str(output),
             ], check=True)
@@ -56,7 +57,7 @@ class WorkflowTests(unittest.TestCase):
             tasks = tmp / "tasks.tsv"
             combined = tmp / "combined.tsv"
             subprocess.run([
-                "python3", str(ROOT / "code/04_build_nmf_tasks.py"),
+                sys.executable, str(ROOT / "code/04_build_nmf_tasks.py"),
                 "--prepared-root", str(tmp / "prepared"), "--ranks", "5,7",
                 "--output-root", str(tmp / "out"),
                 "--prepared-manifest", str(combined), "--tasks", str(tasks),
@@ -97,7 +98,7 @@ class WorkflowTests(unittest.TestCase):
                 (result_dir / name).touch()
             write_tsv(result_dir / "status.tsv", [{"status": "complete"}])
             completed = subprocess.run([
-                "python3", str(ROOT / "code/05_validate_nmf_outputs.py"),
+                sys.executable, str(ROOT / "code/05_validate_nmf_outputs.py"),
                 "--plan", str(plan), "--tasks", str(tasks), "--ranks", "5,6",
                 "--output", str(output),
             ], check=False)
