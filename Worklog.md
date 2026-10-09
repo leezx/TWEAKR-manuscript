@@ -228,3 +228,19 @@ the Results paragraph and legend from the actual analysis output in
 `../TWEAKR-OncoPlacental` / the DATA working dirs; build `references.bib`;
 draft Methods. Still pending: user decision on deleting root `_TEMPLATE` files
 and on whether to keep `GPT/` in-repo.
+
+## 2026-10-09 — Fig. 1B dataset screen (compartment completeness)
+
+**What**: Screened the DS-001 CRC Atlas (obs metadata only; no CytoTRACE2) for studies with
+epithelial, immune and stromal cells in primary tumour, treatment-naive samples.
+A patient is complete with ≥30 cells per compartment; a study passes with ≥5 complete patients.
+
+**Result**: 13 of 37 screened studies pass (222 complete patients). v2 adds the requested checks:
+- study inclusion flow;
+- identifier checks;
+- 20/5 and 50/10 sensitivity (13 and 7 studies);
+- sample-level, unsorted-only and fibroblast-specific completeness;
+- HTAPP HTAN vs Pelka overlap (no duplicated cells; patient overlap unresolved; sensitivity
+  cohort only).
+
+**Status**: Pending review. Record: `analyses/2026-10-09_fig1b-dataset-screen/README.md`.

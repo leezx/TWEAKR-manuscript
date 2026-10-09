@@ -1,0 +1,14 @@
+{
+ "h5ad": "/home/zz950/DATA/scRNAseq/meta_study/CRC_single_cell_atlas_2025/data/final_crc_atlas-adata.count.only.h5ad",
+ "cells_in_h5ad": 4264929,
+ "cells_in_scope": 3812174,
+ "studies_in_scope": 37,
+ "patients_in_scope": 586,
+ "min_cells": 30,
+ "min_patients": 5,
+ "n_pass": {
+  "all_samples": 18,
+  "primary_tumor": 16,
+  "primary_tumor_naive": 13
+ }
+}

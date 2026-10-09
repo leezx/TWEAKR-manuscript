@@ -1,0 +1,6 @@
+study,status,cells,Epithelial_cells,Immune_cells,Stromal_cells,Unknown_cells
+CSE0000154,lineage annotation not complete,,,,,
+GSE178318,heuristic lineage (study level only),140281.0,23676.0,88416.0,23980.0,4209.0
+GSE205506,heuristic lineage (study level only),324020.0,151774.0,90613.0,47736.0,33897.0
+GSE236581,lineage annotation not complete,,,,,
+Moorman_2024_Nature,heuristic lineage (study level only),164304.0,46742.0,94665.0,17967.0,4930.0

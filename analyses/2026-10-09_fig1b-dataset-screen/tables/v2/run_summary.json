@@ -1,0 +1,30 @@
+{
+ "cells": 4264929,
+ "cell_index_unique": true,
+ "patients_in_multiple_studies": 2,
+ "samples_in_multiple_patients": 14,
+ "samples_with_multiple_sample_types": 0,
+ "patients_with_multiple_treatment_values": 57,
+ "scope_backbone_patients": 586,
+ "scope_backbone_patients_missing_from_h5ad": 0,
+ "cells_in_scope": 3812174,
+ "studies_in_scope": 37,
+ "unknown_enrichment_values": [
+  "CD14+",
+  "CD3+/CD4+",
+  "CD3+/CD4+/CD25-",
+  "CD3+/CD4+/CD25high",
+  "CD3+/CD4+/CD25int",
+  "CD3+/TCRgd+",
+  "CD45+",
+  "CD56+",
+  "CD66b+",
+  "CD8+"
+ ],
+ "n_pass": {
+  "permissive_20_5": 13,
+  "primary_30_5": 13,
+  "stringent_50_10": 7
+ },
+ "complete_patients_primary_30_5": 222
+}

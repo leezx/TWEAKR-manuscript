@@ -1,0 +1,55 @@
+study,h5ad_patients,h5ad_cells,scope_patients,source_role,fate
+Bian_2018_Science,8.0,1131.0,8.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Borras_2023_Cell_Discov,27.0,42294.0,25.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Burclaff_2022_Cell_Mol_Gastroenterol_Hepatol,3.0,4385.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+CSE0000154,,,29.0,supplemental_primary_object,not screened: no harmonized cell types; heuristic lineage not complete
+Che_2021_Cell_Discov,6.0,125025.0,6.0,integrated_backbone,FAIL: 3 complete patients (need 5)
+Chen_2021_Cell,106.0,177279.0,106.0,integrated_backbone,FAIL: 4 complete patients (need 5)
+Chen_2024_Cancer_Cell,20.0,892915.0,20.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Conde_2022_Science,4.0,8789.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Elmentaite_2021_Nature,7.0,109390.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+GSE178318,,,6.0,supplemental_primary_object,not screened: no harmonized cell types; heuristic lineage at study level only
+GSE205506,,,19.0,supplemental_primary_object,not screened: no harmonized cell types; heuristic lineage at study level only
+GSE236581,,,22.0,supplemental_primary_object,not screened: no harmonized cell types; heuristic lineage not complete
+GarridoTrigo_2023_Nat_Commun,6.0,36458.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Giguelay_2022_Theranostics,5.0,8147.0,5.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Guo_2022_JCI_Insight,6.0,25407.0,6.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+HTAPP_HTAN,20.0,48641.0,20.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Harmon_2023_Nat_Cancer,3.0,9688.0,3.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+He_2020_Genome_Biol,1.0,17086.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Huang_2024_Nat_Cancer,3.0,62288.0,3.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+James_2020_Nat_Immunol,5.0,54916.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Ji_2024_Cancer_Lett,2.0,31224.0,2.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Ji_2024_PLoS_Genet,3.0,14590.0,3.0,integrated_backbone,FAIL: 2 complete patients (need 5)
+Joanito_2022_Nat_Genet,31.0,287763.0,31.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Khaliq_2022_Genome_Biol,16.0,49852.0,16.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Kong_2023_Immunity,4.0,30771.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Lee_2020_Nat_Genet,34.0,134205.0,34.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Li_2017_Nat_Genet,11.0,156.0,11.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Li_2023_Cancer_Cell,19.0,128989.0,19.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Liu_2024_Cancer_Res,16.0,176531.0,16.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+MUI_Innsbruck,12.0,106162.0,12.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Mazzurana_2021_Cell_Res,3.0,888.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Moorman_2024_Nature,,,29.0,supplemental_primary_object,not screened: no harmonized cell types; heuristic lineage at study level only
+Parikh_2019_Nature,3.0,4247.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Pelka_2021_Cell,62.0,340686.0,62.0,integrated_backbone+clinical_enrichment,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Qi_2022_Nat_Commun,5.0,53564.0,5.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Qian_2020_Cell_Res,7.0,44679.0,7.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Qin_2023_Cell_Rep_Med,29.0,360334.0,29.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Sathe_2023_Clin_Cancer_Res,5.0,13438.0,5.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Scheid_2023_J_EXP_Med,8.0,67084.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Smillie_2019_Cell,12.0,85775.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Terekhanova_2023_Nature,6.0,55826.0,6.0,integrated_backbone,FAIL: 1 complete patients (need 5)
+Thomas_2024_Nat_Med,8.0,32966.0,,not in manuscript scope,excluded before screening: not in the 42-study manuscript scope (reference/non-CRC)
+Tian_2023_Nat_Med,27.0,80455.0,27.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Uhlitz_2021_EMBO_Mol_Med,12.0,68702.0,12.0,integrated_backbone,"PASS (primary 30/5, primary tumour, treatment-naive)"
+Wang_2020_J_Exp_Med,4.0,8435.0,4.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Wang_2021_Adv_Sci,8.0,735.0,8.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Wang_2023_Sci_Adv,7.0,192793.0,7.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Wu_2022_Cancer_Discov,20.0,135676.0,20.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Wu_2024_Cell,8.0,12272.0,8.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Yang_2023_Front_Oncol,1.0,5965.0,1.0,integrated_backbone,FAIL: 1 complete patients (need 5)
+Zhang_2018_Nature,12.0,11138.0,12.0,integrated_backbone,FAIL: 0 complete patients (need 5)
+Zhang_2020_Cell,18.0,53905.0,18.0,integrated_backbone,FAIL: 1 complete patients (need 5)
+Zheng_2022_Signal_Transduct_Target_Ther,4.0,46629.0,4.0,integrated_backbone,FAIL: 1 complete patients (need 5)
+deVries_2023_Nature,5.0,4655.0,5.0,integrated_backbone,FAIL: 0 complete patients (need 5)

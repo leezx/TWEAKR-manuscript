@@ -1,0 +1,38 @@
+study,platform,enrichment,sample_types,treatment,malignant_epithelial_cells,normal_epithelial_cells
+Bian_2018_Science,scTrio-seq2,naive:1131,primary tumor:596;metastasis:294;lymph node:221;adjacent normal:20,naive:1057;treated:74,1103,22
+Borras_2023_Cell_Discov,10x 5p,naive:33225;CD45+:9069,primary tumor:39184;adjacent normal:3110,nan:33225;naive:9069,54,0
+Che_2021_Cell_Discov,10x 3p,naive:125025,metastasis:49838;primary tumor:48472;blood:26715,naive:65709;treated:59316,11520,18
+Chen_2021_Cell,TruDrop,naive:177279,polyp:93913;healthy normal:75253;primary tumor:8113,naive:177279,32811,130725
+Chen_2024_Cancer_Cell,10x 5p,naive:892915,blood:402752;primary tumor:248636;adjacent normal:224004;lymph node:17523,treated:520056;naive:372859,58833,65544
+Giguelay_2022_Theranostics,10x 3p,EPCAM-/CD45-/CD31-:4649;EPCAM+:3498,metastasis:8147,treated:8147,3458,7
+Guo_2022_JCI_Insight,10x 3p,naive:25407,primary tumor:25407,naive:25407,3175,66
+HTAPP_HTAN,10x 3p,NA:48641,primary tumor:48641,nan:48641,19711,112
+Harmon_2023_Nat_Cancer,10x 3p,CD56+:9688,primary tumor:8528;adjacent normal:1160,nan:9688,98,6
+Huang_2024_Nat_Cancer,10x 3p,naive:62288,adjacent normal:45183;primary tumor:17105,naive:62288,102,20
+Ji_2024_Cancer_Lett,GEXSCOPE Singleron,naive:31224,primary tumor:12779;adjacent normal:10277;metastasis:8168,nan:31224,10269,4853
+Ji_2024_PLoS_Genet,10x 3p,CD14+:14590,primary tumor:14590,naive:14590,5793,4
+Joanito_2022_Nat_Genet,10x 3p;10x 5p,naive:287763,primary tumor:192595;adjacent normal:62780;lymph node:32388,naive:287763,25851,2204
+Khaliq_2022_Genome_Biol,10x 5p,naive:49852,primary tumor:31581;adjacent normal:18271,naive:49852,7141,2849
+Lee_2020_Nat_Genet,10x 3p,naive:134205,primary tumor:91214;adjacent normal:42991,naive:134205,29741,6009
+Li_2017_Nat_Genet,SMARTer (C1),naive:156,primary tumor:109;adjacent normal:47,naive:143;treated:13,54,11
+Li_2023_Cancer_Cell,10x 3p,naive:128989,primary tumor:106162;adjacent normal:22827,treated:86286;naive:42703,36360,6449
+Liu_2024_Cancer_Res,10x 5p,mixCD45+CD45-:176531,metastasis:80916;primary tumor:75712;adjacent normal:19903,naive:176531,46501,7516
+MUI_Innsbruck,BD Rhapsody,naive:106162,primary tumor:48047;blood:37913;adjacent normal:20202,naive:106162,15856,11284
+Pelka_2021_Cell,10x 3p,naive:210667;CD45+:130019,primary tumor:240630;adjacent normal:100056,naive:340686,100569,45147
+Qi_2022_Nat_Commun,10x 3p,naive:53564,adjacent normal:29339;primary tumor:24225,naive:53564,6566,2230
+Qian_2020_Cell_Res,10x 3p,naive:44679,primary tumor:30621;adjacent normal:14058,naive:44679,9753,2307
+Qin_2023_Cell_Rep_Med,DNBelab C4,naive:360334,primary tumor:330982;adjacent normal:29352,treated:209635;naive:150699,78466,17833
+Sathe_2023_Clin_Cancer_Res,10x 3p,naive:13438,metastasis:7802;blood:5636,nan:13438,6716,24
+Terekhanova_2023_Nature,10x 3p,naive:55826,metastasis:32762;primary tumor:19288;adjacent normal:3776,treated:47781;naive:4269;nan:3776,22196,3497
+Tian_2023_Nat_Med,10x 5p,naive:80455,metastasis:80455,treated:80455,80372,30
+Uhlitz_2021_EMBO_Mol_Med,10x 3p,naive:68702,primary tumor:38233;adjacent normal:30469,naive:68702,13194,17961
+Wang_2020_J_Exp_Med,10x 3p,naive:8435,adjacent normal:8435,nan:8435,0,8332
+Wang_2021_Adv_Sci,Smart-seq2,naive:735,primary tumor:735,naive:735,307,93
+Wang_2023_Sci_Adv,BD Rhapsody,CD45+:151064;CD45-:41729,metastasis:81800;primary tumor:55253;adjacent normal:30924;blood:24816,treated:192793,23232,460
+Wu_2022_Cancer_Discov,10x 3p,CD45+:135676,metastasis:55097;primary tumor:29724;adjacent normal:21458;lymph node:19844;blood:9553,treated:81793;naive:53883,79,73
+Wu_2024_Cell,10x 5p,CD66b+:12272,primary tumor:9841;blood:2402;adjacent normal:29,naive:12272,114,5
+Yang_2023_Front_Oncol,10x 3p,naive:5965,primary tumor:5965,naive:3704;treated:2261,1879,26
+Zhang_2018_Nature,Smart-seq2,CD8+:4010;CD3+/CD4+/CD25-:3320;CD3+/CD4+/CD25high:2753;CD3+/CD4+/CD25int:608;CD3+/CD4+:447,primary tumor:5149;blood:3352;adjacent normal:2637,naive:11138,8,5
+Zhang_2020_Cell,10x 3p;Smart-seq2,CD45+:43817;CD45+/CD45-:10088,blood:23305;primary tumor:15564;adjacent normal:15036,naive:53905,571,114
+Zheng_2022_Signal_Transduct_Target_Ther,10x 3p,naive:46629,primary tumor:17983;adjacent normal:13465;polyp:13045;blood:2136,naive:46629,13019,5175
+deVries_2023_Nature,10x 5p,CD3+/TCRgd+:4655,primary tumor:4655,naive:4655,1,1
