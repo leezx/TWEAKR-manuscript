@@ -45,13 +45,13 @@ def converged(hist, max_epochs, conv):
     v = hist["elbo_validation"].to_numpy(dtype=float)
     t = hist["elbo_train"].to_numpy(dtype=float)
     finite = bool(np.isfinite(v).all() and np.isfinite(t).all())
-    early = len(v) < max_epochs
+    early = bool(len(v) < max_epochs)
     w = conv["window"]
     rel = np.nan
     if len(v) >= 2 * w:
         last, prev = v[-w:].mean(), v[-2 * w:-w].mean()
         rel = abs(last - prev) / abs(prev)
-    ok = finite and (early or (np.isfinite(rel) and rel <= conv["max_rel_change"]))
+    ok = bool(finite and (early or (np.isfinite(rel) and rel <= conv["max_rel_change"])))
     return ok, {"finite": finite, "early_stopped": early, "epochs_run": int(len(v)),
                 "rel_change_last_window": None if not np.isfinite(rel) else float(rel)}
 
