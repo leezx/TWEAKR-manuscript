@@ -61,6 +61,7 @@
 | `code/fig1b_stats.py`, `code/run_stats.sh` | A2.1 statistics: patient medians, within-patient contrasts, REML + Hartung–Knapp meta-analysis (checked against metafor), Holm, LOSO, mixed model, all pre-specified sensitivities, L2 descriptive tables | Argos |
 | `docs/Full_run_results.md` | full-run A2.1 results: primary contrasts, sensitivity analyses, L2 landscape, proposed wording and review questions |
 | `tables/full/` | light statistics tables from the full run (pooled/study contrasts, LOSO, patient medians, L2 summaries) |
+| `figures/fig1b/` | Fig. 1b (nature-figure, Python): script, SVG/PDF/TIFF/preview, source data, legend, QA |
 | `code/l2_config.yaml` | machine-readable copy of the L2 parameters, panels and Atlas fine → L2 crosswalk |
 
 ## Tables (`tables/input_validation/`)
