@@ -1,0 +1,9 @@
+{
+ "n_cells_scored": 1000926,
+ "n_patients_primary": 222,
+ "not_run": {
+  "permissive_20_5": "11 extra patients are outside cohort v1 and were not exported",
+  "HTAPP_HTAN": "not part of cohort v1 exports"
+ },
+ "min_study_patients": 5
+}

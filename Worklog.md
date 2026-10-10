@@ -397,3 +397,12 @@ non-malignant / uncertain.
 - **Review:** annotation-quality review GO. The primary analysis stays on L1 (A2.1). F1-clean L1 is a sensitivity analysis. High-confidence malignant cells are a selected L2 subset only.
 - **Freeze:** `annotation_v1` SHA256 re-verified on Argos; files made read-only; `final/FROZEN.txt` written.
 - **Full run:** `code/submit_full.sh` exports 13 studies, then runs 361 whole-sample tasks and 5 depth-matched seeds (modes whole + intrinsic; seed 14; 4 slots × 6G).
+
+## 2026-10-10 — Fig. 1B: full CytoTRACE2 run and A2.1 statistics complete
+
+- **Runs:** 361/361 main and 1,805/1,805 depth-matched tasks, 0 failures; statistics job 3654888.
+- **Primary result** (222 patients, 13 studies): Stromal > Epithelial > Immune.
+  - E−I +0.073 (0.056–0.089); E−S −0.162 (−0.206 to −0.117); S−I +0.244 (0.197–0.290).
+  - Same sign in 13/13 studies and in every sensitivity analysis.
+  - Depth matching halves the effects; depth-matched raw E−I is +0.012.
+- **Report:** `docs/Full_run_results.md`; tables in `tables/full/`. Submitted for results review.
