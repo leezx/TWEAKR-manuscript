@@ -25,7 +25,7 @@
     `code/l2_config.yaml` (2026-10-09). Review: Implementation GO with pre-run clarifications C1–C6. Code in `code/l2/`; smoke test
     passed; full chain submitted on 2026-10-09 (SGE 3654572–3654577); completed 2026-10-10.
   - Candidate `annotation_v1` (SHA256 `1d8148063d83…`, not frozen); quality report
-    `docs/L2_annotation_QC_report.md`, light tables in `tables/l2/`. Awaiting annotation-quality review.
+    `docs/L2_annotation_QC_report.md`, light tables in `tables/l2/`. Annotation-quality review GO; `annotation_v1` **frozen** 2026-10-10 (primary contrasts stay on L1 per A2.1). Full 13-study CytoTRACE2 run: `code/submit_full.sh` (`run_export_full.sh`, `run_full_task.sh`; modes whole + intrinsic; depth-matched seeds 1–5), outputs under Argos `full/`.
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).
 
@@ -57,6 +57,7 @@
 | `code/l2/` | L2 steps: `l2_build.py`, `l2_scvi.py` (scvi-env), `l2_label.py`, `l2_cnv_prep.py` + `l2_infercnv.R`, `l2_finalize.py`; `run_l2_step.sh` / `submit_l2.sh smoke\|full` (SGE chain) |
 | `docs/L2_annotation_QC_report.md` | L2 run quality report: convergence, composition, stability, LOSO, malignancy (C4), decisions for review |
 | `tables/l2/` | light L2 QC tables from the Argos run (per-cell table stays on Argos) |
+| `code/submit_full.sh`, `code/run_export_full.sh`, `code/run_full_task.sh` | full 13-study CytoTRACE2 run (A2.1): whole-sample main run (361 samples) and depth-matched run (5 seeds); modes whole + intrinsic | Argos |
 | `code/l2_config.yaml` | machine-readable copy of the L2 parameters, panels and Atlas fine → L2 crosswalk |
 
 ## Tables (`tables/input_validation/`)

@@ -141,3 +141,36 @@ Other items to confirm:
 2. **Dendritic cell**: keep in the main panel with the weak-reproducibility note, or move to Extended Data.
 3. **F2 (cluster-level contamination)** flagged nothing at threshold 0.5. We propose reporting this as is; F1 already removed 3.3% of cells.
 4. **Freeze**: freeze `annotation_v1` at the SHA256 above, then run full 13-study CytoTRACE2 under A2.1.
+
+## 7. Review outcome (2026-10-10): GO, annotation_v1 frozen
+
+The annotation-quality review in the same ChatGPT review conversation approved the freeze and the full 13-study CytoTRACE2 run.
+
+**Epithelial option:** neither A nor C. B's whole-epithelium framing is used within the original A2.1 primary analysis:
+
+| Level | Cells used | Status |
+|---|---|---|
+| Primary L1 | Atlas Epithelial / Immune / Stromal, frozen 222 patients | unchanged (A2.1) |
+| L1 QC sensitivity | the same, excluding F1-flagged cells | supporting sensitivity |
+| Malignant L2 | 34,764 high-confidence malignant cells | selected L2 subset; never substituted for the epithelial compartment |
+
+Review rulings on the other items:
+
+- **Immune scVI:** PASS.
+- **Dendritic cell:** kept in the main panel, with the note "mainly cDC2, weak reproducibility in some studies".
+- **F2 = 0:** reported as is.
+- **F1:** study-dependent (for example Joanito epithelial 18.0%, Qian stromal 18.9%), so it is handled by the F1-clean sensitivity, not by re-thresholding.
+- **Epithelial ARI 0.26:** not a freeze blocker. It is a limitation for any future malignant-state discovery.
+
+**Figure guidance:**
+
+- Fig. 1B shows the L1 compartments (222 patients).
+- The L2 landscape goes in Fig. 1C or Extended Data, with patient and study coverage shown per type. If L1 and L2 are mixed in one panel, the different annotation resolution must be marked.
+- Malignant epithelial states are described by continuous L3 programmes.
+
+**Freeze:**
+
+- SHA256 was re-verified on Argos (`1d8148063d83…`).
+- The files were made read-only.
+- `final/FROZEN.txt` records the decision.
+- No annotation parameter or label was changed.

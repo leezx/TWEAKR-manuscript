@@ -391,3 +391,9 @@ non-malignant / uncertain.
 - **Immune scVI:** converged at 0.496%, just under the 0.5% limit.
 - **Next:** decisions A/B/C go to the annotation-quality review.
 - **Project ledger:** WL-20261010-003.
+
+## 2026-10-10 — Fig. 1B: annotation_v1 frozen; full CytoTRACE2 run scripts
+
+- **Review:** annotation-quality review GO. The primary analysis stays on L1 (A2.1). F1-clean L1 is a sensitivity analysis. High-confidence malignant cells are a selected L2 subset only.
+- **Freeze:** `annotation_v1` SHA256 re-verified on Argos; files made read-only; `final/FROZEN.txt` written.
+- **Full run:** `code/submit_full.sh` exports 13 studies, then runs 361 whole-sample tasks and 5 depth-matched seeds (modes whole + intrinsic; seed 14; 4 slots × 6G).
