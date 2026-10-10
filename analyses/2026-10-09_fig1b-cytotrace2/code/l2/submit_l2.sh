@@ -10,8 +10,8 @@ if [ "$mode" = smoke ]; then
   CP="-pe smp 4 -l m_mem_free=8G"; IC="-pe smp 4 -l m_mem_free=4G"; F="-pe smp 4 -l m_mem_free=8G"
 elif [ "$mode" = full ]; then
   R=$BASE; NPAT=222; EXTRA=; SEXTRA=
-  B="-pe smp 8 -l m_mem_free=16G"; S="-pe smp 16 -l m_mem_free=8G"; L="-pe smp 8 -l m_mem_free=24G"
-  CP="-pe smp 4 -l m_mem_free=40G"; IC="-pe smp 8 -l m_mem_free=4G"; F="-pe smp 4 -l m_mem_free=32G"
+  B="-pe smp 8 -l m_mem_free=16G"; S="-pe smp 16 -l m_mem_free=8G"; L="-pe smp 8 -l m_mem_free=16G"
+  CP="-pe smp 4 -l m_mem_free=32G"; IC="-pe smp 8 -l m_mem_free=4G"; F="-pe smp 4 -l m_mem_free=32G"
 else
   echo "usage: submit_l2.sh smoke|full"; exit 2
 fi
