@@ -22,7 +22,8 @@
       results;
     - no plasticity hierarchy may be claimed from the final-score ordering in immune cells alone.
   - L2 parameters were fixed before any computation in `docs/L2_implementation_notes.md` and
-    `code/l2_config.yaml` (2026-10-09). Review: Implementation GO with pre-run clarifications C1–C6; no L2 job submitted yet.
+    `code/l2_config.yaml` (2026-10-09). Review: Implementation GO with pre-run clarifications C1–C6. Code in `code/l2/`; smoke test
+    passed; full chain submitted on 2026-10-09 (SGE 3654572–3654577).
 - **Cohort:** frozen v1 from `../2026-10-09_fig1b-dataset-screen/cohort/` (13 studies, 222 patients,
   1,003,249 cells).
 
@@ -51,6 +52,7 @@
 |---|---|
 | `docs/Harmonized_annotation_plan.md` | L1/L2/L3 taxonomy, human marker panels, malignancy calls, integration/labelling/validation procedure, L2 eligibility |
 | `docs/L2_implementation_notes.md` | fixed operating parameters for L2 (envs, L1 flags, scVI, Leiden, three-source consensus, infercnv thresholds, LOSO, compute plan) and open questions Q1–Q2 |
+| `code/l2/` | L2 steps: `l2_build.py`, `l2_scvi.py` (scvi-env), `l2_label.py`, `l2_cnv_prep.py` + `l2_infercnv.R`, `l2_finalize.py`; `run_l2_step.sh` / `submit_l2.sh smoke\|full` (SGE chain) |
 | `code/l2_config.yaml` | machine-readable copy of the L2 parameters, panels and Atlas fine → L2 crosswalk |
 
 ## Tables (`tables/input_validation/`)

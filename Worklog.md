@@ -368,3 +368,15 @@ non-malignant / uncertain.
   - Methods wording;
   - a smoke test before the full submission.
 - **Project ledger:** WL-20261009-041.
+
+## 2026-10-09 — Fig. 1B L2: code, smoke test passed, full chain submitted
+
+- **Code:** `analyses/2026-10-09_fig1b-cytotrace2/code/l2/`, five steps chained on SGE all.q. No step reads
+  CytoTRACE2 output.
+- **Smoke test** (2 studies × 2 patients, 14,136 cells):
+  - **First run:** found scVI thread oversubscription (about 32 threads on 4 slots). Fixed by capping all
+    thread pools to NSLOTS, which made an epoch about 25× faster.
+  - **Second run:** found a JSON bool error in the convergence log; fixed.
+  - **Third run:** all six steps completed; the repair path ran. Outputs were deleted unread (C6).
+- **Full run:** SGE jobs 3654572–3654577 (infercnv array over 222 patients).
+- **Project ledger:** WL-20261009-042.
