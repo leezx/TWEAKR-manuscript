@@ -142,3 +142,39 @@ The contract notes that depth matching cannot remove intrinsic differences in tr
    - Is showing depth-matched rows inside B2 preferred, or should they move to Extended Data?
 3. Should the MUI Epithelial − Immune outlier (BD Rhapsody) be flagged in the legend? It does not change the pooled estimate (LOSO 0.071–0.077).
 4. Are the permissive and HTAPP gaps acceptable as "not run", or should we export the 11 patients for permissive (a dated amendment)?
+
+## 6. Review outcome (2026-10-10): results approved, figure production GO
+
+| Item | Decision |
+|---|---|
+| Full CytoTRACE2 execution | COMPLETE |
+| Primary L1 statistics | APPROVED |
+| Sensitivity analyses | APPROVED; permissive 20/5 and HTAPP are stated as "pre-specified but not performed" |
+| L2 descriptive landscape | APPROVED |
+| Results wording | APPROVED with revision (see below) |
+| Fig. 1B production | GO |
+
+**Wording.** "consistent ... in all pre-specified sensitivity analyses" is replaced by "preserved across the completed sensitivity analyses". The Results must also state:
+
+- depth matching attenuated effects by about 43–55%;
+- the ordering was preserved, but the differences were *not* unaffected by depth;
+- fibroblasts showing the highest predicted potential may reflect lineage-specific programmes.
+
+The text must not say "fibroblasts are the primary source of cellular plasticity".
+
+**Layout:**
+
+- **B1:** patient-level L1 scores (box plus points, coloured or shaped by study, 222 patients).
+- **B2:** the three pooled contrasts with 95% CI, original vs depth-matched, on a common effect axis with a zero line.
+- **Extended Data:**
+  - 13-study forest plots;
+  - 95% PIs, encoded differently from CIs;
+  - raw-model and depth-matched raw results;
+  - L2 landscape and study × type heatmap.
+
+**MUI.** Flag it in the legend: *"The MUI Innsbruck cohort, profiled using BD Rhapsody, showed a larger epithelial–immune difference than the other cohorts; exclusion of this study did not materially alter the pooled estimate."* Do not attribute the difference to the platform.
+
+**Methods must state:**
+
+- the three pooled contrasts are pooled separately and need not add up;
+- the detection-adjusted estimate is the per-study regression intercept at zero detected-gene difference; it is secondary and exploratory, and never ranks above the depth-matched results.
