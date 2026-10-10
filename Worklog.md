@@ -406,3 +406,10 @@ non-malignant / uncertain.
   - Same sign in 13/13 studies and in every sensitivity analysis.
   - Depth matching halves the effects; depth-matched raw E−I is +0.012.
 - **Report:** `docs/Full_run_results.md`; tables in `tables/full/`. Submitted for results review.
+
+## 2026-10-10 — Fig. 1b figures produced (nature-figure, Python)
+
+- **Main panel:** `figures/fig1b/` — patient-level L1 scores, plus pooled contrasts for original vs depth-matched counts. 120 × 52 mm.
+- **Extended Data:** `figures/ed_fig1b/` — cohort forest plots (CI and PI encoded differently), sensitivity summary, L2 landscape, cohort × type heatmap. 183 × 190 mm.
+- **QA:** editable Arial text; text ≥5 pt; TIFFs at 600 dpi; source data, legends and QA notes included. The Illustrator check is still to be done by hand.
+- **Deliverables:** copied to `manuscript/Figures/Figure1/Fig1b/` in the project workspace.

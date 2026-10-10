@@ -115,11 +115,11 @@ def l2_landscape(ax, l2):
                        capprops=dict(linewidth=0))
             sub = l2[l2.group == t]
             ax.text(xi, 0.815, f"{sub.patient_id.nunique()}\n{sub.study_id.nunique()}", ha="center", va="bottom",
-                    fontsize=4.5, linespacing=1.0, clip_on=False)
+                    fontsize=5, linespacing=1.0, clip_on=False)
             ticks.append(xi); labs.append(t.replace("Malignant epithelial", "Malignant epi.*"))
             xi += 1
         xi += 0.5
-    ax.text(-1.0, 0.815, "patients\ncohorts", ha="right", va="bottom", fontsize=4.5, linespacing=1.0,
+    ax.text(-1.0, 0.815, "patients\ncohorts", ha="right", va="bottom", fontsize=5, linespacing=1.0,
             clip_on=False)
     ax.set_xticks(ticks, labs, rotation=45, ha="right")
     ax.set_xlim(-0.7, xi - 0.8)

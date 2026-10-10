@@ -2,8 +2,7 @@
 
 - **Claim:** the Fig. 1b ordering holds in each cohort and in every completed sensitivity analysis; its magnitude depends on sequencing depth; the stromal signal is concentrated in fibroblasts.
 - **Backend:** Python only (matplotlib 3.11.1).
-- **Size:** 183 × 190 mm. Text is 4.5–5.5 pt; panel labels are 8 pt bold.
-  - The patient/cohort counts in panel c are 4.5 pt, below the project's 5-pt floor. Raise them during Illustrator harmonisation, or drop them to the legend.
+- **Size:** 183 × 190 mm. Text is 5–5.5 pt; panel labels are 8 pt bold. The panel c counts were raised from 4.5 pt to 5 pt to meet the project floor.
 - **CI vs PI:** encoded differently, as the review required. The CI is a blue diamond; the PI is a thick light-grey bar.
 - **Colours:**
   - Compartments use the same colours as Fig. 1b.
