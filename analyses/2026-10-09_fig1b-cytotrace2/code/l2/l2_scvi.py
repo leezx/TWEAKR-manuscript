@@ -61,12 +61,15 @@ def main():
     ap.add_argument("--config", required=True)
     ap.add_argument("--run-root", required=True)
     ap.add_argument("--lineage", required=True, choices=LINEAGES)
+    ap.add_argument("--smoke-base-epochs", type=int, default=0,
+                    help="smoke test only: replaces the frozen epoch rule to test the pipeline quickly")
     a = ap.parse_args()
     cfg = load_cfg(a.config)
     P = run_paths(a.run_root)
     s = cfg["scvi"]
     nthreads = int(os.environ.get("NSLOTS", "8"))
     torch.set_num_threads(nthreads)
+    torch.set_num_interop_threads(1)
     scvi.settings.seed = s["seed"]
     scvi.settings.num_threads = nthreads
 
@@ -80,6 +83,8 @@ def main():
                                   categorical_covariate_keys=s["categorical_covariate_keys"])
     n = sub.n_obs
     base = int(min(400, round(20000 / n * 400)))
+    if a.smoke_base_epochs:
+        base = a.smoke_base_epochs
     conv = s["convergence"]
     attempts = [base] + [min(conv["max_epochs_cap"], base * m) for m in conv["repair_multipliers"]]
     log = []

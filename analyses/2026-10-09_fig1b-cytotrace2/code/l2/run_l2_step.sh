@@ -7,6 +7,9 @@ step=$1; R=$2; shift 2
 C=$R/code
 export R_LIBS=/home/zz950/softwares/R_lib_4
 export PYTHONPATH=$C/l2
+# cap every thread pool to the granted slots (the first smoke run oversubscribed: ~32 threads on 4 slots)
+N=${NSLOTS:-1}
+export OMP_NUM_THREADS=$N MKL_NUM_THREADS=$N OPENBLAS_NUM_THREADS=$N NUMEXPR_NUM_THREADS=$N NUMBA_NUM_THREADS=$N
 PY=/home/zz950/softwares/miniconda3/envs/r4p3/bin/python
 SCVI=/home/zz950/softwares/miniconda3/envs/scvi-env/bin/python
 RS=/home/zz950/softwares/miniconda3/envs/r4p3/bin/Rscript
@@ -14,7 +17,7 @@ LIN=(Epithelial Immune Stromal)
 cd $R
 case $step in
   build)    /usr/bin/time -v $PY $C/l2/l2_build.py --config $C/l2_config.yaml --run-root $R "$@" ;;
-  scvi)     /usr/bin/time -v $SCVI $C/l2/l2_scvi.py --config $C/l2_config.yaml --run-root $R --lineage ${LIN[$((SGE_TASK_ID-1))]} ;;
+  scvi)     /usr/bin/time -v $SCVI $C/l2/l2_scvi.py --config $C/l2_config.yaml --run-root $R --lineage ${LIN[$((SGE_TASK_ID-1))]} "$@" ;;
   label)    /usr/bin/time -v $PY $C/l2/l2_label.py --config $C/l2_config.yaml --run-root $R --lineage ${LIN[$((SGE_TASK_ID-1))]} --revcsc-gmt $C/revCSC.human.gmt ;;
   cnvprep)  /usr/bin/time -v $PY $C/l2/l2_cnv_prep.py --config $C/l2_config.yaml --run-root $R ;;
   infercnv)
