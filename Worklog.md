@@ -380,3 +380,14 @@ non-malignant / uncertain.
   - **Third run:** all six steps completed; the repair path ran. Outputs were deleted unread (C6).
 - **Full run:** SGE jobs 3654572–3654577 (infercnv array over 222 patients).
 - **Project ledger:** WL-20261009-042.
+
+## 2026-10-10 — Fig. 1B L2: full run completed, quality report
+
+- **Full chain:** completed; 222/222 infercnv outputs. Candidate `annotation_v1` SHA256 `1d8148063d83…`, not yet frozen.
+- **Report:** `docs/L2_annotation_QC_report.md`; light tables are in `tables/l2/`.
+- **Main finding:** 86.9% of epithelial cells are malignancy-Uncertain.
+  - 5/13 studies fail the study-level CNV gate.
+  - CNV clarity is confounded with microsatellite status: 4.5% of MSI-H patients are CNV-clear vs 67.5% of MSS.
+- **Immune scVI:** converged at 0.496%, just under the 0.5% limit.
+- **Next:** decisions A/B/C go to the annotation-quality review.
+- **Project ledger:** WL-20261010-003.

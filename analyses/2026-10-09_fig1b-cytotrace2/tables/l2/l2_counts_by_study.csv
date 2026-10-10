@@ -1,0 +1,294 @@
+study_id,celltype_L1,celltype_L2,n_cells,n_patients
+Chen_2024_Cancer_Cell,Epithelial,"Epithelial, malignancy uncertain",27960,19
+Chen_2024_Cancer_Cell,Epithelial,L1_flagged,150,18
+Chen_2024_Cancer_Cell,Immune,B,6276,19
+Chen_2024_Cancer_Cell,Immune,CD4 T,18682,19
+Chen_2024_Cancer_Cell,Immune,CD8 T,17481,19
+Chen_2024_Cancer_Cell,Immune,Dendritic cell,78,14
+Chen_2024_Cancer_Cell,Immune,L1_flagged,107,17
+Chen_2024_Cancer_Cell,Immune,Macrophage,326,19
+Chen_2024_Cancer_Cell,Immune,Mast,1081,19
+Chen_2024_Cancer_Cell,Immune,Monocyte,1210,18
+Chen_2024_Cancer_Cell,Immune,NK,1793,19
+Chen_2024_Cancer_Cell,Immune,Neutrophil,25,7
+Chen_2024_Cancer_Cell,Immune,Plasma,7817,19
+Chen_2024_Cancer_Cell,Immune,Unclassified immune,2539,19
+Chen_2024_Cancer_Cell,Other,Other (not annotated),82,12
+Chen_2024_Cancer_Cell,Stromal,Endothelial,1325,19
+Chen_2024_Cancer_Cell,Stromal,Fibroblast,1398,19
+Chen_2024_Cancer_Cell,Stromal,L1_flagged,117,18
+Chen_2024_Cancer_Cell,Stromal,Pericyte,514,19
+Chen_2024_Cancer_Cell,Stromal,Smooth muscle,102,15
+Chen_2024_Cancer_Cell,Stromal,Unclassified stromal,43,14
+Guo_2022_JCI_Insight,Epithelial,Enteroendocrine,1,1
+Guo_2022_JCI_Insight,Epithelial,"Epithelial, malignancy uncertain",2309,6
+Guo_2022_JCI_Insight,Epithelial,L1_flagged,11,4
+Guo_2022_JCI_Insight,Epithelial,Malignant epithelial,890,3
+Guo_2022_JCI_Insight,Epithelial,Unclassified epithelial,30,1
+Guo_2022_JCI_Insight,Immune,B,4746,6
+Guo_2022_JCI_Insight,Immune,CD4 T,6157,6
+Guo_2022_JCI_Insight,Immune,CD8 T,2470,6
+Guo_2022_JCI_Insight,Immune,L1_flagged,3,2
+Guo_2022_JCI_Insight,Immune,Macrophage,1669,6
+Guo_2022_JCI_Insight,Immune,Mast,540,6
+Guo_2022_JCI_Insight,Immune,Monocyte,707,6
+Guo_2022_JCI_Insight,Immune,NK,484,6
+Guo_2022_JCI_Insight,Immune,Neutrophil,1358,6
+Guo_2022_JCI_Insight,Immune,Plasma,842,6
+Guo_2022_JCI_Insight,Immune,Unclassified immune,1145,6
+Guo_2022_JCI_Insight,Other,Other (not annotated),10,5
+Guo_2022_JCI_Insight,Stromal,Endothelial,469,6
+Guo_2022_JCI_Insight,Stromal,Fibroblast,990,6
+Guo_2022_JCI_Insight,Stromal,L1_flagged,15,6
+Guo_2022_JCI_Insight,Stromal,Pericyte,351,6
+Guo_2022_JCI_Insight,Stromal,Smooth muscle,117,5
+Guo_2022_JCI_Insight,Stromal,Unclassified stromal,93,6
+Joanito_2022_Nat_Genet,Epithelial,Enteroendocrine,4,3
+Joanito_2022_Nat_Genet,Epithelial,"Epithelial, malignancy uncertain",10194,30
+Joanito_2022_Nat_Genet,Epithelial,L1_flagged,4434,30
+Joanito_2022_Nat_Genet,Epithelial,Malignant epithelial,10014,22
+Joanito_2022_Nat_Genet,Epithelial,Unclassified epithelial,1,1
+Joanito_2022_Nat_Genet,Immune,B,10776,30
+Joanito_2022_Nat_Genet,Immune,CD4 T,38273,30
+Joanito_2022_Nat_Genet,Immune,CD8 T,24348,30
+Joanito_2022_Nat_Genet,Immune,Dendritic cell,625,30
+Joanito_2022_Nat_Genet,Immune,L1_flagged,1393,30
+Joanito_2022_Nat_Genet,Immune,Macrophage,15669,30
+Joanito_2022_Nat_Genet,Immune,Mast,1736,30
+Joanito_2022_Nat_Genet,Immune,Monocyte,7059,30
+Joanito_2022_Nat_Genet,Immune,NK,2285,30
+Joanito_2022_Nat_Genet,Immune,Neutrophil,1691,28
+Joanito_2022_Nat_Genet,Immune,Plasma,24036,30
+Joanito_2022_Nat_Genet,Immune,Unclassified immune,4160,30
+Joanito_2022_Nat_Genet,Other,Other (not annotated),1377,29
+Joanito_2022_Nat_Genet,Stromal,Endothelial,6625,30
+Joanito_2022_Nat_Genet,Stromal,Fibroblast,17655,30
+Joanito_2022_Nat_Genet,Stromal,L1_flagged,3100,30
+Joanito_2022_Nat_Genet,Stromal,Pericyte,3354,30
+Joanito_2022_Nat_Genet,Stromal,Smooth muscle,2487,30
+Joanito_2022_Nat_Genet,Stromal,Unclassified stromal,335,28
+Khaliq_2022_Genome_Biol,Epithelial,Enteroendocrine,1,1
+Khaliq_2022_Genome_Biol,Epithelial,"Epithelial, malignancy uncertain",3050,7
+Khaliq_2022_Genome_Biol,Epithelial,L1_flagged,59,7
+Khaliq_2022_Genome_Biol,Epithelial,Malignant epithelial,1492,6
+Khaliq_2022_Genome_Biol,Epithelial,Unclassified epithelial,5,3
+Khaliq_2022_Genome_Biol,Immune,B,790,7
+Khaliq_2022_Genome_Biol,Immune,CD4 T,3551,7
+Khaliq_2022_Genome_Biol,Immune,CD8 T,937,7
+Khaliq_2022_Genome_Biol,Immune,Dendritic cell,9,4
+Khaliq_2022_Genome_Biol,Immune,L1_flagged,39,7
+Khaliq_2022_Genome_Biol,Immune,Macrophage,274,7
+Khaliq_2022_Genome_Biol,Immune,Mast,72,7
+Khaliq_2022_Genome_Biol,Immune,Monocyte,217,7
+Khaliq_2022_Genome_Biol,Immune,NK,254,7
+Khaliq_2022_Genome_Biol,Immune,Neutrophil,6,3
+Khaliq_2022_Genome_Biol,Immune,Plasma,959,7
+Khaliq_2022_Genome_Biol,Immune,Unclassified immune,288,7
+Khaliq_2022_Genome_Biol,Other,Other (not annotated),12,4
+Khaliq_2022_Genome_Biol,Stromal,Endothelial,318,7
+Khaliq_2022_Genome_Biol,Stromal,Fibroblast,382,7
+Khaliq_2022_Genome_Biol,Stromal,L1_flagged,24,7
+Khaliq_2022_Genome_Biol,Stromal,Pericyte,168,7
+Khaliq_2022_Genome_Biol,Stromal,Smooth muscle,42,7
+Khaliq_2022_Genome_Biol,Stromal,Unclassified stromal,29,5
+Lee_2020_Nat_Genet,Epithelial,"Epithelial, malignancy uncertain",16427,28
+Lee_2020_Nat_Genet,Epithelial,L1_flagged,1482,25
+Lee_2020_Nat_Genet,Epithelial,Malignant epithelial,3629,14
+Lee_2020_Nat_Genet,Immune,B,5026,28
+Lee_2020_Nat_Genet,Immune,CD4 T,16148,28
+Lee_2020_Nat_Genet,Immune,CD8 T,9455,28
+Lee_2020_Nat_Genet,Immune,Dendritic cell,123,21
+Lee_2020_Nat_Genet,Immune,L1_flagged,882,24
+Lee_2020_Nat_Genet,Immune,Macrophage,4750,28
+Lee_2020_Nat_Genet,Immune,Mast,646,16
+Lee_2020_Nat_Genet,Immune,Monocyte,3730,28
+Lee_2020_Nat_Genet,Immune,NK,1377,28
+Lee_2020_Nat_Genet,Immune,Neutrophil,208,18
+Lee_2020_Nat_Genet,Immune,Plasma,3549,28
+Lee_2020_Nat_Genet,Immune,Unclassified immune,2913,28
+Lee_2020_Nat_Genet,Other,Other (not annotated),187,18
+Lee_2020_Nat_Genet,Stromal,Endothelial,2228,28
+Lee_2020_Nat_Genet,Stromal,Fibroblast,4173,28
+Lee_2020_Nat_Genet,Stromal,L1_flagged,677,25
+Lee_2020_Nat_Genet,Stromal,Pericyte,1047,28
+Lee_2020_Nat_Genet,Stromal,Smooth muscle,443,23
+Lee_2020_Nat_Genet,Stromal,Unclassified stromal,219,23
+Li_2023_Cancer_Cell,Epithelial,"Epithelial, malignancy uncertain",16808,9
+Li_2023_Cancer_Cell,Epithelial,L1_flagged,1008,9
+Li_2023_Cancer_Cell,Immune,B,4722,9
+Li_2023_Cancer_Cell,Immune,CD4 T,4496,9
+Li_2023_Cancer_Cell,Immune,CD8 T,3864,9
+Li_2023_Cancer_Cell,Immune,Dendritic cell,40,8
+Li_2023_Cancer_Cell,Immune,L1_flagged,135,9
+Li_2023_Cancer_Cell,Immune,Macrophage,716,9
+Li_2023_Cancer_Cell,Immune,Mast,55,6
+Li_2023_Cancer_Cell,Immune,Monocyte,1290,9
+Li_2023_Cancer_Cell,Immune,NK,504,9
+Li_2023_Cancer_Cell,Immune,Neutrophil,22,6
+Li_2023_Cancer_Cell,Immune,Plasma,2073,9
+Li_2023_Cancer_Cell,Immune,Unclassified immune,1250,9
+Li_2023_Cancer_Cell,Other,Other (not annotated),24,3
+Li_2023_Cancer_Cell,Stromal,Endothelial,2032,9
+Li_2023_Cancer_Cell,Stromal,Fibroblast,772,9
+Li_2023_Cancer_Cell,Stromal,L1_flagged,247,9
+Li_2023_Cancer_Cell,Stromal,Pericyte,459,9
+Li_2023_Cancer_Cell,Stromal,Smooth muscle,111,9
+Li_2023_Cancer_Cell,Stromal,Unclassified stromal,153,9
+Liu_2024_Cancer_Res,Epithelial,Enteroendocrine,2,1
+Liu_2024_Cancer_Res,Epithelial,"Epithelial, malignancy uncertain",4364,12
+Liu_2024_Cancer_Res,Epithelial,L1_flagged,650,12
+Liu_2024_Cancer_Res,Epithelial,Malignant epithelial,8196,12
+Liu_2024_Cancer_Res,Epithelial,Unclassified epithelial,1,1
+Liu_2024_Cancer_Res,Immune,B,3335,12
+Liu_2024_Cancer_Res,Immune,CD4 T,13661,12
+Liu_2024_Cancer_Res,Immune,CD8 T,5469,12
+Liu_2024_Cancer_Res,Immune,Dendritic cell,167,10
+Liu_2024_Cancer_Res,Immune,L1_flagged,92,10
+Liu_2024_Cancer_Res,Immune,Macrophage,1810,12
+Liu_2024_Cancer_Res,Immune,Mast,1363,12
+Liu_2024_Cancer_Res,Immune,Monocyte,1465,10
+Liu_2024_Cancer_Res,Immune,NK,849,12
+Liu_2024_Cancer_Res,Immune,Neutrophil,2534,10
+Liu_2024_Cancer_Res,Immune,Plasma,10310,12
+Liu_2024_Cancer_Res,Immune,Unclassified immune,1408,12
+Liu_2024_Cancer_Res,Other,Other (not annotated),48,5
+Liu_2024_Cancer_Res,Stromal,Endothelial,1284,11
+Liu_2024_Cancer_Res,Stromal,Fibroblast,3065,12
+Liu_2024_Cancer_Res,Stromal,L1_flagged,418,12
+Liu_2024_Cancer_Res,Stromal,Pericyte,1059,12
+Liu_2024_Cancer_Res,Stromal,Smooth muscle,394,10
+Liu_2024_Cancer_Res,Stromal,Unclassified stromal,150,10
+MUI_Innsbruck,Epithelial,Enteroendocrine,6,3
+MUI_Innsbruck,Epithelial,"Epithelial, malignancy uncertain",10108,12
+MUI_Innsbruck,Epithelial,L1_flagged,185,12
+MUI_Innsbruck,Epithelial,Malignant epithelial,5752,8
+MUI_Innsbruck,Epithelial,Unclassified epithelial,11,5
+MUI_Innsbruck,Immune,B,1625,12
+MUI_Innsbruck,Immune,CD4 T,5457,12
+MUI_Innsbruck,Immune,CD8 T,3666,12
+MUI_Innsbruck,Immune,Dendritic cell,12,6
+MUI_Innsbruck,Immune,L1_flagged,69,10
+MUI_Innsbruck,Immune,Macrophage,1026,12
+MUI_Innsbruck,Immune,Mast,276,12
+MUI_Innsbruck,Immune,Monocyte,1693,12
+MUI_Innsbruck,Immune,NK,204,10
+MUI_Innsbruck,Immune,Neutrophil,11896,12
+MUI_Innsbruck,Immune,Plasma,3200,12
+MUI_Innsbruck,Immune,Unclassified immune,959,12
+MUI_Innsbruck,Other,Other (not annotated),19,5
+MUI_Innsbruck,Stromal,Endothelial,895,12
+MUI_Innsbruck,Stromal,Fibroblast,453,12
+MUI_Innsbruck,Stromal,L1_flagged,45,7
+MUI_Innsbruck,Stromal,Pericyte,232,12
+MUI_Innsbruck,Stromal,Smooth muscle,100,10
+MUI_Innsbruck,Stromal,Unclassified stromal,158,12
+Pelka_2021_Cell,Epithelial,"Epithelial, malignancy uncertain",81886,50
+Pelka_2021_Cell,Epithelial,L1_flagged,8986,50
+Pelka_2021_Cell,Immune,B,11488,50
+Pelka_2021_Cell,Immune,CD4 T,21356,50
+Pelka_2021_Cell,Immune,CD8 T,19021,50
+Pelka_2021_Cell,Immune,Dendritic cell,296,42
+Pelka_2021_Cell,Immune,L1_flagged,1342,50
+Pelka_2021_Cell,Immune,Macrophage,15687,50
+Pelka_2021_Cell,Immune,Mast,2482,48
+Pelka_2021_Cell,Immune,Monocyte,9587,50
+Pelka_2021_Cell,Immune,NK,5440,50
+Pelka_2021_Cell,Immune,Neutrophil,1569,42
+Pelka_2021_Cell,Immune,Plasma,15770,49
+Pelka_2021_Cell,Immune,Unclassified immune,7510,50
+Pelka_2021_Cell,Other,Other (not annotated),97,22
+Pelka_2021_Cell,Stromal,Endothelial,3876,50
+Pelka_2021_Cell,Stromal,Fibroblast,2488,50
+Pelka_2021_Cell,Stromal,L1_flagged,796,50
+Pelka_2021_Cell,Stromal,Pericyte,1288,50
+Pelka_2021_Cell,Stromal,Smooth muscle,354,39
+Pelka_2021_Cell,Stromal,Unclassified stromal,323,47
+Qi_2022_Nat_Commun,Epithelial,Enteroendocrine,2,2
+Qi_2022_Nat_Commun,Epithelial,"Epithelial, malignancy uncertain",5408,5
+Qi_2022_Nat_Commun,Epithelial,L1_flagged,175,5
+Qi_2022_Nat_Commun,Epithelial,Malignant epithelial,992,4
+Qi_2022_Nat_Commun,Immune,B,955,5
+Qi_2022_Nat_Commun,Immune,CD4 T,4006,5
+Qi_2022_Nat_Commun,Immune,CD8 T,2870,5
+Qi_2022_Nat_Commun,Immune,Dendritic cell,28,5
+Qi_2022_Nat_Commun,Immune,L1_flagged,164,5
+Qi_2022_Nat_Commun,Immune,Macrophage,2320,5
+Qi_2022_Nat_Commun,Immune,Mast,654,5
+Qi_2022_Nat_Commun,Immune,Monocyte,534,5
+Qi_2022_Nat_Commun,Immune,NK,306,5
+Qi_2022_Nat_Commun,Immune,Neutrophil,206,5
+Qi_2022_Nat_Commun,Immune,Plasma,1436,5
+Qi_2022_Nat_Commun,Immune,Unclassified immune,513,5
+Qi_2022_Nat_Commun,Other,Other (not annotated),131,4
+Qi_2022_Nat_Commun,Stromal,Endothelial,1013,5
+Qi_2022_Nat_Commun,Stromal,Fibroblast,1476,5
+Qi_2022_Nat_Commun,Stromal,L1_flagged,539,5
+Qi_2022_Nat_Commun,Stromal,Pericyte,224,5
+Qi_2022_Nat_Commun,Stromal,Smooth muscle,216,5
+Qi_2022_Nat_Commun,Stromal,Unclassified stromal,57,5
+Qian_2020_Cell_Res,Epithelial,"Epithelial, malignancy uncertain",8617,7
+Qian_2020_Cell_Res,Epithelial,L1_flagged,1143,6
+Qian_2020_Cell_Res,Immune,B,2437,7
+Qian_2020_Cell_Res,Immune,CD4 T,3944,7
+Qian_2020_Cell_Res,Immune,CD8 T,2128,7
+Qian_2020_Cell_Res,Immune,Dendritic cell,63,7
+Qian_2020_Cell_Res,Immune,L1_flagged,769,6
+Qian_2020_Cell_Res,Immune,Macrophage,1463,7
+Qian_2020_Cell_Res,Immune,Mast,436,7
+Qian_2020_Cell_Res,Immune,Monocyte,659,7
+Qian_2020_Cell_Res,Immune,NK,317,7
+Qian_2020_Cell_Res,Immune,Neutrophil,103,6
+Qian_2020_Cell_Res,Immune,Plasma,1399,7
+Qian_2020_Cell_Res,Immune,Unclassified immune,864,7
+Qian_2020_Cell_Res,Other,Other (not annotated),150,6
+Qian_2020_Cell_Res,Stromal,Endothelial,1441,7
+Qian_2020_Cell_Res,Stromal,Fibroblast,2377,7
+Qian_2020_Cell_Res,Stromal,L1_flagged,1158,7
+Qian_2020_Cell_Res,Stromal,Pericyte,624,7
+Qian_2020_Cell_Res,Stromal,Smooth muscle,340,7
+Qian_2020_Cell_Res,Stromal,Unclassified stromal,189,7
+Qin_2023_Cell_Rep_Med,Epithelial,"Epithelial, malignancy uncertain",35682,27
+Qin_2023_Cell_Rep_Med,Epithelial,L1_flagged,1013,26
+Qin_2023_Cell_Rep_Med,Immune,B,7448,27
+Qin_2023_Cell_Rep_Med,Immune,CD4 T,25223,27
+Qin_2023_Cell_Rep_Med,Immune,CD8 T,10222,27
+Qin_2023_Cell_Rep_Med,Immune,Dendritic cell,260,25
+Qin_2023_Cell_Rep_Med,Immune,L1_flagged,621,27
+Qin_2023_Cell_Rep_Med,Immune,Macrophage,2215,27
+Qin_2023_Cell_Rep_Med,Immune,Mast,1665,27
+Qin_2023_Cell_Rep_Med,Immune,Monocyte,70,18
+Qin_2023_Cell_Rep_Med,Immune,NK,1984,27
+Qin_2023_Cell_Rep_Med,Immune,Neutrophil,7,3
+Qin_2023_Cell_Rep_Med,Immune,Plasma,43881,27
+Qin_2023_Cell_Rep_Med,Immune,Unclassified immune,6152,27
+Qin_2023_Cell_Rep_Med,Other,Other (not annotated),105,19
+Qin_2023_Cell_Rep_Med,Stromal,Endothelial,3785,27
+Qin_2023_Cell_Rep_Med,Stromal,Fibroblast,4890,27
+Qin_2023_Cell_Rep_Med,Stromal,L1_flagged,571,27
+Qin_2023_Cell_Rep_Med,Stromal,Pericyte,4141,27
+Qin_2023_Cell_Rep_Med,Stromal,Smooth muscle,251,26
+Qin_2023_Cell_Rep_Med,Stromal,Unclassified stromal,513,27
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,Enteroendocrine,4,1
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,"Epithelial, malignancy uncertain",8133,10
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,L1_flagged,627,10
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,Malignant epithelial,3799,9
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,Unclassified epithelial,2,2
+Uhlitz_2021_EMBO_Mol_Med,Immune,B,1879,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,CD4 T,6389,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,CD8 T,2971,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,Dendritic cell,62,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,L1_flagged,146,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,Macrophage,1338,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,Mast,429,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,Monocyte,823,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,NK,589,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,Neutrophil,104,8
+Uhlitz_2021_EMBO_Mol_Med,Immune,Plasma,6408,10
+Uhlitz_2021_EMBO_Mol_Med,Immune,Unclassified immune,826,10
+Uhlitz_2021_EMBO_Mol_Med,Other,Other (not annotated),81,9
+Uhlitz_2021_EMBO_Mol_Med,Stromal,Endothelial,470,10
+Uhlitz_2021_EMBO_Mol_Med,Stromal,Fibroblast,969,10
+Uhlitz_2021_EMBO_Mol_Med,Stromal,L1_flagged,118,10
+Uhlitz_2021_EMBO_Mol_Med,Stromal,Pericyte,249,10
+Uhlitz_2021_EMBO_Mol_Med,Stromal,Smooth muscle,239,10
+Uhlitz_2021_EMBO_Mol_Med,Stromal,Unclassified stromal,44,9

@@ -1,0 +1,66 @@
+study_id,celltype_L1,celltype_L2,n_cells
+Chen_2024_Cancer_Cell,Epithelial,"Epithelial, malignancy uncertain",27960
+Chen_2024_Cancer_Cell,Epithelial,L1_flagged,150
+Chen_2024_Cancer_Cell,Immune,L1_flagged,107
+Chen_2024_Cancer_Cell,Other,Other (not annotated),82
+Chen_2024_Cancer_Cell,Stromal,L1_flagged,117
+Guo_2022_JCI_Insight,Epithelial,"Epithelial, malignancy uncertain",2309
+Guo_2022_JCI_Insight,Epithelial,L1_flagged,11
+Guo_2022_JCI_Insight,Immune,L1_flagged,3
+Guo_2022_JCI_Insight,Other,Other (not annotated),10
+Guo_2022_JCI_Insight,Stromal,L1_flagged,15
+Joanito_2022_Nat_Genet,Epithelial,"Epithelial, malignancy uncertain",10194
+Joanito_2022_Nat_Genet,Epithelial,L1_flagged,4434
+Joanito_2022_Nat_Genet,Immune,L1_flagged,1393
+Joanito_2022_Nat_Genet,Other,Other (not annotated),1377
+Joanito_2022_Nat_Genet,Stromal,L1_flagged,3100
+Khaliq_2022_Genome_Biol,Epithelial,"Epithelial, malignancy uncertain",3050
+Khaliq_2022_Genome_Biol,Epithelial,L1_flagged,59
+Khaliq_2022_Genome_Biol,Immune,L1_flagged,39
+Khaliq_2022_Genome_Biol,Other,Other (not annotated),12
+Khaliq_2022_Genome_Biol,Stromal,L1_flagged,24
+Lee_2020_Nat_Genet,Epithelial,"Epithelial, malignancy uncertain",16427
+Lee_2020_Nat_Genet,Epithelial,L1_flagged,1482
+Lee_2020_Nat_Genet,Immune,L1_flagged,882
+Lee_2020_Nat_Genet,Other,Other (not annotated),187
+Lee_2020_Nat_Genet,Stromal,L1_flagged,677
+Li_2023_Cancer_Cell,Epithelial,"Epithelial, malignancy uncertain",16808
+Li_2023_Cancer_Cell,Epithelial,L1_flagged,1008
+Li_2023_Cancer_Cell,Immune,L1_flagged,135
+Li_2023_Cancer_Cell,Other,Other (not annotated),24
+Li_2023_Cancer_Cell,Stromal,L1_flagged,247
+Liu_2024_Cancer_Res,Epithelial,"Epithelial, malignancy uncertain",4364
+Liu_2024_Cancer_Res,Epithelial,L1_flagged,650
+Liu_2024_Cancer_Res,Immune,L1_flagged,92
+Liu_2024_Cancer_Res,Other,Other (not annotated),48
+Liu_2024_Cancer_Res,Stromal,L1_flagged,418
+MUI_Innsbruck,Epithelial,"Epithelial, malignancy uncertain",10108
+MUI_Innsbruck,Epithelial,L1_flagged,185
+MUI_Innsbruck,Immune,L1_flagged,69
+MUI_Innsbruck,Other,Other (not annotated),19
+MUI_Innsbruck,Stromal,L1_flagged,45
+Pelka_2021_Cell,Epithelial,"Epithelial, malignancy uncertain",81886
+Pelka_2021_Cell,Epithelial,L1_flagged,8986
+Pelka_2021_Cell,Immune,L1_flagged,1342
+Pelka_2021_Cell,Other,Other (not annotated),97
+Pelka_2021_Cell,Stromal,L1_flagged,796
+Qi_2022_Nat_Commun,Epithelial,"Epithelial, malignancy uncertain",5408
+Qi_2022_Nat_Commun,Epithelial,L1_flagged,175
+Qi_2022_Nat_Commun,Immune,L1_flagged,164
+Qi_2022_Nat_Commun,Other,Other (not annotated),131
+Qi_2022_Nat_Commun,Stromal,L1_flagged,539
+Qian_2020_Cell_Res,Epithelial,"Epithelial, malignancy uncertain",8617
+Qian_2020_Cell_Res,Epithelial,L1_flagged,1143
+Qian_2020_Cell_Res,Immune,L1_flagged,769
+Qian_2020_Cell_Res,Other,Other (not annotated),150
+Qian_2020_Cell_Res,Stromal,L1_flagged,1158
+Qin_2023_Cell_Rep_Med,Epithelial,"Epithelial, malignancy uncertain",35682
+Qin_2023_Cell_Rep_Med,Epithelial,L1_flagged,1013
+Qin_2023_Cell_Rep_Med,Immune,L1_flagged,621
+Qin_2023_Cell_Rep_Med,Other,Other (not annotated),105
+Qin_2023_Cell_Rep_Med,Stromal,L1_flagged,571
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,"Epithelial, malignancy uncertain",8133
+Uhlitz_2021_EMBO_Mol_Med,Epithelial,L1_flagged,627
+Uhlitz_2021_EMBO_Mol_Med,Immune,L1_flagged,146
+Uhlitz_2021_EMBO_Mol_Med,Other,Other (not annotated),81
+Uhlitz_2021_EMBO_Mol_Med,Stromal,L1_flagged,118

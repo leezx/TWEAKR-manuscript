@@ -1,0 +1,203 @@
+held_out_study,celltype_L2,n_cells,recall,lineage
+Guo_2022_JCI_Insight,Enteroendocrine,1,1.0,Epithelial
+Guo_2022_JCI_Insight,Malignant epithelial,890,1.0,Epithelial
+Guo_2022_JCI_Insight,Tuft,30,0.9333333333333333,Epithelial
+Joanito_2022_Nat_Genet,Enteroendocrine,4,1.0,Epithelial
+Joanito_2022_Nat_Genet,Malignant epithelial,10014,0.9995006990213701,Epithelial
+Joanito_2022_Nat_Genet,Tuft,1,0.0,Epithelial
+Khaliq_2022_Genome_Biol,Enteroendocrine,1,1.0,Epithelial
+Khaliq_2022_Genome_Biol,Malignant epithelial,1492,1.0,Epithelial
+Khaliq_2022_Genome_Biol,Tuft,5,1.0,Epithelial
+Lee_2020_Nat_Genet,Malignant epithelial,3629,1.0,Epithelial
+Liu_2024_Cancer_Res,Enteroendocrine,2,1.0,Epithelial
+Liu_2024_Cancer_Res,Malignant epithelial,8196,1.0,Epithelial
+Liu_2024_Cancer_Res,Tuft,1,1.0,Epithelial
+MUI_Innsbruck,Enteroendocrine,6,1.0,Epithelial
+MUI_Innsbruck,Malignant epithelial,5752,0.999826147426982,Epithelial
+MUI_Innsbruck,Tuft,10,1.0,Epithelial
+Qi_2022_Nat_Commun,Enteroendocrine,2,1.0,Epithelial
+Qi_2022_Nat_Commun,Malignant epithelial,992,0.998991935483871,Epithelial
+Uhlitz_2021_EMBO_Mol_Med,Enteroendocrine,4,1.0,Epithelial
+Uhlitz_2021_EMBO_Mol_Med,Malignant epithelial,3799,0.9992103185048697,Epithelial
+Uhlitz_2021_EMBO_Mol_Med,Tuft,2,1.0,Epithelial
+Chen_2024_Cancer_Cell,B,6276,0.9984066284257489,Immune
+Chen_2024_Cancer_Cell,CD4 T,18682,0.9601220426078578,Immune
+Chen_2024_Cancer_Cell,CD8 T,17481,0.9675647846233053,Immune
+Chen_2024_Cancer_Cell,Dendritic cell,78,0.7435897435897436,Immune
+Chen_2024_Cancer_Cell,Macrophage,326,0.9325153374233128,Immune
+Chen_2024_Cancer_Cell,Mast,1081,0.971322849213691,Immune
+Chen_2024_Cancer_Cell,Monocyte,1210,0.9570247933884297,Immune
+Chen_2024_Cancer_Cell,NK,1793,0.9369771332961517,Immune
+Chen_2024_Cancer_Cell,Neutrophil,25,0.96,Immune
+Chen_2024_Cancer_Cell,Plasma,7817,0.9888704106434694,Immune
+Guo_2022_JCI_Insight,B,4746,0.9964180362410451,Immune
+Guo_2022_JCI_Insight,CD4 T,6157,0.9853824914731201,Immune
+Guo_2022_JCI_Insight,CD8 T,2470,0.9307692307692308,Immune
+Guo_2022_JCI_Insight,Macrophage,1669,0.987417615338526,Immune
+Guo_2022_JCI_Insight,Mast,540,0.9962962962962963,Immune
+Guo_2022_JCI_Insight,Monocyte,707,0.9787835926449788,Immune
+Guo_2022_JCI_Insight,NK,484,0.8223140495867769,Immune
+Guo_2022_JCI_Insight,Neutrophil,1358,0.9941089837997055,Immune
+Guo_2022_JCI_Insight,Plasma,842,0.997624703087886,Immune
+Joanito_2022_Nat_Genet,B,10776,0.999072011878248,Immune
+Joanito_2022_Nat_Genet,CD4 T,38273,0.9749954275860268,Immune
+Joanito_2022_Nat_Genet,CD8 T,24348,0.9776573024478397,Immune
+Joanito_2022_Nat_Genet,Dendritic cell,625,0.8608,Immune
+Joanito_2022_Nat_Genet,Macrophage,15669,0.9664305316229498,Immune
+Joanito_2022_Nat_Genet,Mast,1736,0.9804147465437788,Immune
+Joanito_2022_Nat_Genet,Monocyte,7059,0.9694007649808755,Immune
+Joanito_2022_Nat_Genet,NK,2285,0.963238512035011,Immune
+Joanito_2022_Nat_Genet,Neutrophil,1691,0.9881726788882318,Immune
+Joanito_2022_Nat_Genet,Plasma,24036,0.9923864203694458,Immune
+Khaliq_2022_Genome_Biol,B,790,0.9987341772151899,Immune
+Khaliq_2022_Genome_Biol,CD4 T,3551,0.9859194593072373,Immune
+Khaliq_2022_Genome_Biol,CD8 T,937,0.9573105656350054,Immune
+Khaliq_2022_Genome_Biol,Dendritic cell,9,0.6666666666666666,Immune
+Khaliq_2022_Genome_Biol,Macrophage,274,0.9635036496350365,Immune
+Khaliq_2022_Genome_Biol,Mast,72,0.9861111111111112,Immune
+Khaliq_2022_Genome_Biol,Monocyte,217,0.9769585253456221,Immune
+Khaliq_2022_Genome_Biol,NK,254,0.9251968503937008,Immune
+Khaliq_2022_Genome_Biol,Neutrophil,6,0.8333333333333334,Immune
+Khaliq_2022_Genome_Biol,Plasma,959,0.9906152241918665,Immune
+Lee_2020_Nat_Genet,B,5026,0.9984082769598089,Immune
+Lee_2020_Nat_Genet,CD4 T,16148,0.9840847163735447,Immune
+Lee_2020_Nat_Genet,CD8 T,9455,0.953146483342147,Immune
+Lee_2020_Nat_Genet,Dendritic cell,123,0.8861788617886179,Immune
+Lee_2020_Nat_Genet,Macrophage,4750,0.9612631578947368,Immune
+Lee_2020_Nat_Genet,Mast,646,0.9814241486068112,Immune
+Lee_2020_Nat_Genet,Monocyte,3730,0.9447721179624665,Immune
+Lee_2020_Nat_Genet,NK,1377,0.8932461873638344,Immune
+Lee_2020_Nat_Genet,Neutrophil,208,0.9855769230769231,Immune
+Lee_2020_Nat_Genet,Plasma,3549,0.9960552268244576,Immune
+Li_2023_Cancer_Cell,B,4722,0.9915290131300296,Immune
+Li_2023_Cancer_Cell,CD4 T,4496,0.9855427046263345,Immune
+Li_2023_Cancer_Cell,CD8 T,3864,0.967391304347826,Immune
+Li_2023_Cancer_Cell,Dendritic cell,40,0.9,Immune
+Li_2023_Cancer_Cell,Macrophage,716,0.9650837988826816,Immune
+Li_2023_Cancer_Cell,Mast,55,0.9818181818181818,Immune
+Li_2023_Cancer_Cell,Monocyte,1290,0.9457364341085271,Immune
+Li_2023_Cancer_Cell,NK,504,0.9087301587301587,Immune
+Li_2023_Cancer_Cell,Neutrophil,22,0.9090909090909091,Immune
+Li_2023_Cancer_Cell,Plasma,2073,0.989387361312108,Immune
+Liu_2024_Cancer_Res,B,3335,0.9970014992503748,Immune
+Liu_2024_Cancer_Res,CD4 T,13661,0.9876290169094503,Immune
+Liu_2024_Cancer_Res,CD8 T,5469,0.9462424574876577,Immune
+Liu_2024_Cancer_Res,Dendritic cell,167,0.8143712574850299,Immune
+Liu_2024_Cancer_Res,Macrophage,1810,0.9779005524861878,Immune
+Liu_2024_Cancer_Res,Mast,1363,0.9772560528246516,Immune
+Liu_2024_Cancer_Res,Monocyte,1465,0.9863481228668942,Immune
+Liu_2024_Cancer_Res,NK,849,0.9528857479387515,Immune
+Liu_2024_Cancer_Res,Neutrophil,2534,0.9861878453038674,Immune
+Liu_2024_Cancer_Res,Plasma,10310,0.9913676042677012,Immune
+MUI_Innsbruck,B,1625,0.9981538461538462,Immune
+MUI_Innsbruck,CD4 T,5457,0.9884551951621771,Immune
+MUI_Innsbruck,CD8 T,3666,0.8936170212765957,Immune
+MUI_Innsbruck,Dendritic cell,12,0.75,Immune
+MUI_Innsbruck,Macrophage,1026,0.9649122807017544,Immune
+MUI_Innsbruck,Mast,276,0.9855072463768116,Immune
+MUI_Innsbruck,Monocyte,1693,0.9822799763733018,Immune
+MUI_Innsbruck,NK,204,0.8970588235294118,Immune
+MUI_Innsbruck,Neutrophil,11896,0.8816408876933423,Immune
+MUI_Innsbruck,Plasma,3200,0.9934375,Immune
+Pelka_2021_Cell,B,11488,0.9858983286908078,Immune
+Pelka_2021_Cell,CD4 T,21356,0.9786945120809141,Immune
+Pelka_2021_Cell,CD8 T,19021,0.9408022711739656,Immune
+Pelka_2021_Cell,Dendritic cell,296,0.7601351351351351,Immune
+Pelka_2021_Cell,Macrophage,15687,0.9432651239880155,Immune
+Pelka_2021_Cell,Mast,2482,0.9427880741337631,Immune
+Pelka_2021_Cell,Monocyte,9587,0.9184312089287577,Immune
+Pelka_2021_Cell,NK,5440,0.8972426470588235,Immune
+Pelka_2021_Cell,Neutrophil,1569,0.9553855959209687,Immune
+Pelka_2021_Cell,Plasma,15770,0.9834495878249842,Immune
+Qi_2022_Nat_Commun,B,955,0.9968586387434555,Immune
+Qi_2022_Nat_Commun,CD4 T,4006,0.9852720918622067,Immune
+Qi_2022_Nat_Commun,CD8 T,2870,0.9616724738675958,Immune
+Qi_2022_Nat_Commun,Dendritic cell,28,0.8928571428571429,Immune
+Qi_2022_Nat_Commun,Macrophage,2320,0.9771551724137931,Immune
+Qi_2022_Nat_Commun,Mast,654,0.963302752293578,Immune
+Qi_2022_Nat_Commun,Monocyte,534,0.9588014981273408,Immune
+Qi_2022_Nat_Commun,NK,306,0.9248366013071896,Immune
+Qi_2022_Nat_Commun,Neutrophil,206,0.9854368932038835,Immune
+Qi_2022_Nat_Commun,Plasma,1436,0.9923398328690808,Immune
+Qian_2020_Cell_Res,B,2437,0.9954862535904802,Immune
+Qian_2020_Cell_Res,CD4 T,3944,0.9883367139959433,Immune
+Qian_2020_Cell_Res,CD8 T,2128,0.9572368421052632,Immune
+Qian_2020_Cell_Res,Dendritic cell,63,0.8571428571428571,Immune
+Qian_2020_Cell_Res,Macrophage,1463,0.963773069036227,Immune
+Qian_2020_Cell_Res,Mast,436,0.9564220183486238,Immune
+Qian_2020_Cell_Res,Monocyte,659,0.9453717754172989,Immune
+Qian_2020_Cell_Res,NK,317,0.9211356466876972,Immune
+Qian_2020_Cell_Res,Neutrophil,103,0.9805825242718447,Immune
+Qian_2020_Cell_Res,Plasma,1399,0.9942816297355254,Immune
+Qin_2023_Cell_Rep_Med,B,7448,0.9844253490870032,Immune
+Qin_2023_Cell_Rep_Med,CD4 T,25223,0.9609086944455457,Immune
+Qin_2023_Cell_Rep_Med,CD8 T,10222,0.9614556838192134,Immune
+Qin_2023_Cell_Rep_Med,Dendritic cell,260,0.26153846153846155,Immune
+Qin_2023_Cell_Rep_Med,Macrophage,2215,0.8943566591422122,Immune
+Qin_2023_Cell_Rep_Med,Mast,1665,0.9747747747747748,Immune
+Qin_2023_Cell_Rep_Med,Monocyte,70,0.9142857142857143,Immune
+Qin_2023_Cell_Rep_Med,NK,1984,0.7399193548387096,Immune
+Qin_2023_Cell_Rep_Med,Neutrophil,7,1.0,Immune
+Qin_2023_Cell_Rep_Med,Plasma,43881,0.9649962398304506,Immune
+Uhlitz_2021_EMBO_Mol_Med,B,1879,0.9984034060670569,Immune
+Uhlitz_2021_EMBO_Mol_Med,CD4 T,6389,0.9865393645327908,Immune
+Uhlitz_2021_EMBO_Mol_Med,CD8 T,2971,0.9666778862335914,Immune
+Uhlitz_2021_EMBO_Mol_Med,Dendritic cell,62,0.8225806451612904,Immune
+Uhlitz_2021_EMBO_Mol_Med,Macrophage,1338,0.9551569506726457,Immune
+Uhlitz_2021_EMBO_Mol_Med,Mast,429,0.9627039627039627,Immune
+Uhlitz_2021_EMBO_Mol_Med,Monocyte,823,0.9635479951397327,Immune
+Uhlitz_2021_EMBO_Mol_Med,NK,589,0.8760611205432938,Immune
+Uhlitz_2021_EMBO_Mol_Med,Neutrophil,104,0.9134615384615384,Immune
+Uhlitz_2021_EMBO_Mol_Med,Plasma,6408,0.9911048689138576,Immune
+Chen_2024_Cancer_Cell,Endothelial,1325,0.9939622641509434,Stromal
+Chen_2024_Cancer_Cell,Fibroblast,1398,0.9935622317596566,Stromal
+Chen_2024_Cancer_Cell,Pericyte,514,0.9941634241245136,Stromal
+Chen_2024_Cancer_Cell,Smooth muscle,102,0.9509803921568627,Stromal
+Guo_2022_JCI_Insight,Endothelial,469,0.9829424307036247,Stromal
+Guo_2022_JCI_Insight,Fibroblast,990,0.98989898989899,Stromal
+Guo_2022_JCI_Insight,Pericyte,351,0.9629629629629629,Stromal
+Guo_2022_JCI_Insight,Smooth muscle,117,0.9230769230769231,Stromal
+Joanito_2022_Nat_Genet,Endothelial,6625,0.9903396226415094,Stromal
+Joanito_2022_Nat_Genet,Fibroblast,17655,0.983177570093458,Stromal
+Joanito_2022_Nat_Genet,Pericyte,3354,0.9824090638044126,Stromal
+Joanito_2022_Nat_Genet,Smooth muscle,2487,0.9622034579815039,Stromal
+Khaliq_2022_Genome_Biol,Endothelial,318,0.9119496855345912,Stromal
+Khaliq_2022_Genome_Biol,Fibroblast,382,0.9869109947643979,Stromal
+Khaliq_2022_Genome_Biol,Pericyte,168,0.9642857142857143,Stromal
+Khaliq_2022_Genome_Biol,Smooth muscle,42,0.9285714285714286,Stromal
+Lee_2020_Nat_Genet,Endothelial,2228,0.9865350089766607,Stromal
+Lee_2020_Nat_Genet,Fibroblast,4173,0.98705966930266,Stromal
+Lee_2020_Nat_Genet,Pericyte,1047,0.9789875835721108,Stromal
+Lee_2020_Nat_Genet,Smooth muscle,443,0.9525959367945824,Stromal
+Li_2023_Cancer_Cell,Endothelial,2032,0.9901574803149606,Stromal
+Li_2023_Cancer_Cell,Fibroblast,772,0.961139896373057,Stromal
+Li_2023_Cancer_Cell,Pericyte,459,0.9760348583877996,Stromal
+Li_2023_Cancer_Cell,Smooth muscle,111,0.972972972972973,Stromal
+Liu_2024_Cancer_Res,Endothelial,1284,0.971183800623053,Stromal
+Liu_2024_Cancer_Res,Fibroblast,3065,0.9866231647634583,Stromal
+Liu_2024_Cancer_Res,Pericyte,1059,0.9641170915958451,Stromal
+Liu_2024_Cancer_Res,Smooth muscle,394,0.9543147208121827,Stromal
+MUI_Innsbruck,Endothelial,895,0.9921787709497206,Stromal
+MUI_Innsbruck,Fibroblast,453,0.9558498896247241,Stromal
+MUI_Innsbruck,Pericyte,232,0.9612068965517241,Stromal
+MUI_Innsbruck,Smooth muscle,100,0.95,Stromal
+Pelka_2021_Cell,Endothelial,3876,0.9834881320949432,Stromal
+Pelka_2021_Cell,Fibroblast,2488,0.9855305466237942,Stromal
+Pelka_2021_Cell,Pericyte,1288,0.9580745341614907,Stromal
+Pelka_2021_Cell,Smooth muscle,354,0.9576271186440678,Stromal
+Qi_2022_Nat_Commun,Endothelial,1013,0.9881539980256664,Stromal
+Qi_2022_Nat_Commun,Fibroblast,1476,0.9878048780487805,Stromal
+Qi_2022_Nat_Commun,Pericyte,224,0.9955357142857143,Stromal
+Qi_2022_Nat_Commun,Smooth muscle,216,0.9629629629629629,Stromal
+Qian_2020_Cell_Res,Endothelial,1441,0.9909784871616932,Stromal
+Qian_2020_Cell_Res,Fibroblast,2377,0.9823306689103912,Stromal
+Qian_2020_Cell_Res,Pericyte,624,0.9791666666666666,Stromal
+Qian_2020_Cell_Res,Smooth muscle,340,0.9735294117647059,Stromal
+Qin_2023_Cell_Rep_Med,Endothelial,3785,0.9712021136063408,Stromal
+Qin_2023_Cell_Rep_Med,Fibroblast,4890,0.9873210633946831,Stromal
+Qin_2023_Cell_Rep_Med,Pericyte,4141,0.901473074136682,Stromal
+Qin_2023_Cell_Rep_Med,Smooth muscle,251,0.8844621513944223,Stromal
+Uhlitz_2021_EMBO_Mol_Med,Endothelial,470,0.9659574468085106,Stromal
+Uhlitz_2021_EMBO_Mol_Med,Fibroblast,969,0.9948400412796697,Stromal
+Uhlitz_2021_EMBO_Mol_Med,Pericyte,249,0.9678714859437751,Stromal
+Uhlitz_2021_EMBO_Mol_Med,Smooth muscle,239,0.9916317991631799,Stromal

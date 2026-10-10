@@ -1,0 +1,17 @@
+lineage,celltype_L2,n_studies_recovered,loso_status
+Epithelial,Malignant epithelial,8,pan-CRC
+Epithelial,Tuft,1,study-specific (merged)
+Immune,B,13,pan-CRC
+Immune,CD4 T,13,pan-CRC
+Immune,CD8 T,13,pan-CRC
+Immune,Dendritic cell,8,pan-CRC
+Immune,Macrophage,13,pan-CRC
+Immune,Mast,13,pan-CRC
+Immune,Monocyte,13,pan-CRC
+Immune,NK,13,pan-CRC
+Immune,Neutrophil,9,pan-CRC
+Immune,Plasma,13,pan-CRC
+Stromal,Endothelial,13,pan-CRC
+Stromal,Fibroblast,13,pan-CRC
+Stromal,Pericyte,13,pan-CRC
+Stromal,Smooth muscle,13,pan-CRC

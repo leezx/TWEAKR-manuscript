@@ -1,0 +1,128 @@
+{
+ "annotation_sha256": "1d8148063d83cdcc4dcbdd9429326c088fd6add9eaccfb29c0c9ea3623b2809b",
+ "n_cells": 1003249,
+ "scvi": {
+  "Epithelial": {
+   "lineage": "Epithelial",
+   "n_cells": 265780,
+   "n_genes": 3015,
+   "n_hvg": 3000,
+   "n_forced": 15,
+   "attempts": [
+    {
+     "attempt": 0,
+     "max_epochs": 30,
+     "converged": true,
+     "finite": true,
+     "early_stopped": false,
+     "epochs_run": 30,
+     "rel_change_last_window": 0.002107450176389124
+    }
+   ],
+   "converged": true,
+   "scvi_version": "1.4.1",
+   "torch_version": "2.6.0",
+   "threads": 8
+  },
+  "Immune": {
+   "lineage": "Immune",
+   "n_cells": 613575,
+   "n_genes": 3018,
+   "n_hvg": 3000,
+   "n_forced": 18,
+   "attempts": [
+    {
+     "attempt": 0,
+     "max_epochs": 13,
+     "converged": false,
+     "finite": true,
+     "early_stopped": false,
+     "epochs_run": 13,
+     "rel_change_last_window": 0.01316274460712224
+    },
+    {
+     "attempt": 1,
+     "max_epochs": 26,
+     "converged": true,
+     "finite": true,
+     "early_stopped": false,
+     "epochs_run": 26,
+     "rel_change_last_window": 0.004961324128847677
+    }
+   ],
+   "converged": true,
+   "scvi_version": "1.4.1",
+   "torch_version": "2.6.0",
+   "threads": 8
+  },
+  "Stromal": {
+   "lineage": "Stromal",
+   "n_cells": 88061,
+   "n_genes": 3022,
+   "n_hvg": 3000,
+   "n_forced": 22,
+   "attempts": [
+    {
+     "attempt": 0,
+     "max_epochs": 91,
+     "converged": true,
+     "finite": true,
+     "early_stopped": false,
+     "epochs_run": 91,
+     "rel_change_last_window": 0.001023135108071965
+    }
+   ],
+   "converged": true,
+   "scvi_version": "1.4.1",
+   "torch_version": "2.6.0",
+   "threads": 8
+  }
+ },
+ "label_checks": {
+  "Epithelial": {
+   "consensus_unchanged_r0.5": 0.9373052900895478,
+   "consensus_unchanged_r1.5": 0.9214387839566559,
+   "consensus_unchanged_r2.0": 0.8712619459703514,
+   "ARI_scvi_vs_harmony_leiden": 0.2649274483648949,
+   "n_clusters": {
+    "0.5": 18,
+    "1.0": 32,
+    "1.5": 49,
+    "2.0": 64
+   },
+   "n_clusters_harmony": 28,
+   "n_F2_clusters": 0,
+   "n_F2_cells": 0
+  },
+  "Immune": {
+   "consensus_unchanged_r0.5": 0.97889092612965,
+   "consensus_unchanged_r1.5": 0.9765000203724076,
+   "consensus_unchanged_r2.0": 0.9739982887177606,
+   "ARI_scvi_vs_harmony_leiden": 0.577466444003442,
+   "n_clusters": {
+    "0.5": 18,
+    "1.0": 28,
+    "1.5": 39,
+    "2.0": 43
+   },
+   "n_clusters_harmony": 25,
+   "n_F2_clusters": 0,
+   "n_F2_cells": 0
+  },
+  "Stromal": {
+   "consensus_unchanged_r0.5": 0.9697255311658963,
+   "consensus_unchanged_r1.5": 0.9850103905247499,
+   "consensus_unchanged_r2.0": 0.9815582380395408,
+   "ARI_scvi_vs_harmony_leiden": 0.5419989359237682,
+   "n_clusters": {
+    "0.5": 14,
+    "1.0": 21,
+    "1.5": 31,
+    "2.0": 37
+   },
+   "n_clusters_harmony": 21,
+   "n_F2_clusters": 0,
+   "n_F2_cells": 0
+  }
+ }
+}

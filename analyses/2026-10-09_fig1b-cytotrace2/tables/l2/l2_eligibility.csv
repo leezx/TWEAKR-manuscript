@@ -1,0 +1,16 @@
+celltype_L2,eligible_patients,eligible_studies,loso_status,main_panel
+B,175,13,pan-CRC,True
+CD4 T,219,13,pan-CRC,True
+CD8 T,216,13,pan-CRC,True
+Dendritic cell,13,5,pan-CRC,True
+Endothelial,173,13,pan-CRC,True
+Fibroblast,158,13,pan-CRC,True
+Macrophage,183,13,pan-CRC,True
+Malignant epithelial,76,8,pan-CRC,True
+Mast,113,12,pan-CRC,True
+Monocyte,165,12,pan-CRC,True
+NK,153,13,pan-CRC,True
+Neutrophil,47,9,pan-CRC,True
+Pericyte,106,13,pan-CRC,True
+Plasma,187,13,pan-CRC,True
+Smooth muscle,45,12,pan-CRC,True
