@@ -1,0 +1,2 @@
+dataset_id	rds_path	sample_column	cell_filter_column	cell_filter_values	assay	enabled	review_status	notes
+EXAMPLE_DATASET	/absolute/argos/path/example.rds	sample_id	cell_type	malignant|tumor epithelial	RNA	0	pending	Replace this example only after metadata review
