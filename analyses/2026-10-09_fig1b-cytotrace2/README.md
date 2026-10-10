@@ -58,6 +58,7 @@
 | `docs/L2_annotation_QC_report.md` | L2 run quality report: convergence, composition, stability, LOSO, malignancy (C4), decisions for review |
 | `tables/l2/` | light L2 QC tables from the Argos run (per-cell table stays on Argos) |
 | `code/submit_full.sh`, `code/run_export_full.sh`, `code/run_full_task.sh` | full 13-study CytoTRACE2 run (A2.1): whole-sample main run (361 samples) and depth-matched run (5 seeds); modes whole + intrinsic | Argos |
+| `code/fig1b_stats.py`, `code/run_stats.sh` | A2.1 statistics: patient medians, within-patient contrasts, REML + Hartung–Knapp meta-analysis (checked against metafor), Holm, LOSO, mixed model, all pre-specified sensitivities, L2 descriptive tables | Argos |
 | `code/l2_config.yaml` | machine-readable copy of the L2 parameters, panels and Atlas fine → L2 crosswalk |
 
 ## Tables (`tables/input_validation/`)
