@@ -87,7 +87,7 @@ In other words, "Cancer cell" in the Atlas means "epithelial cell from a tumour 
 | Li 2023 Cancer Cell | anti-PD-1 (± celecoxib) | 8 | 5 MSI-H, 3 NA | 7 responders / 1 non-responder |
 | Yang 2023 | FOLFOX + bevacizumab | 1 | NA | responder |
 
-- Treatment type and MSI are confounded: chemotherapy is given to MSS patients, ICI to MSI patients. Each therapy is effectively one study, so no cross-study pooling within a therapy is possible.
+- Treatment type and MSI are **strongly confounded, with too little overlap to separate them reliably**. Chemotherapy is MSS (Qin). ICI is mostly MSI, but Chen 2024 also has 2 MSS anti-PD-1 and 4 MSS chemo+ICI patients. Chen 2024 and Li 2023 are reported per cohort, not pooled.
 - Non-responders are few among usable pairs: 5 (chemo), 3 (ICI). Response-stratified inference is not feasible; descriptive only.
 - Biopsy vs resection for the pre side is not recorded (`tumor_source` empty) and needs to be checked against the papers.
 - Treatment type was read from Atlas `treatment_drug`, not verified per paper.
@@ -110,7 +110,18 @@ Recommendation: no A3b metastasis module now (consistent with the consultation).
 
 Single-study and single-platform: descriptive only.
 
-## 6. Proposed gate decisions (for review)
+## 5b. Review follow-ups (2026-10-11)
+
+- **Enrichment crosswalk:**  lists every observed  label and its class. Every label is classified explicitly, so the "unlisted → immune-enriched" fallback was never triggered.
+- **Sample-level eligibility:** the current counts sum epithelium over the samples on each side (patient-level feasibility). Before any A3b scoring, the final cohort will require each contributing sample to meet the threshold. Multiple samples per side will be aggregated as in A2.1: per-sample median, then the unweighted median across samples.
+- **Clinical verification still pending:**
+  - drug and regimen;
+  - true pre/post order;
+  - biopsy vs resection;
+  - pathological response (RECIST CR is not pathological CR).
+- **Epithelial identity:** asymmetric three-class call (normal-like / tumour-evidence / ambiguous) per review. It is to be frozen separately; CT2 and the A3a programme scores are never used as inputs. The primary normal–primary estimand stays the tissue-context epithelial comparison; the tumour-evidence subset is secondary.
+
+## 6. Proposed gate decisions (accepted 2026-10-11 as feasibility screen; no A3b scoring approved)
 
 | Branch | Proposed decision |
 |---|---|
