@@ -1,0 +1,15 @@
+design	contrast	rule	patients	qualifying_studies	patients_in_qualifying	by_study
+normal_primary_naive	N vs T	E1_ge100	110	7.0	98.0	Pelka_2021_Cell:30; Chen_2024_Cancer_Cell:18; Lee_2020_Nat_Genet:17; MUI_Innsbruck:12; Uhlitz_2021_EMBO_Mol_Med:11; Joanito_2022_Nat_Genet:5; Qian_2020_Cell_Res:5; Khaliq_2022_Genome_Biol:3; Liu_2024_Cancer_Res:3; Qi_2022_Nat_Commun:3; Zheng_2022_Signal_Transduct_Target_Ther:3
+normal_primary_naive	N vs T	E2_ge30	127	8.0	115.0	Pelka_2021_Cell:31; Chen_2024_Cancer_Cell:19; Lee_2020_Nat_Genet:18; MUI_Innsbruck:12; Joanito_2022_Nat_Genet:11; Uhlitz_2021_EMBO_Mol_Med:11; Khaliq_2022_Genome_Biol:7; Qian_2020_Cell_Res:6; Qi_2022_Nat_Commun:4; Liu_2024_Cancer_Res:3; Zheng_2022_Signal_Transduct_Target_Ther:3; Zhang_2020_Cell:2
+pre_post|Qin_2023_Cell_Rep_Med	Pre vs Post	E1_ge100	24			response TRG2:13, TRG3:5, TRG0:2, TRG1:2 | MSI MSS:24
+pre_post|Qin_2023_Cell_Rep_Med	Pre vs Post	E2_ge30	27			response TRG2:14, TRG3:5, TRG0:3, TRG1:3 | MSI MSS:27
+pre_post|Qin_2023_Cell_Rep_Med	Pre vs Post [surgical resection]	E1_ge100	22			response TRG2:13, TRG3:5, TRG0:2, TRG1:2 | MSI MSS:22
+pre_post|Qin_2023_Cell_Rep_Med	Pre vs Post [surgical resection]	E2_ge30	25			response TRG2:14, TRG3:5, TRG0:3, TRG1:3 | MSI MSS:25
+pre_post|Chen_2024_Cancer_Cell	Pre vs Post	E1_ge100	11			response CR: complete response:6, PR: partial response:5 | MSI MSI:7, MSS:4
+pre_post|Chen_2024_Cancer_Cell	Pre vs Post	E2_ge30	14			response CR: complete response:8, PR: partial response:5, SD: stable disease:1 | MSI MSI:9, MSS:5
+pre_post|Chen_2024_Cancer_Cell	Pre vs Post [surgical specimen]	E1_ge100	9			response PR: partial response:5, CR: complete response:4 | MSI MSI:6, MSS:3
+pre_post|Chen_2024_Cancer_Cell	Pre vs Post [surgical specimen]	E2_ge30	11			response CR: complete response:6, PR: partial response:5 | MSI MSI:7, MSS:4
+pre_post|Chen_2024_Cancer_Cell	Pre vs On	E1_ge100	7			response CR: complete response:4, PR: partial response:3 | MSI MSI:5, MSS:2
+pre_post|Chen_2024_Cancer_Cell	Pre vs On	E2_ge30	8			response CR: complete response:5, PR: partial response:3 | MSI MSI:5, MSS:3
+pre_post|Li_2023_Cancer_Cell	Pre vs Post	E1_ge100	8			response pCR:7, non-pCR:1 | MSI MSI-H:5, NA:3
+pre_post|Li_2023_Cancer_Cell	Pre vs Post	E2_ge30	8			response pCR:7, non-pCR:1 | MSI MSI-H:5, NA:3
