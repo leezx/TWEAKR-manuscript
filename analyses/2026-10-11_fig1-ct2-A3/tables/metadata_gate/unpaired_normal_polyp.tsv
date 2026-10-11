@@ -1,0 +1,4 @@
+sample_type	study_id	samples	patients	epi	platform
+healthy normal	Chen_2021_Cell	90	59	69976	TruDrop
+polyp	Chen_2021_Cell	113	94	87326	TruDrop
+polyp	Zheng_2022_Signal_Transduct_Target_Ther	3	3	5198	10x 3p
