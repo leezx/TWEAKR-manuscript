@@ -112,7 +112,7 @@ Single-study and single-platform: descriptive only.
 
 ## 5b. Review follow-ups (2026-10-11)
 
-- **Enrichment crosswalk:**  lists every observed  label and its class. Every label is classified explicitly, so the "unlisted → immune-enriched" fallback was never triggered.
+- **Enrichment crosswalk:** `tables/metadata_gate/enrichment_crosswalk.tsv` lists every observed `enrichment_cell_types` label and its class. Every label is classified explicitly, so the "unlisted → immune-enriched" fallback was never triggered.
 - **Sample-level eligibility:** the current counts sum epithelium over the samples on each side (patient-level feasibility). Before any A3b scoring, the final cohort will require each contributing sample to meet the threshold. Multiple samples per side will be aggregated as in A2.1: per-sample median, then the unweighted median across samples.
 - **Clinical verification still pending:**
   - drug and regimen;
