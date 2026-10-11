@@ -1,0 +1,13 @@
+pct	contrast	eligible_samples	eligible_patients_all	studies_qualifying	patients_in_qualifying_studies	max_study_share	pass	G9_warning
+70	pro_vs_ref	90	84	5	69	0.3043	True	False
+70	rev_vs_ref	90	84	5	69	0.3043	True	False
+70	pro_vs_rev	304	207	13	207	0.2415	True	False
+70	pro_vs_rev_within_stem	155	119	7	111	0.4054	True	True
+75	pro_vs_ref	90	84	5	69	0.3043	True	False
+75	rev_vs_ref	90	84	5	69	0.3043	True	False
+75	pro_vs_rev	299	205	13	205	0.2439	True	False
+75	pro_vs_rev_within_stem	152	118	7	110	0.4091	True	True
+80	pro_vs_ref	90	84	5	69	0.3043	True	False
+80	rev_vs_ref	90	84	5	69	0.3043	True	False
+80	pro_vs_rev	292	205	13	205	0.2439	True	False
+80	pro_vs_rev_within_stem	139	113	7	105	0.419	True	True

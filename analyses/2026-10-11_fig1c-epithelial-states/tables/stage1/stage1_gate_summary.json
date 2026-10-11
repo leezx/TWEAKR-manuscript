@@ -1,0 +1,171 @@
+{
+ "G1": {
+  "macroF1_agg_all": 0.8829,
+  "macroF1_11_all": 0.8343,
+  "macroF1_agg_tumour": 0.8043,
+  "macroF1_agg_normal": 0.928,
+  "ECE_agg": 0.0046,
+  "assigned_frac": 0.841,
+  "accuracy_among_assigned": 0.9502,
+  "n_cells": 168295,
+  "n_patients": 62,
+  "macroF1_agg_tumour_only_training": 0.7802,
+  "pass": true,
+  "rare_uncertain_classes": []
+ },
+ "inputs": {
+  "samples": 360,
+  "samples_ok": 360,
+  "samples_missing": [],
+  "ucell_set_counts": [
+   467
+  ],
+  "cells": 285141,
+  "patients": 222
+ },
+ "G2": {
+  "proCSC": {
+   "coverage": 0.963,
+   "split_overall_median": 0.9210990401701169,
+   "logo_min_overall_rho": 0.9902774626040998,
+   "logo_worst_gene_rank": "TUBA1B",
+   "n_patients": 216,
+   "pass": true
+  },
+  "revCSC": {
+   "coverage": 0.9375,
+   "split_overall_median": 0.8402742673075178,
+   "logo_min_overall_rho": 0.9794363141558367,
+   "logo_worst_gene_rank": "SOX4",
+   "n_patients": 216,
+   "pass": true
+  },
+  "pass": true
+ },
+ "G3": {
+  "assessable": true,
+  "rev_frac_patients_pos": 0.9907,
+  "rev_pooled_rho": 0.2658,
+  "rev_pass": true,
+  "pro_frac_patients_pos": 1.0,
+  "pro_pooled_rho": 0.4389,
+  "pro_pass": true
+ },
+ "G4": {
+  "a_median_patient_rho_pro_rev": 0.2085,
+  "a_pass": true,
+  "b_partial_rev_hOnF_no": 0.2157,
+  "b_pass": true,
+  "c_partial_pro_hStem_no": 0.3127,
+  "c_pass": true,
+  "d_hybrid_sample_median": {
+   "70": {
+    "obs": 0.0988093807578306,
+    "exp": 0.0901665133434349
+   },
+   "75": {
+    "obs": 0.066079295154185,
+    "exp": 0.0627492529870518
+   },
+   "80": {
+    "obs": 0.03778377022450765,
+    "exp": 0.04022034193060195
+   }
+  },
+  "pass": true
+ },
+ "G5": {
+  "pro_vs_ref": {
+   "patients": 69,
+   "studies": 5,
+   "pass": true
+  },
+  "rev_vs_ref": {
+   "patients": 69,
+   "studies": 5,
+   "pass": true
+  },
+  "pro_vs_rev": {
+   "patients": 205,
+   "studies": 13,
+   "pass": true
+  },
+  "pro_vs_rev_within_stem": {
+   "patients": 110,
+   "studies": 7,
+   "pass": true
+  },
+  "top_rev_tertile_lacking_reference_frac": 0.9459,
+  "secondary_continuous_model_triggered": true
+ },
+ "G6": {
+  "patients": 205,
+  "studies": 13,
+  "pass": true
+ },
+ "G9": {
+  "pro_vs_ref": {
+   "max_study_share": 0.3043,
+   "warning": false
+  },
+  "rev_vs_ref": {
+   "max_study_share": 0.3043,
+   "warning": false
+  },
+  "pro_vs_rev": {
+   "max_study_share": 0.2439,
+   "warning": false
+  },
+  "pro_vs_rev_within_stem": {
+   "max_study_share": 0.4091,
+   "warning": true
+  }
+ },
+ "strata75_cells": {
+  "pro_dominant": 50657,
+  "rev_dominant": 48983,
+  "hybrid_high": 20429,
+  "neither_high": 148451,
+  "reference": 16621,
+  "discordant_in_reference": 2267
+ },
+ "G10": {
+  "stage0_manifest_sha256": "419a551bb0f0e29cb3841c82f47e1994744bef1fbaf80dadaf7282484801a434",
+  "genesets_sha256": "ff56f57b1bb326a7b5b6ba43157fe39a95b504f2a52c1b90485b39fa4530495d",
+  "holdout_sha256": "2bc78587834d91fc6dae7ab3c4d1c8d73a16ff5aab1693c1e7bc972fa658dd32",
+  "pelka_folds_sha256": "e8826d064696f05ee1c8a93aa8c7cc2a797c6fb486333493142a412d40704165",
+  "code_sha256": {
+   "fig1c_axisL_fit.py": "a584c9cbb7ed8acd5db6b2ccbd520ab522bb4039654403f2c1da490de370ae6e",
+   "fig1c_axisL_predict.py": "531c2248857849fc4d41050b0b6edca9101b8f342addef19357eeee4446dc4ca",
+   "fig1c_pelka_ref.py": "b7d939dc3421b8bc5bada5c41b99a643d1eae6bedb5712bac041d96c4b5c6608",
+   "fig1c_stage0.py": "f23e71a3f33d224595cdb4ba6e368aa8e75ae5f670199cfcb26cbffb11c0c42f",
+   "fig1c_stage1_gates.py": "bff8120b272c74829cf61a9ea07124468f49d187b9a92ead53db766bb551dd27",
+   "fig1c_stage1_sample.py": "9409dde2352a7be106960636ae720573296422a16f3a024f8e4029fe86027c2d"
+  },
+  "cell_labels_sha256": {
+   "Chen_2024_Cancer_Cell.cell_labels.tsv.gz": "666117f7200dd4e206a1b50f6890f21ca4463e858da6f9b05962fa3ba828b6af",
+   "Guo_2022_JCI_Insight.cell_labels.tsv.gz": "d209d7c76dc59d2501a783a09d25dc879d059a516bfd83687bd22ca1b58977c3",
+   "Joanito_2022_Nat_Genet.cell_labels.tsv.gz": "5c49f9d6edb19e1fd207aa9ed28d820d23f0839b0b4aa20287eba57b90e4a43a",
+   "Khaliq_2022_Genome_Biol.cell_labels.tsv.gz": "2999b1cd6c6ea1d6aa8ba7429f89a87838a5d320a8e4ec1cbb16e217abe4f045",
+   "Lee_2020_Nat_Genet.cell_labels.tsv.gz": "0a9f737b2494edf7efbe12b26746d3880ad25e345cd5b779027ad3648ec612f6",
+   "Li_2023_Cancer_Cell.cell_labels.tsv.gz": "a8acd0e10b0c87c1d52466165602721629364d566d8874e1c1ea48817925026c",
+   "Liu_2024_Cancer_Res.cell_labels.tsv.gz": "87b2da4550b282173c00ab01d01abb623f934d54688c8e267d55d131086718b2",
+   "MUI_Innsbruck.cell_labels.tsv.gz": "76521993f45d599713a8f6101855641c769fb48718f5c606972731856b8c2540",
+   "Pelka_2021_Cell.cell_labels.tsv.gz": "61037d4552e36c32a2b5b853f0748327bed3ba1d43a5a868e81a17b912814aa7",
+   "Qi_2022_Nat_Commun.cell_labels.tsv.gz": "53e70349bce9c8c54586786fe7b5f6180c5cf3d999e3035648b37baf7b5b1f25",
+   "Qian_2020_Cell_Res.cell_labels.tsv.gz": "0a0a8381cea1cdab35d6976effe221ff0d70f061c6f624d4561738797ed4326b",
+   "Qin_2023_Cell_Rep_Med.cell_labels.tsv.gz": "2b8afa9b7144d28f24468927531db43b978a22f2b77cba2330ff711bb842373d",
+   "Uhlitz_2021_EMBO_Mol_Med.cell_labels.tsv.gz": "a8431440898f3059e214e27a883dd9ab8702718efea24cac5f1557282b525b40"
+  },
+  "pass": true
+ },
+ "decision": {
+  "branch": "distinct transcriptional configurations, possibly hybrid continuum",
+  "formal_contrasts_allowed": {
+   "pro_vs_ref": true,
+   "rev_vs_ref": true,
+   "pro_vs_rev": true,
+   "pro_vs_rev_within_stem": true
+  }
+ }
+}

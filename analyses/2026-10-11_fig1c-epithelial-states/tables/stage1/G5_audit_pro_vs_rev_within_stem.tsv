@@ -1,0 +1,3 @@
+included	n	median_umi	median_ref_frac	msi_h	mss	msi_unknown
+False	104	7943.0	0.025639452861436547	19	83	2
+True	118	12283.375	0.038959138752831024	40	68	10

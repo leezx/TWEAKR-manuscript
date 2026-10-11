@@ -1,0 +1,10 @@
+contrast	patients_total	L1_patients_with_reference_or_A	L2_patients_with_eligible_sample	L2_eligible_samples	L3_patients_in_qualifying_studies	L3_studies	max_study_share
+pro_vs_ref	222	122	120	149	108	8	0.2037
+rev_vs_ref	222	122	117	139	106	8	0.2075
+pro_vs_rev	222	206	203	286	203	13	0.2463
+cycling_pro_vs_rev	222	183	63	74	59	6	0.2712
+Cycling Stem/TA_vs_ref	222	122	118	147	107	8	0.1963
+Secretory differentiated-like_vs_ref	222	122	84	90	69	6	0.2319
+Transitional stem/secretory_vs_ref	222	122	49	53	39	5	0.3846
+Transitional secretory/absorptive_vs_ref	222	122	1	1	0	0	
+Rare lineages_vs_ref	222	122	48	51	27	3	0.4444

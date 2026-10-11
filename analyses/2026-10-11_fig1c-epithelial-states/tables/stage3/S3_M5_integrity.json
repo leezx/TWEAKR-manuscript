@@ -1,0 +1,29 @@
+{
+ "samples": 339,
+ "cells_labelled": 285141,
+ "dup_label_ids": 0,
+ "dup_ct2_ids": 0,
+ "merged_equals_labels": true,
+ "missing_ct2_final": 0,
+ "missing_ct2_raw": 0,
+ "missing_covariates": 0,
+ "ref_overlap_prorev": 0,
+ "discordant_in_ref": 5415,
+ "label_hash_matches_stage1": true,
+ "label_sha256": {
+  "Chen_2024_Cancer_Cell.cell_labels.tsv.gz": "eb8c5757201833e41817b33d37dd494d2dcebb8d6bc042729533761d06acbe81",
+  "Guo_2022_JCI_Insight.cell_labels.tsv.gz": "8d3ad137e2b4f31a2b5f2186d2f88f50c85b266a0827a09d6965f77e821fb877",
+  "Joanito_2022_Nat_Genet.cell_labels.tsv.gz": "aef68596b4b20717662115cb9d5cb58bad87dfd487329e10472e48b1a1fa1825",
+  "Khaliq_2022_Genome_Biol.cell_labels.tsv.gz": "8ef737415dd600536ff2e7f3133a82affbb8d671e2ff0b7413c7a34d0e312ca1",
+  "Lee_2020_Nat_Genet.cell_labels.tsv.gz": "08c6c11a869bb668c98677d8d39b108a7fe98f7ba5d6a0aca449a7d3a4996f10",
+  "Li_2023_Cancer_Cell.cell_labels.tsv.gz": "1f0c02aa18aa4c08e665e98c78151882d848f3f85ec6561c80b7996e0b273bad",
+  "Liu_2024_Cancer_Res.cell_labels.tsv.gz": "105c949af2db7a4bacbfc1589b19207bfed2a69bf40036df6ea7566ad5ee18cd",
+  "MUI_Innsbruck.cell_labels.tsv.gz": "fe83f564a5745cccabe399209cb492d1993a138804096a1af372e955bd1d3eb7",
+  "Pelka_2021_Cell.cell_labels.tsv.gz": "2f96af4ddcf58a7a99a4463644e719c68eee58cc29c8bb8cb370d24e2f522753",
+  "Qi_2022_Nat_Commun.cell_labels.tsv.gz": "9b5d2f15b9f27cd49aef4e59c41cf5b32a23e3b3c35fcc9e8f5bae6dc3f46d10",
+  "Qian_2020_Cell_Res.cell_labels.tsv.gz": "dc7cd3135a78b29f9ca1da00005beef4d8b993083a2850d63a516d0d8ebdac3d",
+  "Qin_2023_Cell_Rep_Med.cell_labels.tsv.gz": "96de73afef8978cc0050bacdf6f27febcaaba8c9eb1ebf28634c731bd4bb7a0b",
+  "Uhlitz_2021_EMBO_Mol_Med.cell_labels.tsv.gz": "060ed7061de65275e42c10284fe691632273a0ba720ea556c64d683f861bdca4"
+ },
+ "pass": true
+}

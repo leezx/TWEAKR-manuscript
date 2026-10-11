@@ -1,0 +1,319 @@
+contrast	estimand	family	study_id	n_patients	mean	se
+pro_vs_ref	final	primary_holm	Chen_2024_Cancer_Cell	17.0	0.06886817618845482	0.023358650577333384
+pro_vs_ref	final	primary_holm	Joanito_2022_Nat_Genet	16.0	0.09228042796709635	0.02563096270148012
+pro_vs_ref	final	primary_holm	Lee_2020_Nat_Genet	5.0	0.04102603700137728	0.01859569194474219
+pro_vs_ref	final	primary_holm	Li_2023_Cancer_Cell	7.0	0.24411930177367444	0.05527634863533783
+pro_vs_ref	final	primary_holm	MUI_Innsbruck	11.0	0.39928530294336684	0.027574720239306252
+pro_vs_ref	final	primary_holm	Pelka_2021_Cell	22.0	0.11118935485933142	0.015512045244135112
+pro_vs_ref	final	primary_holm	Qin_2023_Cell_Rep_Med	22.0	0.1243272699807009	0.01903319295625892
+pro_vs_ref	final	primary_holm	Uhlitz_2021_EMBO_Mol_Med	8.0	0.11950368725402831	0.030871113607772657
+pro_vs_ref	raw	robustness	Chen_2024_Cancer_Cell	17.0	0.08626378233069332	0.02635082211837567
+pro_vs_ref	raw	robustness	Joanito_2022_Nat_Genet	16.0	0.18777780998735233	0.020126424918224944
+pro_vs_ref	raw	robustness	Lee_2020_Nat_Genet	5.0	0.09875472628971985	0.02437899731166908
+pro_vs_ref	raw	robustness	Li_2023_Cancer_Cell	7.0	0.30155488143369746	0.03831114835699416
+pro_vs_ref	raw	robustness	MUI_Innsbruck	11.0	0.4513341606195945	0.022306280145499725
+pro_vs_ref	raw	robustness	Pelka_2021_Cell	22.0	0.1932754659899394	0.016362858593362083
+pro_vs_ref	raw	robustness	Qin_2023_Cell_Rep_Med	22.0	0.1964110206609228	0.02055112305327962
+pro_vs_ref	raw	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.16545485380972508	0.03630845032782732
+pro_vs_ref	adj_full	robustness	Chen_2024_Cancer_Cell	17.0	0.02015332915419587	0.007378294017489957
+pro_vs_ref	adj_full	robustness	Joanito_2022_Nat_Genet	16.0	0.056299875228098664	0.02020940400677589
+pro_vs_ref	adj_full	robustness	Lee_2020_Nat_Genet	5.0	0.02004770068995637	0.007500630059192061
+pro_vs_ref	adj_full	robustness	Li_2023_Cancer_Cell	7.0	0.11038887573735821	0.04114266539361457
+pro_vs_ref	adj_full	robustness	MUI_Innsbruck	11.0	0.20787688683316963	0.033744942215722676
+pro_vs_ref	adj_full	robustness	Pelka_2021_Cell	22.0	0.056381257297427684	0.010466989720607334
+pro_vs_ref	adj_full	robustness	Qin_2023_Cell_Rep_Med	22.0	0.05244119117969704	0.011826951386398075
+pro_vs_ref	adj_full	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.07280329816942765	0.016576527704151266
+pro_vs_ref	adj_reduced	robustness	Chen_2024_Cancer_Cell	17.0	0.03719184857088505	0.008653619026910189
+pro_vs_ref	adj_reduced	robustness	Joanito_2022_Nat_Genet	16.0	0.08631001951612857	0.018315981634576102
+pro_vs_ref	adj_reduced	robustness	Lee_2020_Nat_Genet	5.0	0.059666639847272177	0.016435641420674572
+pro_vs_ref	adj_reduced	robustness	Li_2023_Cancer_Cell	7.0	0.1924232077368433	0.03775138791869116
+pro_vs_ref	adj_reduced	robustness	MUI_Innsbruck	11.0	0.2861910480740796	0.020583611431932106
+pro_vs_ref	adj_reduced	robustness	Pelka_2021_Cell	22.0	0.10526002541308833	0.011975271526774089
+pro_vs_ref	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	22.0	0.09008123303577663	0.014297042904417457
+pro_vs_ref	adj_reduced	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.12252318471802776	0.02344780250412016
+pro_vs_ref	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	17.0	0.021017990651051564	0.0070548306715620965
+pro_vs_ref	ds_mean	robustness_mandatory	Joanito_2022_Nat_Genet	16.0	0.04594250932081069	0.009401697706194045
+pro_vs_ref	ds_mean	robustness_mandatory	Lee_2020_Nat_Genet	5.0	0.03169514511215275	0.007481571982935162
+pro_vs_ref	ds_mean	robustness_mandatory	Li_2023_Cancer_Cell	7.0	0.04243078770546416	0.0053128086618633346
+pro_vs_ref	ds_mean	robustness_mandatory	MUI_Innsbruck	11.0	0.15710471801294207	0.030570761395624074
+pro_vs_ref	ds_mean	robustness_mandatory	Pelka_2021_Cell	22.0	0.06961722804939446	0.008174621068492422
+pro_vs_ref	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	22.0	0.05024046702913243	0.006705354833280421
+pro_vs_ref	ds_mean	robustness_mandatory	Uhlitz_2021_EMBO_Mol_Med	8.0	0.11992961696031666	0.020650400609864273
+pro_vs_ref	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	17.0	0.06840859671626177	0.023252969059682233
+pro_vs_ref	final_ood_pass_only	M3_sensitivity	Li_2023_Cancer_Cell	7.0	0.2468204057193756	0.055263840137445966
+pro_vs_ref	final_ood_pass_only	M3_sensitivity	MUI_Innsbruck	8.0	0.39572651322172203	0.02686178125447058
+pro_vs_ref	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	21.0	0.10960268830862936	0.016185487705783732
+pro_vs_ref	final_ood_pass_only	M3_sensitivity	Qin_2023_Cell_Rep_Med	14.0	0.1275623320316713	0.026386365304525566
+rev_vs_ref	final	primary_holm	Chen_2024_Cancer_Cell	17.0	0.007156029122099982	0.0048997896646721375
+rev_vs_ref	final	primary_holm	Joanito_2022_Nat_Genet	14.0	0.020946157987791498	0.010092954212800135
+rev_vs_ref	final	primary_holm	Lee_2020_Nat_Genet	5.0	-0.0030625126308121797	0.0045622374162776515
+rev_vs_ref	final	primary_holm	Li_2023_Cancer_Cell	7.0	0.06439484406054558	0.02583169438919595
+rev_vs_ref	final	primary_holm	MUI_Innsbruck	11.0	0.21912645119082869	0.0513362538758848
+rev_vs_ref	final	primary_holm	Pelka_2021_Cell	22.0	0.02592782262720309	0.005069301160797777
+rev_vs_ref	final	primary_holm	Qin_2023_Cell_Rep_Med	22.0	0.0270847577368899	0.008099711724235537
+rev_vs_ref	final	primary_holm	Uhlitz_2021_EMBO_Mol_Med	8.0	0.033198629320150747	0.009918070391633916
+rev_vs_ref	raw	robustness	Chen_2024_Cancer_Cell	17.0	0.009657510052564142	0.005969144464099303
+rev_vs_ref	raw	robustness	Joanito_2022_Nat_Genet	14.0	0.06587596981410672	0.013617692270039488
+rev_vs_ref	raw	robustness	Lee_2020_Nat_Genet	5.0	0.002794046996329018	0.006991969933303907
+rev_vs_ref	raw	robustness	Li_2023_Cancer_Cell	7.0	0.09624212929672296	0.034379018095038856
+rev_vs_ref	raw	robustness	MUI_Innsbruck	11.0	0.25828745873708764	0.04263064659059101
+rev_vs_ref	raw	robustness	Pelka_2021_Cell	22.0	0.05966263666672081	0.011276307094456279
+rev_vs_ref	raw	robustness	Qin_2023_Cell_Rep_Med	22.0	0.023495642222300498	0.009363532279906765
+rev_vs_ref	raw	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.01405373326436487	0.0064173060713468245
+rev_vs_ref	adj_full	robustness	Chen_2024_Cancer_Cell	17.0	-0.004342631305695388	0.003208782444044587
+rev_vs_ref	adj_full	robustness	Joanito_2022_Nat_Genet	14.0	0.012785313687428202	0.006470182244621666
+rev_vs_ref	adj_full	robustness	Lee_2020_Nat_Genet	5.0	1.8040467194647968e-06	0.0052549522085956965
+rev_vs_ref	adj_full	robustness	Li_2023_Cancer_Cell	7.0	0.04266679067340408	0.01559000033200137
+rev_vs_ref	adj_full	robustness	MUI_Innsbruck	11.0	0.13686011448153967	0.027303405586895244
+rev_vs_ref	adj_full	robustness	Pelka_2021_Cell	22.0	0.019239041804239	0.005832995176896049
+rev_vs_ref	adj_full	robustness	Qin_2023_Cell_Rep_Med	22.0	0.02048356621211428	0.005869154295775873
+rev_vs_ref	adj_full	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.031980258464900255	0.010056694764258115
+rev_vs_ref	adj_reduced	robustness	Chen_2024_Cancer_Cell	17.0	-0.007328928156239587	0.004746314901030422
+rev_vs_ref	adj_reduced	robustness	Joanito_2022_Nat_Genet	14.0	0.018643560926190232	0.007861170200306355
+rev_vs_ref	adj_reduced	robustness	Lee_2020_Nat_Genet	5.0	-0.00836101713032299	0.00971683466994341
+rev_vs_ref	adj_reduced	robustness	Li_2023_Cancer_Cell	7.0	0.054559073797896984	0.01906462274542168
+rev_vs_ref	adj_reduced	robustness	MUI_Innsbruck	11.0	0.13963641370374202	0.02850689171671925
+rev_vs_ref	adj_reduced	robustness	Pelka_2021_Cell	22.0	0.022575944464492712	0.0067824593431117484
+rev_vs_ref	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	22.0	0.022706264212016592	0.006294600826184331
+rev_vs_ref	adj_reduced	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.035751374644463235	0.011218437864429864
+rev_vs_ref	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	17.0	-0.003127931847169313	0.004082897794685539
+rev_vs_ref	ds_mean	robustness_mandatory	Joanito_2022_Nat_Genet	14.0	0.010448397892530088	0.004850389717461868
+rev_vs_ref	ds_mean	robustness_mandatory	Lee_2020_Nat_Genet	5.0	0.0006654599623853383	0.009895685004194625
+rev_vs_ref	ds_mean	robustness_mandatory	Li_2023_Cancer_Cell	7.0	0.021953455727922237	0.007360795637106437
+rev_vs_ref	ds_mean	robustness_mandatory	MUI_Innsbruck	11.0	0.03559850723375085	0.020713295373762534
+rev_vs_ref	ds_mean	robustness_mandatory	Pelka_2021_Cell	22.0	0.028770632328661574	0.004780269903358185
+rev_vs_ref	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	22.0	0.009627686648025692	0.004950249571227973
+rev_vs_ref	ds_mean	robustness_mandatory	Uhlitz_2021_EMBO_Mol_Med	8.0	0.05082863774141193	0.010935175816816335
+rev_vs_ref	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	17.0	0.007519929443291882	0.0047630364051576305
+rev_vs_ref	final_ood_pass_only	M3_sensitivity	Li_2023_Cancer_Cell	7.0	0.07183314118665854	0.029541337877608275
+rev_vs_ref	final_ood_pass_only	M3_sensitivity	MUI_Innsbruck	7.0	0.25675056251025535	0.06585272310683994
+rev_vs_ref	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	21.0	0.026582921479841627	0.00566091187911699
+rev_vs_ref	final_ood_pass_only	M3_sensitivity	Qin_2023_Cell_Rep_Med	14.0	0.04101891778962043	0.01677279015739351
+pro_vs_rev	final	primary_holm	Chen_2024_Cancer_Cell	18.0	0.05862304334944798	0.018523779605037576
+pro_vs_rev	final	primary_holm	Guo_2022_JCI_Insight	5.0	0.062259382104099134	0.020477897514813916
+pro_vs_rev	final	primary_holm	Joanito_2022_Nat_Genet	22.0	0.06527204565205899	0.01592449765371076
+pro_vs_rev	final	primary_holm	Khaliq_2022_Genome_Biol	6.0	0.023168248853745133	0.015479570526572969
+pro_vs_rev	final	primary_holm	Lee_2020_Nat_Genet	26.0	0.052980858066234274	0.011734338022437936
+pro_vs_rev	final	primary_holm	Li_2023_Cancer_Cell	9.0	0.20666817260528444	0.03972467526476898
+pro_vs_rev	final	primary_holm	Liu_2024_Cancer_Res	11.0	0.13019620644626106	0.02805916548983196
+pro_vs_rev	final	primary_holm	MUI_Innsbruck	12.0	0.18677360788147115	0.037200344900771655
+pro_vs_rev	final	primary_holm	Pelka_2021_Cell	50.0	0.09238474011586621	0.011799235882807839
+pro_vs_rev	final	primary_holm	Qi_2022_Nat_Commun	5.0	0.00606694799023286	0.003351622268093661
+pro_vs_rev	final	primary_holm	Qian_2020_Cell_Res	5.0	0.03115216085397008	0.012205764054978821
+pro_vs_rev	final	primary_holm	Qin_2023_Cell_Rep_Med	25.0	0.10809112573317861	0.016364615191761696
+pro_vs_rev	final	primary_holm	Uhlitz_2021_EMBO_Mol_Med	9.0	0.07685831643382948	0.024669656723531806
+pro_vs_rev	raw	robustness	Chen_2024_Cancer_Cell	18.0	0.0741715194616466	0.02025564010920106
+pro_vs_rev	raw	robustness	Guo_2022_JCI_Insight	5.0	0.13642278602377944	0.030882099389093275
+pro_vs_rev	raw	robustness	Joanito_2022_Nat_Genet	22.0	0.11185593773569356	0.014116760982996168
+pro_vs_rev	raw	robustness	Khaliq_2022_Genome_Biol	6.0	0.0438698988482655	0.013789663353889214
+pro_vs_rev	raw	robustness	Lee_2020_Nat_Genet	26.0	0.09923784151377785	0.009905645238244352
+pro_vs_rev	raw	robustness	Li_2023_Cancer_Cell	9.0	0.23530380548563817	0.02676494473260584
+pro_vs_rev	raw	robustness	Liu_2024_Cancer_Res	11.0	0.15878054824426566	0.022628513429096785
+pro_vs_rev	raw	robustness	MUI_Innsbruck	12.0	0.19404662055313693	0.03385676178062892
+pro_vs_rev	raw	robustness	Pelka_2021_Cell	50.0	0.13009173737416027	0.006365547668959179
+pro_vs_rev	raw	robustness	Qi_2022_Nat_Commun	5.0	0.024431492912777998	0.010542674681065841
+pro_vs_rev	raw	robustness	Qian_2020_Cell_Res	5.0	0.07366379419579555	0.017764033832545826
+pro_vs_rev	raw	robustness	Qin_2023_Cell_Rep_Med	25.0	0.1760110950079359	0.01571251989561956
+pro_vs_rev	raw	robustness	Uhlitz_2021_EMBO_Mol_Med	9.0	0.1373092289982808	0.03083065415235649
+pro_vs_rev	adj_full	robustness	Chen_2024_Cancer_Cell	18.0	0.027385360343071916	0.008117392282158954
+pro_vs_rev	adj_full	robustness	Joanito_2022_Nat_Genet	22.0	0.0368557638087986	0.010758519733698294
+pro_vs_rev	adj_full	robustness	Khaliq_2022_Genome_Biol	6.0	0.012513057301301082	0.01110125645172639
+pro_vs_rev	adj_full	robustness	Lee_2020_Nat_Genet	26.0	0.03419042289051942	0.007434694187468231
+pro_vs_rev	adj_full	robustness	Li_2023_Cancer_Cell	9.0	0.06064958989184942	0.023662360967539587
+pro_vs_rev	adj_full	robustness	Liu_2024_Cancer_Res	11.0	0.036921790993345104	0.011534837920618457
+pro_vs_rev	adj_full	robustness	MUI_Innsbruck	12.0	0.10329325600677634	0.03307090169113826
+pro_vs_rev	adj_full	robustness	Pelka_2021_Cell	50.0	0.042597161664404116	0.005368142686615566
+pro_vs_rev	adj_full	robustness	Qi_2022_Nat_Commun	5.0	0.023316625653966	0.006580697221340406
+pro_vs_rev	adj_full	robustness	Qian_2020_Cell_Res	5.0	0.01962164798343414	0.006612196566153339
+pro_vs_rev	adj_full	robustness	Qin_2023_Cell_Rep_Med	25.0	0.06266372300756962	0.008778746756636029
+pro_vs_rev	adj_full	robustness	Uhlitz_2021_EMBO_Mol_Med	9.0	0.0362193226348207	0.010006479252941887
+pro_vs_rev	adj_reduced	robustness	Chen_2024_Cancer_Cell	18.0	0.04913194759221376	0.011347490444215864
+pro_vs_rev	adj_reduced	robustness	Joanito_2022_Nat_Genet	22.0	0.06905811076260943	0.01343011415512995
+pro_vs_rev	adj_reduced	robustness	Khaliq_2022_Genome_Biol	6.0	0.0260301375146276	0.013958768463224795
+pro_vs_rev	adj_reduced	robustness	Lee_2020_Nat_Genet	26.0	0.06857283862498079	0.011478431251759697
+pro_vs_rev	adj_reduced	robustness	Li_2023_Cancer_Cell	9.0	0.1632195097795689	0.025041726796487484
+pro_vs_rev	adj_reduced	robustness	Liu_2024_Cancer_Res	11.0	0.13775358789665756	0.023349042814937538
+pro_vs_rev	adj_reduced	robustness	MUI_Innsbruck	12.0	0.171735903180497	0.030136484747022275
+pro_vs_rev	adj_reduced	robustness	Pelka_2021_Cell	50.0	0.09346674748938488	0.007731534426111396
+pro_vs_rev	adj_reduced	robustness	Qi_2022_Nat_Commun	5.0	0.052288324729835856	0.014518405720529107
+pro_vs_rev	adj_reduced	robustness	Qian_2020_Cell_Res	5.0	0.05068394069285993	0.015250056785173964
+pro_vs_rev	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	25.0	0.10857304832471687	0.011816396735338939
+pro_vs_rev	adj_reduced	robustness	Uhlitz_2021_EMBO_Mol_Med	9.0	0.08000635214955062	0.01614275731847049
+pro_vs_rev	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	18.0	0.023135513606512077	0.004289436798442626
+pro_vs_rev	ds_mean	robustness_mandatory	Guo_2022_JCI_Insight	5.0	0.011024356791312296	0.004515171036541403
+pro_vs_rev	ds_mean	robustness_mandatory	Joanito_2022_Nat_Genet	22.0	0.03135964373190044	0.006455473593363893
+pro_vs_rev	ds_mean	robustness_mandatory	Khaliq_2022_Genome_Biol	6.0	0.00808683222436115	0.0030532527228533217
+pro_vs_rev	ds_mean	robustness_mandatory	Lee_2020_Nat_Genet	26.0	0.020645549027998936	0.002637028096528887
+pro_vs_rev	ds_mean	robustness_mandatory	Li_2023_Cancer_Cell	9.0	0.02672956202475565	0.0058093717447668365
+pro_vs_rev	ds_mean	robustness_mandatory	Liu_2024_Cancer_Res	11.0	0.03575103946326149	0.0064598964451909316
+pro_vs_rev	ds_mean	robustness_mandatory	MUI_Innsbruck	12.0	0.12070815121750005	0.020691788050716375
+pro_vs_rev	ds_mean	robustness_mandatory	Pelka_2021_Cell	50.0	0.038585287949465766	0.0035193858823264934
+pro_vs_rev	ds_mean	robustness_mandatory	Qi_2022_Nat_Commun	5.0	0.008849645143893355	0.0044585101117331685
+pro_vs_rev	ds_mean	robustness_mandatory	Qian_2020_Cell_Res	5.0	0.011823565462614951	0.004245193940054164
+pro_vs_rev	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	25.0	0.041368387807515124	0.003830252846512362
+pro_vs_rev	ds_mean	robustness_mandatory	Uhlitz_2021_EMBO_Mol_Med	9.0	0.06117286600499935	0.01660741490431539
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	18.0	0.05788404728328695	0.018258012324932335
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Khaliq_2022_Genome_Biol	6.0	0.021935205191871514	0.015447172005748544
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Lee_2020_Nat_Genet	25.0	0.05587920867756839	0.012510175410593415
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Li_2023_Cancer_Cell	9.0	0.20321019504042592	0.03956620803842155
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	MUI_Innsbruck	10.0	0.12201567284346126	0.03472771625318427
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	50.0	0.0917847577783803	0.011652372919785476
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Qi_2022_Nat_Commun	5.0	0.00470963981070858	0.003169425575007595
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Qian_2020_Cell_Res	5.0	0.030851849734367647	0.01224946714199246
+pro_vs_rev	final_ood_pass_only	M3_sensitivity	Qin_2023_Cell_Rep_Med	19.0	0.11312312931006477	0.020769780197597766
+cycling_pro_vs_rev	final	sensitivity_planned	Joanito_2022_Nat_Genet	13.0	0.09109723205511437	0.020134878393453556
+cycling_pro_vs_rev	final	sensitivity_planned	Li_2023_Cancer_Cell	7.0	0.17925058972402222	0.03340656458481319
+cycling_pro_vs_rev	final	sensitivity_planned	Liu_2024_Cancer_Res	7.0	0.16635809259282347	0.03132795703095721
+cycling_pro_vs_rev	final	sensitivity_planned	MUI_Innsbruck	5.0	0.04612025416615906	0.036018520426798685
+cycling_pro_vs_rev	final	sensitivity_planned	Pelka_2021_Cell	16.0	0.09946915034605694	0.019743016103764093
+cycling_pro_vs_rev	final	sensitivity_planned	Qin_2023_Cell_Rep_Med	11.0	0.1371856490326258	0.02347296058451646
+cycling_pro_vs_rev	raw	robustness	Joanito_2022_Nat_Genet	13.0	0.12304779315822015	0.012734381932021841
+cycling_pro_vs_rev	raw	robustness	Li_2023_Cancer_Cell	7.0	0.1826375418831994	0.031543679018595616
+cycling_pro_vs_rev	raw	robustness	Liu_2024_Cancer_Res	7.0	0.14947152101157707	0.018994829934069174
+cycling_pro_vs_rev	raw	robustness	MUI_Innsbruck	5.0	0.03644081538512526	0.028577333764958548
+cycling_pro_vs_rev	raw	robustness	Pelka_2021_Cell	16.0	0.09582372254598837	0.01266728958017084
+cycling_pro_vs_rev	raw	robustness	Qin_2023_Cell_Rep_Med	11.0	0.16243991847248587	0.017781535211994104
+cycling_pro_vs_rev	adj_full	robustness	Joanito_2022_Nat_Genet	13.0	0.04994309236647676	0.013618583194949872
+cycling_pro_vs_rev	adj_full	robustness	Li_2023_Cancer_Cell	7.0	0.0741323233518052	0.027020018417747056
+cycling_pro_vs_rev	adj_full	robustness	Liu_2024_Cancer_Res	7.0	0.05508076834920704	0.013076907730928016
+cycling_pro_vs_rev	adj_full	robustness	MUI_Innsbruck	5.0	0.020733628089343044	0.0458908758474309
+cycling_pro_vs_rev	adj_full	robustness	Pelka_2021_Cell	16.0	0.05222380147152446	0.009697165671282098
+cycling_pro_vs_rev	adj_full	robustness	Qin_2023_Cell_Rep_Med	11.0	0.07803584395825879	0.009073541201572718
+cycling_pro_vs_rev	adj_reduced	robustness	Joanito_2022_Nat_Genet	13.0	0.09351791385008226	0.016361632218043393
+cycling_pro_vs_rev	adj_reduced	robustness	Li_2023_Cancer_Cell	7.0	0.1442024691840169	0.027233592901922378
+cycling_pro_vs_rev	adj_reduced	robustness	Liu_2024_Cancer_Res	7.0	0.16361412312865536	0.024886182597138387
+cycling_pro_vs_rev	adj_reduced	robustness	MUI_Innsbruck	5.0	0.05750142421286282	0.04126482358223818
+cycling_pro_vs_rev	adj_reduced	robustness	Pelka_2021_Cell	16.0	0.0940944939808481	0.012555596273687976
+cycling_pro_vs_rev	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	11.0	0.12332633533065844	0.014065464864758064
+cycling_pro_vs_rev	ds_mean	robustness_mandatory	Joanito_2022_Nat_Genet	13.0	0.04204935160062891	0.00745558246646449
+cycling_pro_vs_rev	ds_mean	robustness_mandatory	Li_2023_Cancer_Cell	7.0	0.020191444108032686	0.0072095007221445444
+cycling_pro_vs_rev	ds_mean	robustness_mandatory	Liu_2024_Cancer_Res	7.0	0.04328490367978376	0.007014826350400639
+cycling_pro_vs_rev	ds_mean	robustness_mandatory	MUI_Innsbruck	5.0	0.1375516681061007	0.018149566307582594
+cycling_pro_vs_rev	ds_mean	robustness_mandatory	Pelka_2021_Cell	16.0	0.03956259250980845	0.0064747491710458955
+cycling_pro_vs_rev	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	11.0	0.039892174371065243	0.005867816283964455
+cycling_pro_vs_rev	final_ood_pass_only	M3_sensitivity	Li_2023_Cancer_Cell	6.0	0.1643985552898101	0.037593293471807385
+cycling_pro_vs_rev	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	16.0	0.09871778651357115	0.019806356264855083
+Cycling Stem/TA_vs_ref	final	secondary_bh	Chen_2024_Cancer_Cell	17.0	0.06769275732633613	0.017837672528331863
+Cycling Stem/TA_vs_ref	final	secondary_bh	Joanito_2022_Nat_Genet	17.0	0.053400990995943455	0.015702764902132113
+Cycling Stem/TA_vs_ref	final	secondary_bh	Lee_2020_Nat_Genet	5.0	0.06980311670569261	0.028498594330295002
+Cycling Stem/TA_vs_ref	final	secondary_bh	Li_2023_Cancer_Cell	7.0	0.19678237085920589	0.0452569529694483
+Cycling Stem/TA_vs_ref	final	secondary_bh	MUI_Innsbruck	11.0	0.4138249963689345	0.020212963825869335
+Cycling Stem/TA_vs_ref	final	secondary_bh	Pelka_2021_Cell	21.0	0.0979613402061293	0.012460616907763206
+Cycling Stem/TA_vs_ref	final	secondary_bh	Qin_2023_Cell_Rep_Med	21.0	0.10790884384900953	0.012419337347325338
+Cycling Stem/TA_vs_ref	final	secondary_bh	Uhlitz_2021_EMBO_Mol_Med	8.0	0.17077454627129518	0.02740700665238724
+Cycling Stem/TA_vs_ref	raw	robustness	Chen_2024_Cancer_Cell	17.0	0.09996304661806299	0.020278050680509422
+Cycling Stem/TA_vs_ref	raw	robustness	Joanito_2022_Nat_Genet	17.0	0.15130100470228633	0.013761178885070852
+Cycling Stem/TA_vs_ref	raw	robustness	Lee_2020_Nat_Genet	5.0	0.1708365293275451	0.030562169469258785
+Cycling Stem/TA_vs_ref	raw	robustness	Li_2023_Cancer_Cell	7.0	0.26949331026474027	0.034325765624838654
+Cycling Stem/TA_vs_ref	raw	robustness	MUI_Innsbruck	11.0	0.46626960268357975	0.02016026195678819
+Cycling Stem/TA_vs_ref	raw	robustness	Pelka_2021_Cell	21.0	0.18910220555707483	0.011875925422511657
+Cycling Stem/TA_vs_ref	raw	robustness	Qin_2023_Cell_Rep_Med	21.0	0.18106590384532684	0.012128525756594812
+Cycling Stem/TA_vs_ref	raw	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.22859815711613896	0.02729359094246499
+Cycling Stem/TA_vs_ref	adj_full	robustness	Chen_2024_Cancer_Cell	17.0	0.01571143663790092	0.005211267864560658
+Cycling Stem/TA_vs_ref	adj_full	robustness	Joanito_2022_Nat_Genet	17.0	0.028155699279993788	0.008578331840624296
+Cycling Stem/TA_vs_ref	adj_full	robustness	Lee_2020_Nat_Genet	5.0	0.022994191654782132	0.01198702339096744
+Cycling Stem/TA_vs_ref	adj_full	robustness	Li_2023_Cancer_Cell	7.0	0.04338866224201919	0.027696931381238254
+Cycling Stem/TA_vs_ref	adj_full	robustness	MUI_Innsbruck	11.0	0.21190826849071767	0.02572891542773984
+Cycling Stem/TA_vs_ref	adj_full	robustness	Pelka_2021_Cell	21.0	0.03548675763606125	0.008105151151248716
+Cycling Stem/TA_vs_ref	adj_full	robustness	Qin_2023_Cell_Rep_Med	21.0	0.02991900565667967	0.006830392541825087
+Cycling Stem/TA_vs_ref	adj_full	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.10040090078888136	0.01958226317417146
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Chen_2024_Cancer_Cell	17.0	0.032592000918529415	0.0050579663054338055
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Joanito_2022_Nat_Genet	17.0	0.05723418715813653	0.01234632383220682
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Lee_2020_Nat_Genet	5.0	0.06655477918245804	0.01741339563929399
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Li_2023_Cancer_Cell	7.0	0.11492198484872118	0.028536170368732204
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	MUI_Innsbruck	11.0	0.2740619484189615	0.016061499438399598
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Pelka_2021_Cell	21.0	0.0811864665056362	0.009948602403943633
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	21.0	0.06779468592773776	0.008857518144281698
+Cycling Stem/TA_vs_ref	adj_reduced	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.15120197158947193	0.021660846727000842
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	17.0	0.025803495317553354	0.0042623651133509
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Joanito_2022_Nat_Genet	17.0	0.030295653955997995	0.006258511355781552
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Lee_2020_Nat_Genet	5.0	0.03653670191891352	0.006744987859373972
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Li_2023_Cancer_Cell	7.0	0.042602851782530544	0.006853070806232243
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	MUI_Innsbruck	11.0	0.1451496032296073	0.02115123433759549
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Pelka_2021_Cell	21.0	0.06738113239030137	0.0074153970491329544
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	21.0	0.04769252189510996	0.0037494905974482916
+Cycling Stem/TA_vs_ref	ds_mean	robustness_mandatory	Uhlitz_2021_EMBO_Mol_Med	8.0	0.16088781767862947	0.017929812649929842
+Cycling Stem/TA_vs_ref	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	16.0	0.06907226886244927	0.01855508955146114
+Cycling Stem/TA_vs_ref	final_ood_pass_only	M3_sensitivity	Li_2023_Cancer_Cell	7.0	0.2024869795518123	0.04468633284678138
+Cycling Stem/TA_vs_ref	final_ood_pass_only	M3_sensitivity	MUI_Innsbruck	8.0	0.43257456282978357	0.012192257620005892
+Cycling Stem/TA_vs_ref	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	20.0	0.09562318799177517	0.012758753246154561
+Cycling Stem/TA_vs_ref	final_ood_pass_only	M3_sensitivity	Qin_2023_Cell_Rep_Med	15.0	0.10207453188454843	0.01756849523950302
+Secretory differentiated-like_vs_ref	final	secondary_bh	Chen_2024_Cancer_Cell	15.0	-0.016157260968596585	0.003857659478323319
+Secretory differentiated-like_vs_ref	final	secondary_bh	Joanito_2022_Nat_Genet	6.0	-0.008393630599113425	0.0028690175021318996
+Secretory differentiated-like_vs_ref	final	secondary_bh	MUI_Innsbruck	9.0	-0.009322526856813874	0.006974279697648675
+Secretory differentiated-like_vs_ref	final	secondary_bh	Pelka_2021_Cell	16.0	-0.0031597061216301313	0.002948113333408599
+Secretory differentiated-like_vs_ref	final	secondary_bh	Qin_2023_Cell_Rep_Med	15.0	-0.0021442085810498	0.003684375147895518
+Secretory differentiated-like_vs_ref	final	secondary_bh	Uhlitz_2021_EMBO_Mol_Med	8.0	0.0023108289400100746	0.005712271032978357
+Secretory differentiated-like_vs_ref	raw	robustness	Chen_2024_Cancer_Cell	15.0	-0.0010647006040064553	0.00035721673745757313
+Secretory differentiated-like_vs_ref	raw	robustness	Joanito_2022_Nat_Genet	6.0	-0.017236615114695115	0.007047557044458449
+Secretory differentiated-like_vs_ref	raw	robustness	MUI_Innsbruck	9.0	-0.09741380082723165	0.02131888159183305
+Secretory differentiated-like_vs_ref	raw	robustness	Pelka_2021_Cell	16.0	-0.003601736198274965	0.0031296416512899793
+Secretory differentiated-like_vs_ref	raw	robustness	Qin_2023_Cell_Rep_Med	15.0	-0.009726471866656846	0.0028731761470228915
+Secretory differentiated-like_vs_ref	raw	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	-5.7198990110892346e-05	4.8695347883115687e-05
+Secretory differentiated-like_vs_ref	adj_full	robustness	Chen_2024_Cancer_Cell	15.0	-0.01359856226304024	0.002817313575108236
+Secretory differentiated-like_vs_ref	adj_full	robustness	Joanito_2022_Nat_Genet	6.0	-0.008129876702447717	0.0031960217205169823
+Secretory differentiated-like_vs_ref	adj_full	robustness	MUI_Innsbruck	9.0	-0.0307548294064805	0.0105500855804437
+Secretory differentiated-like_vs_ref	adj_full	robustness	Pelka_2021_Cell	16.0	-0.004290747386311125	0.002962250392700141
+Secretory differentiated-like_vs_ref	adj_full	robustness	Qin_2023_Cell_Rep_Med	15.0	-0.0029732079397616724	0.0033896638235515063
+Secretory differentiated-like_vs_ref	adj_full	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	-0.0001255692472533318	0.005334365992675943
+Secretory differentiated-like_vs_ref	adj_reduced	robustness	Chen_2024_Cancer_Cell	15.0	-0.016068419347098614	0.002953890840188079
+Secretory differentiated-like_vs_ref	adj_reduced	robustness	Joanito_2022_Nat_Genet	6.0	-0.008572019305311616	0.0034508284002294975
+Secretory differentiated-like_vs_ref	adj_reduced	robustness	MUI_Innsbruck	9.0	-0.030086086708745345	0.010074603412736374
+Secretory differentiated-like_vs_ref	adj_reduced	robustness	Pelka_2021_Cell	16.0	-0.005142727579982537	0.003099189869046204
+Secretory differentiated-like_vs_ref	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	15.0	-0.0034558554865832657	0.0033945758210419262
+Secretory differentiated-like_vs_ref	adj_reduced	robustness	Uhlitz_2021_EMBO_Mol_Med	8.0	0.0015281757106579133	0.005379182153817349
+Secretory differentiated-like_vs_ref	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	15.0	-0.01969938981903201	0.0027301073649986613
+Secretory differentiated-like_vs_ref	ds_mean	robustness_mandatory	Joanito_2022_Nat_Genet	6.0	-0.019565177511016815	0.005986397404115504
+Secretory differentiated-like_vs_ref	ds_mean	robustness_mandatory	MUI_Innsbruck	9.0	-0.020334128021942448	0.00687141859728782
+Secretory differentiated-like_vs_ref	ds_mean	robustness_mandatory	Pelka_2021_Cell	16.0	-0.0018810762108385573	0.0055487585706643465
+Secretory differentiated-like_vs_ref	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	15.0	-0.019752684543480007	0.004691475325083944
+Secretory differentiated-like_vs_ref	ds_mean	robustness_mandatory	Uhlitz_2021_EMBO_Mol_Med	8.0	0.0013401859588893445	0.00510304837623519
+Secretory differentiated-like_vs_ref	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	14.0	-0.016563218446337822	0.004043579964801995
+Secretory differentiated-like_vs_ref	final_ood_pass_only	M3_sensitivity	MUI_Innsbruck	5.0	-0.02325363209308666	0.0067027422833664824
+Secretory differentiated-like_vs_ref	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	15.0	-0.00241967949717837	0.003192104487411636
+Secretory differentiated-like_vs_ref	final_ood_pass_only	M3_sensitivity	Qin_2023_Cell_Rep_Med	10.0	-0.0028652830816721206	0.0029584883854943786
+Transitional stem/secretory_vs_ref	final	secondary_bh	Chen_2024_Cancer_Cell	6.0	0.009052519173533334	0.005925333771229678
+Transitional stem/secretory_vs_ref	final	secondary_bh	Li_2023_Cancer_Cell	5.0	0.04798497180513124	0.014357455146731115
+Transitional stem/secretory_vs_ref	final	secondary_bh	MUI_Innsbruck	6.0	0.06739969607627215	0.026025522855483166
+Transitional stem/secretory_vs_ref	final	secondary_bh	Pelka_2021_Cell	15.0	0.017297319990458117	0.0033227070594193057
+Transitional stem/secretory_vs_ref	final	secondary_bh	Qin_2023_Cell_Rep_Med	7.0	0.021573240636042712	0.005899624304383108
+Transitional stem/secretory_vs_ref	raw	robustness	Chen_2024_Cancer_Cell	6.0	0.010458485290672517	0.006323495726230381
+Transitional stem/secretory_vs_ref	raw	robustness	Li_2023_Cancer_Cell	5.0	0.07112820692163606	0.012728019155699832
+Transitional stem/secretory_vs_ref	raw	robustness	MUI_Innsbruck	6.0	0.07078167543847087	0.02580669139419974
+Transitional stem/secretory_vs_ref	raw	robustness	Pelka_2021_Cell	15.0	0.024466008889938443	0.007032028388880895
+Transitional stem/secretory_vs_ref	raw	robustness	Qin_2023_Cell_Rep_Med	7.0	0.012622531325779928	0.006872274550651331
+Transitional stem/secretory_vs_ref	adj_full	robustness	Chen_2024_Cancer_Cell	6.0	-0.00654479860187475	0.005923888219865697
+Transitional stem/secretory_vs_ref	adj_full	robustness	Li_2023_Cancer_Cell	5.0	0.01999390439070824	0.007029591884161349
+Transitional stem/secretory_vs_ref	adj_full	robustness	MUI_Innsbruck	6.0	0.017555735216000165	0.014937672800031845
+Transitional stem/secretory_vs_ref	adj_full	robustness	Pelka_2021_Cell	15.0	0.0036084415172954287	0.005178404529435406
+Transitional stem/secretory_vs_ref	adj_full	robustness	Qin_2023_Cell_Rep_Med	7.0	0.016827059022960614	0.003219959596337568
+Transitional stem/secretory_vs_ref	adj_reduced	robustness	Chen_2024_Cancer_Cell	6.0	-0.0017905594273538172	0.006641637554726244
+Transitional stem/secretory_vs_ref	adj_reduced	robustness	Li_2023_Cancer_Cell	5.0	0.034865023590091956	0.010347690060311263
+Transitional stem/secretory_vs_ref	adj_reduced	robustness	MUI_Innsbruck	6.0	0.03688713424402847	0.014275368835299887
+Transitional stem/secretory_vs_ref	adj_reduced	robustness	Pelka_2021_Cell	15.0	0.011949164041436068	0.004547730573749216
+Transitional stem/secretory_vs_ref	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	7.0	0.020836619377042443	0.003971011539330757
+Transitional stem/secretory_vs_ref	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	6.0	-0.005057620767482936	0.003881466317935071
+Transitional stem/secretory_vs_ref	ds_mean	robustness_mandatory	Li_2023_Cancer_Cell	5.0	0.01212877927751638	0.0066406937240761615
+Transitional stem/secretory_vs_ref	ds_mean	robustness_mandatory	MUI_Innsbruck	6.0	0.00012098389373549374	0.004962809098163211
+Transitional stem/secretory_vs_ref	ds_mean	robustness_mandatory	Pelka_2021_Cell	15.0	0.016200324356563763	0.007009110108817261
+Transitional stem/secretory_vs_ref	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	7.0	-0.0004928241105778465	0.010910745816656756
+Transitional stem/secretory_vs_ref	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	6.0	0.010178363189275634	0.005212950091737605
+Transitional stem/secretory_vs_ref	final_ood_pass_only	M3_sensitivity	Li_2023_Cancer_Cell	5.0	0.0495458595236938	0.01439365399821267
+Transitional stem/secretory_vs_ref	final_ood_pass_only	M3_sensitivity	Pelka_2021_Cell	14.0	0.018282495570660962	0.003465352667017347
+Rare lineages_vs_ref	final	secondary_bh	Chen_2024_Cancer_Cell	9.0	-0.002999875411752145	0.00456353312346408
+Rare lineages_vs_ref	final	secondary_bh	MUI_Innsbruck	6.0	0.0436323060523717	0.05344982925406647
+Rare lineages_vs_ref	final	secondary_bh	Qin_2023_Cell_Rep_Med	12.0	0.004496814097187942	0.0029107061127874954
+Rare lineages_vs_ref	raw	robustness	Chen_2024_Cancer_Cell	9.0	-8.018938166226625e-05	0.00029020752123870515
+Rare lineages_vs_ref	raw	robustness	MUI_Innsbruck	6.0	-0.05217825764608256	0.040089046750411944
+Rare lineages_vs_ref	raw	robustness	Qin_2023_Cell_Rep_Med	12.0	0.009407411097656209	0.004429006085000994
+Rare lineages_vs_ref	adj_full	robustness	Chen_2024_Cancer_Cell	9.0	0.0006754957694130999	0.0023205605349396353
+Rare lineages_vs_ref	adj_full	robustness	MUI_Innsbruck	6.0	0.02407062390194375	0.020145717950987088
+Rare lineages_vs_ref	adj_full	robustness	Qin_2023_Cell_Rep_Med	12.0	0.006273717601011734	0.003170213968759885
+Rare lineages_vs_ref	adj_reduced	robustness	Chen_2024_Cancer_Cell	9.0	-0.0009859863811805887	0.002840564639903247
+Rare lineages_vs_ref	adj_reduced	robustness	MUI_Innsbruck	6.0	0.011321456660899848	0.022172435599905966
+Rare lineages_vs_ref	adj_reduced	robustness	Qin_2023_Cell_Rep_Med	12.0	0.005887113007631624	0.003598198664966016
+Rare lineages_vs_ref	ds_mean	robustness_mandatory	Chen_2024_Cancer_Cell	9.0	0.0006125570444242849	0.0036360213608895406
+Rare lineages_vs_ref	ds_mean	robustness_mandatory	MUI_Innsbruck	6.0	-0.012510484688236458	0.013601849827463607
+Rare lineages_vs_ref	ds_mean	robustness_mandatory	Qin_2023_Cell_Rep_Med	12.0	0.028836735187653537	0.005945008126028209
+Rare lineages_vs_ref	final_ood_pass_only	M3_sensitivity	Chen_2024_Cancer_Cell	9.0	-0.0024108270785123333	0.004769232439083852
+Rare lineages_vs_ref	final_ood_pass_only	M3_sensitivity	Qin_2023_Cell_Rep_Med	7.0	-0.001836980349894843	0.004104576550240676

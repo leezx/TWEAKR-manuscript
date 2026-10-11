@@ -1,0 +1,105 @@
+study_id	subset	class	module	n_class	n_comparator	module_class	module_comparator	diff	evaluable	pass_
+Chen_2024_Cancer_Cell	all_assigned	Absorptive differentiated-like	absorptive	4911	11201	2.1842758864452163	0.3276546619742957	1.8566212244709206	True	True
+Chen_2024_Cancer_Cell	all_assigned	Secretory differentiated-like	secretory	4483	11414	5.892371067029132	1.091084478086556	4.801286588942576	True	True
+Chen_2024_Cancer_Cell	all_assigned	Stem/TA-like	stem	6503	4911	0.7511678135802781	0.7143116301470223	0.03685618343325581	True	False
+Chen_2024_Cancer_Cell	all_assigned	Cycling Stem/TA	cycling	4698	6503	1.3928922265631063	0.10400546274346795	1.2888867638196384	True	True
+Guo_2022_JCI_Insight	all_assigned	Absorptive differentiated-like	absorptive	403	1198	2.8222877523093635	0.9057503946929016	1.9165373576164617	True	True
+Guo_2022_JCI_Insight	all_assigned	Secretory differentiated-like	secretory	625	1074	4.779791834403507	1.0621326559453574	3.717659178458149	True	True
+Guo_2022_JCI_Insight	all_assigned	Stem/TA-like	stem	671	403	0.9784763447142983	0.5226298990074181	0.45584644570688027	True	False
+Guo_2022_JCI_Insight	all_assigned	Cycling Stem/TA	cycling	527	671	1.2128206951787264	0.05860978585368082	1.1542109093250454	True	True
+Joanito_2022_Nat_Genet	all_assigned	Absorptive differentiated-like	absorptive	4522	11319	2.1772766284626788	0.7350458534560971	1.4422307750065817	True	True
+Joanito_2022_Nat_Genet	all_assigned	Secretory differentiated-like	secretory	2824	4522	6.006557073856186	1.6918048274377258	4.31475224641846	True	True
+Joanito_2022_Nat_Genet	all_assigned	Stem/TA-like	stem	0	4522				False	
+Joanito_2022_Nat_Genet	all_assigned	Cycling Stem/TA	cycling	11319	0				False	
+Khaliq_2022_Genome_Biol	all_assigned	Absorptive differentiated-like	absorptive	548	2310	2.4035269900819363	0.5839783230531764	1.81954866702876	True	True
+Khaliq_2022_Genome_Biol	all_assigned	Secretory differentiated-like	secretory	424	2355	5.842246418618719	0.9029848344493522	4.939261584169366	True	True
+Khaliq_2022_Genome_Biol	all_assigned	Stem/TA-like	stem	1807	548	1.2132268110363935	1.0022004464867673	0.2110263645496262	True	False
+Khaliq_2022_Genome_Biol	all_assigned	Cycling Stem/TA	cycling	503	1807	1.409275539298494	0.14192194986032067	1.2673535894381733	True	True
+Lee_2020_Nat_Genet	all_assigned	Absorptive differentiated-like	absorptive	1509	13888	2.6998464804057427	0.7178518577353006	1.9819946226704421	True	True
+Lee_2020_Nat_Genet	all_assigned	Secretory differentiated-like	secretory	1083	11012	5.162224356470753	0.8302691331747597	4.331955223295993	True	True
+Lee_2020_Nat_Genet	all_assigned	Stem/TA-like	stem	9503	1509	0.7787403828734968	0.4121597478146966	0.3665806350588002	True	False
+Lee_2020_Nat_Genet	all_assigned	Cycling Stem/TA	cycling	4385	9503	1.187937366148037	0.0870341150857909	1.100903251062246	True	True
+Li_2023_Cancer_Cell	all_assigned	Absorptive differentiated-like	absorptive	1354	11775	3.588396471706484	0.704352110746651	2.884044360959833	True	True
+Li_2023_Cancer_Cell	all_assigned	Secretory differentiated-like	secretory	536	5331	5.682849115711183	0.8836031237549825	4.799245991956201	True	True
+Li_2023_Cancer_Cell	all_assigned	Stem/TA-like	stem	3977	1354	1.3344997978768276	0.6958958052776418	0.6386039925991858	True	False
+Li_2023_Cancer_Cell	all_assigned	Cycling Stem/TA	cycling	7798	3977	1.4244356456183205	0.06669602101290001	1.3577396246054205	True	True
+Liu_2024_Cancer_Res	all_assigned	Absorptive differentiated-like	absorptive	4932	5962	1.3855515317769256	0.7438726200052046	0.641678911771721	True	False
+Liu_2024_Cancer_Res	all_assigned	Secretory differentiated-like	secretory	182	4932	4.999513409299738	1.5998810825243037	3.3996323267754347	True	True
+Liu_2024_Cancer_Res	all_assigned	Stem/TA-like	stem	0	4932				False	
+Liu_2024_Cancer_Res	all_assigned	Cycling Stem/TA	cycling	5962	0				False	
+MUI_Innsbruck	all_assigned	Absorptive differentiated-like	absorptive	2450	7201	2.1512180324618475	0.5868617475959682	1.5643562848658794	True	True
+MUI_Innsbruck	all_assigned	Secretory differentiated-like	secretory	842	4956	4.768197998372058	0.5226579885649886	4.245540009807069	True	True
+MUI_Innsbruck	all_assigned	Stem/TA-like	stem	2506	2450	1.18670627053505	0.959937337041741	0.22676893349330896	True	False
+MUI_Innsbruck	all_assigned	Cycling Stem/TA	cycling	4695	2506	1.3591336207598823	0.015015711966378064	1.3441179087935042	True	True
+Pelka_2021_Cell	all_assigned	Absorptive differentiated-like	absorptive	3759	58110	3.242535734784033	0.5769694798179479	2.665566254966085	True	True
+Pelka_2021_Cell	all_assigned	Secretory differentiated-like	secretory	4204	33902	6.204683176575301	1.038783444986273	5.165899731589028	True	True
+Pelka_2021_Cell	all_assigned	Stem/TA-like	stem	30143	3759	1.058827070430811	0.5565760400712496	0.5022510303595613	True	False
+Pelka_2021_Cell	all_assigned	Cycling Stem/TA	cycling	27967	30143	1.290145155722061	0.08549975633452658	1.2046453993875343	True	True
+Qi_2022_Nat_Commun	all_assigned	Absorptive differentiated-like	absorptive	492	4594	3.3695232683107075	1.1903127067477812	2.1792105615629263	True	True
+Qi_2022_Nat_Commun	all_assigned	Secretory differentiated-like	secretory	321	3989	5.447443748940572	0.8705828428645828	4.576860906075989	True	True
+Qi_2022_Nat_Commun	all_assigned	Stem/TA-like	stem	3497	492	1.0001671711245426	0.39801724846721676	0.6021499226573258	True	False
+Qi_2022_Nat_Commun	all_assigned	Cycling Stem/TA	cycling	1097	3497	1.449342071031273	0.13843299240566204	1.310909078625611	True	True
+Qian_2020_Cell_Res	all_assigned	Absorptive differentiated-like	absorptive	196	6162	2.77027051787222	0.4896338189758317	2.280636698896388	True	True
+Qian_2020_Cell_Res	all_assigned	Secretory differentiated-like	secretory	235	4673	4.315133771466207	0.8435867891383543	3.4715469823278524	True	True
+Qian_2020_Cell_Res	all_assigned	Stem/TA-like	stem	4477	196	0.38823261980089424	0.32472051702306126	0.06351210277783298	True	False
+Qian_2020_Cell_Res	all_assigned	Cycling Stem/TA	cycling	1685	4477	1.3685585763362793	0.12033279109040892	1.2482257852458705	True	True
+Qin_2023_Cell_Rep_Med	all_assigned	Absorptive differentiated-like	absorptive	4607	17866	2.4349630838895857	0.8111261428633527	1.623836941026233	True	True
+Qin_2023_Cell_Rep_Med	all_assigned	Secretory differentiated-like	secretory	1567	10034	5.69553007073332	1.067206107059388	4.628323963673933	True	True
+Qin_2023_Cell_Rep_Med	all_assigned	Stem/TA-like	stem	5427	4607	0.9382421591057264	0.664444250686852	0.2737979084188744	True	False
+Qin_2023_Cell_Rep_Med	all_assigned	Cycling Stem/TA	cycling	12439	5427	1.4259765782394318	0.14712126362620465	1.278855314613227	True	True
+Uhlitz_2021_EMBO_Mol_Med	all_assigned	Absorptive differentiated-like	absorptive	3327	4779	4.257706136160433	1.1488985079700118	3.108807628190421	True	True
+Uhlitz_2021_EMBO_Mol_Med	all_assigned	Secretory differentiated-like	secretory	2089	6354	7.116063127668428	1.6147297232975226	5.5013334043709055	True	True
+Uhlitz_2021_EMBO_Mol_Med	all_assigned	Stem/TA-like	stem	3027	3327	1.2174290092389495	0.46164183006746146	0.7557871791714881	True	False
+Uhlitz_2021_EMBO_Mol_Med	all_assigned	Cycling Stem/TA	cycling	1752	3027	2.3433701359290606	0.21421795859846174	2.129152177330599	True	True
+Chen_2024_Cancer_Cell	old_ood_rejected	Absorptive differentiated-like	absorptive	794	1217	1.84111949276619	0.45432791156599794	1.386791581200192	True	True
+Chen_2024_Cancer_Cell	old_ood_rejected	Secretory differentiated-like	secretory	400	1354	5.505380501704827	1.2439253357619096	4.261455165942917	True	True
+Chen_2024_Cancer_Cell	old_ood_rejected	Stem/TA-like	stem	560	794	0.5210142952429304	0.7083139655479573	-0.18729967030502692	True	False
+Chen_2024_Cancer_Cell	old_ood_rejected	Cycling Stem/TA	cycling	657	560	1.7195801011217964	0.11224397798712837	1.607336123134668	True	True
+Guo_2022_JCI_Insight	old_ood_rejected	Absorptive differentiated-like	absorptive	231	132	2.5508786770020953	1.0254218653067637	1.5254568116953315	True	True
+Guo_2022_JCI_Insight	old_ood_rejected	Secretory differentiated-like	secretory	382	280	4.278883811830489	1.088401804626754	3.1904820072037348	True	True
+Guo_2022_JCI_Insight	old_ood_rejected	Stem/TA-like	stem	49	231				False	
+Guo_2022_JCI_Insight	old_ood_rejected	Cycling Stem/TA	cycling	83	49				False	
+Joanito_2022_Nat_Genet	old_ood_rejected	Absorptive differentiated-like	absorptive	4520	11319	2.1773990853381906	0.7350458534560971	1.4423532318820935	True	True
+Joanito_2022_Nat_Genet	old_ood_rejected	Secretory differentiated-like	secretory	2824	4520	6.006557073856186	1.6918962240847335	4.314660849771452	True	True
+Joanito_2022_Nat_Genet	old_ood_rejected	Stem/TA-like	stem	0	4520				False	
+Joanito_2022_Nat_Genet	old_ood_rejected	Cycling Stem/TA	cycling	11319	0				False	
+Khaliq_2022_Genome_Biol	old_ood_rejected	Absorptive differentiated-like	absorptive	45	273				False	
+Khaliq_2022_Genome_Biol	old_ood_rejected	Secretory differentiated-like	secretory	32	253				False	
+Khaliq_2022_Genome_Biol	old_ood_rejected	Stem/TA-like	stem	208	45				False	
+Khaliq_2022_Genome_Biol	old_ood_rejected	Cycling Stem/TA	cycling	65	208	1.7810116717529523	0.20458344184485702	1.5764282299080952	True	True
+Lee_2020_Nat_Genet	old_ood_rejected	Absorptive differentiated-like	absorptive	473	696	1.9657712165722638	0.9135773479528728	1.052193868619391	True	True
+Lee_2020_Nat_Genet	old_ood_rejected	Secretory differentiated-like	secretory	199	862	3.6142394194810614	0.9247007111916666	2.689538708289395	True	True
+Lee_2020_Nat_Genet	old_ood_rejected	Stem/TA-like	stem	389	473	0.37679687242282495	0.3050361162348926	0.07176075618793237	True	False
+Lee_2020_Nat_Genet	old_ood_rejected	Cycling Stem/TA	cycling	307	389	1.582693292924715	0.0587144078320474	1.5239788850926677	True	True
+Li_2023_Cancer_Cell	old_ood_rejected	Absorptive differentiated-like	absorptive	173	576	2.6934251273965195	1.0547556756884766	1.638669451708043	True	True
+Li_2023_Cancer_Cell	old_ood_rejected	Secretory differentiated-like	secretory	53	335	3.9728391245333463	1.0932056869667939	2.8796334375665524	True	True
+Li_2023_Cancer_Cell	old_ood_rejected	Stem/TA-like	stem	162	173	0.8058928795411887	0.7959791721826954	0.009913707358493284	True	False
+Li_2023_Cancer_Cell	old_ood_rejected	Cycling Stem/TA	cycling	414	162	1.648308616223551	0.09583180758553878	1.552476808638012	True	True
+Liu_2024_Cancer_Res	old_ood_rejected	Absorptive differentiated-like	absorptive	4191	5961	1.3943128091858397	0.7438743156243692	0.6504384935614704	True	False
+Liu_2024_Cancer_Res	old_ood_rejected	Secretory differentiated-like	secretory	179	4191	4.998528715585839	1.5998775467070303	3.398651168878809	True	True
+Liu_2024_Cancer_Res	old_ood_rejected	Stem/TA-like	stem	0	4191				False	
+Liu_2024_Cancer_Res	old_ood_rejected	Cycling Stem/TA	cycling	5961	0				False	
+MUI_Innsbruck	old_ood_rejected	Absorptive differentiated-like	absorptive	1333	3054	2.1463533595628244	0.6879035513301976	1.4584498082326267	True	True
+MUI_Innsbruck	old_ood_rejected	Secretory differentiated-like	secretory	455	2041	4.291843466029934	0.6258624882021034	3.6659809778278305	True	True
+MUI_Innsbruck	old_ood_rejected	Stem/TA-like	stem	708	1333	1.2763143188801165	0.8970652752223691	0.37924904365774736	True	False
+MUI_Innsbruck	old_ood_rejected	Cycling Stem/TA	cycling	2346	708	1.4353671797530523	0.01203627204769189	1.4233309077053604	True	True
+Pelka_2021_Cell	old_ood_rejected	Absorptive differentiated-like	absorptive	166	510	2.4483035846198584	1.0306302998294368	1.4176732847904217	True	True
+Pelka_2021_Cell	old_ood_rejected	Secretory differentiated-like	secretory	137	378	4.641788230788648	1.054313860604865	3.5874743701837826	True	True
+Pelka_2021_Cell	old_ood_rejected	Stem/TA-like	stem	212	166	0.7914714560329817	0.5836788670370812	0.20779258899590058	True	False
+Pelka_2021_Cell	old_ood_rejected	Cycling Stem/TA	cycling	298	212	1.8517261202322737	0.09105284320082038	1.7606732770314533	True	True
+Qi_2022_Nat_Commun	old_ood_rejected	Absorptive differentiated-like	absorptive	148	186	3.33122561254426	1.9197869632506417	1.4114386492936184	True	True
+Qi_2022_Nat_Commun	old_ood_rejected	Secretory differentiated-like	secretory	17	276				False	
+Qi_2022_Nat_Commun	old_ood_rejected	Stem/TA-like	stem	128	148	0.6840604075584589	0.372578772396752	0.31148163516170685	True	False
+Qi_2022_Nat_Commun	old_ood_rejected	Cycling Stem/TA	cycling	58	128	1.9870220278930235	0.11677139651594018	1.8702506313770833	True	True
+Qian_2020_Cell_Res	old_ood_rejected	Absorptive differentiated-like	absorptive	19	100				False	
+Qian_2020_Cell_Res	old_ood_rejected	Secretory differentiated-like	secretory	11	74				False	
+Qian_2020_Cell_Res	old_ood_rejected	Stem/TA-like	stem	55	19				False	
+Qian_2020_Cell_Res	old_ood_rejected	Cycling Stem/TA	cycling	45	55				False	
+Qin_2023_Cell_Rep_Med	old_ood_rejected	Absorptive differentiated-like	absorptive	1141	6265	2.595020197633292	0.9395898454876181	1.6554303521456737	True	True
+Qin_2023_Cell_Rep_Med	old_ood_rejected	Secretory differentiated-like	secretory	752	2628	5.293057018907489	1.16853748691595	4.124519531991539	True	True
+Qin_2023_Cell_Rep_Med	old_ood_rejected	Stem/TA-like	stem	1487	1141	0.864259800576559	0.6259800012940065	0.2382797992825525	True	False
+Qin_2023_Cell_Rep_Med	old_ood_rejected	Cycling Stem/TA	cycling	4778	1487	1.45972881129682	0.11391245737651445	1.3458163539203056	True	True
+Uhlitz_2021_EMBO_Mol_Med	old_ood_rejected	Absorptive differentiated-like	absorptive	3141	4633	4.273166566943275	1.1524123700940463	3.120754196849229	True	True
+Uhlitz_2021_EMBO_Mol_Med	old_ood_rejected	Secretory differentiated-like	secretory	1947	6049	7.113313635204579	1.6105021295718938	5.502811505632685	True	True
+Uhlitz_2021_EMBO_Mol_Med	old_ood_rejected	Stem/TA-like	stem	2908	3141	1.2192709537126962	0.4475365572623792	0.771734396450317	True	False
+Uhlitz_2021_EMBO_Mol_Med	old_ood_rejected	Cycling Stem/TA	cycling	1725	2908	2.3439531432223286	0.21276100257564579	2.1311921406466827	True	True

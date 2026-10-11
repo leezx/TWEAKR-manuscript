@@ -1,0 +1,53 @@
+study_id	class	verdict
+Chen_2024_Cancer_Cell	Absorptive differentiated-like	verified
+Chen_2024_Cancer_Cell	Cycling Stem/TA	verified
+Chen_2024_Cancer_Cell	Secretory differentiated-like	verified
+Chen_2024_Cancer_Cell	Stem/TA-like	lineage_transfer_unverified
+Guo_2022_JCI_Insight	Absorptive differentiated-like	verified
+Guo_2022_JCI_Insight	Cycling Stem/TA	verified
+Guo_2022_JCI_Insight	Secretory differentiated-like	verified
+Guo_2022_JCI_Insight	Stem/TA-like	lineage_transfer_unverified
+Joanito_2022_Nat_Genet	Absorptive differentiated-like	verified
+Joanito_2022_Nat_Genet	Cycling Stem/TA	not_evaluable
+Joanito_2022_Nat_Genet	Secretory differentiated-like	verified
+Joanito_2022_Nat_Genet	Stem/TA-like	not_evaluable
+Khaliq_2022_Genome_Biol	Absorptive differentiated-like	verified
+Khaliq_2022_Genome_Biol	Cycling Stem/TA	verified
+Khaliq_2022_Genome_Biol	Secretory differentiated-like	verified
+Khaliq_2022_Genome_Biol	Stem/TA-like	lineage_transfer_unverified
+Lee_2020_Nat_Genet	Absorptive differentiated-like	verified
+Lee_2020_Nat_Genet	Cycling Stem/TA	verified
+Lee_2020_Nat_Genet	Secretory differentiated-like	verified
+Lee_2020_Nat_Genet	Stem/TA-like	lineage_transfer_unverified
+Li_2023_Cancer_Cell	Absorptive differentiated-like	verified
+Li_2023_Cancer_Cell	Cycling Stem/TA	verified
+Li_2023_Cancer_Cell	Secretory differentiated-like	verified
+Li_2023_Cancer_Cell	Stem/TA-like	lineage_transfer_unverified
+Liu_2024_Cancer_Res	Absorptive differentiated-like	lineage_transfer_unverified
+Liu_2024_Cancer_Res	Cycling Stem/TA	not_evaluable
+Liu_2024_Cancer_Res	Secretory differentiated-like	verified
+Liu_2024_Cancer_Res	Stem/TA-like	not_evaluable
+MUI_Innsbruck	Absorptive differentiated-like	verified
+MUI_Innsbruck	Cycling Stem/TA	verified
+MUI_Innsbruck	Secretory differentiated-like	verified
+MUI_Innsbruck	Stem/TA-like	lineage_transfer_unverified
+Pelka_2021_Cell	Absorptive differentiated-like	verified
+Pelka_2021_Cell	Cycling Stem/TA	verified
+Pelka_2021_Cell	Secretory differentiated-like	verified
+Pelka_2021_Cell	Stem/TA-like	lineage_transfer_unverified
+Qi_2022_Nat_Commun	Absorptive differentiated-like	verified
+Qi_2022_Nat_Commun	Cycling Stem/TA	verified
+Qi_2022_Nat_Commun	Secretory differentiated-like	verified
+Qi_2022_Nat_Commun	Stem/TA-like	lineage_transfer_unverified
+Qian_2020_Cell_Res	Absorptive differentiated-like	verified
+Qian_2020_Cell_Res	Cycling Stem/TA	verified
+Qian_2020_Cell_Res	Secretory differentiated-like	verified
+Qian_2020_Cell_Res	Stem/TA-like	lineage_transfer_unverified
+Qin_2023_Cell_Rep_Med	Absorptive differentiated-like	verified
+Qin_2023_Cell_Rep_Med	Cycling Stem/TA	verified
+Qin_2023_Cell_Rep_Med	Secretory differentiated-like	verified
+Qin_2023_Cell_Rep_Med	Stem/TA-like	lineage_transfer_unverified
+Uhlitz_2021_EMBO_Mol_Med	Absorptive differentiated-like	verified
+Uhlitz_2021_EMBO_Mol_Med	Cycling Stem/TA	verified
+Uhlitz_2021_EMBO_Mol_Med	Secretory differentiated-like	verified
+Uhlitz_2021_EMBO_Mol_Med	Stem/TA-like	lineage_transfer_unverified

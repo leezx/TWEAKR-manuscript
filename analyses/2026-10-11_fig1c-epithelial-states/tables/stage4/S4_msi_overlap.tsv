@@ -1,0 +1,5 @@
+contrast	studies_with_ge5_in_both	interaction_tested
+pro_vs_ref	1	False
+rev_vs_ref	1	False
+pro_vs_rev	4	True
+cycling_pro_vs_rev	1	False

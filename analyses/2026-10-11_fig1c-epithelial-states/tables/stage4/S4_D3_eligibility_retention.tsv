@@ -1,0 +1,5 @@
+contrast	eligible_base	eligible_intersection	lost	lost_frac_rev_low	lost_frac_rev_mid	lost_frac_rev_high
+pro_vs_ref	120	97	23	0.236	0.2	0.05
+rev_vs_ref	117	95	22	0.222	0.2	0.056
+pro_vs_rev	203	200	3	0.045	0.0	0.0
+cycling_pro_vs_rev	63	63	0	0.0	0.0	0.0
