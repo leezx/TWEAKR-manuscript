@@ -1,14 +1,24 @@
-# A3b contract v0.2: epithelial identity, clinical gate and estimands
+# A3b contract v0.3: epithelial identity, clinical gate and estimands
 
 - **Date:** 2026-10-11.
-- **Status:** v0.2 for final-head check. No A3b expression, inferCNV or CT2 computation has been run.
+- **Status:** v0.3 = v0.2 plus the four fixes required by the v0.2 final-head check (§0). Submitted for FREEZE. No A3b expression, inferCNV or CT2 computation has been run.
 - **Review history:**
 
   | Version | Review | Outcome |
   |---|---|---|
   | v0.1 (`A3b_identity_clinical_contract_v0.1_draft.md`, 3219b10) | `A3b_contract_v0.1_review_20261011.md` | REVISE: six blocking items |
 
-  v0.2 addresses exactly those six items (§2–§6) and adds the verified clinical manifest (§3). It adds no algorithm and does not expand the cohort. A3a stays frozen.
+  | v0.2 (6439a32) | `A3b_contract_v0.2_review_20261011.md` | REVISE: four implementation fixes; Chen surgical branch HOLD |
+
+  v0.2 addressed the six v0.1 items (§2–§6) and added the verified clinical manifest (§3). v0.3 changes only the four items listed in §0 plus the Chen relabel; nothing else. It adds no algorithm and does not expand the cohort. A3a stays frozen.
+
+## 0. v0.3 changes (from the v0.2 final-head check)
+
+1. **F1:** exact Fig. 1b A2.1 rule and code (§1). The v0.2 wording ("foreign panel ≥ epithelial panel") was wrong and is withdrawn.
+2. **Evidence N null:** fully model-held-out (§2).
+3. **E1 eligibility after depth matching:** strict (§4).
+4. **Adjusted model:** outcome on the CT2 0–1 score scale (§4).
+5. **Chen:** relabelled "Pre vs GEO-annotated Post" (exploratory ED). The surgical-specimen comparison is on HOLD until per-visit specimen identity is shown for the 9 E1-eligible patients (Fig. S1 or another sample-level source); §3.
 - **Unchanged from v0.1:** the question and claim boundary.
   - The primary normal–primary estimand is a **tissue-context** comparison.
   - Malignant-cell wording is allowed only for the validated tumour-evidence subset.
@@ -22,7 +32,9 @@
   - pre/post: the samples in `tables/metadata_gate/a3b_clinical_manifest.tsv`.
 - **Exclusions:** immune-enriched samples, per `enrichment_crosswalk.tsv`.
 - **Epithelium:**
-  - Definition: an Atlas epithelial label, plus the frozen Fig. 1b L1 F1 panel flag (no foreign-lineage panel ≥ epithelial panel).
+  - Definition: Atlas broad lineage Epithelial (`atlas_cell_type_middle` → lineage → broad, the `screen_compartments.py` maps), and **not F1-flagged**.
+  - **F1 is the frozen Fig. 1b A2.1 rule, reused verbatim** (`l2_config.yaml` → `l1_flags`; `l2_build.py` logic). A cell is flagged when ≥2 genes of a panel foreign to its broad lineage each have ≥2 UMI. The panels are Epithelial, T/NK, Myeloid, B/Plasma, Fibroblast, Endothelial and Mural, as in `L2_implementation_notes.md` §2. There is no relative-dominance criterion.
+  - **Check:** on every cohort-v1 cell that is re-exported, the A3b F1 must be identical to the Fig. 1b `annotation_v1` F1. Any mismatch stops the export.
   - The same definition is applied to **every** A3b sample, including tumour samples already in cohort v1, so that both sides are defined identically.
   - The Fig. 1b F2 (cluster-level) flag is not used, because it requires a joint embedding that the new samples do not have. It is reported as a cross-check on the cohort-v1 tumour samples (agreement).
 - **Counts:** all-gene raw counts are exported per sample, as in `a3a_export.py`.
@@ -52,9 +64,11 @@
   3. z-scale with R_p mean and SD, clip ±10.
   4. 30 PCs fitted on R_p.
   - **Statistic:** d(cell) = mean Euclidean distance to the 15 nearest R_p cells.
-- **Null and threshold (cross-fitted):**
-  - Within fold p, each reference patient q ∈ R_p is scored against R_p minus q, in the same fold space, with its own capped cells.
-  - The null is the pooled distribution of these distances, each q weighted equally.
+- **Null and threshold (fully model-held-out):**
+  - Within fold p, for each reference patient q ∈ R_p, the **entire preprocessing** (HVG selection, scaling, 30-PC PCA) is refitted on R_p minus q.
+  - q's capped normal cells are then scored against R_p minus q in that refitted space.
+  - q therefore contributes neither to the model nor to the neighbours used to score it.
+  - The null is the pooled distribution of these held-out distances, each q weighted equally.
   - τ_p is the 90th percentile of this null.
   - Patient p's cells, from all of its samples, are then scored against R_p and compared with τ_p.
   - p's own normal cells are therefore never in p's reference or p's null.
@@ -83,7 +97,9 @@
 **Consequences fixed now:**
 - **Chen:**
   - P02 is excluded (not neoadjuvant).
-  - The Chen primary contrast is **Pre vs Post among resected patients** (inferred surgical specimen). If the reviewer does not accept the inference, the Chen branch stays on HOLD and the rest freezes.
+  - The Chen contrast is **Pre vs GEO-annotated Post**, exploratory ED, among neoadjuvant patients.
+  - **Surgical-specimen comparison: HOLD.** The inference "last visit of a resected patient = surgical specimen" was not accepted. It stays on HOLD until a sample-level source (Chen Fig. S1 or equivalent) confirms specimen identity for each of the 9 E1-eligible patients.
+  - Until then, no biopsy-versus-resection or residual-surgical-tumour wording is used, and no cell-state transition is inferred from the last visit.
   - Pre vs On is secondary and descriptive.
   - On visits are never merged into Post.
   - Multiple tumour regions at one visit (T1/T2) are aggregated within the patient.
@@ -99,7 +115,7 @@
 
 | Use | Threshold |
 |---|---|
-| E1 (CT2 tissue context) | ≥100 epithelial cells per sample |
+| E1 (CT2 tissue context) | ≥100 epithelial cells per sample before matching (screening), **and ≥100 after depth matching (binding; see "CT2 and depth")** |
 | Composition (E2) | ≥30 |
 | E3 / E4 | ≥30 identity-qualified cells per side |
 
@@ -113,7 +129,8 @@
 |---|---|---|
 | Normal–primary (naive) | 110 patients; 98 in 7 qualifying studies (Pelka 30, Chen 18, Lee 17, MUI 12, Uhlitz 11, Joanito 5, Qian 5) | 127; 115 in 8 studies |
 | Qin, Pre vs Post (surgical) | 22 (TRG0 2, TRG1 2, TRG2 13, TRG3 5) | 25 |
-| Chen, Pre vs Post (resected) | 9 (MSI 6, MSS 3; CR 4, PR 5) | 11 |
+| Chen, Pre vs GEO-annotated Post (P02 excluded) | 11 (MSI 7, MSS 4; CR 6, PR 5) | 14 |
+| Chen, Pre vs Post, resected only (HOLD) | 9 (MSI 6, MSS 3; CR 4, PR 5) | 11 |
 | Chen, Pre vs On | 7 | 8 |
 | Li, Pre vs Post | 8 (pCR 7, non-pCR 1) | 8 |
 
@@ -125,11 +142,20 @@
 - **Depth-matched target:** T_s^A3b is the smallest of the 25th-percentile epithelial library sizes across the A3b sides of study s (normal and tumour; or pre and post).
   - Cells below T_s are dropped; cells above are downsampled to T_s. Seeds 1–5; the per-cell score is the mean over seeds.
   - The CT2 depth-matched run downsamples **all** cells of the sample at T_s, so the whole-sample smoothing sees the same depth on both sides.
+- **Eligibility after depth matching (strict):**
+  - A sample counts for E1 only if it keeps **≥100 L1 epithelial cells after depth matching**, i.e. cells with library ≥ T_s^A3b.
+  - A patient enters primary E1 only if both sides have ≥1 such sample.
+  - A study is pooled only with ≥5 such patients; pooling needs ≥3 studies.
+  - If depth matching leaves fewer than 3 qualifying studies, primary E1 is reported as **not estimable** and the analysis stops at descriptive per-study results.
+  - The original-depth analysis is never promoted to primary in its place. Its own eligibility (≥100 cells per sample before matching) is used only for sensitivity (i).
+  - The same rule applies to E1-pp per cohort (≥5 patients, else descriptive).
 - **Single primary CT2 estimand (E1):** within-patient difference (tumour side − normal side) of the sample-median **depth-matched CT2 final** over L1 epithelium.
 - **Mandatory sensitivities, never co-primary:**
   - (i) original-depth CT2 final;
   - (ii) depth-matched **raw** model score (whole-sample smoothing differs between sides because cell number and lineage composition differ, so the raw score is mandatory);
-  - (iii) complexity-adjusted: within patient, a cell-level OLS of the CT2 final rank on side, log UMI, log detected genes, mitochondrial fraction, S and G2M; the side coefficient is the patient estimate.
+  - (iii) complexity-adjusted: within patient, a cell-level OLS of the **depth-matched CT2 final score (0–1 scale, untransformed)** on side, log UMI, log detected genes, mitochondrial fraction, S and G2M.
+    - The side coefficient, in CT2 score units, is the patient estimate.
+    - Ranks are not used, so patient estimates share one scale.
 - **Aggregation:**
   - Normal–primary: patient → study mean with t-CI → REML + Hartung–Knapp, with PI (k−2 df), I² and LOSO.
   - Pre/post: per cohort, patient-level mean Δ with t-CI and Wilcoxon signed-rank (descriptive).
@@ -141,6 +167,8 @@
   - Reference: the patient's immune and stromal cells pooled over those samples, ≤1,500 cells, half immune and half stromal, seed 0.
   - All other parameters as frozen in Fig. 1b L2: cutoff 0.1, window 101, denoise, no HMM, chromosomes 1–22, reference P99/P95 calls.
 - A patient with <100 reference cells is "CNV not assessable".
+- **CNV correlation profile:** the top 5% by CNV score is taken over the patient's **pre/primary tumour-side** epithelial cells only, as in Fig. 1b, whose observations were tumour cells. It then applies to all observation cells.
+- **Reference subsampling:** an independent RNG with seed 0 per patient.
 - **Clear-CNV patient:** ≥20% of the pre/primary tumour-side epithelial cells are CNV-high.
 - **Separate output:** this is A3b `identity_v1`. Fig. 1b `annotation_v1` stays frozen and is not modified.
 - **Concordance gate (per patient, pre-specified):**
@@ -206,7 +234,7 @@
 | E3 | N–P | tumour-evidence (tumour side) vs normal-like (normal side); clear-CNV, calibrated studies | secondary selected subset (MSS-enriched; labelled) |
 | E4 | N–P | normal-like cells, tumour side vs normal side | secondary |
 | R | N–P | 4 programme Δ (BH family of 4) | secondary |
-| E1-pp | Qin (surgical), Chen (resected Pre vs Post) | as E1, per cohort | exploratory ED |
+| E1-pp | Qin (surgical post), Chen (Pre vs GEO-annotated Post) | as E1, per cohort | exploratory ED |
 | E2-pp | Qin, Chen, Li | composition shift | descriptive |
 | E3-pp | Qin, Chen | tumour-evidence ≥30 on both sides | exploratory, only if ≥5 patients |
 
