@@ -1,7 +1,7 @@
 # A3b contract v0.3: epithelial identity, clinical gate and estimands
 
 - **Date:** 2026-10-11.
-- **Status:** v0.3 = v0.2 plus the four fixes required by the v0.2 final-head check (§0). Submitted for FREEZE. No A3b expression, inferCNV or CT2 computation has been run.
+- **Status:** **FROZEN 2026-10-11** (v0.3, commit cd4bab5; `A3b_contract_v0.3_freeze_20261011.md`). Stage I/C steps 1–4 GO. Step 5 (identity_v1 QA) is a mandatory hold point; CT2/UCell need a separate GO. Any later change requires a dated amendment.
 - **Review history:**
 
   | Version | Review | Outcome |
@@ -9,6 +9,7 @@
   | v0.1 (`A3b_identity_clinical_contract_v0.1_draft.md`, 3219b10) | `A3b_contract_v0.1_review_20261011.md` | REVISE: six blocking items |
 
   | v0.2 (6439a32) | `A3b_contract_v0.2_review_20261011.md` | REVISE: four implementation fixes; Chen surgical branch HOLD |
+  | v0.3 (cd4bab5) | `A3b_contract_v0.3_freeze_20261011.md` | **FREEZE / GO Stage I/C 1–4** |
 
   v0.2 addressed the six v0.1 items (§2–§6) and added the verified clinical manifest (§3). v0.3 changes only the four items listed in §0 plus the Chen relabel; nothing else. It adds no algorithm and does not expand the cohort. A3a stays frozen.
 
