@@ -38,7 +38,13 @@ def main():
     ap.add_argument("--axisl-models", required=True)
     a = ap.parse_args()
     sys.path.insert(0, a.fig1c_code)
+    import __main__  # noqa: E402
+    import fig1c_axisL_fit  # noqa: E402
     from fig1c_axisL_fit import Model, predict  # noqa: F401,E402
+    __main__.Model = Model  # models were pickled from fig1c_axisL_fit run as __main__
+    for k in dir(fig1c_axisL_fit):
+        if not hasattr(__main__, k):
+            setattr(__main__, k, getattr(fig1c_axisL_fit, k))
     from fig1c_axisL_predict import to_model_space  # noqa: E402
     R = Path(a.root)
     final = joblib.load(Path(a.axisl_models) / "axisL_model_fold0.joblib")
