@@ -44,5 +44,9 @@ case "$1" in
     [ -z "$tag" ] && { echo "no sample for task $SGE_TASK_ID"; exit 0; }
     [ -s $A/ucell/$tag.ucell.tsv.gz ] && { echo exists; exit 0; }
     "$ENV/bin/Rscript" $R/code/a3a_ucell.R $A/export/counts "$tag" $R/private/genesets_A3a.private.tsv $A/ucell/$tag.ucell.tsv.gz 2 epi ;;
+  check)
+    $PY $R/code/a3b_ct2_check.py --root $A --fig1b-scores $F/full/scores --public $A/public ;;
+  estimands)
+    $PY $R/code/a3b_estimands.py --root $A --fig1b-code $F/code --public $A/public ;;
 esac
 echo STEP_DONE a3b_ct2 "$@"
