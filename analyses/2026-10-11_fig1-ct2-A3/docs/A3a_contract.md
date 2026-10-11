@@ -1,7 +1,9 @@
-# A3a contract (DRAFT v0.2, for final check): developmental programmes × potency proxies in CRC epithelium
+# A3a contract (v0.2, FROZEN 2026-10-11): developmental programmes × potency proxies in CRC epithelium
 
 - **Date:** 2026-10-11.
-- **Status:** v0.2, revised once per the 2026-10-11 review ("REVISE ONCE → FREEZE → GO"). Not yet frozen.
+- **Status: FROZEN** on 2026-10-11. The reviewer's final check of the text at commit `9104fc8` returned **"FREEZE / GO — A3a v0.2 APPROVED"**, authorising P1, P2 and P3; the CCAT branch remains subject to its technical gate. A3b scoring is not authorised.
+- **Changes after freeze:** dated amendments only. Endpoints, covariates and signatures are never adjusted to the observed direction of an association.
+- **Content:** this file is the approved text at `9104fc8`, renamed from `A3a_contract_draft.md`. Only this header was changed at freeze.
 - **No computation has been run.** Any change after freeze is a dated amendment.
 - **Parent:** Fig. 1b CytoTRACE2 (contract A2.1, results approved 2026-10-10).
 - **Review record:**
