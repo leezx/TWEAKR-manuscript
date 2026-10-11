@@ -1,0 +1,16 @@
+subpanel,stratum,category,n_cells,fraction
+c-i composition,hybrid_high,Cycling Stem/TA,12889,0.633864463460214
+c-i composition,pro_dominant,Cycling Stem/TA,37060,0.733295079047864
+c-i composition,rev_dominant,Cycling Stem/TA,8518,0.184980889506602
+c-i composition,hybrid_high,Transitional/rare*,1542,0.0758335792269106
+c-i composition,pro_dominant,Transitional/rare*,3292,0.0651378143611864
+c-i composition,rev_dominant,Transitional/rare*,4864,0.105628908964559
+c-i composition,hybrid_high,Secretory,327,0.0160814399527884
+c-i composition,pro_dominant,Secretory,875,0.0173133619580918
+c-i composition,rev_dominant,Secretory,2908,0.0631514940931202
+c-i composition,hybrid_high,Stem/TA-like (unverified),2768,0.136126684371004
+c-i composition,pro_dominant,Stem/TA-like (unverified),4153,0.0821741625279487
+c-i composition,rev_dominant,Stem/TA-like (unverified),16240,0.352675469075747
+c-i composition,hybrid_high,Unresolved,2808,0.138093832989082
+c-i composition,pro_dominant,Unresolved,5159,0.102079582104909
+c-i composition,rev_dominant,Unresolved,13518,0.293563238359972
