@@ -193,3 +193,44 @@ Results (SGE 3655128/3655129; `tables/a3a_posthoc/`):
 | DS-010 | 26/26 samples, 8,283 network genes in every sample, buckets 3–5 min, ≤8.3 GB |
 | Full run plan | 360 samples × about 1 min; then the frozen secondary family (5 P1 sets × CCAT, unadjusted, BH) plus the adjusted estimate, with the same aggregation |
 
+
+## 11. CCAT secondary family (complete; SGE 3655132/3655133, commit 1c5f048)
+
+- **Run:** 360/360 samples; all 361 tasks exit 0; maxvmem ≤41 GB.
+- **Scope:** frozen secondary family = 5 P1 sets × CCAT (unadjusted, BH), with the adjusted estimate as mandatory robustness. Aggregation is identical to CT2. CCAT has no raw-score or depth variants.
+- **Tables:** `tables/a3a_ccat/`.
+- **Sample:** 216 patients / 13 studies; TNFRSF12A: 8 studies / 140 patients.
+
+| Programme | CT2 unadjusted | **CCAT unadjusted** (BH) | CT2 adjusted | **CCAT adjusted** |
+|---|---|---|---|---|
+| proCSC | +0.611 | **+0.728** (0.690, 0.761), 13/13 | +0.311 | **+0.415** (0.350, 0.475), 13/13 |
+| Lgr5CSC | +0.348 | **+0.566** (0.498, 0.627), 13/13 | +0.081 | **+0.158** (0.080, 0.234), 13/13 |
+| Extended CIOC | +0.303 | **+0.425** (0.325, 0.515), 13/13 | +0.111 (0.076, 0.146) | **+0.037 (−0.012, 0.087)**, 9/13 |
+| revCSC | +0.203 | **+0.446** (0.335, 0.545), 13/13 | −0.026 (ns) | **−0.015 (−0.073, 0.043)**, 8/13 |
+| YAP core | +0.104 | **+0.251** (0.159, 0.338), 13/13 | −0.034 | **−0.039 (−0.065, −0.013)**, 11/13 |
+| ECOS-38 | +0.121 | +0.208 | +0.016 (ns) | −0.039 (ns) |
+| YAP fetal | +0.163 | +0.445 | −0.058 | +0.003 (ns) |
+| Placenta | +0.148 | +0.415 | −0.076 | −0.022 (ns) |
+| TNFRSF12A | +0.155 | +0.292 | −0.008 (ns) | +0.042 (0.011, 0.072) |
+
+- **Primary CCAT family:** all 5 sets are positive with BH p < 1e-4.
+- **Heterogeneity:** I² is 0.91–0.97, higher than for CT2. 95% PIs: revCSC −0.010 to 0.749, YAP core −0.088 to 0.537.
+- **Cell sets (adjusted CCAT):** consistent across F1-clean, non-cycling and the malignant subset.
+  - proCSC: +0.39 to +0.44;
+  - revCSC: −0.02 to +0.01;
+  - Extended CIOC: −0.02 to +0.06.
+
+**CT2–CCAT comparison under §5** (written before any CCAT result):
+
+1. **proCSC and Lgr5CSC:** concordant and robust under both proxies.
+2. **revCSC and YAP core:** concordant.
+   - Under both proxies the unadjusted association is positive.
+   - After adjustment for transcriptomic complexity and cell cycle it is about 0 (revCSC) or slightly negative (YAP core).
+   - The unadjusted association is **stronger** with CCAT (revCSC +0.45 vs +0.20). That extra coupling sits in the complexity-related component and disappears after adjustment under both algorithms.
+   - Under the §0 rule, the revCSC/YAP null **cannot** be attributed to a CT2-specific defect.
+3. **Extended CIOC:** same sign under both proxies, so this is not "proxy-dependent" under the §5 definition. However, the adjusted association that was robust with CT2 (+0.111) is **not reproduced** by CCAT (+0.037; CI includes 0).
+4. **TNFRSF12A:** a small positive adjusted association with CCAT (+0.042), against none with CT2 (−0.008). Descriptive only.
+
+**Consequence for the conclusions:**
+- proCSC (and, more weakly, Lgr5CSC) is the only programme whose coupling to predicted developmental potential holds after adjustment under two independent algorithms.
+- The revival/YAP and oncofetal programmes associate with both potency proxies through transcriptomic complexity, not independently of it.
