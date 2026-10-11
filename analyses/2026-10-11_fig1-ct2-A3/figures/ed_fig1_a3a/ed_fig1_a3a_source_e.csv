@@ -1,0 +1,26 @@
+version,study,rho,ci_low,ci_high,n_units
+All samples,Guo 2022,0.371428571428572,,,6
+All samples,Joanito 2022,-0.158171983326259,,,82
+All samples,Khaliq 2022,0.5,,,5
+All samples,Lee 2020,-0.223328591749644,,,37
+All samples,Li 2023,0.371428571428572,,,6
+All samples,Liu 2024,0.0181818181818182,,,11
+All samples,MUI,0.571428571428572,,,8
+All samples,Pelka 2021,0.23997144447041,,,95
+All samples,Qi 2022,0.4,,,5
+All samples,Qian 2020,-0.274725274725275,,,13
+All samples,Qin 2023,-0.0842105263157895,,,19
+All samples,Uhlitz 2021,-0.477952119399243,,,10
+Patient level,Guo 2022,0.371428571428572,,,6
+Patient level,Joanito 2022,-0.0217391304347826,,,24
+Patient level,Lee 2020,-0.386446886446886,,,27
+Patient level,Li 2023,0.371428571428572,,,6
+Patient level,Liu 2024,-0.0303030303030303,,,10
+Patient level,MUI,0.571428571428572,,,8
+Patient level,Pelka 2021,0.24436974789916,,,50
+Patient level,Qi 2022,0.4,,,5
+Patient level,Qian 2020,-0.714285714285714,,,6
+Patient level,Qin 2023,-0.0842105263157895,,,19
+Patient level,Uhlitz 2021,-0.415861968050203,,,9
+All samples,Pooled,-0.00696337105909815,-0.191953948885128,0.178505055224528,
+Patient level,Pooled,-0.014934690270781,-0.255599220816134,0.227472775201035,
