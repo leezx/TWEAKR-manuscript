@@ -1,0 +1,184 @@
+branch	study_id	patient_id	contrast	msi	response	E1_prematch	E1	E2	E4	E3
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P01	normal vs tumour	MSS	CR: complete response	False	False	True	False	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P02	normal vs tumour	MSS	SD: stable disease	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P03	normal vs tumour	MSS	PR: partial response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P04	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P08	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P09	normal vs tumour	MSS	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P12	normal vs tumour	MSI	CR: complete response	True	False	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P14	normal vs tumour	MSS	PR: partial response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P15	normal vs tumour	MSI	PR: partial response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P16	normal vs tumour	MSI	SD: stable disease	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P17	normal vs tumour	MSI	PR: partial response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P18	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P19	normal vs tumour	MSI	PR: partial response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P20	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P21	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P22	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P23	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P25	normal vs tumour	MSI	SD: stable disease	True	True	True	True	False
+normal_primary	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P26	normal vs tumour	MSI	CR: complete response	True	True	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2783	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2801	normal vs tumour	MSS		False	False	True	False	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2803	normal vs tumour	MSS		False	False	True	True	True
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2810	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2811	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2816	normal vs tumour	MSS		True	False	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2817	normal vs tumour	MSI-H		True	False	True	True	True
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2841	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2899	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.SC041	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.SC043	normal vs tumour	MSS		False	False	True	False	True
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC10	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC11	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC14	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC15	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC4	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC6	normal vs tumour	MSS		False	False	True	False	False
+normal_primary	Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC7	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC001	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC019	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC021	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC024	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC027	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC028	normal vs tumour	MSS		True	False	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC029	normal vs tumour	MSS		True	False	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC030	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC031	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC01	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC02	normal vs tumour	MSS		True	False	True	True	True
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC03	normal vs tumour	MSI-H		False	False	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC04	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC05	normal vs tumour	MSS		False	False	False	False	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC07	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC09	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC10	normal vs tumour	MSI-H		True	False	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC13	normal vs tumour	NA		True	False	True	True	False
+normal_primary	Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC171	normal vs tumour	NA		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P11	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P12	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P13	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P14	normal vs tumour	NA		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P15	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P16	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P3	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P4	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P5	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P7	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P8	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	MUI_Innsbruck	MUI_Innsbruck.P9	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C106	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C107	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C109	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C110	normal vs tumour	MSI-H		True	True	True	False	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C111	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C113	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C122	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C123	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C124	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C125	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C126	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C129	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C130	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C132	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C133	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C134	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C135	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C136	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C137	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C138	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C139	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C140	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C142	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C143	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C151	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C152	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C155	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C157	normal vs tumour	MSS		True	True	True	True	True
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C162	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C165	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Pelka_2021_Cell	Pelka_2021_Cell.C170	normal vs tumour	MSI-H		False	False	True	True	False
+normal_primary	Qian_2020_Cell_Res	Qian_2020_Cell_Res.P31	normal vs tumour	MSI-H		True	True	True	True	False
+normal_primary	Qian_2020_Cell_Res	Qian_2020_Cell_Res.P32	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Qian_2020_Cell_Res	Qian_2020_Cell_Res.P33	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Qian_2020_Cell_Res	Qian_2020_Cell_Res.P35	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Qian_2020_Cell_Res	Qian_2020_Cell_Res.P36	normal vs tumour	MSS		False	False	True	True	False
+normal_primary	Qian_2020_Cell_Res	Qian_2020_Cell_Res.P38	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P007	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P008	normal vs tumour	MSS		True	True	True	False	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P009	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P012	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P013	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P014	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P016	normal vs tumour	NA		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P017	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P020	normal vs tumour	MSS		True	True	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P021	normal vs tumour	MSS		True	False	True	True	False
+normal_primary	Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P025	normal vs tumour	MSS		True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P01	tumour:Pre vs tumour:Post	MSS	CR: complete response	False	False	True	False	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P03	tumour:Pre vs tumour:Post	MSS	PR: partial response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P04	tumour:Pre vs tumour:Post	MSI	CR: complete response	False	False	False	False	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P05	tumour:Pre vs tumour:Post	MSS	PR: partial response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P08	tumour:Pre vs tumour:Post	MSI	CR: complete response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P09	tumour:Pre vs tumour:Post	MSS	CR: complete response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P12	tumour:Pre vs tumour:Post	MSI	CR: complete response	True	False	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P14	tumour:Pre vs tumour:Post	MSS	PR: partial response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P15	tumour:Pre vs tumour:Post	MSI	PR: partial response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P16	tumour:Pre vs tumour:Post	MSI	SD: stable disease	False	False	False	False	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P17	tumour:Pre vs tumour:Post	MSI	PR: partial response	False	False	False	False	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P18	tumour:Pre vs tumour:Post	MSI	CR: complete response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P19	tumour:Pre vs tumour:Post	MSI	PR: partial response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P20	tumour:Pre vs tumour:Post	MSI	CR: complete response	False	False	False	False	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P21	tumour:Pre vs tumour:Post	MSI	CR: complete response	False	False	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P22	tumour:Pre vs tumour:Post	MSI	CR: complete response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P23	tumour:Pre vs tumour:Post	MSI	CR: complete response	True	True	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P25	tumour:Pre vs tumour:Post	MSI	SD: stable disease	False	False	True	True	False
+pre_post	Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P26	tumour:Pre vs tumour:Post	MSI	CR: complete response	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P11	tumour:Pre vs tumour:Post	MSI-H	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P12	tumour:Pre vs tumour:Post	MSI-H	non-pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P14	tumour:Pre vs tumour:Post	MSI-H	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P15	tumour:Pre vs tumour:Post	NA	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P17	tumour:Pre vs tumour:Post	MSI-H	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P18	tumour:Pre vs tumour:Post	NA	non-pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P19	tumour:Pre vs tumour:Post	NA	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P21	tumour:Pre vs tumour:Post	NA	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P23	tumour:Pre vs tumour:Post	MSI-H	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P24	tumour:Pre vs tumour:Post	MSI-H	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P25	tumour:Pre vs tumour:Post	MSI-H	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P26	tumour:Pre vs tumour:Post	NA	non-pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P27	tumour:Pre vs tumour:Post	NA	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P28	tumour:Pre vs tumour:Post	NA	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P29	tumour:Pre vs tumour:Post	NA	pCR	False	False	False	False	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P30	tumour:Pre vs tumour:Post	MSI-H	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P31	tumour:Pre vs tumour:Post	MSI-H	non-pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P32	tumour:Pre vs tumour:Post	MSI-H	pCR	True	False	True	True	False
+pre_post	Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P33	tumour:Pre vs tumour:Post	MSI-H	pCR	False	False	False	False	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ02	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ03	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ05	tumour:Pre vs tumour:Post	MSS	TRG3	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ07	tumour:Pre vs tumour:Post	MSS	TRG0	True	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ08	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ09	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ17	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ18	tumour:Pre vs tumour:Post	MSS	TRG2	False	False	False	False	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ19	tumour:Pre vs tumour:Post	MSS	TRG1	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ21	tumour:Pre vs tumour:Post	MSS		False	False	False	False	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ22	tumour:Pre vs tumour:Post	MSS	TRG0	False	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ23	tumour:Pre vs tumour:Post	MSS	TRG3	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ24	tumour:Pre vs tumour:Post	MSS	TRG1	False	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ25	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ26	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ27	tumour:Pre vs tumour:Post	MSS	TRG2	True	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ28	tumour:Pre vs tumour:Post	MSS	TRG1	True	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ31	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ32	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ34	tumour:Pre vs tumour:Post	MSS	TRG3	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ35	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ36	tumour:Pre vs tumour:Post	MSS		False	False	False	False	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ38	tumour:Pre vs tumour:Post	MSS	TRG2	False	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ39	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ41	tumour:Pre vs tumour:Post	MSS	TRG0	False	False	False	False	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ44	tumour:Pre vs tumour:Post	MSS	TRG2	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ46	tumour:Pre vs tumour:Post	MSS	TRG3	True	True	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ48	tumour:Pre vs tumour:Post	MSS	TRG0	True	False	True	True	False
+pre_post	Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ49	tumour:Pre vs tumour:Post	MSS	TRG3	True	True	True	True	False

@@ -1,0 +1,150 @@
+{
+ "identity_v1": "/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/fig1_ct2_A3_20261011/A3b/identity_v1.private.tsv.gz",
+ "sha256": "2098d172dd36431fc745c4ca0a4b793d812214206396dc437ee91d4512d57819",
+ "commit": "c062dfa",
+ "cells": 425183,
+ "samples": 447,
+ "patients": 165,
+ "identity_counts": {
+  "normal_like": 306753,
+  "ambiguous": 115363,
+  "tumour_evidence": 3067
+ },
+ "N_status_by_study": {
+  "Chen_2024_Cancer_Cell": "assessable",
+  "Joanito_2022_Nat_Genet": "assessable",
+  "Khaliq_2022_Genome_Biol": "assessable",
+  "Lee_2020_Nat_Genet": "assessable",
+  "Li_2023_Cancer_Cell": "assessable",
+  "MUI_Innsbruck": "assessable",
+  "Pelka_2021_Cell": "assessable",
+  "Qian_2020_Cell_Res": "assessable",
+  "Qin_2023_Cell_Rep_Med": "assessable",
+  "Uhlitz_2021_EMBO_Mol_Med": "assessable"
+ },
+ "T_s": {
+  "normal_primary|Chen_2024_Cancer_Cell": 1523.0,
+  "normal_primary|Joanito_2022_Nat_Genet": 7570.0,
+  "normal_primary|Khaliq_2022_Genome_Biol": 726.0,
+  "normal_primary|Lee_2020_Nat_Genet": 1425.0,
+  "normal_primary|MUI_Innsbruck": 4441.25,
+  "normal_primary|Pelka_2021_Cell": 2676.0,
+  "normal_primary|Qian_2020_Cell_Res": 596.0,
+  "normal_primary|Uhlitz_2021_EMBO_Mol_Med": 1787.0,
+  "pre_post|Chen_2024_Cancer_Cell": 1651.0,
+  "pre_post|Li_2023_Cancer_Cell": 4334.0,
+  "pre_post|Qin_2023_Cell_Rep_Med": 1088.0
+ },
+ "eligibility": [
+  {
+   "branch": "normal_primary",
+   "study_id": "Chen_2024_Cancer_Cell",
+   "contrast": "normal vs tumour",
+   "E1": 17,
+   "E1_prematch": 18,
+   "E2": 19,
+   "E3": 0,
+   "E4": 18
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "Joanito_2022_Nat_Genet",
+   "contrast": "normal vs tumour",
+   "E1": 3,
+   "E1_prematch": 5,
+   "E2": 11,
+   "E3": 4,
+   "E4": 9
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "Khaliq_2022_Genome_Biol",
+   "contrast": "normal vs tumour",
+   "E1": 3,
+   "E1_prematch": 3,
+   "E2": 7,
+   "E3": 0,
+   "E4": 6
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "Lee_2020_Nat_Genet",
+   "contrast": "normal vs tumour",
+   "E1": 12,
+   "E1_prematch": 17,
+   "E2": 18,
+   "E3": 5,
+   "E4": 18
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "MUI_Innsbruck",
+   "contrast": "normal vs tumour",
+   "E1": 12,
+   "E1_prematch": 12,
+   "E2": 12,
+   "E3": 0,
+   "E4": 12
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "Pelka_2021_Cell",
+   "contrast": "normal vs tumour",
+   "E1": 30,
+   "E1_prematch": 30,
+   "E2": 31,
+   "E3": 6,
+   "E4": 30
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "Qian_2020_Cell_Res",
+   "contrast": "normal vs tumour",
+   "E1": 5,
+   "E1_prematch": 5,
+   "E2": 6,
+   "E3": 0,
+   "E4": 6
+  },
+  {
+   "branch": "normal_primary",
+   "study_id": "Uhlitz_2021_EMBO_Mol_Med",
+   "contrast": "normal vs tumour",
+   "E1": 10,
+   "E1_prematch": 11,
+   "E2": 11,
+   "E3": 0,
+   "E4": 10
+  },
+  {
+   "branch": "pre_post",
+   "study_id": "Chen_2024_Cancer_Cell",
+   "contrast": "tumour:Pre vs tumour:Post",
+   "E1": 10,
+   "E1_prematch": 11,
+   "E2": 14,
+   "E3": 0,
+   "E4": 13
+  },
+  {
+   "branch": "pre_post",
+   "study_id": "Li_2023_Cancer_Cell",
+   "contrast": "tumour:Pre vs tumour:Post",
+   "E1": 0,
+   "E1_prematch": 8,
+   "E2": 8,
+   "E3": 0,
+   "E4": 8
+  },
+  {
+   "branch": "pre_post",
+   "study_id": "Qin_2023_Cell_Rep_Med",
+   "contrast": "tumour:Pre vs tumour:Post",
+   "E1": 18,
+   "E1_prematch": 22,
+   "E2": 25,
+   "E3": 0,
+   "E4": 25
+  }
+ ]
+}

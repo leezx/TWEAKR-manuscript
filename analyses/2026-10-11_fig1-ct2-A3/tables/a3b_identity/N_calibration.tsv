@@ -1,0 +1,166 @@
+study_id	patient_id	is_reference	tau	n_cells	n_own_normal	own_normal_like	study_median_own_normal_like	N_status	reference_pool	n_reference_patients
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P01	True	9.080838359343138	8677	2826	0.93241330502477	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P02	True	9.136491495320062	2505	1407	0.9673063255152808	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P03	True	9.110538518331206	11557	4122	0.9165453663270258	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P04	True	9.157843567282836	3583	1991	0.8930185836263185	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P05	False	9.09894419658808	5098	1376	0.9607558139534884	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P08	True	9.265312036027389	12519	8574	0.8947982271985071	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P09	True	9.113348949000784	3990	1957	0.9059785385794584	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P12	True	9.123252178965542	1568	918	0.9705882352941176	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P14	True	9.169961732977724	11063	6051	0.9535613948107752	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P15	True	9.125545949365856	6760	3570	0.9378151260504202	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P16	True	9.09165718625388	3842	2516	0.93362480127186	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P17	True	9.25704886115354	3578	1705	0.8692082111436951	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P18	True	9.14135367738042	8769	4366	0.929225836005497	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P19	True	9.16608808534952	7695	3457	0.9074341914955164	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P20	True	9.20835259128956	5069	3607	0.8818963127252565	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P21	True	9.087671366916176	2526	1155	0.8372294372294372	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P22	True	9.205945411744946	4386	2561	0.853963295587661	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P23	True	9.100002837889758	9033	4318	0.8390458545622974	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P25	True	9.324014489852564	3065	2177	0.7864033073036288	0.9074341914955164	assessable	naive_or_pre_normals	19
+Chen_2024_Cancer_Cell	Chen_2024_Cancer_Cell.P26	True	9.152503908804606	4861	3852	0.9722222222222222	0.9074341914955164	assessable	naive_or_pre_normals	19
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2783	True	13.440712136393918	839	153	0.9607843137254902	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2801	True	14.50918886838836	361	172	0.8546511627906976	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2803	True	13.454153607351705	892	94	0.7978723404255319	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2810	True	13.990704440884205	384	204	0.946078431372549	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2811	True	14.297713514417724	1294	55	0.9090909090909092	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2816	True	13.850101748555234	1124	111	0.90990990990991	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2817	True	13.3692142272445	993	131	0.9770992366412212	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2841	True	13.304571383861026	2298	678	0.9734513274336284	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.CRC2899	True	13.753742882293496	1418	221	0.9683257918552036	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.SC041	True	13.676896482076137	229	69	0.8260869565217391	0.9245283018867924	assessable	naive_or_pre_normals	11
+Joanito_2022_Nat_Genet	Joanito_2022_Nat_Genet.SC043	True	13.649318582958346	748	53	0.9245283018867924	0.9245283018867924	assessable	naive_or_pre_normals	11
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC10	True	9.686258021422194	401	345	0.9652173913043478	0.9210526315789472	assessable	naive_or_pre_normals	7
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC11	True	9.886011438134014	1285	454	0.8259911894273128	0.9210526315789472	assessable	naive_or_pre_normals	7
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC14	True	9.730997962592271	1177	152	0.9210526315789472	0.9210526315789472	assessable	naive_or_pre_normals	7
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC15	True	9.42160825240682	516	451	0.8891352549889135	0.9210526315789472	assessable	naive_or_pre_normals	7
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC4	True	9.850704175303804	503	451	0.8758314855875832	0.9210526315789472	assessable	naive_or_pre_normals	7
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC6	True	9.674251570375572	236	193	0.9896373056994818	0.9210526315789472	assessable	naive_or_pre_normals	7
+Khaliq_2022_Genome_Biol	Khaliq_2022_Genome_Biol.CAC7	True	9.905265236574634	1784	706	0.9490084985835694	0.9210526315789472	assessable	naive_or_pre_normals	7
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC001	True	9.03026465285479	2385	536	0.8190298507462687	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC019	True	8.675785496708956	1968	542	0.8247232472324724	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC021	True	9.035198740248797	2168	628	0.964968152866242	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC024	True	8.54844588548312	1453	509	0.768172888015717	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC027	True	8.628461372563315	1985	477	0.5849056603773585	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC028	True	8.861590208167192	338	120	0.9833333333333332	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC029	True	8.829554932685717	432	104	0.9615384615384616	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC030	True	8.742617686634881	1144	475	0.983157894736842	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SC031	True	8.962679521223937	962	469	0.9211087420042644	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC01	True	8.771895259257274	1161	146	0.958904109589041	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC02	True	8.87232295839761	413	117	0.9230769230769232	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC03	True	8.800160512836472	711	62	0.967741935483871	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC04	True	8.952310900699322	466	164	0.945121951219512	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC05	True	8.803560172341887	75	75	0.9333333333333332	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC07	True	8.749186520562256	623	126	0.9285714285714286	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC09	True	9.069991940694532	2014	186	0.9623655913978496	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC10	True	8.819373871199495	562	113	0.9823008849557522	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC13	True	8.757932395743165	1902	192	0.7760416666666666	0.9404915912031048	assessable	naive_or_pre_normals	19
+Lee_2020_Nat_Genet	Lee_2020_Nat_Genet.SMC171	True	8.996727384763297	2180	773	0.9404915912031048	0.9404915912031048	assessable	naive_or_pre_normals	19
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P11	True	11.305922698536188	336	168	0.9761904761904762	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P12	True	11.022644915431115	1651	597	0.9212730318257956	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P14	False	11.028595171393624	1392	0		0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P15	True	11.11791636412774	1252	866	0.9226327944572748	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P17	True	11.150856359706625	366	306	0.869281045751634	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P18	True	11.086206825539891	4463	809	0.8689740420271941	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P19	True	10.678542796508411	919	279	0.7670250896057348	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P21	False	11.028595171393624	1197	0		0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P23	False	11.028595171393624	3424	0		0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P24	False	11.028595171393624	2323	0		0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P25	True	10.833835034613958	3165	386	0.8264248704663213	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P26	False	11.028595171393624	1265	0		0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P27	True	11.187891202678902	4186	778	0.9395886889460154	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P28	True	11.258149347224212	2367	552	0.9619565217391304	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P29	True	11.338855740052248	951	321	0.940809968847352	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P30	True	11.197002665006266	1631	313	0.952076677316294	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P31	True	11.021482644051863	6258	73	0.8767123287671232	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P32	True	11.088044612564962	1493	392	0.9056122448979592	0.9212730318257956	assessable	post_treatment_normals	13
+Li_2023_Cancer_Cell	Li_2023_Cancer_Cell.P33	False	11.028595171393624	1948	0		0.9212730318257956	assessable	post_treatment_normals	13
+MUI_Innsbruck	MUI_Innsbruck.P11	True	13.16423431433811	2801	1740	0.942528735632184	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P12	True	13.575390439701472	3217	1495	0.9625418060200668	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P13	True	14.370941878149932	2460	577	0.8336221837088388	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P14	True	13.327838275252194	1871	806	0.9317617866004962	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P15	True	13.747107305370982	1176	654	0.8960244648318043	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P16	True	13.970797833608072	2440	851	0.8531139835487661	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P3	True	13.865177299317793	2452	1205	0.9103734439834024	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P4	True	13.8648823575736	1481	924	0.9307359307359307	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P5	True	13.363699910681447	843	530	0.9452830188679244	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P7	True	13.791016237968968	2974	711	0.959212376933896	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P8	True	13.58863535763649	2795	883	0.8097395243488109	0.9312488586682136	assessable	naive_or_pre_normals	12
+MUI_Innsbruck	MUI_Innsbruck.P9	True	13.50939834506469	2369	626	0.977635782747604	0.9312488586682136	assessable	naive_or_pre_normals	12
+Pelka_2021_Cell	Pelka_2021_Cell.C106	True	7.9624352603396495	1459	725	0.926896551724138	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C107	True	7.824344762190027	2399	900	0.9644444444444444	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C109	True	7.887536123135322	2075	1179	0.9406276505513148	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C110	True	7.947022676799365	852	470	0.8446808510638298	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C111	True	7.92075292448413	743	297	0.8080808080808081	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C113	True	7.951843780576309	1536	289	0.8408304498269896	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C122	True	8.075617084244813	2173	942	0.916135881104034	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C123	True	7.855575641152514	3557	966	0.953416149068323	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C124	True	7.86053108272487	4213	3480	0.8775862068965518	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C125	True	7.873082368084738	2779	1724	0.9361948955916474	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C126	True	7.906115420111095	2003	1491	0.9268947015425888	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C129	True	7.99179816154551	2134	590	0.9372881355932204	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C130	True	7.835744046284771	2889	1188	0.9511784511784512	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C132	True	8.120830194735095	2033	923	0.847237269772481	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C133	True	8.020058738597506	1235	487	0.8480492813141683	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C134	True	7.751917529028134	1324	467	0.8072805139186295	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C135	True	7.854846721362943	1141	565	0.9433628318584072	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C136	True	7.841373474344791	1923	1135	0.9488986784140968	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C137	True	7.888124280780933	921	454	0.8964757709251101	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C138	True	7.91954006398326	751	363	0.8980716253443526	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C139	True	7.854221280001264	3056	653	0.9693721286370596	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C140	True	7.982174380645111	2358	891	0.9607182940516272	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C142	True	7.872090679111952	1878	1133	0.9461606354810238	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C143	True	7.85840366849543	2688	1763	0.9279636982416336	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C151	True	7.941521759136563	2577	2260	0.85	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C152	True	7.855823879235913	2035	1103	0.8204895738893926	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C155	True	7.854403847920356	1840	887	0.8974069898534386	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C157	True	8.068283377780595	2909	1252	0.9137380191693292	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C162	True	8.025846119167301	4615	610	0.7967213114754098	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C165	True	8.070458487667695	823	233	0.8369098712446352	0.9137380191693292	assessable	naive_or_pre_normals	31
+Pelka_2021_Cell	Pelka_2021_Cell.C170	True	7.895139643971358	2089	94	0.8723404255319149	0.9137380191693292	assessable	naive_or_pre_normals	31
+Qian_2020_Cell_Res	Qian_2020_Cell_Res.P31	True	9.061198207519825	2762	374	0.6657754010695187	0.9589542220432272	assessable	naive_or_pre_normals	6
+Qian_2020_Cell_Res	Qian_2020_Cell_Res.P32	True	9.668562210738582	2871	520	0.9615384615384616	0.9589542220432272	assessable	naive_or_pre_normals	6
+Qian_2020_Cell_Res	Qian_2020_Cell_Res.P33	True	9.518604403440126	2094	573	0.956369982547993	0.9589542220432272	assessable	naive_or_pre_normals	6
+Qian_2020_Cell_Res	Qian_2020_Cell_Res.P35	True	9.726813238781196	1916	331	0.8580060422960725	0.9589542220432272	assessable	naive_or_pre_normals	6
+Qian_2020_Cell_Res	Qian_2020_Cell_Res.P36	True	9.55936255263426	239	88	1.0	0.9589542220432272	assessable	naive_or_pre_normals	6
+Qian_2020_Cell_Res	Qian_2020_Cell_Res.P38	True	9.147697455240442	733	296	0.9763513513513512	0.9589542220432272	assessable	naive_or_pre_normals	6
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ02	False	8.661498575385549	2531	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ03	False	8.661498575385549	2506	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ05	True	9.049572229267016	8038	5466	0.9306622758873032	0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ07	False	8.661498575385549	2257	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ08	False	8.661498575385549	1641	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ09	False	8.661498575385549	3582	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ17	False	8.661498575385549	1002	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ18	True	9.167237514883356	2706	1815	0.9134986225895316	0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ19	False	8.661498575385549	3667	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ21	False	8.661498575385549	2347	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ22	False	8.661498575385549	299	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ23	False	8.661498575385549	3109	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ24	False	8.661498575385549	371	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ25	False	8.661498575385549	5208	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ26	True	8.589148572235386	6681	1802	0.9206437291897892	0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ27	True	8.66858134316538	7621	3825	0.9317647058823528	0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ28	False	8.661498575385549	600	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ31	False	8.661498575385549	1560	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ32	False	8.661498575385549	3042	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ34	True	9.014521833031786	9492	4443	0.8903893765473779	0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ35	False	8.661498575385549	2241	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ36	False	8.661498575385549	1901	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ38	False	8.661498575385549	713	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ39	False	8.661498575385549	6959	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ41	False	8.661498575385549	513	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ44	False	8.661498575385549	5585	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ46	False	8.661498575385549	4078	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ48	False	8.661498575385549	1449	0		0.9206437291897892	assessable	post_treatment_normals	5
+Qin_2023_Cell_Rep_Med	Qin_2023_Cell_Rep_Med.XFZ49	False	8.661498575385549	1608	0		0.9206437291897892	assessable	post_treatment_normals	5
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P007	True	9.295601241477998	1766	829	0.8709288299155609	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P008	True	9.152139447388254	1236	723	0.8354080221300139	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P009	True	9.224652281121498	9393	5538	0.9225352112676056	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P012	True	9.342969385793896	1850	1036	0.91988416988417	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P013	True	9.178392006696567	2352	1319	0.8013646702047005	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P014	True	9.206300972217385	3145	1911	0.8430141287284144	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P016	True	9.32643292718172	3597	2677	0.9148300336197236	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P017	True	9.001813791644036	3169	1454	0.920907840440165	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P020	True	9.275977323933631	921	627	0.9696969696969696	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P021	True	9.309915656542078	1195	1086	0.9585635359116024	0.9148300336197236	assessable	naive_or_pre_normals	11
+Uhlitz_2021_EMBO_Mol_Med	Uhlitz_2021_EMBO_Mol_Med.P025	True	9.241882562884465	595	214	0.9065420560747663	0.9148300336197236	assessable	naive_or_pre_normals	11
