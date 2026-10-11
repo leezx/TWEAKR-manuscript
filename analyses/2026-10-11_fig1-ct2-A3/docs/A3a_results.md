@@ -127,16 +127,69 @@ TNFRSF12A tracks the revival/YAP/oncofetal/placenta axis, not the proCSC/Lgr5 ax
 - **Result:** across samples, macrophage TNFSF12 pseudobulk vs the epithelial Extended CIOC sample median is pooled ρ **−0.007 (−0.192, 0.179)**, k = 12, I² 0.32.
 - **Conclusion:** no detectable sample-level co-occurrence.
 
-## 8. Interpretation (within the §5 rules)
+## 8. Interpretation (approved wording, results review 2026-10-11)
 
-1. **proCSC, Lgr5CSC and the broad oncofetal programme (Extended CIOC)** are robustly associated with higher CT2-predicted developmental potential. The associations hold:
-   - after adjustment for complexity and cell cycle;
-   - on the raw model score;
-   - after depth matching;
-   - in all 13 studies.
+**Review status:**
 
-   proCSC is by far the strongest.
-2. **revCSC and YAP core** are positively associated before adjustment. The association is substantially attenuated after adjustment for transcriptomic complexity and cell-cycle covariates, and turns negative after depth matching. This replicates the DS-010 revCSC pattern in 13 independent studies. The stricter ECOS-38 set, YAP fetal effectors and the placenta set behave the same way.
-3. **TNFRSF12A** is coupled to the revCSC/YAP/oncofetal axis (adjusted ρ +0.33 with revCSC) and not to proCSC. Its link to CT2 disappears after adjustment.
-4. **Macrophage TNFSF12** shows no sample-level co-occurrence with the epithelial oncofetal programme.
-5. **CCAT is not yet available.** Under §0, CT2 limitations can be invoked for the revCSC/YAP null only if CCAT disagrees. Until then, the statement is: "revCSC/YAP programmes are not associated with higher CT2-predicted developmental potential independently of transcriptomic complexity".
+| Item | Decision |
+|---|---|
+| P1 primary tests | APPROVED |
+| P1 robust classification | APPROVED; robustness is stated for Extended CIOC-222 only |
+| revCSC / YAP sign reversal | APPROVED; must be written as reversal, not only attenuation |
+| P2 | APPROVED as descriptive |
+| P3 | CONDITIONAL on the QC in §9 |
+| Co-activation | APPROVED, with the expected share clarified |
+| CCAT | PENDING its technical gate |
+| Figure production | GO for P1 |
+
+1. **Core finding.** Canonical proCSC is strongly and consistently coupled to CT2. Revival- and YAP-associated programmes show much weaker relationships that are sensitive to adjustment or depth: revCSC and YAP core are positive unadjusted but **negative after depth matching** (revCSC −0.080, YAP core −0.087; both CIs below 0), and YAP core is also negative after adjustment. This does not show lower true plasticity of revCSC/YAP cells.
+2. **Oncofetal signatures diverge.** Associations with CT2-predicted developmental potential varied substantially across oncofetal gene signatures:
+   - the broader Extended CIOC programme kept a modest positive association after adjustment and depth perturbation;
+   - the more restricted ECOS-38 signature did not;
+   - in the high-confidence malignant subset, the adjusted Extended CIOC association was +0.034 (CI −0.059 to 0.126).
+
+   "Oncofetal programmes are robustly associated with higher developmental potential" is **not** an allowed statement.
+3. **P2.** TNFRSF12A expression was more strongly associated with revival, YAP-associated and oncofetal transcriptional programmes than with canonical proCSC signatures. Its modest association with CT2-predicted developmental potential was lost after adjustment for transcriptomic complexity.
+   - These are stronger *observed* associations; no formal paired test or equivalence test was done.
+   - P2 covers 8 studies / 140 patients where TNFRSF12A varied enough to estimate a correlation.
+   - This is a transcriptional-state association. It does not show causality, YAP dependence or state transition.
+   - TNFRSF12A is one of the 32 revCSC genes; see the post-hoc check in §9.
+4. **P3.** No detectable sample-level association. This does not refute a macrophage–TWEAKR relationship, because samples cannot measure spatial proximity or ligand activity.
+5. **CCAT.** Until CCAT is done, all A3a conclusions are CT2-specific. Even a positive unadjusted CCAT result would not, on its own, show that CT2 misses revival plasticity.
+
+## 9. Post-hoc checks requested by the review (labelled post hoc; frozen sets unchanged)
+
+1. **revCSC without TNFRSF12A** (31 genes), to address self-inclusion. Tested:
+   - TNFRSF12A vs revCSC_noTN;
+   - revCSC_noTN vs CT2.
+2. **P3:**
+   - enforce ≥100 epithelial cells per sample;
+   - run a patient-level version, because the sample-level SE ignored within-patient correlation.
+3. **Co-activation:** observed co-high share against the per-sample expected share, P(pro-high) × P(rev-high).
+
+Results (SGE 3655128/3655129; `tables/a3a_posthoc/`):
+
+| Check | Unadjusted | Adjusted |
+|---|---|---|
+| TNFRSF12A vs revCSC without TNFRSF12A (8 studies / 140 patients) | +0.378 (0.298, 0.451) | **+0.213 (0.142, 0.282)**, 8/8 studies |
+| revCSC without TNFRSF12A vs CT2 (216 patients) | +0.203 | −0.025 |
+
+- **Self-inclusion:** with TNFRSF12A in the set, the adjusted value was +0.327. Self-inclusion explains part of that, but the TNFRSF12A–revival association remains clearly positive. revCSC × CT2 is unchanged.
+- **P3 with ≥100 epithelial cells:** ρ +0.003 (−0.207, 0.212); 11 studies, 271 samples.
+- **P3 at patient level:** ρ −0.015 (−0.256, 0.227); 11 studies, 170 patients.
+- The P3 null holds under both QC versions.
+- **Co-activation:** the per-sample expected share is 6.26% (ties are negligible). Observed / expected per study (median) is 0.69–1.81 and is above 1 in 10 of 13 studies, but below 1 in Joanito (0.69), Li (0.86) and Pelka (0.92). There is no consistent co-activation beyond independence.
+
+## 10. CCAT technical pilot (A3a secondary proxy; gate for review)
+
+| Item | Result |
+|---|---|
+| Implementation | SCENT 1.0.3 `CompCCAT(exp.m, ppiA.m = net13Jun12.m)`, as in the DS-010 CSCPOT run. Normalisation to 10,000 per cell, then log2(x+1) on a sparse matrix. One-to-one SYMBOL→ENTREZ mapping; this A3a version also drops ambiguous symbols, which DS-010 did not (DS-010 dropped duplicated Entrez only) |
+| Network coverage | 24,021 genes mapped; **8,403** overlapping net13Jun12 (gate ≥5,000) |
+| Output checks | finite values, \|CCAT\| ≤ 1, one per cell; asserted |
+| Repeat stability | two runs gave **identical** values on all 3 pilot samples (CompCCAT is deterministic) |
+| Pilot samples | smallest (102 cells), median (649) and largest (4,586) eligible samples |
+| Resources | about 50 s wall time per sample; peak virtual memory 35–37 GB (independent of cell number, dominated by loading the network and annotation); 24 GB `m_mem_free` was sufficient |
+| DS-010 | 26/26 samples, 8,283 network genes in every sample, buckets 3–5 min, ≤8.3 GB |
+| Full run plan | 360 samples × about 1 min; then the frozen secondary family (5 P1 sets × CCAT, unadjusted, BH) plus the adjusted estimate, with the same aggregation |
+

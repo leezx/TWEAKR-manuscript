@@ -2,7 +2,7 @@
 # A3a step 2 (one SGE task per sample): UCell programme scores on all-gene epithelial counts.
 # Frozen contract A3a v0.2 §2: UCell per sample on raw counts of the primary-set cells (Atlas gene space).
 # Variants: main and ds1..ds5 (regenerated Fig. 1b depth-matched counts; see a3a_export.py).
-# Usage: Rscript a3a_ucell.R <counts_dir> <sample_tag> <genesets.tsv> <out.tsv.gz> <ncores>
+# Usage: Rscript a3a_ucell.R <counts_dir> <sample_tag> <genesets.tsv> <out.tsv.gz> <ncores> [variants, default main,ds1..ds5]
 #   genesets.tsv: two columns set, gene (public and restricted sets concatenated; private path only)
 suppressPackageStartupMessages({ library(UCell); library(hdf5r); library(Matrix); library(data.table) })
 args <- commandArgs(trailingOnly = TRUE)
@@ -20,7 +20,8 @@ read_h5 <- function(p) {
 }
 
 res <- list()
-for (v in c("main", paste0("ds", 1:5))) {
+variants <- if (length(args) >= 6) strsplit(args[6], ",")[[1]] else c("main", paste0("ds", 1:5))
+for (v in variants) {
   p <- file.path(counts_dir, sprintf("%s.%s.h5", tag, v))
   if (!file.exists(p)) next
   m <- read_h5(p)
