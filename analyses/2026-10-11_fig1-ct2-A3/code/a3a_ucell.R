@@ -24,6 +24,8 @@ for (v in c("main", paste0("ds", 1:5))) {
   p <- file.path(counts_dir, sprintf("%s.%s.h5", tag, v))
   if (!file.exists(p)) next
   m <- read_h5(p)
+  # samples below the frozen minimum (>=50 epithelial cells) never enter A3a; UCell also fails on 1 cell
+  if (ncol(m) < 50) next
   # UCell needs >=1 cell; genes absent from the matrix are dropped by UCell and reported as coverage
   sc <- ScoreSignatures_UCell(m, features = sets, ncores = ncores, name = "")
   d <- as.data.table(sc, keep.rownames = "cell_id")
@@ -31,5 +33,10 @@ for (v in c("main", paste0("ds", 1:5))) {
   res[[v]] <- d
 }
 res <- rbindlist(res, use.names = TRUE)
-fwrite(res, out, sep = "\t")
+if (nrow(res) == 0) {
+  # fwrite produces an invalid gzip for a zero-row table; write the header only
+  con <- gzfile(out, "w"); writeLines(paste(c("cell_id", names(sets), "variant"), collapse = "\t"), con); close(con)
+} else {
+  fwrite(res, out, sep = "\t")
+}
 cat(sprintf("%s variants=%d rows=%d\n", tag, length(unique(res$variant)), nrow(res)))
