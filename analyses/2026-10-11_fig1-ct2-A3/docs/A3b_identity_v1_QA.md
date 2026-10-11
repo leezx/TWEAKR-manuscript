@@ -1,5 +1,16 @@
 # A3b identity_v1 — QA report (Stage I steps 1–4; contract v0.3 §8 step 5 hold point)
 
+> **Review outcome (2026-10-11, `A3b_identity_v1_QA_review_20261011.md`):** identity_v1 FROZEN, but its validity as a malignant classifier is NOT established.
+>
+> - **Stage S, limited GO:** E1 + sensitivities, E1-L (class gate), the 4 programmes, and Qin/Chen E1-pp.
+> - **Descriptive / QA only:** E2/E2-pp descriptive only; E3 two-study descriptive; E4 QA only.
+> - **Stopped or on hold:** E3-pp NO-GO; Chen surgical comparison HOLD.
+>
+> **Corrections recorded:**
+> - (i) §3's metric is the *CNV-high cells' out-of-reference fraction* (all CNV-high cells in clear-CNV patients, not restricted to tumour-side or T-calibrated cells). It is not a malignant-cell sensitivity.
+> - (ii) The normal-like fraction is not a strict upper bound on residual normal epithelium. It is the share of epithelium transcriptionally similar to the study's normal-mucosa reference.
+> - (iii) **Dormant implementation discrepancy:** `a3b_identity.py` lets T-positive cells become tumour-evidence when N is not assessable. This is looser than the strict two-evidence rule of contract §6. It had no effect, because N was assessable in 10/10 studies. Code and contract must be reconciled before any reuse; identity_v1 is not regenerated.
+
 - **Date:** 2026-10-11.
 - **No CT2, no UCell, no programme score** has been computed or read for A3b.
 - **identity_v1:**
