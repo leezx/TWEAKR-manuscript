@@ -231,6 +231,12 @@ Results (SGE 3655128/3655129; `tables/a3a_posthoc/`):
 3. **Extended CIOC:** same sign under both proxies, so this is not "proxy-dependent" under the §5 definition. However, the adjusted association that was robust with CT2 (+0.111) is **not reproduced** by CCAT (+0.037; CI includes 0).
 4. **TNFRSF12A:** a small positive adjusted association with CCAT (+0.042), against none with CT2 (−0.008). Descriptive only.
 
-**Consequence for the conclusions:**
-- proCSC (and, more weakly, Lgr5CSC) is the only programme whose coupling to predicted developmental potential holds after adjustment under two independent algorithms.
-- The revival/YAP and oncofetal programmes associate with both potency proxies through transcriptomic complexity, not independently of it.
+**Consequence for the conclusions (final review, 2026-10-11: APPROVED, with wording revised):**
+- **Supported by both algorithms:** proCSC and, more weakly, Lgr5CSC keep a positive adjusted association. CCAT has no depth-matched variant, so CCAT depth robustness is not shown.
+- **revCSC / YAP:** under both proxies the associations are positive before adjustment and **sensitive to adjustment for transcriptomic complexity** (attenuated or reversed). The adjustment cannot tell whether this reflects mediation by complexity or a technical effect.
+- **CT2-specific defect:** the hypothesis that a CT2-specific defect explains the revCSC/YAP result is **not supported**. This does not exclude other model biases shared by both algorithms.
+- **Extended CIOC:** the broader programme kept a modest adjusted association with CytoTRACE2, but SCENT-CCAT did not independently support it. The two proxies were not formally tested against each other.
+- **TNFRSF12A:** CCAT adjusted +0.042 vs CT2 −0.008 is a small, descriptive proxy-dependent association.
+- **Allowed main claim:** canonical stemness and oncofetal-associated programmes show distinct relationships with transcriptome-derived developmental potency estimates. These associations do not measure cellular plasticity or state-transition capacity.
+- **Discussion only:** the strong attenuation after covariate adjustment raises the possibility that transcriptomic complexity contributes to these relationships. The present analysis cannot separate technical variation from biologically meaningful transcriptional diversity.
+- **Status:** A3a analysis branch CLOSED; figure production GO; A3b CT2 scoring still not authorised.
