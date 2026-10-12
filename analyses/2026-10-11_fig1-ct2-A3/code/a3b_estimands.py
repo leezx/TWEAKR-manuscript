@@ -28,6 +28,11 @@ from scipy import stats
 MIN_PAT, MIN_STUDY, CLASS_MIN_CELLS, CLASS_MIN_PAT = 5, 3, 30, 20
 CLASSES = ["Absorptive differentiated-like", "Cycling Stem/TA"]
 PROGS = ["proCSC", "revCSC", "ExtCIOC", "YAPcore"]
+# Clinical-eligibility amendment 2026-10-12 (Stage S review, docs/A3b_stageS_review_20261012.md): Chen P02 is a
+# second-line metastatic patient (Chen 2024 STAR Methods), so its Atlas "naive" (pre-anti-PD-1) samples follow prior
+# systemic therapy and fail the normal-primary treatment-naive criterion. Excluded from all normal-primary estimands;
+# the frozen Atlas-label E1 (P02 included) is kept as a traceable sensitivity.
+AMEND_EXCLUDE_NP = {("Chen_2024_Cancer_Cell", "Chen_2024_Cancer_Cell.P02")}
 
 
 def read_scores(d):
@@ -125,7 +130,16 @@ def main():
                        duplicated_cells=int(c.cell_id.duplicated().sum())))
         if c.cell_id.duplicated().any():
             raise ValueError("duplicate cells within branch")
-        e = el[el.branch == br].set_index(["study_id", "patient_id"])
+        e = el[el.branch == br].set_index(["study_id", "patient_id"]).copy()
+        # contract §3: Qin TRG0 -> composition only; E1_prematch did not apply this, so enforce it for every readout
+        trg0 = e.response.eq("TRG0")
+        for col in ["E1_prematch", "E1", "E3"]:
+            e[col] = e[col] & ~trg0
+        e_frozen = e.copy()
+        if br == "normal_primary":
+            amend = e.index.isin(list(AMEND_EXCLUDE_NP))
+            for col in ["E1_prematch", "E1", "E3"]:
+                e[col] = e[col] & ~amend
         if br == "pre_post":  # Qin: surgical Post only (contract §3)
             spec = c.sample_id.map(man.specimen)
             c = c[~(c.study_id.eq("Qin_2023_Cell_Rep_Med") & c.side_key.eq("Post") & ~spec.eq("surgical resection"))]
@@ -135,10 +149,14 @@ def main():
             "E1s_i_original_depth": (c, "ct2_orig", 100, "E1_prematch"),
             "E1s_ii_raw_depth_matched": (cm, "raw_ds", 100, "E1"),
         }
+        if br == "normal_primary":
+            runs["E1_frozen_atlas_label_incl_P02"] = (cm, "ct2_ds", 100, "E1_frozen")
+        else:  # descriptive: original depth in exactly the E1 (depth-matched) patients
+            runs["E1pp_desc_original_depth_same_patients"] = (c, "ct2_orig", 100, "E1")
         for name, (cc, col, mn, elig) in runs.items():
             sv = side_values(cc, col, mn)
             d = (sv[B] - sv[A]).dropna()
-            ok = e[e[elig]].index
+            ok = e_frozen[e_frozen.E1].index if elig == "E1_frozen" else e[e[elig]].index
             d = d[d.index.isin(ok)]
             label = dict(branch=br, estimand=name, value=col)
             if br == "normal_primary":
@@ -197,6 +215,7 @@ def main():
                 if A not in sv or B not in sv:
                     pooled.append(dict(branch=br, estimand=f"E1L_{cl}", status="no_pairs")); continue
                 d = (sv[B] - sv[A]).dropna()
+                d = d[d.index.isin(e[e.E1].index)]
                 label = dict(branch=br, estimand=f"E1L_{cl}", value="ct2_ds")
                 st, r = pool(d, label, reml_hk)
                 if r.get("status") == "pooled" and r["n_patients"] < CLASS_MIN_PAT:
@@ -207,6 +226,7 @@ def main():
             sv = side_values(t3, "ct2_ds", 30)
             if A in sv and B in sv:
                 d = (sv[B] - sv[A]).dropna()
+                d = d[d.index.isin(e[e.E3].index)]
                 for s, x in d.groupby(level="study_id"):
                     if s in ("Pelka_2021_Cell", "Lee_2020_Nat_Genet"):
                         pp_rows.append(cohort(x, dict(branch=br, estimand="E3_descriptive", value="ct2_ds", study_id=s)))
