@@ -44,5 +44,5 @@
 **Statistics, replicates and abbreviations.**
 - **Units:** n is the number of patients, the independent unit; cells are not treated as replicates.
 - **Tests:** all tests are two-sided. CI, confidence interval; PI, prediction interval.
-- **Abbreviations:** REML, restricted maximum likelihood; BH, Benjamini–Hochberg; UMI, unique molecular identifier; CIOC, colitis-associated injury/oncofetal; TRG, tumour regression grade.
+- **Abbreviations:** REML, restricted maximum likelihood; BH, Benjamini–Hochberg; UMI, unique molecular identifier; TRG, tumour regression grade. Programme gene sets (proCSC, revCSC, Extended CIOC, YAP core) are as defined for Fig. 1 A3a.
 - **Source data:** `ed_fig1_a3b_source_a.csv` to `ed_fig1_a3b_source_d.csv`.
