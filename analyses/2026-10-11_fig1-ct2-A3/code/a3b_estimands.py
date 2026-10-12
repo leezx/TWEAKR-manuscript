@@ -109,7 +109,7 @@ def main():
     pooled, studies, pp_rows, qc = [], [], [], []
 
     for br, tag in [("normal_primary", "np"), ("pre_post", "pp")]:
-        ds = ds_mean(R / f"ct2/scores_ds_{tag}").rename(columns={"whole_score": "ct2_ds", "intrinsic_score": "raw_ds"})
+        ds = ds_mean(R / f"ct2/scores_{tag}").rename(columns={"whole_score": "ct2_ds", "intrinsic_score": "raw_ds"})
         smp = sl[sl.branch == br][["sample_id", "side", "stage"]].drop_duplicates("sample_id")
         c = idt.drop(columns=["side", "stage"]).merge(smp, on="sample_id")
         if br == "normal_primary":
