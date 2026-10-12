@@ -1,5 +1,7 @@
 # A3b Stage S — results for final review (contract v0.3; identity_v1 limited GO)
 
+> **SUPERSEDED** by `A3b_stageS_correction_20261012.md` (commit 7a2ecfc; final approval `A3b_stageS_final_approval_20261012.md`). The numbers below are first-run values (E1 n=86, Qin n=22). Do not cite them; the tables they come from are in `tables/a3b_stageS/audit_v1_20261012/`.
+
 - **Date:** 2026-10-12.
 - **Code:** `a3b_ct2_prep.py`, `a3b_ct2_check.py` and `a3b_estimands.py`. Run commit `dbcc966`; the only change after deployment was a path fix for the depth-matched score folder.
 - **Public tables:** `tables/a3b_stageS/`.
