@@ -1,0 +1,21 @@
+contrast,variant,status,k,n_patients,estimate,ci_low,ci_high
+pro_vs_ref,All patients (primary),pooled,8,108,0.147477173587478,0.049815166482009,0.245139180692946
+rev_vs_ref,All patients (primary),pooled,8,106,0.0251511423505638,-0.00460334665315148,0.0549056313542791
+pro_vs_rev,All patients (primary),pooled,13,203,0.0773419826193513,0.0436836141378876,0.111000351100815
+cycling_pro_vs_rev,All patients (primary),pooled,6,59,0.118747776730537,0.0698720138783014,0.167623539582772
+pro_vs_ref,CNV-positive cells,pooled,3,16,0.22897437728987,-0.243577496350618,0.701526250930358
+rev_vs_ref,CNV-positive cells,descriptive_fewer_than_3_studies,2,10,,,
+pro_vs_rev,CNV-positive cells,pooled,5,38,0.094812447072305,0.0516166547882649,0.138008239356345
+cycling_pro_vs_rev,CNV-positive cells,descriptive_fewer_than_3_studies,1,5,,,
+pro_vs_ref,MSI-H,descriptive_fewer_than_3_studies,2,24,,,
+rev_vs_ref,MSI-H,descriptive_fewer_than_3_studies,2,24,,,
+pro_vs_rev,MSI-H,pooled,5,54,0.10165494396819,0.000826311993367732,0.202483575943012
+cycling_pro_vs_rev,MSI-H,descriptive_fewer_than_3_studies,2,14,,,
+pro_vs_ref,MSS,pooled,5,61,0.170710885105708,-0.00285891095736901,0.344280681168785
+rev_vs_ref,MSS,pooled,5,59,0.0313768111623928,0.00707038946173823,0.0556832328630474
+pro_vs_rev,MSS,pooled,10,130,0.0762579333438448,0.0400108350374011,0.112505031650288
+cycling_pro_vs_rev,MSS,pooled,4,36,0.123339352706422,0.0706852316742858,0.175993473738559
+pro_vs_ref,Pelka 2021 excluded,pooled,7,86,0.153263469283423,0.0371906014990834,0.269336337067763
+rev_vs_ref,Pelka 2021 excluded,pooled,7,84,0.0338094671458577,-0.0157382456692092,0.0833571799609245
+pro_vs_rev,Pelka 2021 excluded,pooled,12,153,0.0765902219376923,0.0393431164322548,0.11383732744313
+cycling_pro_vs_rev,Pelka 2021 excluded,pooled,5,43,0.12383521398621,0.0586210532496703,0.189049374722749

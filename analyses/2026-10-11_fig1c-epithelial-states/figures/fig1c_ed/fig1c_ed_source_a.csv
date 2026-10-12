@@ -1,0 +1,144 @@
+table,study,item,value
+audit_verdict,Chen 2024,Absorptive,Verified
+audit_verdict,Chen 2024,Cycling Stem/TA,Verified
+audit_verdict,Chen 2024,Secretory,Verified
+audit_verdict,Chen 2024,Stem/TA-like,Failed (unverified)
+audit_verdict,Guo 2022,Absorptive,Verified
+audit_verdict,Guo 2022,Cycling Stem/TA,Verified
+audit_verdict,Guo 2022,Secretory,Verified
+audit_verdict,Guo 2022,Stem/TA-like,Failed (unverified)
+audit_verdict,Joanito 2022,Absorptive,Verified
+audit_verdict,Joanito 2022,Cycling Stem/TA,Not evaluable
+audit_verdict,Joanito 2022,Secretory,Verified
+audit_verdict,Joanito 2022,Stem/TA-like,Not evaluable
+audit_verdict,Khaliq 2022,Absorptive,Verified
+audit_verdict,Khaliq 2022,Cycling Stem/TA,Verified
+audit_verdict,Khaliq 2022,Secretory,Verified
+audit_verdict,Khaliq 2022,Stem/TA-like,Failed (unverified)
+audit_verdict,Lee 2020,Absorptive,Verified
+audit_verdict,Lee 2020,Cycling Stem/TA,Verified
+audit_verdict,Lee 2020,Secretory,Verified
+audit_verdict,Lee 2020,Stem/TA-like,Failed (unverified)
+audit_verdict,Li 2023,Absorptive,Verified
+audit_verdict,Li 2023,Cycling Stem/TA,Verified
+audit_verdict,Li 2023,Secretory,Verified
+audit_verdict,Li 2023,Stem/TA-like,Failed (unverified)
+audit_verdict,Liu 2024,Absorptive,Failed (unverified)
+audit_verdict,Liu 2024,Cycling Stem/TA,Not evaluable
+audit_verdict,Liu 2024,Secretory,Verified
+audit_verdict,Liu 2024,Stem/TA-like,Not evaluable
+audit_verdict,MUI Innsbruck,Absorptive,Verified
+audit_verdict,MUI Innsbruck,Cycling Stem/TA,Verified
+audit_verdict,MUI Innsbruck,Secretory,Verified
+audit_verdict,MUI Innsbruck,Stem/TA-like,Failed (unverified)
+audit_verdict,Pelka 2021,Absorptive,Verified
+audit_verdict,Pelka 2021,Cycling Stem/TA,Verified
+audit_verdict,Pelka 2021,Secretory,Verified
+audit_verdict,Pelka 2021,Stem/TA-like,Failed (unverified)
+audit_verdict,Qi 2022,Absorptive,Verified
+audit_verdict,Qi 2022,Cycling Stem/TA,Verified
+audit_verdict,Qi 2022,Secretory,Verified
+audit_verdict,Qi 2022,Stem/TA-like,Failed (unverified)
+audit_verdict,Qian 2020,Absorptive,Verified
+audit_verdict,Qian 2020,Cycling Stem/TA,Verified
+audit_verdict,Qian 2020,Secretory,Verified
+audit_verdict,Qian 2020,Stem/TA-like,Failed (unverified)
+audit_verdict,Qin 2023,Absorptive,Verified
+audit_verdict,Qin 2023,Cycling Stem/TA,Verified
+audit_verdict,Qin 2023,Secretory,Verified
+audit_verdict,Qin 2023,Stem/TA-like,Failed (unverified)
+audit_verdict,Uhlitz 2021,Absorptive,Verified
+audit_verdict,Uhlitz 2021,Cycling Stem/TA,Verified
+audit_verdict,Uhlitz 2021,Secretory,Verified
+audit_verdict,Uhlitz 2021,Stem/TA-like,Failed (unverified)
+composition_fraction,Chen 2024,Absorptive (ref.),0.1747
+composition_fraction,Guo 2022,Absorptive (ref.),0.1243
+composition_fraction,Joanito 2022,Absorptive (ref.),0.1832
+composition_fraction,Khaliq 2022,Absorptive (ref.),0.1189
+composition_fraction,Lee 2020,Absorptive (ref.),0.0702
+composition_fraction,Li 2023,Absorptive (ref.),0.0760
+composition_fraction,Liu 2024,Absorptive (ref.),0.0000
+composition_fraction,MUI Innsbruck,Absorptive (ref.),0.1525
+composition_fraction,Pelka 2021,Absorptive (ref.),0.0412
+composition_fraction,Qi 2022,Absorptive (ref.),0.0748
+composition_fraction,Qian 2020,Absorptive (ref.),0.0202
+composition_fraction,Qin 2023,Absorptive (ref.),0.1255
+composition_fraction,Uhlitz 2021,Absorptive (ref.),0.2648
+composition_fraction,Chen 2024,Cycling Stem/TA,0.1671
+composition_fraction,Guo 2022,Cycling Stem/TA,0.1626
+composition_fraction,Joanito 2022,Cycling Stem/TA,0.4603
+composition_fraction,Khaliq 2022,Cycling Stem/TA,0.1092
+composition_fraction,Lee 2020,Cycling Stem/TA,0.2037
+composition_fraction,Li 2023,Cycling Stem/TA,0.4377
+composition_fraction,Liu 2024,Cycling Stem/TA,0.4512
+composition_fraction,MUI Innsbruck,Cycling Stem/TA,0.2923
+composition_fraction,Pelka 2021,Cycling Stem/TA,0.3077
+composition_fraction,Qi 2022,Cycling Stem/TA,0.1668
+composition_fraction,Qian 2020,Cycling Stem/TA,0.1731
+composition_fraction,Qin 2023,Cycling Stem/TA,0.3390
+composition_fraction,Uhlitz 2021,Cycling Stem/TA,0.1394
+composition_fraction,Chen 2024,Trans./rare (not audited),0.0528
+composition_fraction,Guo 2022,Trans./rare (not audited),0.1132
+composition_fraction,Joanito 2022,Trans./rare (not audited),0.0637
+composition_fraction,Khaliq 2022,Trans./rare (not audited),0.0645
+composition_fraction,Lee 2020,Trans./rare (not audited),0.0506
+composition_fraction,Li 2023,Trans./rare (not audited),0.0673
+composition_fraction,Liu 2024,Trans./rare (not audited),0.0292
+composition_fraction,MUI Innsbruck,Trans./rare (not audited),0.0808
+composition_fraction,Pelka 2021,Trans./rare (not audited),0.0934
+composition_fraction,Qi 2022,Trans./rare (not audited),0.0253
+composition_fraction,Qian 2020,Trans./rare (not audited),0.0592
+composition_fraction,Qin 2023,Trans./rare (not audited),0.0740
+composition_fraction,Uhlitz 2021,Trans./rare (not audited),0.0576
+composition_fraction,Chen 2024,Secretory,0.1595
+composition_fraction,Guo 2022,Secretory,0.1928
+composition_fraction,Joanito 2022,Secretory,0.1151
+composition_fraction,Khaliq 2022,Secretory,0.0920
+composition_fraction,Lee 2020,Secretory,0.0504
+composition_fraction,Li 2023,Secretory,0.0301
+composition_fraction,Liu 2024,Secretory,0.0138
+composition_fraction,MUI Innsbruck,Secretory,0.0524
+composition_fraction,Pelka 2021,Secretory,0.0463
+composition_fraction,Qi 2022,Secretory,0.0488
+composition_fraction,Qian 2020,Secretory,0.0241
+composition_fraction,Qin 2023,Secretory,0.0427
+composition_fraction,Uhlitz 2021,Secretory,0.1663
+composition_fraction,Chen 2024,Stem/TA-like (unverified),0.2313
+composition_fraction,Guo 2022,Stem/TA-like (unverified),0.2070
+composition_fraction,Joanito 2022,Stem/TA-like (unverified),0.0000
+composition_fraction,Khaliq 2022,Stem/TA-like (unverified),0.3922
+composition_fraction,Lee 2020,Stem/TA-like (unverified),0.4414
+composition_fraction,Li 2023,Stem/TA-like (unverified),0.2232
+composition_fraction,Liu 2024,Stem/TA-like (unverified),0.3733
+composition_fraction,MUI Innsbruck,Stem/TA-like (unverified),0.1560
+composition_fraction,Pelka 2021,Stem/TA-like (unverified),0.3318
+composition_fraction,Qi 2022,Stem/TA-like (unverified),0.5317
+composition_fraction,Qian 2020,Stem/TA-like (unverified),0.4588
+composition_fraction,Qin 2023,Stem/TA-like (unverified),0.1479
+composition_fraction,Uhlitz 2021,Stem/TA-like (unverified),0.2409
+composition_fraction,Chen 2024,Unresolved,0.2146
+composition_fraction,Guo 2022,Unresolved,0.1999
+composition_fraction,Joanito 2022,Unresolved,0.1778
+composition_fraction,Khaliq 2022,Unresolved,0.2231
+composition_fraction,Lee 2020,Unresolved,0.1837
+composition_fraction,Li 2023,Unresolved,0.1656
+composition_fraction,Liu 2024,Unresolved,0.1325
+composition_fraction,MUI Innsbruck,Unresolved,0.2660
+composition_fraction,Pelka 2021,Unresolved,0.1796
+composition_fraction,Qi 2022,Unresolved,0.1527
+composition_fraction,Qian 2020,Unresolved,0.2646
+composition_fraction,Qin 2023,Unresolved,0.2708
+composition_fraction,Uhlitz 2021,Unresolved,0.1311
+ood_fail_fraction,Chen 2024,frac_ood_fail,0.111
+ood_fail_fraction,Guo 2022,frac_ood_fail,0.259
+ood_fail_fraction,Joanito 2022,frac_ood_fail,1.000
+ood_fail_fraction,Khaliq 2022,frac_ood_fail,0.057
+ood_fail_fraction,Lee 2020,frac_ood_fail,0.066
+ood_fail_fraction,Li 2023,frac_ood_fail,0.074
+ood_fail_fraction,Liu 2024,frac_ood_fail,0.975
+ood_fail_fraction,MUI Innsbruck,frac_ood_fail,0.461
+ood_fail_fraction,Pelka 2021,frac_ood_fail,0.011
+ood_fail_fraction,Qi 2022,frac_ood_fail,0.106
+ood_fail_fraction,Qian 2020,frac_ood_fail,0.022
+ood_fail_fraction,Qin 2023,frac_ood_fail,0.361
+ood_fail_fraction,Uhlitz 2021,frac_ood_fail,0.958

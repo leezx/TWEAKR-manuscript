@@ -1,0 +1,33 @@
+table,contrast,item,value,lo,hi
+funnel,pro − ref,All patients,222,,
+funnel,rev − ref,All patients,222,,
+funnel,pro − rev,All patients,222,,
+funnel,"pro − rev
+(Cycling)",All patients,222,,
+funnel,pro − ref,With both groups,122,,
+funnel,rev − ref,With both groups,122,,
+funnel,pro − rev,With both groups,206,,
+funnel,"pro − rev
+(Cycling)",With both groups,183,,
+funnel,pro − ref,≥1 eligible sample,120,,
+funnel,rev − ref,≥1 eligible sample,117,,
+funnel,pro − rev,≥1 eligible sample,203,,
+funnel,"pro − rev
+(Cycling)",≥1 eligible sample,63,,
+funnel,pro − ref,In studies with ≥5 patients,108,,
+funnel,rev − ref,In studies with ≥5 patients,106,,
+funnel,pro − rev,In studies with ≥5 patients,203,,
+funnel,"pro − rev
+(Cycling)",In studies with ≥5 patients,59,,
+D1_dropped_minus_retained,pro (median 1.2% dropped),log10 UMI,-0.754789344172876,-1.155,-0.3546
+D1_dropped_minus_retained,reference (median 13.9% dropped),log10 UMI,-0.598311011957076,-0.8122,-0.3844
+D1_dropped_minus_retained,pro (median 1.2% dropped),log10 genes,-0.526669397984412,-0.8174,-0.2359
+D1_dropped_minus_retained,reference (median 13.9% dropped),log10 genes,-0.424224063557687,-0.5668,-0.2816
+D1_dropped_minus_retained,pro (median 1.2% dropped),CytoTRACE2,-0.0752440327083775,-0.1442,-0.0063
+D1_dropped_minus_retained,reference (median 13.9% dropped),CytoTRACE2,-0.00365691965772117,-0.0106,0.0033
+D3_lost_fraction,pro − ref (23/120 lost),low,0.236,,
+D3_lost_fraction,rev − ref (22/117 lost),low,0.222,,
+D3_lost_fraction,pro − ref (23/120 lost),mid,0.2,,
+D3_lost_fraction,rev − ref (22/117 lost),mid,0.2,,
+D3_lost_fraction,pro − ref (23/120 lost),high,0.05,,
+D3_lost_fraction,rev − ref (22/117 lost),high,0.056,,
