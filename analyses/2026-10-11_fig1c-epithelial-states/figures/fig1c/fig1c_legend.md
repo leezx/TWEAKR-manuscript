@@ -9,11 +9,11 @@
   - Bars show the annotation composition of the pro-dominant, rev-dominant and hybrid-high strata (cell numbers below). Lineage was transferred from the Pelka et al. reference by a patient-grouped cross-validated classifier and audited with marker modules.
     - "Stem/TA-like (unverified)": cells predicted as Stem/TA-like, a class that did not pass the pre-specified lineage audit.
     - "Unresolved": below the classifier confidence thresholds.
-    - "*": Transitional and rare classes, which were not module-audited.
+    - "Transitional/rare (not audited)": transitional and rare classes, which were not module-audited.
 - **Middle (within-patient contrasts).**
   - Differences in CytoTRACE2-predicted developmental potency between programme-defined strata and the absorptive differentiated-like reference.
   - Estimation: the difference of group medians within each sample, then the median per patient, then the mean per study, pooled across studies by REML random-effects meta-analysis with the Hartung–Knapp adjustment. Points and bars show pooled estimates and 95% CIs.
-  - n = patients in studies with ≥ 5 eligible patients. "Studies +" = studies with a positive mean difference.
+  - n = patients in studies with ≥ 5 eligible patients. "Studies > 0" = studies with a positive pooled within-study mean difference.
   - Eligibility: samples with ≥ 30 cells in each stratum compared and ≥ 50 reference cells.
   - The three upper contrasts form the pre-specified primary family, with Holm-adjusted P values. The contrast restricted to Cycling Stem/TA cells is a planned sensitivity analysis (open symbol). The shaded row is the direct pro-dominant versus rev-dominant contrast.
 - **Right (continuous model).**

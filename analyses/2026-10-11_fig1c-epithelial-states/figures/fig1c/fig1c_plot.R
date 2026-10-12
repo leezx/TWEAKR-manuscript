@@ -66,10 +66,10 @@ p_i <- ggplot(g) +
 cm <- fread(file.path(tab, "stage1_v03a", "strata75_lineage_composition.tsv"))
 cm <- melt(cm, id.vars = "stratum", variable.name = "lineage", value.name = "n")
 cat_of <- c("Cycling Stem/TA" = "Cycling Stem/TA", "Secretory differentiated-like" = "Secretory",
-            "Transitional stem/secretory" = "Transitional/rare*", "Transitional secretory/absorptive" = "Transitional/rare*",
-            "Rare lineages" = "Transitional/rare*", "lineage-transfer-unverified" = "Stem/TA-like (unverified)",
+            "Transitional stem/secretory" = "Transitional/rare (not audited)", "Transitional secretory/absorptive" = "Transitional/rare (not audited)",
+            "Rare lineages" = "Transitional/rare (not audited)", "lineage-transfer-unverified" = "Stem/TA-like (unverified)",
             "lineage-unresolved" = "Unresolved")
-cm[, cat := factor(cat_of[as.character(lineage)], levels = rev(c("Cycling Stem/TA", "Secretory", "Transitional/rare*",
+cm[, cat := factor(cat_of[as.character(lineage)], levels = rev(c("Cycling Stem/TA", "Secretory", "Transitional/rare (not audited)",
                                                                   "Stem/TA-like (unverified)", "Unresolved")))]
 cm <- cm[, .(n = sum(n)), by = .(stratum, cat)]
 cm[, frac := n / sum(n), by = stratum]
@@ -80,7 +80,7 @@ cm <- cm[stratum %in% names(SL)]
 tot <- tot[stratum %in% names(SL)]
 SL <- setNames(paste0(SL, "\n", sprintf("%.1fk", tot$n[match(names(SL), tot$stratum)] / 1000)), names(SL))
 cm[, st := factor(SL[stratum], levels = SL)]
-CATCOL <- c("Cycling Stem/TA" = "#0F4D92", "Secretory" = "#42949E", "Transitional/rare*" = "#9FC3D6",
+CATCOL <- c("Cycling Stem/TA" = "#0F4D92", "Secretory" = "#42949E", "Transitional/rare (not audited)" = "#9FC3D6",
             "Stem/TA-like (unverified)" = "#9A9A9A", "Unresolved" = "#DDDDDD")
 p_i2 <- ggplot(cm, aes(x = st, y = frac, fill = cat)) +
   geom_col(width = 0.78, colour = "white", linewidth = 0.15) +
@@ -104,8 +104,8 @@ d[, y := c(pro_vs_ref = 4, rev_vs_ref = 3, pro_vs_rev = 2, cycling_pro_vs_rev = 
 d[, role := ifelse(contrast == "pro_vs_rev", "hero", ifelse(family == "primary_holm", "primary", "sensitivity"))]
 fmtp <- function(p) ifelse(p < 0.001, sprintf("%.4f", p), sprintf("%.3f", p))
 d[, ann := ifelse(family == "primary_holm",
-                  sprintf("n = %d; %d/%d studies +\nHolm P = %s", n_patients, studies_same_sign, k, fmtp(p_adj)),
-                  sprintf("n = %d; %d/%d studies +\nplanned sensitivity", n_patients, studies_same_sign, k))]
+                  sprintf("n = %d; %d/%d studies > 0\nHolm P = %s", n_patients, studies_same_sign, k, fmtp(p_adj)),
+                  sprintf("n = %d; %d/%d studies > 0\nplanned sensitivity", n_patients, studies_same_sign, k))]
 d[, ylab := paste0(lab, "\n", ann)]
 ROLECOL <- c(hero = SIGNAL, primary = INK, sensitivity = MID)
 p_ii <- ggplot(d, aes(y = y)) +
@@ -148,7 +148,7 @@ p_iii <- ggplot(m, aes(y = y, colour = programme)) +
 
 # ---------------------------------------------------------------- assemble
 fig <- (p_i | p_i2 | p_ii | p_iii) +
-  plot_layout(widths = c(1.0, 0.48, 0.8, 0.42)) &
+  plot_layout(widths = c(1.0, 0.50, 0.85, 0.42)) &
   theme(plot.background = element_rect(fill = "white", colour = NA))
 
 w <- 183 / 25.4; h <- 64 / 25.4

@@ -17,3 +17,9 @@
 - **Open:**
   - The Illustrator round-trip check (fonts, clipping) is still to do at Figure 1 assembly.
   - The Extended Data panels ED-A to ED-H are not drawn yet.
+
+## Revision 1 (2026-10-11, WL-20261011-1C-010)
+- c-ii labels: "k/k studies +" → "k/k studies > 0".
+- c-i composition key: "Transitional/rare*" → "Transitional/rare (not audited)", so the panel needs no footnote; legend and source CSV category names updated to match.
+- Panel widths 1.0/0.48/0.8/0.42 → 1.0/0.50/0.85/0.42 to remove the white gap before c-ii; no overlap at 100%.
+- Re-checked after re-export: SVG 69 Arial `<text>` objects; PDF embeds ArialMT; all numbers unchanged.
