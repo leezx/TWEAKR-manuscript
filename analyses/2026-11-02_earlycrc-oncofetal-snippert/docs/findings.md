@@ -98,12 +98,19 @@ cohort, so our exp1 result replicates the authors' analysis and exp2 does not
 reproduce it either.
 
 **Claim ceiling for Q1.** Supported: *in early-stage CRC, tumour epithelium at
-the invasive front shifts from a proliferative/proCSC to a YAP-regenerative/
-revCSC state; this is epithelium-specific and survives matched-null calibration
-in two independent cohorts.* Supported: *trophoblast and placenta programmes are
-not enriched at the invasive front in either cohort.* Not supported: any
-statement that the fetal-intestinal axis specifically (IFA, Yui) is enriched in
-*all* early CRCs — that holds in the CTA cohort only.
+the invasive front runs a YAP-regenerative/revCSC programme where the core runs a
+proliferative/proCSC one; this is epithelium-specific and survives matched-null
+calibration in two independent cohorts.* These are bulk segments compared across
+space, so this is regional difference, NOT plasticity: no cell is observed
+changing state, and nothing here licenses "state switching". Supported:
+*trophoblast and placenta programmes are not stably enriched at the invasive
+front in either cohort.* NOT supported, and corrected from the first draft: that
+trophoblast programmes are absent from these tumours. The negative is specific to
+invasive-front enrichment of trophoblast-IDENTITY axes in bulk segments; it does
+not test whether a minority oncofetal subpopulation runs a placenta-like
+IMMUNE-TOLERANCE programme, which is a different gene set and needs a
+cell-state-resolved test. Not supported: that the fetal-intestinal axis
+specifically is enriched in *all* early CRCs — that holds in the CTA cohort only.
 
 ---
 
@@ -176,11 +183,23 @@ does not replicate in CTA.
 
 **Claim ceiling for Q2.** Supported: *TNFRSF12A marks the invasive front of
 early-stage CRC epithelium in 10/10 patients, co-ordinately with MMP7 and LAMC2*;
-and *TWEAK is expressed at a uniform low rate across microenvironmental cell
-types with no dominant source, while TGFB1 in the same cells is strongly
-source-structured*. Not supported: any ligand-driven mechanism, since no
-ligand-to-receptor direction can be inferred from co-expression, and the two
-cohorts disagree on whether *TNFSF12* itself is regionally patterned.
+and *TNFSF12 is broadly expressed across stromal and immune populations without
+a dominant, macrophage-specific source in this dataset, while TGFB1 in the same
+cells is strongly source-structured*. NOT supported, and corrected from the first
+draft: "TWEAK has no cellular source" — the ligand is detected in roughly a third
+of the cells of most cell types, and 5 patients / 2,409 sorted cells cannot
+exclude a macrophage contribution confined to particular patients, to a subset
+this sort under-samples, or to a compartment dissociation discards. Also not
+supported: any ligand-driven mechanism, since co-expression carries no direction,
+and the two cohorts disagree on whether *TNFSF12* is regionally patterned.
+
+**Circularity, found in review.** TNFRSF12A is a member of the revCSC gene set
+(1 of 32; 1 of the 12 on the CTA panel, 1 of 29 on WTA). The Q1 revCSC result and
+the Q2 receptor result are therefore one observation reported twice. Removing the
+gene and rescoring leaves revCSC essentially unchanged (exp1 PanCK+ Δ +0.0423 vs
++0.0443, 10/10 patients, matched-null P = 0.005; `Q5_revCSC_leaveout_TNFRSF12A.tsv`),
+so the programme-level result does not depend on the receptor — but they must not
+be presented as converging evidence.
 
 ---
 
@@ -264,23 +283,98 @@ in the manuscript built that way needs a detection-matched control gene panel.
 
 **Claim ceiling for Q3.** Supported: *oncofetal tumour cells emerge with
 pseudostage and are absent from two of three intramucosal carcinomas.* Supported
-as a negative: *TWEAK⁺ macrophages neither co-emerge with nor colocalise with
-oncofetal tumour cells in 11 early CRCs, and neither do TGFB1⁺, TGFB3⁺ or IL36G⁺
-cells.* Not supported: any colocalisation claim derived from a score-threshold
-definition without detection-matched controls.
+as a bounded negative: *no cross-patient-stable, ligand-specific proximity between
+TWEAK⁺ macrophages and oncofetal cells is detectable above the matched spatial
+background, at 20, 50 or 100 µm, and conditioning on receptor-positive oncofetal
+cells does not recover one.* NOT supported, and corrected from the first draft:
+"TWEAK⁺ macrophages do not colocalise with oncofetal cells" as an unqualified
+statement. Two of eleven tumours cannot enter the test; transcript detection is
+not protein availability; a whole-tumour average dilutes a local niche. Not
+supported: any colocalisation claim derived from a score-threshold definition
+without detection-matched controls.
 
 ---
+
+## Q4 (added in review) — Is TNFRSF12A specific to the oncofetal cell state?
+
+The Q2 result is regional and cannot distinguish a receptor that marks the
+oncofetal state from one raised in every invasive epithelial state. Tested in
+CosMx by comparing oncofetal with other malignant epithelial cells **within the
+same tumour, the same field of view and the same detection quintile**, with the
+authors' oncofetal label (independent of our gene sets) and with twelve
+detection-matched control genes carried through the same pipeline
+(`Q6_*`, Fig. EC4a,b).
+
+Stratification balanced depth exactly (oncofetal/comparison depth ratio 1.00).
+TNFRSF12A is higher in oncofetal cells in **7 of 8** evaluable tumours: median
++3.18 percentage points of detection, Δlog +0.097, Cliff's δ +0.044, Wilcoxon
+P = 0.016, BH q = 0.19 over 17 genes. Control genes: median effect +0.014, max
++0.027, none significant; the receptor exceeds all twelve controls in **6 of 8**
+tumours (z +2.4 to +24.1). The two exceptions include the tumour whose epithelium
+is 87% oncofetal, where almost no comparison cells remain.
+
+Sensitivity with a revCSC decile (TNFRSF12A removed from the set): 11/11 tumours,
++5.63 points, Δlog +0.112, δ +0.077, P = 0.00098, q = 0.008, receptor above all
+twelve controls in 11/11. That arm retains an 11% depth imbalance, so it is
+reported as supporting, not primary.
+
+**Claim ceiling.** Supported: *TNFRSF12A expression is associated with the
+oncofetal cell state, not only with the invasive front.* Not supported: receptor
+protein, receptor clustering, pathway activity, or any temporal ordering between
+receptor and state.
+
+## Q5 (added in review) — Where does the EC3c inflation come from?
+
+Audit of the score-threshold colocalisation positive, at 20/50/100 µm, under four
+definitions, with FOV × detection-quintile stratification and a depth-,
+complexity- and area-residualised score (`Q7A_*`, Fig. EC4c).
+
+| Definition (50 µm, all-cell sources) | median z, controls | median z, ligands |
+|---|---|---|
+| revCSC decile, unstratified (as published in EC3c) | +7.8 | +6.3 |
+| revCSC decile + FOV × depth strata | +1.48 | +0.91 |
+| score residualised on depth, genes, area + strata | +1.13 | +0.75 |
+| authors' label + strata | −0.93 | −0.33 |
+
+Conclusions: (i) the positive is not ligand-specific under any definition or
+radius — controls match or exceed ligands throughout; (ii) stratifying on field
+and detection quintile removes most of the inflation, from z ≈ 7.8 to ≈ 1.5;
+(iii) residualising the score adds little and changes decile membership by only
+8%; (iv) a residual bias of ≈ +1 to +1.7 z persists under score-based
+definitions and **grows with radius**, which points to tissue architecture —
+signature-high cells clustering in locally dense regions — rather than to
+sequencing depth alone. Neighbour-cap truncation is negligible (≤ 0.07% of query
+cells at 100 µm).
+
+**Claim ceiling.** Supported: *the score-threshold colocalisation positive lacks
+ligand specificity, and most of it is attributable to within-field detection
+density.* NOT supported, and corrected from the first draft: calling it simply
+"an artefact" — the residual, radius-growing component is not explained by
+detection depth and has not been fully characterised.
+
+## Q6 (added in review) — Is there a receptor-conditioned niche?
+
+Among oncofetal cells only, do TNFRSF12A⁺ cells have more TNFSF12⁺ macrophage
+neighbours than TNFRSF12A⁻ cells (`Q7B_*`, Fig. EC4d)? At 20/50/100 µm with the
+same stratification and null: 5/9, 4/9 and 2/9 tumours positive, median z +0.06,
+−0.15, −0.37, P ≥ 0.43; control genes indistinguishable; nothing significant
+after correction in any of the 96 gene × radius × source combinations.
+
+**Decision.** Negative. Per the review's stopping rule, this line is closed: no
+further ligand-receptor prediction, no further source hunting in the 2,409-cell
+dataset, no further regional placenta contrasts.
 
 ## What this cohort does and does not do for the manuscript
 
 | Manuscript claim | Verdict here |
 |---|---|
-| Tumour epithelium re-engages fetal/regenerative, **not** trophoblast, programmes | **Supported.** Trophoblast axes null or negative in both GeoMx cohorts, with full gene coverage in one. |
+| Tumour epithelium re-engages fetal/regenerative, **not** trophoblast, programmes | **Supported for invasive-front enrichment.** Trophoblast identity axes null or negative in both GeoMx cohorts, with full gene coverage in one. Does not test a cell-state-specific placenta-like immune-tolerance programme. |
 | The programme is organised toward the invasive front | **Supported**, epithelium-specific, 10/10 patients, matched-null calibrated. |
 | proCSC ↔ revCSC rebalancing | **Supported** in both cohorts. |
 | TNFRSF12A marks the revival state | **Supported** — +0.46 log at the invasive front in 10/10 patients, alongside MMP7 and LAMC2. |
 | TWEAK has no single cellular source | **Supported** in a fourth independent cohort; TGFB1 in the same cells shows clear sources, so this is not an assay limitation. |
-| Macrophage-derived TWEAK drives the oncofetal state | **Contradicted.** No co-emergence, no colocalisation, flat TWEAK⁺ macrophage fraction across the whole pseudotime series. |
+| Macrophage-derived TWEAK drives the oncofetal state | **Not supported.** No co-emergence, no ligand-specific proximity at 20/50/100 µm, none after conditioning on receptor-positive cells, flat TWEAK⁺ macrophage fraction across the series. This bounds the claim; it does not disprove TWEAK signalling. |
+| TNFRSF12A marks the oncofetal cell *state*, not just the region | **Supported** at single-cell resolution: 7/8 tumours, above all 12 detection-matched controls in 6/8. |
 | Fetal-intestinal (IFA) axis specifically | **Partly supported** — strong in the CTA cohort, absent in the WTA cohort. |
 
 ---
@@ -304,7 +398,21 @@ definition without detection-matched controls.
 6. One intramucosal tumour (T1_NANO_026) carries 23.0% oncofetal cells, which sits
    uneasily with the paper's statement that oncofetal states are absent before
    invasion. Worth raising if this cohort is cited.
-7. Script `03b` should be generalised into a reusable detection-matched control
-   for every spatial colocalisation claim in the manuscript, not just this one.
-8. Nothing here has been reviewed or merged; per the repository rules these
-   results are not canonical manuscript evidence yet.
+7. Script `03b`/`07` should be generalised into a reusable detection-matched
+   control for every spatial colocalisation claim in the manuscript, not just
+   this one. The residual radius-growing bias in Q5 is unexplained and would
+   need a density- or architecture-aware null to characterise.
+8. The Q4 primary result sits at BH q = 0.19 with 8 tumours. It is consistent
+   and far outside the control-gene distribution, but it is not a
+   multiplicity-corrected significant finding and should not be reported as one.
+   A larger oncofetal-labelled cohort would settle it.
+9. Q4 assumes the authors' oncofetal label, derived from the published
+   high-relapse-cell signature, does not itself contain TNFRSF12A. That gene list
+   is not in the paper's text and we could not verify it. If it does, Q4 is
+   circular and must be withdrawn — worth one email to the authors.
+10. Closed by the review's stopping rule: further ligand-receptor prediction
+    (CellChat/CellPhoneDB/NicheNet), further TNFSF12 source hunting in the
+    2,409-cell dataset, further regional placenta contrasts, and further generic
+    spatial colocalisation maps.
+11. Nothing here has been reviewed or merged; per the repository rules these
+    results are not canonical manuscript evidence yet.

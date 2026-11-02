@@ -73,7 +73,11 @@ Joanito-derived lists is not reproduced here.
 | `code/02_scrna_ligand_sources.R` | `Q2_*` — ligand and receptor detection by TME cell type, source decomposition, patient-paired regional tests |
 | `code/03_cosmx_coemergence_colocalisation.R` | `Q3_*` — co-emergence across 11 pseudotimed tumours and ligand-specific colocalisation |
 | `code/03b_cosmx_control_genes.R` | `Q3b_*` — the same colocalisation test on twelve detection-matched non-ligand control genes; this is what shows the score-threshold version of the test to be invalid |
-| `code/04_make_figures.R` | `figures/Fig_EC1…EC3.{pdf,png}` — the three manuscript figures. Reads only the frozen tables above and computes no new statistics, so the figures cannot drift from the text |
+| `code/04_make_figures.R` | `figures/Fig_EC1…EC3.{pdf,png}` — the first three manuscript figures. Reads only the frozen tables above and computes no new statistics, so the figures cannot drift from the text |
+| `code/05_geomx_revCSC_leaveout.R` | `Q5_*` — circularity check: TNFRSF12A is a revCSC member, so revCSC is rescored without it |
+| `code/06_cosmx_receptor_state_specificity.R` | `Q6_*` — is TNFRSF12A specific to the oncofetal cell state, within field of view and detection quintile, against detection-matched control genes |
+| `code/07_cosmx_density_audit_and_receptor_niche.R` | `Q7A_*`, `Q7B_*` — where the spurious colocalisation comes from (three radii, four state definitions, depth-residualised score) and whether conditioning on the receptor recovers a niche |
+| `code/08_make_figure_EC4.R` | `figures/Fig_EC4_receptor_state_and_audit.{pdf,png}` |
 
 Run with `Rscript code/<script>.R`. Paths come from `STELLIGEN_ROOT`,
 `EARLYCRC_DIR`, `EARLYCRC_ZENODO_DIR`, `EARLYCRC_OUT`.
@@ -89,6 +93,7 @@ Software: R 4.5.2; Seurat 5, GeomxTools, singscore, RANN, Matrix, dplyr, ggplot2
 | `figures/Fig_EC1_regional_architecture.{pdf,png}` | stem-programme rebalancing at the invasive front; compartment specificity; trophoblast axes |
 | `figures/Fig_EC2_tweak_axis.{pdf,png}` | TNFRSF12A at the front; ligand sources in the microenvironment |
 | `figures/Fig_EC3_coemergence_colocalisation.{pdf,png}` | co-emergence, colocalisation and the control-gene test |
+| `figures/Fig_EC4_receptor_state_and_audit.{pdf,png}` | receptor cell-state specificity, the detection-density audit, and the receptor-conditioned niche test |
 | `tables/`, `manifests/` | all statistics, with checksums for outputs and source archives |
 
 The Results section and the three figures are also copied into the manuscript
@@ -97,4 +102,20 @@ and `manuscript/v1/01_figures/earlyCRC_replication/`.
 
 ## Review status
 
-Not yet reviewed. Open items are listed at the end of `docs/findings.md`.
+Reviewed once (2026-11-02), outcome REQUEST_CHANGES with limited scope. All four
+requested items are done:
+
+1. three overstatements corrected in `docs/Results.md` — the TWEAK source claim,
+   the colocalisation claim and the placenta claim — plus two more found while
+   making them: the draft implied cell-state switching from purely regional data,
+   and called the EC3c positive an artefact before its cause was established;
+2. detection-density audit of EC3c (`07`, Fig. EC4c);
+3. TNFRSF12A oncofetal-state specificity (`06`, Fig. EC4a,b) — positive;
+4. receptor-conditioned proximity, run because 3 was positive (`07`, Fig. EC4d)
+   — negative, so this line is closed.
+
+Found independently during the revision and **not** in the review: TNFRSF12A is a
+member of the revCSC gene set, so the Q1 programme result and the Q2 gene result
+are one observation reported twice. `05` quantifies it; the text now says so.
+
+Open items are listed at the end of `docs/findings.md`.

@@ -1,23 +1,23 @@
 <!--
 Source analysis: analyses/2026-11-02_earlycrc-oncofetal-snippert/
-Figures:         analyses/2026-11-02_earlycrc-oncofetal-snippert/figures/Fig_EC1..EC3.{pdf,png}
+Figures:         .../figures/Fig_EC1..EC4.{pdf,png}; PDFs copied to ../01_figures/earlyCRC_replication/
 Statistics:      .../tables/, claim ceilings and open items in .../docs/findings.md
-Status:          new section, not yet reviewed or merged; not canonical evidence yet.
+Status:          revised after review (2026-11-02). Not merged; not canonical evidence yet.
 
-Placement note: this is an external replication cohort. It can run as its own
-Results section, or be split with the Q1/Q2 material folded into the Figure 2
-and Figure 4 sections of the main Results and the CosMx control-gene test
-promoted to Methods. The author should choose; see open_items.md.
+Placement, per the reviewer: fold EC1 and the TNFRSF12A results of EC2/EC4 into
+the main Results, and carry EC3 as supporting/limiting evidence rather than
+running all four as independent main figures. The detection-matched control-gene
+test (EC3c, EC4c) belongs in Methods as a standard for every spatial
+colocalisation claim in the manuscript.
 -->
+# Results — An independent early-stage CRC cohort ties TWEAKR to the oncofetal state and withholds support from a macrophage-TWEAK niche
 
-# Results — An independent early-stage CRC cohort separates the revival axis from the trophoblast hypothesis
-
-*Draft section for the TWEAKR manuscript. Figures: `../figures/Fig_EC1…EC3`.
+*Draft section for the TWEAKR manuscript. Figures: `../figures/Fig_EC1…EC4`.
 Statistics in `../tables/`, methods and claim ceilings in `findings.md`.*
 
 ---
 
-## The oncofetal front is a rebalancing of two stem programmes, not a gain of a placental one
+## The invasive front carries a different stem programme from the tumour core, and not a placental one
 
 To test the manuscript's spatial claims in tissue the laboratory had no part in
 generating, we re-analysed a published atlas of early-stage colorectal cancer
@@ -44,13 +44,19 @@ BH q ≤ 0.005, nine patients with complete region coverage). The front is
 therefore not simply "more tumour-like" than the core: the two stem programmes
 move in opposite directions across the same tissue.
 
+We state this as regional difference, not as plasticity. These are bulk segments
+compared across space within a patient, so they establish that invasive front and
+tumour core run different transcriptional programmes. They cannot show that
+individual cells converted from one state to the other; no lineage, time course
+or clonal information enters this analysis.
+
 The shift belongs to the epithelium. In PanCK⁻ segments from the same regions of
 interest, the fetal-intestinal, revCSC, fetal-intestine and revival-stem scores
 are flat (|Δ| ≤ 0.005, 3–5 of 10 patients, matched-null P ≥ 0.87), whereas
 proCSC and proliferation fall in 0 of 10 (Fig. EC1c). A change in bulk tissue
 composition at the invasive front cannot produce that pattern.
 
-No trophoblast programme participates (Fig. EC1d). In the epithelium of the
+No trophoblast programme is stably enriched at the front (Fig. EC1d). In the epithelium of the
 cancer-panel cohort the pan-trophoblast axis, the curated placenta-trophoblast
 set and the extravillous-trophoblast set are all unmoved (Δ = −0.005, +0.010,
 −0.020; matched-null P = 0.73, 0.67, 0.36). The whole-transcriptome cohort,
@@ -60,6 +66,17 @@ patients (P = 0.006 in the opposite direction); in its microenvironment the axis
 is significantly depleted at the front (Δ = −0.033, 0 of 10 patients,
 matched-null P = 0.025). Restricting to the nine T1 tumours, as the original
 authors do, does not change this.
+
+The scope of that negative needs stating precisely, because it is narrower than
+it first appears. What fails here is the proposition that trophoblast programmes
+are a general feature of the invasive front. It is not a demonstration that
+trophoblast-associated transcription is absent from these tumours, and it does
+not test the hypothesis the placenta work was built around — that a particular
+oncofetal subpopulation runs a placenta-like immune-tolerance programme. Bulk
+segments averaging hundreds of cells cannot detect a programme confined to a
+minority state, and the immune-tolerance axis is a different gene set from the
+trophoblast-identity axes tested here. That hypothesis remains open and needs a
+cell-state-resolved test, not another regional contrast.
 
 One negative result is worth stating explicitly because it would have been a
 positive under a looser design. Contrasting the invasive front against the mean
@@ -71,7 +88,7 @@ revCSC (z = +3.1), the fetal-intestinal axis (z = +5.3), YAP regeneration
 consistency against a background that includes normal tissue reflects generic
 expression drift into tumour, which any tumour-expressed gene set reproduces.
 
-## TNFRSF12A marks the invasive front; TWEAK has no cellular source
+## TNFRSF12A marks the invasive front; TWEAK is broadly expressed without a dominant source
 
 Within the same patient-paired design, *TNFRSF12A* rises at the invasive front of
 tumour epithelium in **10 of 10 patients** (+0.46 log, BH q = 0.004), placing it
@@ -82,9 +99,18 @@ original authors use to define the oncofetal front — and above *TGFB3* (+0.18,
 microenvironment as well (+0.15, 8 of 10, q = 0.027); the ligand does not
 (7 of 10, q = 0.28).
 
+These two results are not independent and must not be presented as mutual
+corroboration: *TNFRSF12A* is itself a member of the revCSC gene set, one of the
+twelve revCSC genes carried on the cancer panel. Removing it and rescoring, the
+revCSC enrichment at the front is essentially unchanged (Δ = +0.042 versus
++0.044, still 10 of 10 patients, matched-null P = 0.005), so the programme-level
+result does not rest on the receptor — but the programme and the gene are one
+observation reported two ways, not two converging lines of evidence.
+
 Plate-based scRNA-seq of the sorted microenvironment from the same study
-(2,409 cells, 5 patients) explains why the ligand carries no spatial
-information: it has no cellular source (Fig. EC2b, EC2c). *TNFSF12* detection is
+(2,409 cells, 5 patients) shows why the ligand carries little spatial
+information: it is expressed broadly, without a dominant cell type of origin
+(Fig. EC2b, EC2c). *TNFSF12* detection is
 near-identical in every cell type — trophocyte-like CAF MMP⁻ 38.0%, MMP⁺ 35.7%,
 trophocyte 34.4%, telocyte 33.9%, **macrophage 33.7%**, pericyte 33.5% — and
 macrophages supply **7.1%** of all ligand-positive cells, behind pericytes
@@ -96,7 +122,56 @@ CAF MMP⁺ 73.8%, endothelial tip 60.5%, macrophage 46.2%). *IL36G* is detected 
 0 of 2,409 cells, consistent with an epithelial origin that this sorted dataset
 cannot sample.
 
-## TWEAK⁺ macrophages neither co-emerge nor colocalise with oncofetal cells
+The claim this supports is that *TNFSF12* expression is distributed across
+stromal and immune populations without a dominant, macrophage-specific source in
+this dataset. It is not a claim that TWEAK has no source, which the data
+contradict — the ligand is detectable in a third of the cells of most cell types.
+Nor does it exclude a macrophage contribution that matters: five patients and
+2,409 microenvironmental cells cannot rule out a source confined to particular
+patients, to a macrophage subset that this sorting strategy under-samples, or to
+a spatial compartment that dissociation discards.
+
+## TNFRSF12A is enriched in oncofetal cells themselves, not only in the region they occupy
+
+A regional result cannot distinguish a receptor that marks the oncofetal state
+from one raised in every invasive epithelial state. We therefore moved to the
+single-cell spatial cohort and asked the cell-state question directly, comparing
+*TNFRSF12A* between oncofetal and other malignant epithelial cells **within the
+same tumour, the same field of view and the same transcript-detection quintile**
+(Fig. EC4a, EC4b). Normal and undefined epithelium were excluded. The oncofetal
+label is the original authors', derived from the published high-relapse-cell
+signature rather than from any gene set of ours — necessary here, because
+defining the state with revCSC and then testing *TNFRSF12A* would be circular.
+Twelve non-ligand control genes matched to *TNFSF12* on detection rate run
+through the identical pipeline, so the receptor is read against what an
+arbitrary gene of similar abundance produces under the same stratification.
+
+Stratification balanced the confounder it was built for: oncofetal and
+comparison cells differ in mean detection depth by a factor of 1.00. Against
+that background *TNFRSF12A* is higher in oncofetal cells in 7 of 8 evaluable
+tumours (median +3.18 percentage points of detection, median Δlog = +0.097,
+Cliff's δ = +0.044, Wilcoxon P = 0.016, BH q = 0.19 across the seventeen genes
+tested). The control genes place that effect: their median effect is +0.014 and
+their largest is +0.027, none significant, and in **6 of 8 tumours the receptor
+exceeds all twelve controls** (z = +2.4 to +24.1 against the control
+distribution). The two exceptions are informative rather than fatal — one is the
+tumour whose epithelium is 87% oncofetal by the authors' label, where the
+contrast has almost no comparison cells left.
+
+The same test under a revCSC score decile with *TNFRSF12A* removed from the set
+gives a stronger result across all eleven tumours (11 of 11 positive, median
++5.63 percentage points, Δlog = +0.112, δ = +0.077, P = 0.00098, q = 0.008), and
+there the receptor exceeds all twelve control genes in **11 of 11 tumours**.
+That arm retains an 11% residual depth imbalance after stratification, so we
+report the authors'-label result as primary and this one as supporting.
+
+This is the strongest statement the data license: *TNFRSF12A* expression is
+associated with the oncofetal cell state, not merely with the invasive front.
+It remains an association. Receptor transcript abundance is not receptor
+protein, not receptor clustering and not pathway activity, and nothing here
+orders the receptor and the state in time.
+
+## No cross-patient-stable TWEAK⁺ macrophage–oncofetal association is detectable
 
 The decisive test is the single-cell spatial arm: 1,257,627 cells on a
 6,175-gene panel across eleven non-metastatic tumours staged immediately before
@@ -116,7 +191,7 @@ way a ligand-driven model predicts is the *TNFRSF12A*⁺ fraction rising with
 substage (ρ = +0.54, P = 0.083), which does not reach significance in eleven
 tumours.
 
-Nor are the two cell populations neighbours (Fig. EC3b). Counting ligand-positive
+Nor is there detectable ligand-specific proximity (Fig. EC3b). Counting ligand-positive
 neighbours within 50 µm of every tumour-epithelial cell and comparing oncofetal
 against other tumour epithelium — with the ligand-positive label permuted among
 cells of the same class within each field of view, so that the test measures
@@ -124,21 +199,70 @@ cells of the same class within each field of view, so that the test measures
 macrophages are enriched around oncofetal cells in 3 of 9 evaluable tumours
 (median z = −0.13, P = 0.73). *TGFB1*, *TGFB3* and *IL36G* are equally negative.
 
-This test required a control that we recommend be adopted for every spatial
-colocalisation claim (Fig. EC3c). If oncofetal cells are instead defined by a
-revCSC score decile rather than by the authors' label, the identical test
-returns **every** ligand as strongly colocalised in 11 of 11 tumours (median z
-4.6 to 7.3, permutation P < 0.005). That result is false. Twelve non-ligand
-control genes matched to *TNFSF12* on detection rate (0.041–0.047 versus 0.046),
-run through the same test, score **higher** than the ligands (median z 7.8 versus
-6.3), with SHC1, ESYT1, PPP3CA and UBQLN2 each positive in 11 of 11 tumours.
-Cells scoring high on any expression signature sit where transcript detection is
-dense and therefore have more neighbours positive for anything. Under the
-authors' label, ligands and control genes are indistinguishable (median z −0.61
-for controls, +0.12 for ligands; the highest-ranked of all sixteen genes is the
-control PPP3CA). A signature-score threshold combined with a within-field label
-permutation is not a sufficient control for colocalisation in imaging-based
-spatial transcriptomics.
+This is a bounded negative, and we state its bounds. It argues against a
+*general* TWEAK⁺ macrophage–oncofetal niche: one that would be visible as a
+cross-patient-stable excess of ligand-positive neighbours above the matched
+spatial background. It does not exclude TWEAK signalling. Two of eleven tumours
+carry too few oncofetal cells to enter the test; transcript detection is not
+protein availability, and a ligand that is secreted, cleaved and diffusible need
+not be transcribed by the cell that delivers it; 50 µm is one pre-chosen scale;
+and a whole-tumour average will dilute a niche confined to a small region. The
+proposition that survives is that ligand–receptor co-occurrence cannot carry the
+mechanistic claim, not that the interaction does not occur.
+
+Two things had to be checked before that negative could be trusted: that it is
+not an artefact of the single 50 µm radius, and that the comparison is not
+confounded by transcript-detection depth. Repeating the test at 20, 50 and
+100 µm, with the comparison stratified by field of view **and** detection
+quintile, leaves it unchanged: *TNFSF12*⁺ macrophages are enriched around
+oncofetal cells in 5 of 8, 5 of 8 and 6 of 8 tumours (median z = +0.42, +0.34,
++0.34; P ≥ 0.38), and at every radius the ligands sit *below* the twelve control
+genes (median z: ligands −0.12, +0.09, +0.20; controls +0.07, +0.26, +0.40).
+
+## A signature-score definition of cell state inflates spatial colocalisation
+
+The same analysis exposed a methodological problem that we think is the most
+transferable result here (Fig. EC3c, EC4c). Defining oncofetal cells by a revCSC
+score decile instead of by the authors' label turns the identical test strongly
+positive for **every** ligand — 11 of 11 tumours, median z 4.6 to 7.3,
+permutation P < 0.005. Twelve non-ligand control genes matched to *TNFSF12* on
+detection rate (0.041–0.047 versus 0.046) score *higher* than the ligands under
+that definition (median z 7.8 versus 6.3), with SHC1, ESYT1, PPP3CA and UBQLN2
+each positive in 11 of 11 tumours.
+
+The positive is therefore not ligand-specific, and it is acutely sensitive to how
+the cell state is defined. We audited where it comes from. Stratifying the
+comparison by field of view and detection quintile removes most of it: the median
+control z falls from +7.8 to **+1.5** at 50 µm. Additionally regressing per-cell
+transcript count, detected-gene count and cell area out of the score before
+taking the decile adds little beyond that (+1.1), and changes the decile
+membership by only 8%. Under the authors' label the same stratified test is
+centred below zero (median control z −0.93).
+
+So detection density accounts for most of the inflation but not all of it: a
+residual bias of roughly +1 to +1.7 z persists under score-based definitions
+after both corrections, and it grows with radius, which points to tissue
+architecture — signature-high cells clustering in locally dense regions — rather
+than to sequencing depth alone. We therefore state this as a demonstrated lack
+of ligand specificity with a largely identified cause, not as a fully
+characterised artefact. The practical consequence stands either way: a
+signature-score threshold combined with a within-field label permutation is not
+an adequate control for colocalisation in imaging-based spatial transcriptomics,
+and any such claim needs detection-matched control genes carried through the same
+pipeline.
+
+## No receptor-conditioned niche either
+
+A whole-tumour average can hide a small local structure, so we asked the
+narrower question the data can still answer: among oncofetal cells only, do the
+*TNFRSF12A*-positive ones sit closer to *TNFSF12*-positive macrophages than the
+*TNFRSF12A*-negative ones do (Fig. EC4d)? Stratified by field of view and
+detection quintile, at 20, 50 and 100 µm, the answer is no — 5 of 9, 4 of 9 and
+2 of 9 tumours positive (median z = +0.06, −0.15, −0.37; P ≥ 0.43), with the
+control genes again indistinguishable and nothing significant after correction
+in any of the 96 gene × radius × source combinations tested. Conditioning on the
+receptor does not recover a niche, and on the strength of this we are closing
+this line rather than subdividing further.
 
 ## Summary
 
@@ -203,5 +327,33 @@ sides); red diamond, median.
 *TNFSF12* on detection rate, under the authors' oncofetal label (left) and under
 a revCSC score-decile definition (right). One point per tumour × gene; black
 diamond, median. Under the score-decile definition control genes outscore the
-ligands, identifying the positive result as a transcript-detection-density
-artefact.
+ligands, showing the positive result to lack ligand specificity. Its origin is
+audited in Fig. EC4c.
+
+**Fig. EC4 | TNFRSF12A is associated with the oncofetal cell state, and the
+spurious colocalisation signal is traced to detection density and local
+architecture.**
+**(a)** Per tumour, the difference in *TNFRSF12A* expression between oncofetal
+and other malignant epithelial cells, stratified by field of view and
+transcript-detection quintile so that cells are compared only with cells imaged
+in the same field at similar depth. Red, *TNFRSF12A*; blue, the four ligands;
+grey, twelve non-ligand control genes matched to *TNFSF12* on detection rate.
+Oncofetal cells carry the original authors' label. Eight tumours have enough
+cells of both classes to contribute.
+**(b)** The same quantity summarised across tumours, one point per gene, under
+the authors' label (left) and under a revCSC score decile with *TNFRSF12A*
+removed from the set (right). Labels give the number of tumours in which the
+receptor is higher in oncofetal cells.
+**(c)** Audit of the EC3c result. The published test (bottom row, 50 µm only) is
+compared with the same test after stratifying on field of view and detection
+quintile, after additionally regressing per-cell transcript count, gene count
+and area out of the score before taking the decile, and under the authors'
+label — each at 20, 50 and 100 µm. One point per tumour × gene; diamonds,
+medians. Stratification removes most of the inflation; a residual positive bias
+that grows with radius remains under score-based definitions and affects control
+genes as much as ligands.
+**(d)** Receptor-conditioned proximity: among oncofetal cells only, the
+difference between *TNFRSF12A*-positive and *TNFRSF12A*-negative cells in the
+number of ligand-positive macrophage neighbours, at three radii, with the same
+stratification and the same field-permutation null. One point per tumour × gene;
+black diamond, median.
