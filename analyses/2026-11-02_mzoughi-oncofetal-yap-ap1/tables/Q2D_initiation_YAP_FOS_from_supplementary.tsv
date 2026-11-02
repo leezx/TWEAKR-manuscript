@@ -1,0 +1,7 @@
+contrast	source	n_significant_genes	receptor_present	log2FC	padj	status
+WT ➤ A_Scr_vs_WT_Scr	Supplementary Table S2c	1331	TRUE	1.32679203067525	1.05355089437233e-20	up_regulated
+WT ➤ A_YAP_Sh1_vs_WT_Scr	Supplementary Table S2c	395	FALSE	NA	NA	not in significant list
+WT ➤ A_YAP_Sh2_vs_WT_Scr	Supplementary Table S2c	597	FALSE	NA	NA	not in significant list
+WT ➤ A_FOS_Kd_vs_WT_Scr	Supplementary Table S2c	438	FALSE	NA	NA	not in significant list
+WT ➤ A_YAP_Sh1_vs_WT ➤ A_Scr	Supplementary Table S2c	234	FALSE	NA	NA	not in significant list
+WT ➤ A_FOS_Kd_vs_WT ➤ A_Scr	Supplementary Table S2c	345	FALSE	NA	NA	not in significant list

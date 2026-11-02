@@ -1,0 +1,2 @@
+gene	avg_log2FC	pct.1	pct.2	p_val_adj	status	rank_by_log2FC_among_up	n_up_genes	ligand_present
+Tnfrsf12a	0.337226208	0.818	0.538	8.25e-35	Up Reg	189	341	FALSE
