@@ -1,0 +1,37 @@
+gene	celltypes	n_patients_top
+ANXA1	T.CD8	1
+ANXA1	macrophage	1
+ANXA1	mast cells	1
+ANXA1	myofibroblast.1	1
+ANXA1	trophocyte	1
+EMP1	endothelial.tip	2
+EMP1	endothelial.stalk	1
+EMP1	trophocyte	1
+EMP1	trophocyte-like CAF MMP+	1
+LAMC2	T.CD4	1
+LAMC2	endothelial.stalk	1
+LAMC2	telocyte	1
+LAMC2	trophocyte	1
+LAMC2	trophocyte-like CAF MMP-	1
+MMP7	myofibroblast.1	1
+MMP7	pericytes	1
+MMP7	plasma	1
+MMP7	trophocyte-like CAF MMP+	1
+TGFB1	endothelial.stalk	1
+TGFB1	endothelial.tip	1
+TGFB1	macrophage	1
+TGFB1	pericytes	1
+TGFB1	telocyte-like CAF	1
+TGFB3	myofibroblast.2	2
+TGFB3	myofibroblast.1	1
+TGFB3	trophocyte-like CAF MMP+	1
+TGFB3	trophocyte-like CAF MMP-	1
+TNFRSF12A	myofibroblast.1	2
+TNFRSF12A	telocyte	1
+TNFRSF12A	telocyte-like CAF	1
+TNFRSF12A	trophocyte-like CAF MMP-	1
+TNFSF12	MKI67+ lymphocytes	1
+TNFSF12	macrophage	1
+TNFSF12	pericytes	1
+TNFSF12	telocyte	1
+TNFSF12	trophocyte-like CAF MMP+	1
