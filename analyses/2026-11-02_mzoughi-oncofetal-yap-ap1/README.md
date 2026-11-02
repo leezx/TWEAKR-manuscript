@@ -106,6 +106,9 @@ human placenta/IFA/TRA/EVT sets mapped to mouse orthologues with `babelgene`
 | `code/02_bulk_perturbation.R` | `Q2*` — 15 DESeq2 contrasts, gene level and programme level, plus the one contrast that exists only as supplementary output |
 | `code/03_atac_tweakr_locus.R` | `Q3*` — locus accessibility in two ATAC experiments, the window ladder, and the TEAD/AP-1 consensus scan against matched background |
 | `code/04_make_figures.R` | `figures/Fig_MZ1…MZ3.{pdf,png}`. Reads only the frozen tables and computes no statistics, so figures cannot drift from the text |
+| `code/05_signature_audits.R` | `Q5*` — review audits: is the plasticity axis independent of the mOnF signature; does the placenta signal survive removing generic YAP targets; are the immune results one gene; are the 15 contrasts independent |
+| `code/06_chipatlas_occupancy.R` | `Q6*` — TEAD/YAP and AP-1 occupancy at the Tnfrsf12a TSS in all public mouse ChIP-seq, benchmarked against all genes and against the authors' oncofetal genes |
+| `code/07_make_figure_MZ4.R` | `figures/Fig_MZ4_review_audits.{pdf,png}` |
 
 Run with `Rscript code/<script>.R`. Paths come from `STELLIGEN_ROOT`,
 `MZOUGHI_DIR`, `MZOUGHI_OUT`. Script 00 takes the workbook and an output
@@ -120,27 +123,32 @@ directory as arguments and runs under `python3 -I`.
 | `docs/TODO_FOLFIRI.md` | the Fig. 4 design recorded as a to-do, with the data already in hand |
 | `figures/Fig_MZ1_receptor_oncofetal_state.{pdf,png}` | the receptor and the oncofetal state across three models |
 | `figures/Fig_MZ2_yap_ap1_perturbation.{pdf,png}` | YAP and AP-1 perturbation, gene and programme level |
-| `figures/Fig_MZ3_chromatin_negative.{pdf,png}` | the chromatin negative and the motif scan |
-| `tables/` | 17 TSVs, every statistic quoted anywhere |
+| `figures/Fig_MZ3_chromatin_negative.{pdf,png}` | the chromatin accessibility result and the motif scan |
+| `figures/Fig_MZ4_review_audits.{pdf,png}` | the four review audits, including the ChIP-seq occupancy result |
+| `tables/` | 24 TSVs, every statistic quoted anywhere |
 | `manifests/` | checksums for outputs and for every source file |
 
 ## Results in one paragraph
 
 *Tnfrsf12a* is the most oncofetal-enriched of 26 genes tested in both A
 (+0.491 log) and AKSP (+0.619 log) tumoroids, beaten by none of 24 control genes,
-and collapses to +0.053 in wild-type organoids where the state is absent. It
-tracks the paper's lineage plasticity axis (partial ρ 0.209 and 0.325; no control
-gene reaches it). Seven of seven YAP and AP-1 perturbations move it in the
-predicted direction — YAP-OE +2.39, YAP+FOS +2.71, dominant-negative FOS −1.39,
-two YAP shRNAs −0.76 and −0.99, FOS knockdown −0.82, all p_adj < 10⁻⁷ — and
-across 15 contrasts its Wald statistic tracks the oncofetal programme's at
-ρ = 0.975. The placenta/trophoblast programme is co-regulated by the same factors
-but three to four times more weakly and significantly in only half the loss
-contrasts. The tumour-intrinsic immune programmes are induced by YAP gain but
-reduced by no loss contrast. Negatives: the authors' oncofetal reporter does not
-separate on *Tnfrsf12a* (p_adj = 0.81); the locus shows no consistent
-accessibility gain and no TEAD or AP-1 motif enrichment, so direct regulation is
-not established.
+and falls to +0.053 in wild-type organoids where the state is absent. It tracks
+the paper's lineage plasticity axis (partial ρ 0.206 and 0.324), attenuated to
+0.162 and 0.268 once the 14 genes that axis shares with the oncofetal signature
+are removed, still with no control gene above it. Seven of seven YAP and AP-1
+perturbations move it in the predicted direction — YAP-OE +2.39, YAP+FOS +2.71,
+dominant-negative FOS −1.39, two YAP shRNAs −0.76 and −0.99, FOS knockdown −0.82,
+all p_adj < 10⁻⁷ — and across 15 contrasts its Wald statistic tracks the
+oncofetal programme's at ρ = 0.975 (0.976 on an arm-disjoint subset of 8). Public
+ChIP-seq shows the promoter is a strongly bound TEAD and AP-1 element (83rd–97th
+percentile of all genes), but none of the 4 intestinal experiments in the panel
+calls a peak, so direct regulation remains open. Withdrawn in review: the
+placenta result (gone once 4 of 34 genes that are generic YAP targets are
+dropped) and the two immune-programme results (each carried by one gene, *Nt5e*
+and *Serpinb9*). Other negatives: the authors' oncofetal reporter does not
+separate on *Tnfrsf12a* (p_adj = 0.81), an unresolved conflict; and the locus
+shows no consistent accessibility gain, which is uninformative about mechanism
+rather than evidence against it.
 
 ## Verification, negative results and claim ceiling
 
@@ -149,14 +157,33 @@ not established.
 - Reported negatives: the reporter sort; the chromatin discordance between the
   two ATAC experiments; the absence of motif enrichment; the immune programmes'
   one-directional behaviour; the ligand *Tnfsf12*, flat everywhere.
-- Claim ceiling: **"YAP- and AP-1-dependent"**, established by perturbation.
-  **Not** "a direct YAP/TEAD or AP-1 target gene" — no experiment here perturbs
-  either factor while measuring chromatin, so direct action is untestable in this
-  dataset.
+- Claim ceiling: **"enriched in oncofetal-like tumour cells, and responsive to
+  YAP/AP-1 perturbation"**. **Not** "specifically marks oncofetal cells", **not**
+  "a direct YAP/TEAD or AP-1 target gene", **not** "YAP and AP-1 act on a common
+  element" — no experiment here perturbs either factor while measuring chromatin
+  or occupancy, so direct action is untestable in this dataset.
 - Known weaknesses, stated in `findings.md`: no replicate labels in the
   single-cell data; consensus motif counting instead of a PWM scan; 6–8 gene
   immune sets after orthologue mapping; mouse models throughout.
 
 ## Review status
 
-Not yet reviewed. Open items are listed at the end of `docs/findings.md`.
+Reviewed once (2026-11-02), outcome REQUEST_CHANGES with the analysis line
+retained. All four requested changes are made; see the "Review response" section
+of `docs/findings.md` for the item-by-item record.
+
+Three of the changes were decided by running an audit rather than by rewording:
+
+1. the mOnF / plasticity-score independence reservation — tested, association
+   attenuates ~20% and survives;
+2. the placenta result — tested, **does not survive** removing 4 of 34 genes that
+   are generic YAP targets, so withdrawn;
+3. the immune results — tested, each **carried by a single gene**, so withdrawn
+   at programme level and kept as two single-gene observations.
+
+New work prompted by the review: ChIP-Atlas occupancy at the *Tnfrsf12a* locus
+(the review's P0). Positive — the promoter is a strongly bound TEAD and AP-1
+element — but context-mismatched, so P0 is advanced rather than closed.
+
+Open items are listed at the end of `docs/findings.md`, ordered by the review's
+own priorities.

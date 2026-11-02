@@ -1,184 +1,241 @@
-# Results — TWEAKR is a YAP- and AP-1-dependent component of the oncofetal programme
+# Results — TWEAKR expression is associated with oncofetal identity and responds to YAP/AP-1 perturbation
 
-## The receptor marks oncofetal cells in two genetically defined tumour models
+## TWEAKR is enriched in oncofetal-like tumour cells
 
 Every cohort that has so far linked *TNFRSF12A* to the revival/oncofetal state in
 this manuscript is observational, and an association in human tumours cannot
 distinguish a component of a programme from a correlate of it. We therefore
 turned to a published set of isogenic mouse intestinal organoid models in which
 the oncofetal state is created on demand by defined mutations and dismantled by
-defined perturbations (Mzoughi *et al.*, *Nat Genet* 2025; GEO GSE237954).
+defined perturbations of the transcription factors said to build it
+(Mzoughi *et al.*, *Nat Genet* 2025; GEO GSE237954).
 
 Across the three single-cell libraries of that study — wild-type organoids,
 *Apc*-null (A) tumoroids and *Apc*/*Kras*^G12D^/*Smad4*/*Trp53* (AKSP) tumoroids,
-23,223 cells after quality control — *Tnfrsf12a* detection rises monotonically
-with malignancy, from 25.7% of wild-type cells to 54.6% in A and 81.7% in AKSP
-(Fig. MZ1a). Library depth also rises across these three, so all subsequent
-comparisons are made within a library and within a sequencing-depth quintile.
+23,223 cells after quality control — *Tnfrsf12a* detection rises with malignancy,
+from 25.7% of wild-type cells to 54.6% in A and 81.7% in AKSP (Fig. MZ1a).
+Library depth also rises across these three, so all subsequent comparisons are
+made within a library and within a sequencing-depth quintile; the more
+informative question is whether the receptor still separates cell states *inside*
+a single genetic background, where malignancy is held constant.
 
-Defining oncofetal cells by the authors' own mOnF signature — which does not
-contain *Tnfrsf12a*, so the test is not circular — the receptor is higher in
-oncofetal cells than in other malignant cells by +0.491 log in A and +0.619 log
-in AKSP, with the two sides matched on depth to within 3% (Fig. MZ1b). Among 26
-genes tested it ranks first in both models, and none of 24 detection-matched
-control genes exceeds it. In wild-type organoids, where the oncofetal state is
-barely present, the same contrast collapses to +0.053 and one control gene beats
-it. That collapse is the specificity control: the association appears where the
-state appears, and not otherwise.
+It does. Defining oncofetal cells by the authors' own mOnF signature — which does
+not contain *Tnfrsf12a*, so the test is not circular — the receptor is higher in
+oncofetal-like cells than in other malignant cells of the same library by +0.491
+log in A and +0.619 log in AKSP, with the two sides matched on depth to within 3%
+(Fig. MZ1b). Among 26 genes tested it ranks first in both models, and none of 24
+detection-matched control genes exceeds it. In wild-type organoids, where the
+oncofetal state is barely present, the same contrast falls to +0.053 and one
+control gene beats it.
 
-The same pattern holds on the lineage plasticity axis the original study uses to
-connect oncofetal reprogramming to loss of colonic identity (esophagus mucosa
-module minus colon module). We first confirmed that the axis behaves as reported:
-the mOnF score correlates with the plasticity score at ρ = 0.53 in A and ρ = 0.62
-in AKSP. *Tnfrsf12a* then tracks that axis at ρ = 0.215 (A) and ρ = 0.328 (AKSP),
-essentially unchanged after removing library size as a partial correlate (0.209
-and 0.325), while no control gene reaches it in either model (Fig. MZ1c, d). In
-wild-type organoids the receptor sits in the middle of the control distribution
-(ρ = 0.031, 13 of 24 controls above).
+We describe this as enrichment rather than as marking. *Tnfrsf12a* is expressed
+in all three genotypes, the comparison is against other malignant cells rather
+than against a systematic panel of alternative cell states, and the authors' own
+differential expression gives a more modest effect: up in their neoplastic
+metacluster at log2FC +0.337 (p_adj = 8.3 × 10⁻³⁵, detected in 82% versus 54% of
+cells), ranked 189th of 341 up-regulated genes, and absent from their 51-gene
+oncofetal signature.
 
-The authors' own differential expression supports this at a more modest effect
-size: *Tnfrsf12a* is up in their neoplastic metacluster (log2FC +0.337,
-p_adj = 8.3 × 10⁻³⁵, detected in 82% vs 54% of cells), ranked 189th of 341
-up-regulated genes. We therefore describe the receptor as associated with, and
-specific to, the oncofetal state — not as one of its defining genes.
+**Replication structure.** The deposited matrices carry a single barcode suffix
+per genotype: the replicates were pooled before deposition. These are therefore
+three pooled libraries representing three different genotypes, **not three
+biological replicates** of anything, and no genotype-level test is possible. Every
+cell-level p-value in this section is pseudoreplicated and none is used as
+evidence. What the claims rest on is effect size against detection-matched control
+genes at identical *n*, and agreement in direction between the two tumour models.
 
-Two limitations bound this section. The deposited matrices carry a single barcode
-suffix per genotype, so the replicates were pooled before deposition and no
-sample-level test is possible; cell-level p-values are pseudoreplicated and are
-not the basis of any claim here, which rests instead on effect size against
-control genes at identical *n* and on agreement across three independent
-libraries. And the plasticity score is applied per cell in mouse models, whereas
-the original study applies it per patient in human cohorts.
+## The association with lineage plasticity is attenuated once the two scores are made independent
 
-## Forcing the oncofetal programme up or down moves TWEAKR with it
+The original study connects oncofetal reprogramming to loss of colonic identity
+with a lineage plasticity score — the esophagus mucosa module minus the colon
+module — applied per patient in three human cohorts. Applied per cell here, the
+score behaves as reported: the mOnF score correlates with it at ρ = 0.530 in A and
+ρ = 0.616 in AKSP.
 
-The same study perturbs YAP and AP-1 — the two factors it identifies as driving
-oncofetal reprogramming — in both directions, in replicate, which allows the
-association above to be tested as a dependency.
+*Tnfrsf12a* tracks the same axis at partial ρ = 0.206 (A) and 0.324 (AKSP) after
+removing library size, with no control gene reaching it in either model, and sits
+in the middle of the control distribution in wild-type organoids (ρ = 0.034, 13 of
+24 controls above).
 
-It is one. Ectopic YAP(S6A) in wild-type organoids induces *Tnfrsf12a* by +2.39
-log2 (p_adj = 1.8 × 10⁻³⁶), and YAP together with FOS by +2.71
-(p_adj = 3.6 × 10⁻⁴⁷). In the opposite direction, a dominant-negative FOS during
-*Apc*-loss-driven initiation reduces it by −1.39 (p_adj = 1.0 × 10⁻⁹), and in
-established AKSP tumoroids two independent YAP shRNAs reduce it by −0.76 and
-−0.99 (p_adj = 8.3 × 10⁻⁸, 2.4 × 10⁻¹²) and FOS knockdown by −0.82
+These two scores are not independent, however: 14 of the 51 mOnF genes are also
+members of the esophagus module that forms the positive arm of the plasticity
+score (the colon arm shares none). Part of the correlation above could therefore
+be the oncofetal association measured a second time. Removing those 14 genes from
+the axis attenuates but does not abolish the result — partial ρ falls from 0.206
+to 0.162 in A and from 0.324 to 0.268 in AKSP, with still 0 of 24 control genes
+above it in either model (Fig. MZ4a). The relationship between the mOnF score and
+the axis itself is more dependent on the shared genes (0.530 → 0.336 in A;
+0.616 → 0.407 in AKSP).
+
+We therefore report the plasticity association as supporting evidence of reduced
+weight: a real but partly redundant restatement of the oncofetal association,
+measured on an axis that quantifies ectopic lineage gene expression rather than
+observed state conversion.
+
+## Perturbing YAP or AP-1 moves TWEAKR in both directions
+
+The same study perturbs YAP and AP-1 in both directions, in replicate, which
+allows the association above to be tested as a dependency — and this is the
+strongest result in the analysis.
+
+Ectopic YAP(S6A) in wild-type organoids induces *Tnfrsf12a* by +2.39 log2
+(p_adj = 1.8 × 10⁻³⁶), and YAP together with FOS by +2.71 (p_adj = 3.6 × 10⁻⁴⁷).
+In the opposite direction, a dominant-negative FOS during *Apc*-loss-driven
+initiation reduces it by −1.39 (p_adj = 1.0 × 10⁻⁹), and in established AKSP
+tumoroids two independent YAP shRNAs reduce it by −0.76 and −0.99
+(p_adj = 8.3 × 10⁻⁸, 2.4 × 10⁻¹²) and FOS knockdown by −0.82
 (p_adj = 1.2 × 10⁻⁷) (Fig. MZ2a). Seven of seven perturbations move the gene in
-the predicted direction. Gain of YAP alone is sufficient to induce it and loss of
-AP-1 alone is sufficient to reduce it; adding FOS on top of YAP adds nothing
-further (+0.32, p = 0.20), consistent with the two acting on one axis at this
-locus rather than additively.
+the predicted direction, with three to four organoid replicates per arm.
 
-Across all fifteen contrasts assembled here — including progression, RXR
-manipulation and state sorting — the receptor's Wald statistic tracks the mOnF
-programme's at Spearman ρ = 0.975 (Fig. MZ2c). Wherever the programme moves, by
-whatever means, the receptor moves with it and in proportion.
+Gain of YAP alone is sufficient to induce the gene and loss of AP-1 alone is
+sufficient to reduce it. Adding FOS on top of YAP produces no further significant
+increase (+0.32, p = 0.20), but we draw no mechanistic conclusion from that:
+non-additivity is equally consistent with saturation of the response, with the
+FOS construct not raising effective AP-1 activity, with convergence on a shared
+downstream programme, and with two separate mechanisms sharing a common output
+limit. It cannot distinguish between them, and in particular it is not evidence
+that the two factors act on a common regulatory element.
 
-One contrast does not support the receptor. The study's oncofetal fluorescent
-reporter, sorted high versus negative, shows no difference in *Tnfrsf12a*
-(+0.14 log2, p_adj = 0.81, three replicates per arm). The reporter is a synthetic
-locus control region assembled from a defined set of transcription-factor binding
-sites, so it reports on those sites rather than on the programme as a whole, and
-the comparison has little power for an effect of this size — but it is the one
-state-sorting experiment available and we report it as a negative rather than
-omitting it.
+The supportable statement is that *Tnfrsf12a* expression is regulated by YAP- and
+AP-1-associated transcriptional programmes in these organoid models. Whether
+either factor acts on the gene directly, or through the oncofetal programme it
+establishes, is addressed below and is not resolved.
 
-## The placenta programme follows, weakly; the immune programmes only in one direction
+Across all fifteen contrasts assembled here the receptor's Wald statistic tracks
+the mOnF programme's at Spearman ρ = 0.975 (Fig. MZ2c). Because several of these
+contrasts share an experimental arm, we repeated the correlation on a maximal
+arm-disjoint subset of eight contrasts; it is unchanged (ρ = 0.976, P = 4 × 10⁻⁴).
+This is nonetheless consistency evidence rather than independent mechanistic
+support: the Wald statistic reflects estimation precision as well as effect size,
+and the contrasts span different biological settings — progression, transcription
+factor perturbation and RXR manipulation.
 
-Scoring the same contrasts at programme level (cameraPR on Wald statistics,
-global Benjamini–Hochberg) separates three behaviours that should not be merged
-(Fig. MZ2b).
+One contrast does not support the receptor, and we report it as a genuine
+conflict rather than resolving it. The study's oncofetal fluorescent reporter,
+sorted high versus negative, shows no difference in *Tnfrsf12a* (+0.14 log2,
+p_adj = 0.81). This disagrees with the single-cell result in the same study,
+where mOnF-high cells show the largest receptor difference of any gene tested.
+The two experiments use different definitions of the oncofetal state — a
+synthetic locus control region assembled from a defined set of transcription
+factor binding sites, versus a 51-gene expression signature — and we do not have
+evidence to say which definition the receptor fails to follow, or whether the
+reporter is simply insensitive. The discrepancy stands unexplained and bounds how
+far the marker claim can be taken.
 
-The oncofetal and revCSC programmes are bidirectionally controlled: up in both
-gain-of-function contrasts and down in all four loss-of-function contrasts, every
-comparison significant. This replicates the original study's claim on our own
-gene sets.
+## The placenta and immune signals do not survive auditing
 
-The placenta/trophoblast programme is co-regulated, but weakly. It rises under
-YAP (mean Wald +3.87, FDR = 1.3 × 10⁻³) and under YAP+FOS (+4.75,
-FDR = 3.0 × 10⁻³), and falls in all four loss contrasts — but only two of those
-reach FDR < 0.05, and the effect sizes are three to four times smaller than the
-oncofetal programme's. The interstitial-fetal (IFA) axis behaves the same way.
-This is consistent with what we found at the invasive front of early human
-tumours, where no trophoblast axis survived null calibration: the placenta
-programme appears to be a weak passenger of oncofetal reprogramming rather than a
-programme with its own control.
+Scoring the same contrasts at programme level (cameraPR on Wald statistics)
+initially suggested that the placenta/trophoblast programme and two
+tumour-intrinsic immune programmes move with YAP and AP-1 (Fig. MZ2b). Both
+findings fail when the gene sets are audited, and we report them as negative.
 
-The tumour-intrinsic immune programmes behave asymmetrically. Cytotoxic
-resistance and immune suppression are induced by YAP gain (FDR = 2.3 × 10⁻³ and
-9.9 × 10⁻³), but no loss-of-function contrast reduces either, and four of eight
-loss comparisons point the wrong way. YAP activation is sufficient to switch
-these on; removing YAP or AP-1 from an established tumoroid does not switch them
-off. These two sets are also the smallest tested (6 and 8 genes after orthologue
-mapping) and are correspondingly the least robust result in the panel. We
-therefore record the immune-tolerance hypothesis as neither supported nor refuted
-by this cohort.
+**Placenta.** The 34-gene trophoblast set rose under YAP (mean Wald +3.87) and
+YAP+FOS (+4.75) and fell in all four loss-of-function contrasts. But four of its
+34 genes — *Egfr*, *Krt19*, *Krt8*, *Phlda2* — are also members of the project's
+YAP target sets. Removing those four genes removes the result: no contrast
+remains significant, and the YAP gain-of-function effect falls from +3.87 to
++2.08 and from +4.75 to +1.93 (Fig. MZ4b). The enrichment was carried by generic
+YAP-responsive epithelial genes, not by a trophoblast programme. We therefore do
+not claim that YAP or AP-1 regulates a placental programme in these models, and
+nothing here supports a placenta-like immune tolerance phenotype. This is
+consistent with our finding in early human tumours, where no trophoblast axis
+survived expression-matched null calibration at the invasive front.
+
+**Tumour-intrinsic immune programmes.** Immune suppression (10 genes) and
+cytotoxic resistance (6 genes) were induced by YAP gain. Both results are carried
+by one gene each: removing *Nt5e* takes immune suppression from P = 0.0036 to
+P = 0.39, and removing *Serpinb9* takes cytotoxic resistance from P = 0.0007 to
+P = 0.16 (Fig. MZ4c). No loss-of-function contrast reduced either set in the
+first place. These sets are too small for a competitive test to be informative,
+and the names are functional assertions that transcript-level enrichment cannot
+support: a change in *Nt5e* or *Serpinb9* transcript is not evidence that tumour
+cells suppress T cells or resist cytotoxic killing. We record this as two
+single-gene observations worth following up — *Nt5e* and *Serpinb9* are both
+plausible YAP-responsive immune-evasion effectors — and not as a programme-level
+finding.
 
 Throughout, the Lgr5 stem programme moves opposite to the oncofetal one — the
 same rebalancing, rather than a general gain of stemness, that we observe at the
 invasive front.
 
-## The dependency is not shown to be direct
+## Direct regulation: occupancy evidence exists, but not in the right tissue
 
-If YAP and AP-1 acted at the *Tnfrsf12a* locus, the locus should open as the
-oncofetal state is established and its peaks should carry the corresponding
-motifs. Neither follows cleanly (Fig. MZ3).
+Bulk ATAC-seq does not show the *Tnfrsf12a* locus opening as the oncofetal state
+is established. In the first experiment the 24 peaks within 50 kb of the
+transcription start site do not change during progression (median log2FC +0.013
+for A versus wild type, −0.137 for AKSP versus wild type; p ≥ 0.87 against all
+other peaks), while peaks at the mOnF gene loci open strongly in the same
+contrasts (+0.444 and +0.805). In the second experiment the same A versus
+wild-type contrast gives +0.582 at the receptor locus (p = 5.7 × 10⁻³). The two
+experiments disagree about this locus while agreeing about the oncofetal loci
+(Fig. MZ3a, b).
 
-In the first bulk ATAC-seq experiment, the 24 peaks within 50 kb of the
-*Tnfrsf12a* transcription start site do not change during progression (median
-log2FC +0.013 for A versus wild type, −0.137 for AKSP versus wild type; p ≥ 0.87
-against all other peaks), while peaks at the mOnF gene loci open strongly in the
-same contrasts (+0.444 and +0.805, p = 3 × 10⁻⁵⁸ and 7 × 10⁻¹⁰⁷). In the second
-experiment, the same A versus wild-type contrast gives +0.582 at the receptor
-locus (p = 5.7 × 10⁻³). The two experiments therefore disagree about this locus
-while agreeing about the oncofetal loci, so the discordance is specific rather
-than a global quality difference. A window ladder from 10 kb to 500 kb places the
-positive signal at 10–25 kb, so it is not a distal element that a narrower window
-missed.
+This is not evidence against direct regulation. Transcription factor binding does
+not require a change in chromatin accessibility: YAP/TEAD and AP-1 can occupy
+elements that are already open, in which case ATAC-seq registers nothing. Neither
+ATAC experiment perturbs YAP or AP-1, so neither can test direct action at all.
 
-Nor is there motif evidence. Against 408 width- and accessibility-matched
-background peaks, the locus peaks carry no excess of TEAD (0.58 versus 0.59
-consensus matches per kb, p = 0.95) or AP-1 sites (0.96 versus 0.59, p = 0.23).
+We therefore asked the occupancy question directly, using ChIP-Atlas's uniform
+reprocessing of public mouse ChIP-seq. The *Tnfrsf12a* transcription start site is
+a bound element for both arms: TEAD1 (mean MACS2 320, 94th percentile of all
+genes, a peak in 19 of 24 experiments), TEAD4 (96, 83rd percentile, 12 of 32),
+YAP1 (46, 65th percentile, 7 of 37), and all five AP-1 members tested — FOSL1
+(604, 97th percentile), JUND (386, 97th), FOSL2 (254, 94th), FOS (144, 94th),
+JUNB (124, 90th) and JUN (101, 87th) (Fig. MZ4d). The locus scores above 70–89%
+of the authors' own oncofetal genes for every factor tested.
 
-We state the conclusion at the level the evidence supports: *Tnfrsf12a*
-expression requires YAP and AP-1 in these models, established by perturbation in
-both directions with two independent shRNAs. Whether either factor acts directly
-at the locus is not established — neither chromatin experiment perturbs YAP or
-AP-1, so none of them can test direct action, and the regulation may be indirect
-or may operate on factor occupancy at already-accessible chromatin rather than on
-accessibility itself. Consensus-sequence counting is also cruder than a
-position-weight-matrix scan and would miss degenerate sites.
+Two limits keep this from closing the question. First, of 349 experiments in the
+panel only four are intestinal, and **none of those four calls a peak** at the
+locus; the positive signal comes from liver, fibroblasts, macrophages,
+trophoblast stem cells and tumour lines. The evidence is therefore
+context-mismatched, and the few in-context experiments are negative. Second,
+occupancy is not function: even a bound element need not be required for
+expression, which would take CRISPR interference or enhancer deletion to
+establish. Our earlier consensus-motif scan, which found no TEAD or AP-1 excess
+in the locus peaks, is superseded by this analysis and should be read as a limit
+of consensus matching rather than as evidence of absence.
 
 ## Summary
 
-This cohort **supports** the manuscript's claim that TWEAKR belongs to the
-oncofetal programme rather than merely correlating with it: the receptor marks
-oncofetal cells specifically in two tumour models and not in normal organoids,
-tracks the study's own lineage plasticity axis, and responds to seven of seven
-perturbations of the two transcription factors that build the state.
+This cohort **supports** the claim that *TNFRSF12A* is associated with oncofetal
+identity: the receptor is enriched in oncofetal-like cells in two tumour models
+and not in normal organoids, and is the strongest of 26 genes tested in both.
 
-It **adds** an upstream placement — YAP- and AP-1-dependence — while **withholding
-support** from the stronger statement that either factor acts directly at the
-locus.
+Its **strongest contribution** is perturbational: seven of seven gain- and
+loss-of-function manipulations of YAP and AP-1 move *Tnfrsf12a* in the predicted
+direction, including two independent shRNAs. *Tnfrsf12a* expression responds to
+YAP- and AP-1-associated transcriptional programmes.
 
-It **qualifies** the placenta arm: the trophoblast programme is co-regulated by
-the same factors but several-fold more weakly, and significantly in only half the
-loss contrasts.
+It **does not establish** that YAP/TEAD or AP-1 acts directly at the locus.
+Public ChIP-seq shows the promoter is a bound TEAD and AP-1 element, which makes
+direct regulation plausible, but no intestinal experiment supports it and
+occupancy is not functional dependence.
 
-It **leaves open** the immune-tolerance hypothesis, which this design can induce
-but cannot test for necessity, and it says **nothing** about the TWEAK ligand:
-*Tnfsf12* is flat in every comparison here and absent from the original study's
-differential expression, as expected in epithelial organoid models that contain
-no immune compartment.
+It **withdraws** the placenta and immune results. Both were artefacts of gene set
+composition — four generic YAP targets in the trophoblast set, one gene each in
+the two immune sets.
+
+It **leaves open** a question this analysis creates rather than answers. The
+manuscript's working model places TWEAKR upstream of YAP; this dataset shows YAP
+activation raising *Tnfrsf12a*. TWEAKR upstream of YAP, TWEAKR downstream of YAP,
+and a positive feedback loop between them are all compatible with what we have.
+Distinguishing them is a more productive next step than any further signature
+analysis.
+
+It says **nothing** about the TWEAK ligand: *Tnfsf12* is flat in every comparison
+here and absent from the original study's differential expression, as expected in
+epithelial organoid models that contain no immune compartment.
 
 ---
 
 # Figure legends
 
-**Fig. MZ1 | TWEAKR marks the oncofetal state in the A and AKSP models.**
+**Fig. MZ1 | TWEAKR is enriched in oncofetal-like cells in the A and AKSP models.**
 **a**, Per-library cell means for the authors' mOnF oncofetal score, the lineage
 plasticity score (esophagus mucosa module minus colon module) and *Tnfrsf12a*
 expression, across wild-type organoids, A (*Apc*-null) and AKSP tumoroids
-(GSE240129; 5,086 / 7,400 / 10,737 cells after quality control).
+(GSE240129; 5,086 / 7,400 / 10,737 cells after quality control). The three
+libraries are three genotypes, not biological replicates.
 **b**, *Tnfrsf12a* (red) in mOnF-high cells versus other cells of the same
 library, stratified by sequencing-depth quintile, against *Tnfsf12* (blue) and 24
 detection-matched control genes (grey). **c**, Expression along deciles of the
@@ -187,20 +244,37 @@ lineage plasticity score, relative to decile 1; grey is the control-gene mean.
 library size. Cells within a library are not independent, so the comparison with
 control genes at identical *n*, not the per-cell p-value, is the inference.
 
-**Fig. MZ2 | TWEAKR is YAP- and AP-1-dependent.**
+**Fig. MZ2 | TWEAKR responds to YAP and AP-1 perturbation.**
 **a**, *Tnfrsf12a* log2 fold change (DESeq2, 95% confidence interval) in fifteen
 contrasts grouped by perturbation axis; 3–4 organoid replicates per arm, batch
 included in the model where the deposited sample names carry one. **b**,
 Programme-level effects in the YAP and AP-1 contrasts (cameraPR on Wald
-statistics; stars are global Benjamini–Hochberg FDR). **c**, *Tnfrsf12a* Wald
-statistic against the mOnF programme's mean Wald statistic across all fifteen
-contrasts (Spearman ρ = 0.975).
+statistics; stars are global Benjamini–Hochberg FDR). The placenta and immune
+rows of this panel do not survive the gene set audits in Fig. MZ4b, c and are
+retained only to show what was tested. **c**, *Tnfrsf12a* Wald statistic against
+the mOnF programme's mean Wald statistic across all fifteen contrasts
+(Spearman ρ = 0.975; ρ = 0.976 on an arm-disjoint subset of eight).
 
-**Fig. MZ3 | The chromatin evidence does not establish direct regulation.**
+**Fig. MZ3 | Chromatin accessibility at the locus is unchanged and discordant.**
 **a**, Median peak log2 fold change within 50 kb of a transcription start site,
 for the *Tnfrsf12a* locus, the authors' mOnF gene loci and the Lgr5 stem loci, in
 two independent bulk ATAC-seq experiments. **b**, The same quantity across a
 ladder of window sizes around the *Tnfrsf12a* transcription start site; window
 sizes were fixed as a ladder rather than chosen after inspecting the result.
 **c**, TEAD and AP-1 consensus match density in the 24 locus peaks against 408
-width- and accessibility-matched background peaks; diamonds are means.
+width- and accessibility-matched background peaks; diamonds are means. Panel c is
+superseded by the ChIP-seq occupancy analysis in Fig. MZ4d: absence of consensus
+enrichment is a limit of consensus matching, not evidence of absent binding.
+
+**Fig. MZ4 | Audits of the four results the first draft over-read.**
+**a**, *Tnfrsf12a* partial Spearman correlation with the lineage plasticity axis
+as published and after removing the 14 genes the axis shares with the mOnF
+signature; grey bars span the median to the maximum of 24 detection-matched
+control genes. **b**, The placenta/trophoblast programme before and after
+removing the four genes it shares with the project's YAP target sets; filled
+points are FDR < 0.05 within this table. **c**, cameraPR P for the two immune
+sets with the whole set and after removing the single strongest gene (named in
+brackets). **d**, Percentile of the *Tnfrsf12a* transcription start site among
+all mouse genes by mean MACS2 score in ChIP-Atlas, for four YAP/TEAD and six AP-1
+factors at a 5 kb window; labels give the number of experiments calling a peak.
+None of the four intestinal experiments in the panel calls a peak.
