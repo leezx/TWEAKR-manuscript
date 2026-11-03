@@ -9,3 +9,7 @@ slurm_J1_data_pipeline	58451421 (short, 8 CPU, 32G, 6h)
 slurm_J2_inference	58451425 (gpu, l40s, 4 CPU, 32G, 2h, afterok:58451421)
 submitted	2026-11-03
 note	first J2 submission to gpu_quad was rejected (Invalid qos gpuquad_qos); resubmitted to gpu
+input_C_sha256	0b19d6cdd6feaad64613fc6e0895cba880512d326f329dfca0c3c46607013a12
+slurm_J3_data_pipeline_C	58455648 (short; --max_template_date=2007-12-31)
+slurm_J4_inference_C	58455649 (gpu l40s; afterok:58455648)
+amendment_1	condition A templates = 2EQP, 2KN0, 4KT1 x2; 2EQP is human Fn14 (2008-04-01) -> C added as deciding condition

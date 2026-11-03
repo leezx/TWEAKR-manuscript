@@ -2,7 +2,7 @@
 
 Run with the open-source PyMOL venv:
     $BIOWORKSPACE_ROOT/SOFTWARES/tools/pymol-open-source/.venv/bin/python evaluate_M1b.py <af3_frozen_dir>
-<af3_frozen_dir> holds fn14_ecd_28_80_tmplA/ and fn14_ecd_28_80_tmplB/ copied from the O2 lab dir.
+<af3_frozen_dir> holds fn14_ecd_28_80_tmpl{A,B,C}/ copied from the O2 lab dir.
 Writes ../../tables/M1b_per_sample.tsv, ../../tables/M1b_summary.tsv, ../../tables/M1b_templates.tsv.
 
 AF3 numbers the 53-residue construct 1-53; 2KMZ file numbering is also 1-53 (= UniProt 28-80),
@@ -28,7 +28,8 @@ CRD = "9-40"
 SS = [(9, 22), (25, 40), (28, 37)]  # construct numbering = UniProt 36-49, 52-67, 55-64
 CRIT_MIN, CRIT_MED, CRIT_SS = 2.0, 2.6, 2.5
 SEQ = "EQAPGTAPCSRGSSWSADLDKCMDCASCRARPHSDFCLGCAAAPPAPFRLLWP"
-EXCLUDE = {"2kmz", "2kn0"}
+EXCLUDE = {"2kmz", "2kn0", "2eqp"}  # amendment 1: 2EQP = human Fn14 TNFR domain (NMR, 2008)
+DECIDING = "C"  # amendment 1: C (cutoff 2007-12-31) replaces B
 
 cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr")
 cmd.remove("hydro")
@@ -61,7 +62,7 @@ def ss_dist(obj):
 
 
 rows, tmpl_rows, summary = [], [], []
-for cond in ("A", "B"):
+for cond in ("A", "B", "C"):
     name = f"fn14_ecd_28_80_tmpl{cond}"
     base = os.path.join(SRC, name)
     # ---- template audit from the stage-1 data json
@@ -104,7 +105,7 @@ for cond in ("A", "B"):
         cmd.delete(obj)
     cr = [r for r in rows if r["condition"] == cond]
     top = max(cr, key=lambda r: r["ranking_score"])
-    verdict = ("BLOCKED (excluded template present: %s)" % ",".join(leaked)) if (cond == "B" and leaked) \
+    verdict = ("BLOCKED (excluded template present: %s)" % ",".join(leaked)) if (cond == DECIDING and leaked) \
         else ("PASS" if top["meets_criteria"] else "FAIL")
     summary.append({"condition": cond, "n_samples": len(cr), "n_templates": len(tids),
                     "excluded_templates_present": ",".join(leaked) or "none",
@@ -112,7 +113,7 @@ for cond in ("A", "B"):
                     "top_crd_rmsd_min": top["crd_rmsd_min"], "top_crd_rmsd_median": top["crd_rmsd_median"],
                     "top_ss_ok": all(top[k] <= CRIT_SS for k in ("ss_36_49", "ss_52_67", "ss_55_64")),
                     "frac_samples_meeting": f'{sum(r["meets_criteria"] for r in cr)}/{len(cr)}',
-                    "verdict": verdict if cond == "B" else f"control ({verdict} on same criteria)"})
+                    "verdict": verdict if cond == DECIDING else f"control ({verdict} on same criteria)"})
 
 
 def write(path, recs):
