@@ -109,7 +109,7 @@ CRD (TNFR-Cys, atypical) 36-67 · 二硫键 36-49 / 52-67 / 55-64
 
 - [ ] 把 Winkles 2008 和 PubMed 23438059 登记为 `REF-xxx`
 - [x] M1b（ECD 28–80）AF3 预测与 2KMZ 比 RMSD：**PASS**（条件 C，见 §13 和 `docs/M1b_results.md`）
-- [ ] M2（TWEAK trimer + 3×ECD），验收标准：D45/K48/M50/D62 必须落在预测界面上
+- [x] M2（TWEAK trimer + 3×ECD）：**PASS**（M2-C，D45/K48/M50/D62 全部在预测界面上，见 §14 和 `docs/M2_results.md`）
 - [ ] isoform 2（Q9NP84-2，缺 33–67 即整个 CRD 与三对二硫键）是否纳入 —— 对应
       "ligand-independent clustering" 问题
 
@@ -182,7 +182,7 @@ TR2 用 AF 的 TM 螺旋轴来放膜：这条螺旋本身是高置信的（pLDDT
 ECD 相对膜的位置则明确标为「未确定」。因此 TR2 没有违反 TR1 的限定，只是把它量化了。
 
 
-## 13. M1b — AF3 胞外区 vs 2KMZ（进行中）
+## 13. M1b — AF3 胞外区 vs 2KMZ（PASS）
 
 事先注册：`docs/M1b_preregistration.md`（commit 时间早于任何结果）。输入与 sbatch 脚本在
 `code/af3_M1b/`，作业 id 和 O2 路径见 `manifests/af3_M1b_jobs.tsv`。条件 B
@@ -201,8 +201,19 @@ A、B 结果几乎相同，说明 CRD 的恢复不依赖模板。**限制：** A
 推理作业 58451425 因路径大小写问题失败，58455649 在启动前取消；实际使用的是 58457237（A/B）和 58457238（C）。
 
 
-## 14. M2 — TWEAK₃–Fn14₃ 复合物（进行中）
+## 14. M2 — TWEAK₃–Fn14₃ 复合物（PASS）
 
 事先注册：`docs/M2_preregistration.md`（commit `6caeebe` 早于提交）。输入：3 条 TWEAK 94–249（O43508 分泌形式）
 加 3 条 Fn14 28–80。判定条件 M2-C（模板截止 2007-12-31），M2-D（默认）作对照。输入与脚本在 `code/af3_M2/`，
-评估脚本 `code/af3_M2/evaluate_M2.py`。O2 作业 58464436 → 58464437，2026-11-03 提交，结果未出。
+评估脚本 `code/af3_M2/evaluate_M2.py`。O2 作业 58464436 → 58464437，2026-11-03 完成。
+
+**结果（2026-11-03）：PASS（M2-C）。** 模板里没有 Fn14，也没有 TWEAK（只有 RANKL/EDA 和 M1b-C 的同一组模板）；
+PDB 中本来也不存在 TWEAK–Fn14 复合物。排名第一的模型（seed 2/sample 0，ranking_score 0.955，iptm 0.84）中：
+TWEAK 三聚体 chain_pair_iptm ≥ 0.87；每条 Fn14 的 iptm 为 0.71–0.72、接触 12 个残基；**3 个拷贝的
+D45/K48/M50/D62 全部 ≤ 4 Å**（随机落入界面的概率：≥ 3/4 为 0.052，4/4 为 0.0034）；CRD RMSD 中位数 1.59–1.60 Å。
+25/25 个 sample 达标，75/75 个 Fn14 拷贝 4 个位点全在界面上，并且都同时接触两条 TWEAK 链。M2-D（含 Fn14 模板）
+与 M2-C 的第一名模型相差 1.01 Å。**限制：** 这是预测，四个位点是事先选定的阳性对照而非盲测；Fn14 链 iptm 中等；
+3:3 是输入设定。详见 `docs/M2_results.md`。
+
+**评估脚本更正（结果出来后，只改代码）：** 首次运行条件 4 的 RMSD 全为 0.0，原因是 PyMOL `rms` 按链名配对，
+D/E/F 链与 2KMZ 的 A 链配不上。已改为显式 Cα Kabsch，并与改链名后的 PyMOL `rms` 交叉核对（1.594 Å 一致）；标准不变。

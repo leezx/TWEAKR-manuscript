@@ -6,3 +6,8 @@ input_d_sha256	437af524ce8a3d9f3a321992742ceff9c99980d55a651be35ab4b858761c0b30
 slurm_J1_data_pipeline	58464436 (short; c then d)
 slurm_J2_inference	58464437 (gpu l40s; afterok)
 submitted_via	o2-sh persistent session (no extra DUO)
+status	COMPLETED 2026-11-03 (J1 01:05:36, J2 00:13:39)
+local_copy	DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M2/af3_M2_frozen.tar.gz
+local_copy_sha256	448014abf1c6db7b7a8b79f3225cbfac05a3740fde8fef42c4810e178880fd28
+manifest_check	161/161 OK
+fetched_via	o2-sh session (3 base64 parts, each sha256-verified)

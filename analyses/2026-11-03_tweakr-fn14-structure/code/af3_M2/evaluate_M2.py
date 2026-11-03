@@ -2,7 +2,7 @@
 
     $BIOWORKSPACE_ROOT/SOFTWARES/tools/pymol-open-source/.venv/bin/python evaluate_M2.py <frozen_dir>
 <frozen_dir> holds m2_tweak3_fn14x3_tmpl{c,d}/. Run from code/af3_M2/.
-Writes ../../tables/M2_{summary,per_sample,interface,templates}.tsv.
+Writes ../../tables/M2_{summary,per_sample,interface,templates,c_vs_d}.tsv.
 
 Chains: A,B,C = TWEAK 94-249 (construct 1-156; UniProt = construct + 93);
         D,E,F = Fn14 28-80 (construct 1-53; UniProt = construct + 27).
@@ -28,7 +28,7 @@ TW, FN = ["A", "B", "C"], ["D", "E", "F"]
 SITES = {18: ("ASP", "D45"), 21: ("LYS", "K48"), 23: ("MET", "M50"), 35: ("ASP", "D62")}  # construct: (resn, UniProt)
 CRD = "9-40"
 DECIDING = "c"
-EXCLUDE_FN14 = {"2kmz", "2kn0", "2eqp"}
+EXCLUDE_FN14 = {"2kmz", "2kn0", "2eqp", "2rpj"}  # all Fn14 PDB entries (RCSB, UniProt Q9NP84 + xenopus 2KN0)
 
 cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr")
 cmd.remove("hydro")
@@ -53,11 +53,30 @@ def min_dist_per_residue(obj, ch, partners):
     return out
 
 
+def _ca(sel, state):
+    m = cmd.get_model(f"{sel} and name CA and resi {CRD}", state=state)
+    return [(int(a.resi), a.resn) for a in m.atom], np.array([a.coord for a in m.atom])
+
+
+def kabsch_rmsd(P, Q):
+    P, Q = P - P.mean(0), Q - Q.mean(0)
+    U, S, Vt = np.linalg.svd(P.T @ Q)
+    d = np.sign(np.linalg.det(U @ Vt))
+    S[-1] *= d
+    return float(np.sqrt(max((P ** 2).sum() + (Q ** 2).sum() - 2 * S.sum(), 0) / len(P)))
+
+
 def crd_rmsd_median(obj, ch):
+    """Cα RMSD (Kabsch, no outlier rejection) of CRD vs each of the 20 2KMZ models; median.
+    Fix 2026-11-03: cmd.rms pairs atoms by identifier incl. chain, so chains D/E/F matched nothing in
+    2KMZ chain A and returned 0.0 ("No atoms selected"). Same criterion, explicit residue pairing."""
+    ids_m, xm = _ca(f"{obj} and chain {ch}", 1)
+    assert len(ids_m) == 32, (obj, ch, len(ids_m))
     v = []
     for st in range(1, 21):
-        v.append(cmd.rms(f"{obj} and chain {ch} and name CA and resi {CRD}",
-                         f"nmr and name CA and resi {CRD}", mobile_state=1, target_state=st, cycles=0))
+        ids_t, xt = _ca("nmr", st)
+        assert ids_m == ids_t, (obj, ch, st)
+        v.append(kabsch_rmsd(xm, xt))
     return float(np.median(v))
 
 
@@ -112,12 +131,19 @@ for cond in ("c", "d"):
             per_tw = [sum(1 for v in min_dist_per_residue(obj, ch, [t]).values() if v <= 4.5) for t in TW]
             groove.append(sum(1 for v in per_tw if v >= 3))
             frac_if.append(sum(1 for v in dmin.values() if v <= 5.0) / len(dmin))
+            tw_side = []
+            for t in TW:
+                dt = min_dist_per_residue(obj, t, [ch])
+                hits = [str(r + 93) for r, v in sorted(dt.items()) if v <= 5.0]
+                if hits:
+                    tw_side.append(f"{t}:" + ",".join(hits))
             iface_rows.append({"condition": cond, "seed": seed, "sample": sample, "fn14_chain": ch,
                                "best_chain_iptm_to_tweak": round(best_ip, 3), "n_contact_res_4p5A": n_contact,
                                "sites_within_5A": ",".join(sites_at),
                                **{f"dmin_{SITES[k][1]}": round(dmin[k], 2) for k in SITES},
                                "crd_rmsd_median_2kmz": round(crd, 3), "tweak_chains_contacted": groove[-1],
-                               "interface_residues_uniprot": ",".join(str(r + 27) for r, v in sorted(dmin.items()) if v <= 5.0)})
+                               "interface_residues_uniprot": ",".join(str(r + 27) for r, v in sorted(dmin.items()) if v <= 5.0),
+                               "tweak_interface_uniprot": ";".join(tw_side)})
         c3 = sum(c3_list) >= 2
         ok = c1 and all(c2_list) and c3 and all(c4_list)
         K = round(np.mean(frac_if) * 53)
@@ -129,6 +155,8 @@ for cond in ("c", "d"):
                            "mean_interface_fraction": round(float(np.mean(frac_if)), 3),
                            "chance_P(>=3of4)": round(hyper_ge(53, K, 4, 3), 4),
                            "copies_in_groove(2 TWEAK chains)": sum(1 for g in groove if g >= 2)})
+        if (seed, sample) == max(rk, key=rk.get):
+            cmd.create(f"top_{cond}", obj)
         cmd.delete(obj)
     cs = [r for r in per_sample if r["condition"] == cond]
     top = max(cs, key=lambda r: r["ranking_score"])
@@ -146,6 +174,24 @@ for cond in ("c", "d"):
                     "verdict": verdict if cond == DECIDING else f"control ({verdict} on same criteria)"})
 
 
+# M2-C vs M2-D top models: Cα RMSD over the whole complex and over each chain (report only)
+def _all_ca(o, ch):
+    m = cmd.get_model(f"{o} and chain {ch} and name CA")
+    return [(int(a.resi), a.resn) for a in m.atom], np.array([a.coord for a in m.atom])
+
+
+cd_rows = []
+xc_all, xd_all = [], []
+for ch in TW + FN:
+    ic, xc = _all_ca("top_c", ch)
+    idd, xd = _all_ca("top_d", ch)
+    assert ic == idd
+    xc_all.append(xc); xd_all.append(xd)
+    cd_rows.append({"chain": ch, "n_ca": len(xc), "rmsd_top_c_vs_top_d": round(kabsch_rmsd(xc, xd), 3)})
+cd_rows.append({"chain": "complex", "n_ca": sum(len(x) for x in xc_all),
+                "rmsd_top_c_vs_top_d": round(kabsch_rmsd(np.vstack(xc_all), np.vstack(xd_all)), 3)})
+
+
 def write(path, recs):
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(recs[0].keys()), delimiter="\t")
@@ -156,6 +202,7 @@ def write(path, recs):
 write(os.path.join(TAB, "M2_summary.tsv"), summary)
 write(os.path.join(TAB, "M2_per_sample.tsv"), per_sample)
 write(os.path.join(TAB, "M2_interface.tsv"), iface_rows)
+write(os.path.join(TAB, "M2_c_vs_d.tsv"), cd_rows)
 write(os.path.join(TAB, "M2_templates.tsv"), tmpl_rows or [{"condition": "-", "chain_ids": "-", "template_pdb": "none"}])
 for s in summary:
     print(s)

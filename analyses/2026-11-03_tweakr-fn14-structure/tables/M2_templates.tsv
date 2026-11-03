@@ -1,0 +1,17 @@
+condition	chain_ids	template_pdb
+c	A,B,C	1rj8
+c	A,B,C	1rj7
+c	A,B,C	1jtz
+c	A,B,C	1iqa
+c	D,E,F	1xu1
+c	D,E,F	2ebr
+c	D,E,F	1vvc
+c	D,E,F	1dax
+d	A,B,C	4zch
+d	A,B,C	4zch
+d	A,B,C	6zt0
+d	A,B,C	1rj8
+d	D,E,F	2eqp
+d	D,E,F	2kn0
+d	D,E,F	4kt1
+d	D,E,F	4kt1
