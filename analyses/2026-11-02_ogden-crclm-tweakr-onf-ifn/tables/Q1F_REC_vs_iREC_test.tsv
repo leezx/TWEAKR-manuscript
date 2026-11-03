@@ -1,0 +1,3 @@
+comparison	n_patients	median_REC	median_iREC	median_paired_difference	wilcoxon_p
+REC vs iREC, receptor detection	5	0.38636363636363635	0.32	-0.008162142333088762	1.0
+REC vs iREC, IFNG score (positive control)	5	0.34856820836837116	0.27517738257109847	-0.14375518506337148	0.625

@@ -1,0 +1,5 @@
+{
+  "positive_control_recovered": false,
+  "n_patients_with_both_states": 5,
+  "interpretation": "the paired REC/iREC comparison is UNDERPOWERED and uninterpretable; the IFN difference that defines the two states cannot itself be recovered in these patients"
+}

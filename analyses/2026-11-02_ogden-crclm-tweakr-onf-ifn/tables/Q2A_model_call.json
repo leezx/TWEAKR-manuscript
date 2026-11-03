@@ -1,0 +1,12 @@
+{
+  "model_A_oncofetal_only": false,
+  "model_B_inflammation_only": false,
+  "model_C_dual": true,
+  "oncofetal_median_partial_rho": 0.15057403071737285,
+  "inflammatory_median_partial_rho": 0.070547193465811,
+  "oncofetal_dominant": true,
+  "n_patients_oncofetal_greater": 11,
+  "controls_above_receptor_oncofetal": 0,
+  "controls_above_receptor_inflammatory": 1,
+  "n_controls": 24
+}

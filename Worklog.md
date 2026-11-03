@@ -229,6 +229,94 @@ the Results paragraph and legend from the actual analysis output in
 draft Methods. Still pending: user decision on deleting root `_TEMPLATE` files
 and on whether to keep `GPT/` in-repo.
 
+## 2026-10-08 — Wang 2026 MFI Checkpoint 1A: TNFSF12/TNFRSF12A expression feasibility
+
+**What**: First analysis folder under the new policy:
+`analyses/2026-10-08_wang2026-mfi-checkpoint1a/` on branch
+`analysis/20261008-wang2026-mfi-checkpoint1a`.
+
+**Why**: User split Checkpoint 1 into 1A (expression feasibility, unblocked) and
+1B (genotype origin, blocked pending author request).
+
+**How**: QC showed the public X = log1p(raw counts) without normalisation, so
+CP10k was reconstructed. Author cell-type-level origin came from Supp Table 13
+(FB and pvSMC mixed; GC and Ery ambiguous). The analysis produced cell-type,
+donor and trimester summaries, within-donor Wilcoxon contrasts and two Nature-style DotPlots.
+
+**Validation**: Independent anndata re-extraction matched. Coverage assertion
+covers 36 types and 193,202 nuclei. Fonts are editable and embedded; TIFF is 600 dpi.
+
+Added library-size QC, a depth-matched detection sensitivity analysis, a sign test
+and trimester-split direction counts. Renamed the level metric to `mean_log1p_cp10k`
+and added `pseudobulk_cp10k`.
+
+**Decision**: Human review — CP1A EXPLORATORY / PASS WITH LIMITATIONS. CP1B BLOCKED
+(author request drafted to the corresponding authors, not sent). CP1C spatial assay
+feasibility next. CP2 HOLD.
+
+**Next**: CP1C metadata/gene-detection check; send the author email after the user
+verifies it; merge to main is not authorised.
+
+## 2026-10-08 — Wang 2026 MFI Checkpoint 1C: Stereo-seq assay feasibility
+
+**What**: Metadata and gene-detection feasibility check of the public COSMOS
+Stereo-seq explorer (no matrix download, no spatial statistics). Script
+`analyses/2026-10-08_wang2026-mfi-checkpoint1a/code/cp1c_spatial_feasibility.py`.
+
+**Result**: Explorer values are transformed, not counts (about 1% integer; 14.9% of
+cells consistent with log-normalised counts; CD163 31% and PECAM1 68% nonzero),
+so they cannot give detection rates. `STOMICS.h5ad` returns 404, and the Box link
+holds only CODEX. Immune cells are pooled with no macrophage label. EVT subtypes,
+mVEC/fVEC and stromal types are resolved. Coordinates, annotation and sample ID are
+complete for 1,077,690 cells in 16 sections (GW18–24 only).
+
+**Decision**: Proposed NOT EVALUABLE WITH PUBLIC DATA (pending review); CP2 HOLD.
+
+## 2026-10-08 — Wang 2026 MFI (DS-013) closed
+
+**Decision**: CP1A PASS (exploratory expression evidence); CP1C PASS — not
+evaluable for spatial interaction with accessible public data; CP1B and CP2 not
+pursued. DS-013 CLOSED as an exploratory developmental reference. The author
+request is archived and was not sent. The branch is kept without a PR.
+
+**Retained observation**: TNFRSF12A is reproducibly expressed in fetal-derived
+extravillous trophoblast populations (iEVT), with origin based on the authors'
+cell-type-level classification. Not a standalone Figure 4 panel.
+
+## 2026-10-08 — Wang 2026 MFI Checkpoint 1D: TWEAK-associated macrophage state (scoped reopening)
+
+**What**: snRNA-only analysis, pre-registered in `docs/Checkpoint_1D_contract.md`. Scored the
+AOM/DSS Tnfsf12+ TAM core/extended programs plus control modules in maternal decidual
+macrophages, with TNFSF12 as an independent readout.
+
+**Result**: CORE meets all pre-specified PASS criteria: MH OR 1.43, 12/14 donors, OR/SD 1.29,
+beats the matched-random null (p = 0.002), survives lysosomal adjustment and the CD14_M-only
+check. The effect is modest (2.7% vs 1.9% detection). A C1Q complement control module is
+equally associated, so the state is not TWEAK-specific. HB shows no association.
+
+**Decision**: Proposed PASS with a specificity caveat. Level 3 is not started; Stereo-seq untouched.
+
+## 2026-10-08 — Wang 2026 MFI CP1D review and CP1E (CORE vs C1Q)
+
+**Decision**: CP1D PASS WITH SPECIFICITY LIMITATIONS; Level 3 HOLD. CORE is the primary
+signature and C1Q the comparator; they are not merged.
+
+**CP1E** (assembled from already-fitted models; no rerun): in M3, CORE 1.21 (1.04–1.41) and
+C1Q 1.38 (1.22–1.57). In CD14_M only, CORE 1.18 (0.99–1.40) and C1Q 1.36. Score correlation is
+r = 0.22 (VIF 1.05). CORE adds modest information beyond C1Q that is not robust in CD14_M.
+CORE is an exploratory state score, not a TWEAK+ classifier.
+
+## 2026-10-08 — Wang 2026 MFI (DS-013) final closure
+
+**Decision**: CP1E PASS — C1Q association stronger. DS-013 CLOSED — developmental context
+established; interaction hypothesis unvalidated. Level 3 (donor co-occurrence) and CP2
+(Stereo-seq) NOT PURSUED. No PR, no author contact; branch and results kept as the archive.
+
+**Retained** (two separate observations, not an interaction claim): TNFRSF12A in fetal-derived
+trophoblast, particularly iEVT (16.3%, 13/13 donors; author cell-type-level origin); TNFSF12
+detection in maternal macrophages is modestly associated with the SPP1/TREM2/GPNMB/APOE program
+and more strongly with a C1Q complement program. A stronger C1Q association does not make C1Q
+upstream of TNFSF12. Not a Figure 4 panel. Record: `analyses/2026-10-08_wang2026-mfi-checkpoint1a/docs/DS-013_final_closure.md`.
 ## 2026-10-09 — Atlas NMF workflow packaged for review; analysis held
 
 **What**: Added `analyses/2026-10-09_atlas-nmf-workflow/` as a lightweight,

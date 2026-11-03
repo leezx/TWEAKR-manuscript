@@ -1,0 +1,37 @@
+major_class	minor_class	celltype_shortname	celltype_fullname	n_cells	n_donors	author_cell_type_origin	supp_table13_label	mapping_basis	analysis_role
+B	B	B	B lymphocyte	362	22	maternal	B	exact	
+DSC	DSC	DSC0	decidual stromal cell type 0	7666	21	maternal	DSC0	exact	alternative_receptor_maternal_stroma
+DSC	DSC	DSC1	decidual stromal cell type 1	3695	22	maternal	DSC1	exact	alternative_receptor_maternal_stroma
+DSC	DSC	DSC2	decidual stromal cell type 2	3559	21	maternal	DSC2	exact	alternative_receptor_maternal_stroma
+DSC	DSC	DSC3	decidual stromal cell type 3	3405	23	maternal	DSC3	exact	alternative_receptor_maternal_stroma
+DSC	DSC	DSC4	decidual stromal cell type 4	1953	21	maternal	DSC4	exact	alternative_receptor_maternal_stroma
+DSC	eS	eS	endometrial stromal fibroblast	4089	23	maternal	eS	exact	alternative_receptor_maternal_stroma
+EC	LEC	LEC	lymphatic endothelium	1788	20	maternal	LEC	exact	
+EC	mVEC	aEC	maternal arterial endothelium)	472	22	maternal	aEC	exact	specificity_control
+EC	mVEC	vEC	maternal venous endothelium	2937	23	maternal	vEC	exact	specificity_control
+Epi	Epi	Epi	endometrial epithelium	32218	21	maternal	Epi	exact	
+Epi	cili	ciliated	ciliated endometrial epithelium	224	15	maternal	ciliated	exact	
+M	M	CD14_M	CD14+ decidual macrophage	7261	23	maternal	M(CD14)	name_equivalent	ligand_candidate
+M	M	CD16_M	CD16+ decidual macrophage	2015	23	maternal	M(CD16)	name_equivalent	ligand_candidate
+T	T	T	T lymphocyte	1130	23	maternal	T	exact	
+cDC	cDC	cDC	classical dendritic cell	435	20	maternal	cDC	exact	
+dNK	dNK	dNK	decidual natural killer cell	9563	23	maternal	dNK	exact	
+EC	fVEC	fEC	fetal vascular endothelium	3002	23	fetal	fEC	exact	specificity_control
+EVT	EVT	EVT	other extravillous trophoblast	3381	21	fetal	other EVT	name_equivalent	receptor_candidate_EVT
+EVT	EVT	eEVT	endovascular extravillous trophoblast)	471	11	fetal	eEVT	exact	receptor_candidate_EVT
+EVT	EVT	iEVT	interstitial extravillous trophoblast	2073	16	fetal	iEVT	exact	receptor_candidate_EVT
+EVT	EVT	pEVT	perivascular extravillous trophoblast	170	13	fetal	pEVT	exact	receptor_candidate_EVT
+HB	HB	HB	hofbauer cell	3172	18	fetal	HB	exact	fetal_macrophage_control
+SCT	SCT	SCT	syncytiotrophoblast	65742	23	fetal	SCT	exact	receptor_candidate_SCT
+SCT	SCT	SCT_a	syncytiotrophoblast type A	3803	16	fetal	SCT	parent_minor_class	receptor_candidate_SCT
+SCT	SCT	SCT_b	syncytiotrophoblast type B	3412	18	fetal	SCT	parent_minor_class	receptor_candidate_SCT
+VCT	VCT	EVTpro	extravillous trophoblast progenitor	542	19	fetal	EVTpro	exact	receptor_candidate_VCT
+VCT	VCT	SCT_pro	progenitor/precursor of syncytiotrophoblast	760	15	fetal	SCTpro	name_equivalent	receptor_candidate_VCT
+VCT	VCT	VCT	other villous cytotrophoblast	8793	17	fetal	VCT	exact	receptor_candidate_VCT
+VCT	VCT	VCT_dividing	cycling villous cytotrophoblast	3333	23	fetal	VCT(MKI67)	name_equivalent	receptor_candidate_VCT
+VCT	VCT	avVCT	villous cytotrophoblast - anchoring villi	2098	22	fetal	avVCT	exact	receptor_candidate_VCT
+VCT	VCT	fvVCT	villous cytotrophoblast - floating villi	1350	16	fetal	VCT	parent_minor_class	receptor_candidate_VCT
+FB	FB	FB	fibroblast	3420	17	mixed	FB	listed_in_both_tables	
+PV	PV	pvSMC	perivascular smooth muscle cell and pericyte	2861	23	mixed	pvSMC | PV	conflict_shortname_vs_minor_class	
+EVT	GC	GC	trophoblast giant cell	1978	23	ambiguous		not_listed	
+Ery	Ery	Ery	Erythrocyte	69	9	ambiguous		not_listed	

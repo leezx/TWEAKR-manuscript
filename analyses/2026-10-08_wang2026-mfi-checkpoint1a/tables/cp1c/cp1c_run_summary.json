@@ -1,0 +1,205 @@
+{
+  "source": "https://cell.ucsf.edu/snPlacenta/build5/stereo_host/stereo_host.jsonl",
+  "index_sha256": "6f9be64678b310912acf6500df4eb8e93571c45fdef507c640f370d3dbf50235",
+  "shape": [
+    1077690,
+    25794
+  ],
+  "obs_fields": [
+    "subclass",
+    "sample_id",
+    "celltype"
+  ],
+  "embeddings": [
+    {
+      "name": "spatial",
+      "dimensions": 2
+    }
+  ],
+  "layers": [],
+  "category_levels": {
+    "subclass": [
+      "DSC",
+      "EVT",
+      "Epi",
+      "FB",
+      "HB",
+      "Immune",
+      "PV",
+      "SCT",
+      "VCT",
+      "fVEC",
+      "mVEC"
+    ],
+    "sample_id": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "007",
+      "008",
+      "009",
+      "010",
+      "011",
+      "012",
+      "013",
+      "014",
+      "015",
+      "016"
+    ],
+    "celltype": [
+      "DSC",
+      "DSC3",
+      "DSC4",
+      "EVT",
+      "EVTpro",
+      "Epi",
+      "FB",
+      "HB",
+      "Immune",
+      "PV",
+      "SCT",
+      "VCT",
+      "eEVT",
+      "fVEC",
+      "iEVT",
+      "mVEC"
+    ]
+  },
+  "genes_present": {
+    "TNFSF12": true,
+    "TNFRSF12A": true,
+    "PTPRC": true,
+    "CD68": true,
+    "CD163": true,
+    "LYVE1": true,
+    "PECAM1": true,
+    "HLA-G": true
+  },
+  "value_qc": [
+    {
+      "gene": "TNFSF12",
+      "n_nonzero": 98132,
+      "min_nonzero": 0.05,
+      "max": 3.85,
+      "fraction_integer_nonzero": 0.0094566502262259
+    },
+    {
+      "gene": "TNFRSF12A",
+      "n_nonzero": 343016,
+      "min_nonzero": 0.06,
+      "max": 3.96,
+      "fraction_integer_nonzero": 0.01086246705693029
+    },
+    {
+      "gene": "PTPRC",
+      "n_nonzero": 162609,
+      "min_nonzero": 0.06,
+      "max": 4.14,
+      "fraction_integer_nonzero": 0.009925649871778314
+    },
+    {
+      "gene": "CD68",
+      "n_nonzero": 214551,
+      "min_nonzero": 0.03,
+      "max": 3.79,
+      "fraction_integer_nonzero": 0.010687435621367414
+    },
+    {
+      "gene": "CD163",
+      "n_nonzero": 331640,
+      "min_nonzero": 0.06,
+      "max": 3.79,
+      "fraction_integer_nonzero": 0.010475214087564829
+    },
+    {
+      "gene": "LYVE1",
+      "n_nonzero": 337144,
+      "min_nonzero": 0.04,
+      "max": 4.15,
+      "fraction_integer_nonzero": 0.010473269582137009
+    },
+    {
+      "gene": "PECAM1",
+      "n_nonzero": 733131,
+      "min_nonzero": 0.03,
+      "max": 4.41,
+      "fraction_integer_nonzero": 0.009850899770982266
+    },
+    {
+      "gene": "HLA-G",
+      "n_nonzero": 429846,
+      "min_nonzero": 0.05,
+      "max": 4.48,
+      "fraction_integer_nonzero": 0.010447927862536815
+    },
+    {
+      "gene": "ACTB",
+      "n_nonzero": 947310,
+      "min_nonzero": 0.08,
+      "max": 5.38,
+      "fraction_integer_nonzero": 0.009769769135763372
+    },
+    {
+      "gene": "GAPDH",
+      "n_nonzero": 739592,
+      "min_nonzero": 0.06,
+      "max": 4.13,
+      "fraction_integer_nonzero": 0.010569340933920323
+    },
+    {
+      "gene": "MALAT1",
+      "n_nonzero": 1072200,
+      "min_nonzero": 0.11,
+      "max": 6.51,
+      "fraction_integer_nonzero": 0.009413355717216937
+    },
+    {
+      "gene": "KRT7",
+      "n_nonzero": 617010,
+      "min_nonzero": 0.07,
+      "max": 4.27,
+      "fraction_integer_nonzero": 0.010455260044407708
+    }
+  ],
+  "integer_multiple_test": {
+    "genes": [
+      "TNFSF12",
+      "TNFRSF12A",
+      "PTPRC",
+      "CD68",
+      "CD163",
+      "LYVE1",
+      "PECAM1",
+      "HLA-G",
+      "ACTB",
+      "GAPDH",
+      "MALAT1",
+      "KRT7"
+    ],
+    "n_cells_tested": 20000,
+    "fraction_consistent_with_lognormalised_counts": 0.1485
+  },
+  "overall_pct_nonzero_explorer": {
+    "TNFSF12": 9.105772531989718,
+    "TNFRSF12A": 31.82881904814928,
+    "PTPRC": 15.088661860089637,
+    "CD68": 19.90841522144587,
+    "CD163": 30.773227922686488,
+    "LYVE1": 31.283949929942747,
+    "PECAM1": 68.02800434262171,
+    "HLA-G": 39.88586699329121,
+    "ACTB": 87.90190128886786,
+    "GAPDH": 68.62752739656116,
+    "MALAT1": 99.49057706761684,
+    "KRT7": 57.2530133897503
+  },
+  "snRNA_reference_pct_expr": {
+    "TNFSF12": 0.94,
+    "TNFRSF12A": 8.36
+  },
+  "n_duplicate_xy_within_sample": 0,
+  "notes": "Explorer values are transformed (non-integer, not consistent with log-normalised counts). pct_nonzero_explorer is NOT a detection rate. No cell-level data saved."
+}
