@@ -13,3 +13,9 @@ input_C_sha256	0b19d6cdd6feaad64613fc6e0895cba880512d326f329dfca0c3c46607013a12
 slurm_J3_data_pipeline_C	58455648 (short; --max_template_date=2007-12-31)
 slurm_J4_inference_C	58455649 (gpu l40s; afterok:58455648)
 amendment_1	condition A templates = 2EQP, 2KN0, 4KT1 x2; 2EQP is human Fn14 (2008-04-01) -> C added as deciding condition
+slurm_J2_failed	58451425 (looked for mixed-case _data.json; AF3 lower-cases names)
+slurm_J4_cancelled	58455649 (same bug; cancelled before start)
+slurm_J2b_inference_AB	58457237 (gpu l40s)
+slurm_J4b_inference_C	58457238 (gpu l40s; afterok:58455648)
+templates_A	2EQP, 2KN0, 4KT1, 4KT1
+templates_B	2EQP, 1XU1, 2EBR, 1VVC (2EQP present -> confirms amendment 1)

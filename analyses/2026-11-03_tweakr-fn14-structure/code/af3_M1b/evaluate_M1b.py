@@ -66,7 +66,7 @@ for cond in ("A", "B", "C"):
     name = f"fn14_ecd_28_80_tmpl{cond}"
     base = os.path.join(SRC, name)
     # ---- template audit from the stage-1 data json
-    dj = json.load(open(glob.glob(os.path.join(base, "**", f"{name}_data.json"), recursive=True)[0]))
+    dj = json.load(open(glob.glob(os.path.join(base, "**", f"{name.lower()}_data.json"), recursive=True)[0]))  # AF3 lower-cases names
     tids = []
     for s in dj["sequences"]:
         for t in (s.get("protein", {}).get("templates") or []):

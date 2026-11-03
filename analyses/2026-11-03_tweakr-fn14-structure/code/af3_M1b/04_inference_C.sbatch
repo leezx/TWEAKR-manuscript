@@ -15,19 +15,19 @@ module load alphafold/3.0.1
 nvidia-smi --query-gpu=name,memory.total --format=csv
 date -Is
 for C in C; do
-  N=fn14_ecd_28_80_tmpl$C
-  run_alphafold.py --json_path=$R/out/$N/${N}_data.json --output_dir=$R/out_inf \
+  N=fn14_ecd_28_80_tmpl$C; NL=${N,,}   # AF3 lower-cases output dir and file names
+  run_alphafold.py --json_path=$R/out/$NL/${NL}_data.json --output_dir=$R/out_inf \
     --norun_data_pipeline
 done
 date -Is
 # freeze lightweight products in the lab dir (O2 AGENTS.md §2/§4)
 mkdir -p $L
 for C in C; do
-  N=fn14_ecd_28_80_tmpl$C
-  D=$(ls -d $R/out_inf/${N}* | head -1)
+  N=fn14_ecd_28_80_tmpl$C; NL=${N,,}
+  D=$(ls -d $R/out_inf/${NL}* | head -1)
   mkdir -p $L/$N
-  cp $R/out/$N/${N}_data.json $L/$N/
+  cp $R/out/$NL/${NL}_data.json $L/$N/
   (cd $D && find . \( -name "*.cif" -o -name "*summary_confidences.json" -o -name "ranking_scores.csv" -o -name "*_confidences.json" \) -print0 | cpio -0pdm $L/$N/ 2>/dev/null)
 done
-(cd $L && find . -type f -exec sha256sum {} \; > manifest_sha256.txt)
+(cd $L && find . -type f ! -name manifest_sha256.txt -exec sha256sum {} \; | sort -k2 > manifest_sha256.txt)
 echo "slurm_job_C=$SLURM_JOB_ID" >> $L/run_metadata.txt
