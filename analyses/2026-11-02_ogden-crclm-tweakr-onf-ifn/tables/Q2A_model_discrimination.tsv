@@ -1,0 +1,4 @@
+test	n_patients	median	n_positive	wilcoxon_p	note
+onf_revCSC partial rho vs 0 (other dimension controlled)	12	0.15057403071737285	12	0.00048828125	p is at the n=12 signed-rank floor (0.000488) when all signs agree
+infl_IFNG partial rho vs 0 (other dimension controlled)	12	0.070547193465811	12	0.00048828125	p is at the n=12 signed-rank floor (0.000488) when all signs agree
+oncofetal partial rho > inflammatory partial rho (paired)	12	0.07213591892404515	11	0.00146484375	the quantity that separates Model A-dominant from Model B-dominant

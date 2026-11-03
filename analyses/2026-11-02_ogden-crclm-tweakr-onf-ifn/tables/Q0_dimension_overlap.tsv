@@ -1,0 +1,25 @@
+onf	infl	n_onf	n_infl	n_shared	jaccard	shared_genes
+onf_YAP_regen	infl_TNFA_NFKB	35	200	9	0.0398230088495575	AREG,FOSL1,ID2,KLF4,KLF6,HBEGF,PHLDA1,PHLDA2,GADD45B
+onf_YAP_regen	infl_NFKB_canon	35	200	9	0.0398230088495575	AREG,FOSL1,ID2,KLF4,KLF6,HBEGF,PHLDA1,PHLDA2,GADD45B
+onf_revCSC	infl_TNFA_NFKB	31	200	5	0.0221238938053097	F3,PMEPA1,AREG,CCN1,CD44
+onf_revCSC	infl_NFKB_canon	31	200	5	0.0221238938053097	F3,PMEPA1,AREG,CCN1,CD44
+onf_YAP_effectors	infl_TNFA_NFKB	34	200	2	0.00862068965517241	AREG,FOSL1
+onf_YAP_effectors	infl_NFKB_canon	34	200	2	0.00862068965517241	AREG,FOSL1
+onf_revCSC	infl_antigen_pres	31	98	1	0.0078125	CTSL
+onf_YAP_effectors	infl_IFNA	34	97	1	0.00769230769230769	LY6E
+onf_YAP_effectors	infl_IFNG	34	200	1	0.00429184549356223	LY6E
+onf_revCSC	infl_IFNG	31	200	0	0	
+onf_proCSC	infl_IFNG	27	200	0	0	
+onf_YAP_regen	infl_IFNG	35	200	0	0	
+onf_revCSC	infl_IFNA	31	97	0	0	
+onf_proCSC	infl_IFNA	27	97	0	0	
+onf_YAP_regen	infl_IFNA	35	97	0	0	
+onf_proCSC	infl_TNFA_NFKB	27	200	0	0	
+onf_proCSC	infl_NFKB_canon	27	200	0	0	
+onf_revCSC	infl_NFKB_noncan	31	86	0	0	
+onf_proCSC	infl_NFKB_noncan	27	86	0	0	
+onf_YAP_regen	infl_NFKB_noncan	35	86	0	0	
+onf_YAP_effectors	infl_NFKB_noncan	34	86	0	0	
+onf_proCSC	infl_antigen_pres	27	98	0	0	
+onf_YAP_regen	infl_antigen_pres	35	98	0	0	
+onf_YAP_effectors	infl_antigen_pres	34	98	0	0	

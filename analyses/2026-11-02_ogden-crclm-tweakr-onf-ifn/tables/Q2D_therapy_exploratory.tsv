@@ -1,0 +1,4 @@
+quantity	n_treated	n_naive	median_treated	median_naive	mannwhitney_p	caveat
+receptor_detection	7	8	0.18181818181818182	0.17624251535476576	0.33566433566433573	not paired pre/post; confounded by patient selection, tumour genotype and sampling time. Exploratory only.
+revcsc	7	8	0.6128360187261126	0.4526686905008671	0.5358197358197359	not paired pre/post; confounded by patient selection, tumour genotype and sampling time. Exploratory only.
+ifng	7	8	0.15897307482088974	0.17060464529837177	0.6943278943278944	not paired pre/post; confounded by patient selection, tumour genotype and sampling time. Exploratory only.
