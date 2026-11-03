@@ -19,3 +19,6 @@ slurm_J2b_inference_AB	58457237 (gpu l40s)
 slurm_J4b_inference_C	58457238 (gpu l40s; afterok:58455648)
 templates_A	2EQP, 2KN0, 4KT1, 4KT1
 templates_B	2EQP, 1XU1, 2EBR, 1VVC (2EQP present -> confirms amendment 1)
+templates_C	1XU1, 2EBR, 1VVC, 1DAX (no Fn14)
+local_copy	/Volumes/Stelligen_SSD/Stelligen/DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M1b/ (af3_M1b_frozen.tar.gz sha256 5fd4dbd18800eb11bee6f64c58f5d66a574d42fe57aa80547a04ab62da8cf404)
+verdict	PASS (condition C)

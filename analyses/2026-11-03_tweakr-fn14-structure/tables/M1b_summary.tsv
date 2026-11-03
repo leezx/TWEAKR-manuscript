@@ -1,0 +1,4 @@
+condition	n_samples	n_templates	excluded_templates_present	top_seed_sample	top_ranking_score	top_crd_rmsd_min	top_crd_rmsd_median	top_ss_ok	frac_samples_meeting	verdict
+A	25	4	2eqp,2kn0	2/1	0.8474983318874056	1.361	1.662	True	25/25	control (PASS on same criteria)
+B	25	4	2eqp	2/1	0.8457829826082446	1.39	1.686	True	25/25	control (PASS on same criteria)
+C	25	4	none	1/3	0.8316553690894077	1.313	1.619	True	25/25	PASS
