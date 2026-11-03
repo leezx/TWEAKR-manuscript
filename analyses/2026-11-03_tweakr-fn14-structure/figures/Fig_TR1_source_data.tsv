@@ -1,0 +1,8 @@
+feature	start	end	len	seq
+Signal peptide (cleaved)	1	27	27	MARGSLRRLLRLLVLGLWLALLRSVAG
+Extracellular N-segment	28	35	8	EQAPGTAP
+CRD (TNFR-Cys, atypical)	36	67	32	CSRGSSWSADLDKCMDCASCRARPHSDFCLGC
+Extracellular stalk	68	80	13	AAAPPAPFRLLWP
+Transmembrane helix	81	101	21	ILGGALSLTFVLGLLSGFLVW
+Juxtamembrane basic cluster	102	109	8	RRCRRREK
+Cytoplasmic tail (TRAF region)	110	129	20	FTTPIEETGGEGCPAVALIQ

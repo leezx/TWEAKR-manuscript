@@ -500,3 +500,76 @@ patient/tissue/timepoint tuple and no other source sample shares it. Reasonable
 duplication check, not proof of absent unrecorded replication. Propose26 approved
 with original Cancer annotation limitation,23 c91 pending,4 Normal not approved.
 Public evidence excludes patient linkage; final review pending, all execution0.
+
+## 2026-11-03 — B32 立项：Fn14 结构坐标冻结与 Fig. TR1（WL-20261103-FN14-001）
+
+**做了什么。** 用户决定把 `UDE/TWEAKR-AF3.md`（GPT 的 TWEAKR 结构/信号转导方案）立为 UDE
+分支 **B32**（新主干 T8）。立项前先把方案依赖的结构事实逐条核实，再据此建图。
+
+**为什么。** 该方案的数字和文献引用没经过核对就要被用作建模与制图依据。核实发现两处错误
+（见下），说明这一步不能跳。
+
+**核实（向权威库取回，非转述）。**
+- UniProt Q9NP84：SIGNAL 1–27 · CHAIN 28–129（102 aa）· 胞外 28–80（53）·
+  TRANSMEM 81–101（21，helical）· 胞内 102–129（28）· REPEAT 36–67「TNFR-Cys; atypical」·
+  DISULFID 36–49/52–67/55–64 · 无 CARBOHYD。小鼠 Q9CR75 边界相同。
+- 脚本硬编码的 129 aa 与 UniProt FASTA **逐字符一致**。这步必做：脚本自检是拿序列验位点，
+  序列若抄错，自检会在错序列上全部通过。
+- D45/K48/M50/D62 身份正确且全在 CRD 内；CRD 内六个 Cys 位置为 36/49/52/55/64/67。
+
+**更正两处既有记录错误（已在 `UDE/TWEAKR-AF3.md` 内标注）。**
+1. **2KN1 不是 Fn14。** PDBe 条目标题为 "Solution NMR Structure of BCMA"。只用 2KMZ（hFn14）
+   和 2KN0（xFn14）。
+2. **TM = 21 aa 来自 UniProt，不是 Winkles 2008。** 该综述给 129/102/53/28，未给 TM 长度；
+   其讨论的 N-glycosylation 是 TWEAK 的。引用补全为 Nat Rev Drug Discov 2008;7(5):411–425。
+
+**新发现。** isoform 2（Q9NP84-2）缺失 33–67，即整个 CRD 与三对二硫键，但保留 TM 和完整
+胞内尾 —— 天然的「无配体结合域但可跨膜并保留 TRAF 区」变体，对应方案中
+ligand-independent clustering 的问题。原方案未提。
+
+**产出。** `analyses/2026-11-03_tweakr-fn14-structure/`：README、
+`code/make_fig_TR1_topology.R`（R 4.5.2，11 项 stopifnot 自检）、Fig. TR1（PDF/SVG/PNG 600 dpi）、
+图注、source data、`manifests/outputs.tsv`（sha256）。渲染后目视检查两轮，修掉标签重叠、
+D45 骑在域边界上（代入椭圆方程 ≈ 0.994）、以及 36/67 标注位置与链的进出方向相反。
+
+**claim ceiling。** 拓扑示意图，非结构渲染；膜平面是人工参考；二硫键连线与四个点是示意位置，
+故不逐点标注；TRAF motif 精确坐标未核实，只标区段；不得用 AF 全长模型（pLDDT 73.19）定义几何。
+本目录不含任何 CRC 数据，不支持任何关于 TWEAKR 在 CRC 中功能的主张。
+
+**UDE。** `root-branch-history.md` 升至 v1.1：新增 T8/B32，思维导图与登记表已校验一致（32=32）；
+核实记录存于 `UDE/design/history/2026-11-03_fn14-structure-verification.md`；
+`CURRENT.yaml`/`CURRENT.md`/`design`/`execution` 已同步；§7 待决事项增至 11 项。
+
+**O2。** 按用户指示写入 `~/AGENTS.md`（72 行）：DUO 硬限制、文件系统分区、计算规则、AF3、
+可追溯性。写前 `ssh -O check o2` 返回 `Master running (pid=52408)`，全程复用该通道，
+**未触发 DUO**；写前确认 home 无同名文件，未覆盖任何内容。第 4 节的 AF3 可用性
+（`hpc_alphafold3_users` 组、`alphafold/3.0.1` wrapper、权重可读、数据库清单）当场核实。
+
+**状态：** 未 commit、未 push、无 PR、未审核。AF3 建模（M1–M4）未授权、未执行。
+
+## 2026-11-03 — Fig. TR2：Fn14 三维结构在膜参考系中的位置与功能域（WL-20261103-FN14-002）
+
+**What.** 用户要一张「TWEAKR 与细胞膜的参考图」：显示真实蛋白结构，不同 domain 用不同颜色。
+TR1 是手画的拓扑示意，TR2 改用真实坐标：a 为 AF-Q9NP84-F1 v6 成熟链 28–129，嵌在按 TM 螺旋轴
+放置的双分子层中；b 为实验 ECD 结构 2KMZ（NMR model 1），以 CRD 叠合到 AF 模型后同向显示；
+c 为线性 domain 图 + pLDDT。配色沿用 TR1。产出在
+`analyses/2026-11-03_tweakr-fn14-structure/figures/Fig_TR2_*`（README §12）。
+
+**Why this design.** 只有 AF 模型覆盖全长，但 TR1 已经限定不能用它定义域间几何。
+所以 TR2 只取两样可信的东西：AF 的域内折叠（CRD 与 2KMZ 的 Cα RMSD 为 1.25 Å），
+以及 TM 螺旋轴（pLDDT 87.5，域内 PAE 2.8 Å），用后者放膜。
+CRD↔TM 的 PAE 为 22–24 Å，图上直接注明「CRD 相对膜的位置未确定」。
+
+**How.** 用开源 PyMOL 3.2 做无头渲染：先 PCA 求 TM 轴并刚体对齐，再正交投影，同时导出像素↔Å 映射；
+R 负责画膜、标注和拼版。输入是 AF 模型与 PAE、2KMZ、UniProt FASTA，
+存放于 `DATA/HotData/TWEAKR-oncoFetal/external/structures_fn14/`，sha256 记在 `manifests/inputs.tsv`。
+
+**负结果。** PyMOL.app 2.5.7 的许可证已于 2024-07-01 过期，每张图都带 "License expired" 水印，已弃用。
+改装开源 PyMOL 到 `SOFTWARES/tools/pymol-open-source/.venv`，并登记 TOOL_INDEX；
+必须固定 numpy 1.26.4，因为 numpy 2.x 下 `get_coords` 报 ABI 错误。
+AF 把 124–129 放进了疏水核心，属低置信伪影，图中以星号标出。
+
+**claim ceiling.** 参考/示意用途。域内折叠可引用；域间几何（CRD 高度、倾角、结合面「朝外」）不可引用，
+不得据此讨论 TWEAK 接近方向或抗体可及性。TRAF motif 坐标仍未核实。不含 CRC 数据。
+
+**状态：** 未 commit、未 push、无 PR、未审核。

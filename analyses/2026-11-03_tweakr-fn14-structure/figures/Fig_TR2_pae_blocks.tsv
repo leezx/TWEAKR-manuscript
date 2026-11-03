@@ -1,0 +1,7 @@
+block	mean_PAE_A
+CRD-CRD	3.9
+TM-TM	2.8
+CRD(aligned)->TM	24.2
+TM(aligned)->CRD	22.2
+TM(aligned)->JM	6.8
+TM(aligned)->C-tail	15.6

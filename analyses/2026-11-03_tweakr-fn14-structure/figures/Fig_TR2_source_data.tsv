@@ -1,0 +1,130 @@
+resi	aa	domain_short	plddt	x_membrane_frame_A	y_membrane_frame_A	z_membrane_frame_A	domain	tweak_binding_site	disulfide_cys
+1	M	SP	45.66	14.22	-22.05	2.75	Signal peptide (cleaved)	FALSE	FALSE
+2	A	SP	56.03	11.04	-20	1.78	Signal peptide (cleaved)	FALSE	FALSE
+3	R	SP	57.5	10.51	-18.2	5.18	Signal peptide (cleaved)	FALSE	FALSE
+4	G	SP	67.56	14.08	-16.77	5.28	Signal peptide (cleaved)	FALSE	FALSE
+5	S	SP	72.75	13.79	-14.98	1.9	Signal peptide (cleaved)	FALSE	FALSE
+6	L	SP	72	10.44	-13.39	2.89	Signal peptide (cleaved)	FALSE	FALSE
+7	R	SP	80.69	11.83	-12.13	6.24	Signal peptide (cleaved)	FALSE	FALSE
+8	R	SP	82.12	14.83	-10.65	4.34	Signal peptide (cleaved)	FALSE	FALSE
+9	L	SP	78.62	12.52	-8.95	1.78	Signal peptide (cleaved)	FALSE	FALSE
+10	L	SP	82.06	10.28	-7.48	4.55	Signal peptide (cleaved)	FALSE	FALSE
+11	R	SP	87.31	13.42	-6.25	6.42	Signal peptide (cleaved)	FALSE	FALSE
+12	L	SP	86.81	14.77	-4.6	3.22	Signal peptide (cleaved)	FALSE	FALSE
+13	L	SP	86.88	11.39	-2.85	2.61	Signal peptide (cleaved)	FALSE	FALSE
+14	V	SP	85.81	11.31	-1.58	6.24	Signal peptide (cleaved)	FALSE	FALSE
+15	L	SP	89.38	14.98	-0.42	5.99	Signal peptide (cleaved)	FALSE	FALSE
+16	G	SP	86.31	14.35	1.27	2.6	Signal peptide (cleaved)	FALSE	FALSE
+17	L	SP	86.75	11.21	3.03	3.92	Signal peptide (cleaved)	FALSE	FALSE
+18	W	SP	86.38	13.17	4.12	7.04	Signal peptide (cleaved)	FALSE	FALSE
+19	L	SP	86.31	16.07	5.49	4.88	Signal peptide (cleaved)	FALSE	FALSE
+20	A	SP	82.5	13.59	7.31	2.57	Signal peptide (cleaved)	FALSE	FALSE
+21	L	SP	82.06	11.89	8.87	5.63	Signal peptide (cleaved)	FALSE	FALSE
+22	L	SP	79.56	15.3	9.97	7.03	Signal peptide (cleaved)	FALSE	FALSE
+23	R	SP	77.25	16.27	11.48	3.63	Signal peptide (cleaved)	FALSE	FALSE
+24	S	SP	70.12	12.96	13.4	3.53	Signal peptide (cleaved)	FALSE	FALSE
+25	V	SP	69.94	13.71	14.83	7.03	Signal peptide (cleaved)	FALSE	FALSE
+26	A	SP	66	17.36	15.54	6.06	Signal peptide (cleaved)	FALSE	FALSE
+27	G	SP	52.88	16.11	18.02	3.41	Signal peptide (cleaved)	FALSE	FALSE
+28	E	N-seg	51.69	19.12	20.27	4.06	Extracellular N-segment	FALSE	FALSE
+29	Q	N-seg	49.75	18.01	23.68	5.25	Extracellular N-segment	FALSE	FALSE
+30	A	N-seg	42.56	20.82	25.29	3.29	Extracellular N-segment	FALSE	FALSE
+31	P	N-seg	45.72	21.45	28.34	5.52	Extracellular N-segment	FALSE	FALSE
+32	G	N-seg	48.53	22.2	30.22	2.36	Extracellular N-segment	FALSE	FALSE
+33	T	N-seg	48.25	23.46	33.42	3.99	Extracellular N-segment	FALSE	FALSE
+34	A	N-seg	57.81	20.58	35.34	2.45	Extracellular N-segment	FALSE	FALSE
+35	P	N-seg	72.69	21.29	38.68	4.23	Extracellular N-segment	FALSE	FALSE
+36	C	CRD	80.12	17.53	38.92	4.91	CRD (TNFR-Cys, atypical)	FALSE	TRUE
+37	S	CRD	83.06	15.03	36.82	6.83	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+38	R	CRD	80.88	12.27	35	4.89	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+39	G	CRD	82.06	9.74	37.66	3.69	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+40	S	CRD	86.25	12.36	40.46	3.68	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+41	S	CRD	87.69	14.53	41.64	0.76	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+42	W	CRD	89.38	17.79	43.61	0.61	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+43	S	CRD	88.94	17.59	47.28	-0.41	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+44	A	CRD	87.19	20.79	48.53	-2.05	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+45	D	CRD	87.81	19.65	52.17	-1.54	CRD (TNFR-Cys, atypical)	TRUE	FALSE
+46	L	CRD	88.31	19.09	51.71	2.24	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+47	D	CRD	88.81	21.92	49.12	2.8	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+48	K	CRD	91.56	19.44	47.06	4.9	CRD (TNFR-Cys, atypical)	TRUE	FALSE
+49	C	CRD	90.5	16.7	44.44	4.79	CRD (TNFR-Cys, atypical)	FALSE	TRUE
+50	M	CRD	89.81	13.18	45.76	4.04	CRD (TNFR-Cys, atypical)	TRUE	FALSE
+51	D	CRD	91.69	9.85	44.02	4.7	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+52	C	CRD	89.62	8.19	42.83	1.45	CRD (TNFR-Cys, atypical)	FALSE	TRUE
+53	A	CRD	88.5	4.8	44.05	2.86	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+54	S	CRD	87.81	6.14	47.61	2.15	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+55	C	CRD	88.62	5.9	46.82	-1.62	CRD (TNFR-Cys, atypical)	FALSE	TRUE
+56	R	CRD	85.94	2.06	47.12	-1.31	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+57	A	CRD	88.5	2.48	50.81	-0.43	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+58	R	CRD	86.06	5.57	51.37	-2.7	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+59	P	CRD	85.5	5.8	48.83	-5.59	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+60	H	CRD	87.38	8.68	50.7	-7.37	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+61	S	CRD	86.25	11.38	50.34	-4.65	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+62	D	CRD	88.94	14.67	48.55	-5.52	CRD (TNFR-Cys, atypical)	TRUE	FALSE
+63	F	CRD	85.81	14.11	45.79	-2.89	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+64	C	CRD	86.94	10.65	44.82	-4.31	CRD (TNFR-Cys, atypical)	FALSE	TRUE
+65	L	CRD	83.75	12.38	43.05	-7.24	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+66	G	CRD	82.19	13.91	40.61	-4.68	CRD (TNFR-Cys, atypical)	FALSE	FALSE
+67	C	CRD	81.5	10.48	40.19	-2.99	CRD (TNFR-Cys, atypical)	FALSE	TRUE
+68	A	Stalk	67.88	9.6	37.19	-5.15	Extracellular stalk	FALSE	FALSE
+69	A	Stalk	59.41	6.04	36.84	-3.79	Extracellular stalk	FALSE	FALSE
+70	A	Stalk	55.62	6.38	33.8	-1.51	Extracellular stalk	FALSE	FALSE
+71	P	Stalk	55.25	4.69	31.3	-3.86	Extracellular stalk	FALSE	FALSE
+72	P	Stalk	54.91	1.13	31.02	-2.51	Extracellular stalk	FALSE	FALSE
+73	A	Stalk	57.97	1.38	27.89	-0.41	Extracellular stalk	FALSE	FALSE
+74	P	Stalk	60.34	-2.04	26.1	-0.96	Extracellular stalk	FALSE	FALSE
+75	F	Stalk	61.69	-0.01	23.26	-2.57	Extracellular stalk	FALSE	FALSE
+76	R	Stalk	68.31	2.22	22.88	0.55	Extracellular stalk	FALSE	FALSE
+77	L	Stalk	68.88	-0.66	21.08	2.36	Extracellular stalk	FALSE	FALSE
+78	L	Stalk	75.06	-1.76	19.19	-0.81	Extracellular stalk	FALSE	FALSE
+79	W	Stalk	79.31	1.79	17.79	-1.28	Extracellular stalk	FALSE	FALSE
+80	P	Stalk	78.38	1.91	15.79	2.05	Extracellular stalk	FALSE	FALSE
+81	I	TM	80.38	-1.74	14.66	1.47	Transmembrane helix	FALSE	FALSE
+82	L	TM	82.31	-0.9	13.38	-2.06	Transmembrane helix	FALSE	FALSE
+83	G	TM	82.62	2.43	11.87	-0.86	Transmembrane helix	FALSE	FALSE
+84	G	TM	86.62	0.66	10.39	2.22	Transmembrane helix	FALSE	FALSE
+85	A	TM	87.19	-2.18	8.86	0.14	Transmembrane helix	FALSE	FALSE
+86	L	TM	87.88	0.31	7.48	-2.46	Transmembrane helix	FALSE	FALSE
+87	S	TM	88.25	2.53	5.97	0.3	Transmembrane helix	FALSE	FALSE
+88	L	TM	89.69	-0.51	4.51	2.15	Transmembrane helix	FALSE	FALSE
+89	T	TM	90.5	-1.98	2.94	-1.05	Transmembrane helix	FALSE	FALSE
+90	F	TM	89.75	1.49	1.5	-1.9	Transmembrane helix	FALSE	FALSE
+91	V	TM	90.44	1.89	-0.02	1.62	Transmembrane helix	FALSE	FALSE
+92	L	TM	92.06	-1.66	-1.52	1.54	Transmembrane helix	FALSE	FALSE
+93	G	TM	91.19	-1.01	-2.93	-1.99	Transmembrane helix	FALSE	FALSE
+94	L	TM	89.75	2.26	-4.56	-0.84	Transmembrane helix	FALSE	FALSE
+95	L	TM	90.19	0.69	-5.9	2.4	Transmembrane helix	FALSE	FALSE
+96	S	TM	90.56	-2.38	-7.39	0.62	Transmembrane helix	FALSE	FALSE
+97	G	TM	87.56	-0.21	-8.94	-2.16	Transmembrane helix	FALSE	FALSE
+98	F	TM	86.31	2.15	-10.34	0.54	Transmembrane helix	FALSE	FALSE
+99	L	TM	85.75	-0.76	-11.83	2.58	Transmembrane helix	FALSE	FALSE
+100	V	TM	87.38	-2.25	-13.39	-0.62	Transmembrane helix	FALSE	FALSE
+101	W	TM	82	1.2	-14.72	-1.67	Transmembrane helix	FALSE	FALSE
+102	R	JM	79.75	1.78	-16.12	1.87	Juxtamembrane basic cluster	FALSE	FALSE
+103	R	JM	80	-1.7	-17.79	1.84	Juxtamembrane basic cluster	FALSE	FALSE
+104	C	JM	75.94	-1.04	-19.29	-1.65	Juxtamembrane basic cluster	FALSE	FALSE
+105	R	JM	74.81	2.45	-20.62	-0.74	Juxtamembrane basic cluster	FALSE	FALSE
+106	R	JM	68.56	1.03	-22.23	2.48	Juxtamembrane basic cluster	FALSE	FALSE
+107	R	JM	63.06	-1.53	-24.27	0.42	Juxtamembrane basic cluster	FALSE	FALSE
+108	E	JM	59.88	1.1	-25.57	-2.08	Juxtamembrane basic cluster	FALSE	FALSE
+109	K	JM	57.78	3.35	-26.9	0.77	Juxtamembrane basic cluster	FALSE	FALSE
+110	F	C-tail	49.75	0.81	-29.46	2.19	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+111	T	C-tail	52.41	0.17	-31.86	-0.74	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+112	T	C-tail	47.16	2.55	-34.5	-1.95	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+113	P	C-tail	52.16	0.14	-36.99	-3.39	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+114	I	C-tail	50.12	1.6	-38.64	-6.48	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+115	E	C-tail	48.38	0.33	-37.79	-9.98	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+116	E	C-tail	45.72	-2.64	-36.21	-11.77	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+117	T	C-tail	46.34	-3.99	-32.81	-12.65	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+118	G	C-tail	46.12	-3.32	-29.28	-12.96	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+119	G	C-tail	45.78	-3.36	-27.11	-9.83	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+120	E	C-tail	48.75	-4.34	-23.7	-11.29	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+121	G	C-tail	50.66	-1.79	-21.23	-9.92	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+122	C	C-tail	51.22	-3.32	-18.74	-7.45	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+123	P	C-tail	52.22	-6.21	-16.78	-8.78	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+124	A	C-tail	46.69	-6.38	-14.92	-11.96	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+125	V	C-tail	47.25	-8.11	-12.01	-10.17	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+126	A	C-tail	47.16	-11.73	-13.05	-10.53	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+127	L	C-tail	39.44	-13.13	-10.25	-12.62	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+128	I	C-tail	43.44	-16.66	-11.14	-11.52	Cytoplasmic tail (TRAF region)	FALSE	FALSE
+129	Q	C-tail	41.59	-19.07	-8.35	-12.46	Cytoplasmic tail (TRAF region)	FALSE	FALSE
