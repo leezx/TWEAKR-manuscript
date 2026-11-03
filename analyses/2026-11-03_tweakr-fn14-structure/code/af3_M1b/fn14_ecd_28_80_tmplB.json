@@ -1,0 +1,9 @@
+{
+  "name": "fn14_ecd_28_80_tmplB",
+  "modelSeeds": [1, 2, 3, 4, 5],
+  "sequences": [
+    {"protein": {"id": "A", "sequence": "EQAPGTAPCSRGSSWSADLDKCMDCASCRARPHSDFCLGCAAAPPAPFRLLWP"}}
+  ],
+  "dialect": "alphafold3",
+  "version": 1
+}

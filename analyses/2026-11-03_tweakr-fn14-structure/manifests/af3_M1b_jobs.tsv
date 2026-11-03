@@ -1,0 +1,11 @@
+key	value
+o2_run_dir	/n/scratch/users/z/zhl595/projects/TWEAKR-oncoFetal/af3_M1b
+o2_frozen_dir	/n/data1/dfci/medonc/sethi/lab/zhixin/TWEAKR-oncoFetal/af3_M1b
+module	alphafold/3.0.1 (O2 wrapper; weights /n/shared_db/alphafold-3.0/etc/af3.bin)
+input_A_sha256	794b536fe164114d8d4901fc4a4dee7ebee93da17408468d225b5eed7e06e6ab
+input_B_sha256	847fbe58a38e913bede61321a5757474a501fc7ad68b8933885fbffe19075c0e
+model_seeds	1,2,3,4,5 (x5 diffusion samples)
+slurm_J1_data_pipeline	58451421 (short, 8 CPU, 32G, 6h)
+slurm_J2_inference	58451425 (gpu, l40s, 4 CPU, 32G, 2h, afterok:58451421)
+submitted	2026-11-03
+note	first J2 submission to gpu_quad was rejected (Invalid qos gpuquad_qos); resubmitted to gpu
