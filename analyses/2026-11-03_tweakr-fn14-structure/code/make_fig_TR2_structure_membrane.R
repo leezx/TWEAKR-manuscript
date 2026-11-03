@@ -23,7 +23,8 @@ stopifnot(nrow(res) == 129, paste(res$aa, collapse = "") ==
 stopifnot(res$aa[c(45, 48, 50, 62)] == c("D", "K", "M", "D"),
           all(res$aa[c(36, 49, 52, 55, 64, 67)] == "C"),
           substr(paste(res$aa, collapse = ""), 102, 109) == "RRCRRREK")
-stopifnot(abs(pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_model1 - 1.248) < 0.01)  # recorded value
+stopifnot(abs(pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_model1 - 1.737) < 0.01)  # = independent numpy Kabsch
+rr <- pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_min_median_max
 
 # AlphaFold PAE: is the CRD placement relative to the TM helix (hence the bilayer) determined?
 struct_dir <- Sys.getenv("FN14_STRUCT_DIR",
@@ -151,10 +152,10 @@ pb <- ggplot() +
   bl("C55–C64", ssm[["55-64"]], -230, -60, SS_TXT, 1) +
   bl("N (E28)", anc[["28"]], -200, 110, dom$txt[2]) +
   bl("P80", anc[["80"]], -40, 0, dom$txt[4], 1) +
-  annotate("text", x = 1000, y = 330, hjust = 0, vjust = 0, size = fs, family = fam, colour = GREY,
+  annotate("text", x = 1000, y = 260, hjust = 0, vjust = 0, size = fs, family = fam, colour = GREY,
            lineheight = 0.95,
-           label = sprintf("Same orientation as a\n(CRD superposed).\nCRD Cα RMSD vs AF: %.2f Å\n(32 Cα, 36–67)",
-                           pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_model1)) +
+           label = sprintf("Same orientation as a\n(CRD superposed).\nCRD Cα RMSD vs AF (32 Cα):\n%.2f Å to model 1;\n%.2f–%.2f Å over 20 models\n(median %.2f Å)",
+                           pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_model1, rr[1], rr[3], rr[2])) +
   coord_fixed(xlim = c(60, W2 - 60), ylim = c(230, H2 - 120), expand = FALSE, clip = "off") +
   theme_void(base_family = fam) +
   labs(title = "Experimental ECD: PDB 2KMZ (solution NMR, model 1 of 20)") +

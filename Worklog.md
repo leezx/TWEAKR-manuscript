@@ -556,7 +556,8 @@ c 为线性 domain 图 + pLDDT。配色沿用 TR1。产出在
 `analyses/2026-11-03_tweakr-fn14-structure/figures/Fig_TR2_*`（README §12）。
 
 **Why this design.** 只有 AF 模型覆盖全长，但 TR1 已经限定不能用它定义域间几何。
-所以 TR2 只取两样可信的东西：AF 的域内折叠（CRD 与 2KMZ 的 Cα RMSD 为 1.25 Å），
+所以 TR2 只取两样可信的东西：AF 的域内折叠（CRD 与 2KMZ 的 Cα RMSD：对 model 1 为 1.74 Å，对 20 个 model 为 1.30–2.14 Å；
+首版误写为 1.25 Å，原因及更正见 README §12），
 以及 TM 螺旋轴（pLDDT 87.5，域内 PAE 2.8 Å），用后者放膜。
 CRD↔TM 的 PAE 为 22–24 Å，图上直接注明「CRD 相对膜的位置未确定」。
 

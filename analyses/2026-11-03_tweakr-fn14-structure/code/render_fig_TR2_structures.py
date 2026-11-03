@@ -219,9 +219,22 @@ proj_af = {"width": W, "height": H, "center": center.tolist(), "half_height_A": 
 # ============================================================================
 # 2. 2KMZ NMR (model 1), renumbered to UniProt, superposed on AF ECD
 # ============================================================================
-cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr", state=1)
-cmd.alter("nmr", "resi = str(int(resi) + 27)")
-cmd.sort("nmr")
+# NB: cmd.load(..., state=1) does NOT restrict a multi-model PDB to MODEL 1 -- it loads all 20
+# states, and pair_fit on that object returned a value (1.248 A) matching none of the 20 models.
+# Extract MODEL 1 explicitly into a single-state object.
+cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr_all")
+assert cmd.count_states("nmr_all") == 20
+cmd.alter("nmr_all", "resi = str(int(resi) + 27)")
+cmd.sort("nmr_all")
+cmd.remove("nmr_all and hydro")
+cmd.create("nmr", "nmr_all", 1, 1)
+assert cmd.count_states("nmr") == 1
+rms_crd_all = []
+for k in range(1, 21):  # af is not moved by cmd.rms
+    cmd.create("nk", "nmr_all", k, 1)
+    rms_crd_all.append(cmd.rms("af and name CA and resi 36-67", "nk and name CA and resi 36-67", cycles=0))
+    cmd.delete("nk")
+cmd.delete("nmr_all")
 nmr_seq = "".join(a.resn for a in cmd.get_model("nmr and name CA").atom)
 assert cmd.count_atoms("nmr and name CA") == 53
 for r, rn in BINDING.items():
@@ -256,6 +269,10 @@ summary = {
     "nmr": "2KMZ model 1 of 20 (file resi + 27 = UniProt)",
     "rmsd_CA_CRD36_67_AF_vs_2KMZ_model1": rms_crd,
     "rmsd_CA_ECD28_80_after_CRD_fit": rms_ecd_nofit,
+    "rmsd_CA_CRD36_67_AF_vs_2KMZ_all20": [round(x, 3) for x in rms_crd_all],
+    "rmsd_CA_CRD36_67_AF_vs_2KMZ_min_median_max": [round(min(rms_crd_all), 3),
+                                                   round(float(np.median(rms_crd_all)), 3),
+                                                   round(max(rms_crd_all), 3)],
     "mean_plddt_by_domain": {
         n: float(np.mean([plddt[r] for r in range(s, e + 1)])) for n, s, e, _ in DOMAINS},
     "af": proj_af,
