@@ -1,8 +1,9 @@
 # TWEAKR / Fn14 结构参考：拓扑图与坐标冻结
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态（2026-11-03 更新）：** Fig. TR1、Fig. TR2、M1b（PASS）、M2（PASS）均已完成并推送到 PR #2。GPT 审核第 1 轮 REQUEST_CHANGES（P0 0、P1 3、P2 3），
-修改已全部完成（见 §15），等待第 2 轮审核与人工批准；未合并。
+**状态（2026-11-03 更新）：** Fig. TR1、Fig. TR2、M1b（PASS）、M2（PASS）均已完成并推送到 PR #2。GPT 审核第 1 轮 REQUEST_CHANGES → 已修改（§15）；
+第 2 轮 **APPROVE**（`ff9b7ca`），4 项 P2 已清理（§16）。等待人工批准合并；未合并。定位：Fn14 structural reference and hypothesis-generation resource，
+不是 manuscript 的结构机制实验证据。
 **UDE 分支：** B32（见 `../../UDE/root-branch-history.md`）
 
 ## 1. 问题与目标
@@ -118,16 +119,19 @@ CRD (TNFR-Cys, atypical) 36-67 · 二硫键 36-49 / 52-67 / 55-64
 - [x] M1b（ECD 28–80）AF3 预测与 2KMZ 比 RMSD：**PASS**（条件 C，见 §13 和 `docs/M1b_results.md`）
 - [x] M2（TWEAK trimer + 3×ECD）：**PASS**（M2-C，D45/K48/M50/D62 全部在预测界面上，见 §14 和 `docs/M2_results.md`）
 - [x] GPT 审核第 1 轮的 3 项 P1、3 项 P2 全部修改（§15）
-- [ ] GPT 审核第 2 轮 + 人工批准合并（合并须用户授权）
+- [x] GPT 审核第 2 轮：**APPROVE**（`ff9b7ca`；P0 0、P1 0、P2 4，均已在本轮清理，见 §16）
+- [ ] 人工批准与合并（合并须用户授权）
 - 移出 B32、转为后续分支（审核第 1 轮建议，待用户决定）：
   - **Fn14 therapeutic epitope atlas**（下一条分支的首选）：核实直接结合 Fn14 的抗体/ADC、VH/VL 序列、表位证据与激动/内吞性质，
     再映射到 M2 模型；
-  - isoform 2（Q9NP84-2，缺 33–67）：审核指出 2013 年已有 Fn14-ΔEC 研究（出处待核实），建议先查 CRC 数据中的剪接与蛋白证据，暂不做结构模拟。
+  - isoform 2（Q9NP84-2，缺 33–67）：已有 Fn14-ΔEC 研究（Brown 2013，REF-040：不能结合 TWEAK、过表达时可激活 NF-κB，未确证内源蛋白）。
+    建议先查 CRC 数据中的剪接与蛋白证据，并把 AB035481 product B 与 Q9NP84-2 做序列比对，暂不做结构模拟。
 
 ## 11. PR 与审核状态
 
 分支 `analysis/20261103-tweakr-fn14-structure`，PR https://github.com/leezx/TWEAKR-manuscript/pull/2（2026-11-03 创建，含 TR1、TR2、M1b、M2）。
-GPT 审核第 1 轮（HEAD `167a401`）：REQUEST_CHANGES，记录在 `docs/reviews/PR2_GPT_round1.md`；修改后待第 2 轮。按 AGENTS.md §4，合并前不是 canonical evidence。
+GPT 审核第 1 轮（HEAD `167a401`）：REQUEST_CHANGES（`docs/reviews/PR2_GPT_round1.md`）；第 2 轮（HEAD `ff9b7ca`）：**APPROVE**，允许合并（`docs/reviews/PR2_GPT_round2.md`）。
+合并须用户授权。按 AGENTS.md §4，合并前不是 canonical evidence。
 
 
 ---
@@ -247,3 +251,21 @@ D/E/F 链与 2KMZ 的 A 链配不上。已改为显式 Cα Kabsch，并与改链
 **原始结构的位置（供第三方复算）：** M1b 全部 75 个模型在 `DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M1b/frozen/`（条件 C 在
 `fn14_ecd_28_80_tmplC/`）；M2 全部 50 个模型在 `DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M2/frozen/af3_M2/`；2KMZ 在
 `DATA/HotData/TWEAKR-oncoFetal/external/structures_fn14/2kmz.pdb`。第 2 轮审核包附上了 M1b-C 与 M2 全部模型、2KMZ。
+
+## 16. GPT 审核第 2 轮（HEAD `ff9b7ca`）：APPROVE
+
+审核方独立重算了全部原始结构：M2 两个条件 50/50 个模型通过全部四项判定，M1b-C 25/25 通过（最近 NMR 构象的 CRD RMSD 1.10–1.53 Å，
+中位数 1.55–1.97 Å，二硫键最大 2.26 Å），并实际运行了 `test_m2_checks.py`（4 项通过）。P0 0、P1 0，余 4 项 P2，本轮全部清理：
+
+| 项 | 问题 | 处理 |
+|---|---|---|
+| P2-1 | 第 1 轮把 PIEET 的 alanine scanning 归于 Brown 2003，有误 | 改引 Han 2003（REF-039，摘要已核实）；Brown 2003 只用于 TRAF1/2/3/5 结合；TR1/TR2 图注同步 |
+| P2-2 | 表中仍有 `chance_P` 字段名 | 改为 `geometric_reference_fraction_ge3of4` / `top_geometric_reference_fraction`，只改列名，数值不变 |
+| P2-3 | 两种 75/75 分母易混 | Fn14 侧 = 25 个模型 × 3 个受体；TWEAK 侧 = 25 个模型 × 3 条配体链（`tweak_chain_observation`）；都不是独立实验 |
+| P2-4 | `outputs.tsv` 有 9 个路径重复（历史与当前混在一起） | 改为**当前快照**：每个文件一行，记录本次提交时的 sha256；历史版本以 git 为准 |
+
+另：第 1 轮两条待核实陈述均已解决——PIEET 出处为 Han 2003（REF-039）；Fn14-ΔEC 为 Brown 2013（REF-040，书目与摘要已核实，全文细节转述自审核、未逐条核对）。
+
+**B32 的结论：** 这条支线已完成它应做的工作。冻结 M2-C 第一名模型
+（`DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M2/frozen/af3_M2/m2_tweak3_fn14x3_tmplc/m2_tweak3_fn14x3_tmplc_model.cif`）作为后续结构参考；
+不再围绕 Fn14 单体或 3:3 模型继续优化。下一条分支建议为 **Fn14 therapeutic epitope atlas**（需用户决定是否开启）。

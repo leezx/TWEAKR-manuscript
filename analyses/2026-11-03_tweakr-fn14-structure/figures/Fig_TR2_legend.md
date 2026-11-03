@@ -29,16 +29,15 @@ CRD 36–67、stalk 68–80、跨膜螺旋 81–101、膜内侧碱性簇 102–1
 3. **胞质尾 110–129 为低置信区（pLDDT 均值 47.6）。** AF 把 124–129 的 Cα 放进了
    疏水核心（|y| < 15 Å），这在物理上不合理，是低置信模型的伪影，图中以星号注明。
    胞质尾标注了 PIEET 113–117：其中 P113–I–E–E116 符合 TRAF2 的主要结合 consensus (P/S/A/T)x(Q/E)E
-   （Ye 1999，REF-037）；TRAF1/2/3/5 结合 Fn14 胞质尾见 Brown 2003（REF-036，小鼠 Fn14）。
-   本项目只核对了序列匹配与摘要；该 motif 经 alanine scanning 定位的说法来自 GPT 审核，
-   Brown 2003 全文未能取得，尚未逐条核实。
+   （Ye 1999，REF-037）；PIEET 由 alanine scanning 确定为介导 TRAF 结合与 NF-κB 激活的 motif（Han 2003，REF-039）；
+   TRAF1/2/3/5 结合 Fn14 胞质尾见 Brown 2003（REF-036，小鼠 Fn14）。人 Fn14 上的 113–117 坐标由 UniProt Q9NP84 序列映射。
 4. **2KMZ 只显示 model 1。** N-segment 和 stalk 在 NMR 集合中本身就柔性较大：
    以 CRD 叠合后，ECD 28–80 全长 Cα RMSD（AF vs 2KMZ model 1）为 12.8 Å，
    差异集中在两端，而不在 CRD。
 5. 本图不含任何 CRC 数据，不支持任何关于 TWEAKR 在 CRC 中功能的主张。
 
 **来源：** AlphaFold DB AF-Q9NP84-F1 v6（模型与 PAE，2026-11-03 取回）；PDB 2KMZ
-（Pellegrini 2013，REF-033）；结合残基 Brown 2006（REF-034）；TRAF motif Ye 1999（REF-037）、Brown 2003（REF-036）；UniProt Q9NP84。checksum 见 `../manifests/inputs.tsv`。
+（Pellegrini 2013，REF-033）；结合残基 Brown 2006（REF-034）；TRAF motif Han 2003（REF-039）、Ye 1999（REF-037）、Brown 2003（REF-036）；UniProt Q9NP84。checksum 见 `../manifests/inputs.tsv`。
 **生成：** `code/render_fig_TR2_structures.py`（开源 PyMOL 3.2.0a，`pymol-open-source-whl` 3.2.0.2，
 numpy 1.26.4）→ `code/make_fig_TR2_structure_membrane.R`（R 4.5.2；ggplot2 4.0.3、ggforce 0.5.0、
 patchwork 1.3.2、png 0.1.9、jsonlite 2.0.0）。

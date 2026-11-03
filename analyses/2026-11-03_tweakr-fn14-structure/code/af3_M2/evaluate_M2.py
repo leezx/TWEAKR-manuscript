@@ -151,7 +151,7 @@ for cond in ("c", "d"):
                            "c2_all_fn14_bound": all(c2_list), "c3_copies_with_>=3_sites": sum(c3_list),
                            "c4_crd_intact": all(c4_list), "meets_all": ok,
                            "mean_interface_fraction": round(float(np.mean(frac_if)), 3),
-                           "chance_P(>=3of4)": round(hyper_ge(53, K, 4, 3), 4),
+                           "geometric_reference_fraction_ge3of4": round(hyper_ge(53, K, 4, 3), 4),  # descriptive, NOT a P value
                            "copies_in_groove(2 TWEAK chains)": sum(1 for g in groove if g >= 2)})
         if (seed, sample) == max(rk, key=rk.get):
             cmd.create(f"top_{cond}", obj)
@@ -169,7 +169,7 @@ for cond in ("c", "d"):
                     "top_seed_sample": f'{top["seed"]}/{top["sample"]}', "top_ranking_score": round(top["ranking_score"], 3),
                     "top_iptm": top["iptm"], "c1": top["c1_trimer"], "c2": top["c2_all_fn14_bound"],
                     "c3_copies": top["c3_copies_with_>=3_sites"], "c4": top["c4_crd_intact"],
-                    "top_chance_P": top["chance_P(>=3of4)"], "top_groove_copies": top["copies_in_groove(2 TWEAK chains)"],
+                    "top_geometric_reference_fraction": top["geometric_reference_fraction_ge3of4"], "top_groove_copies": top["copies_in_groove(2 TWEAK chains)"],
                     "frac_samples_meeting_all": f'{sum(r["meets_all"] for r in cs)}/{len(cs)}',
                     "verdict": verdict if cond == DECIDING else f"control ({verdict} on same criteria)"})
 

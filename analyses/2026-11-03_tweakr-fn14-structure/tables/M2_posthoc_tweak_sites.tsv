@@ -1,4 +1,4 @@
-condition	sample	tweak_site	tweak_chain	dmin_to_fn14_A
+condition	sample	tweak_site	tweak_chain_observation	dmin_to_fn14_A
 c	seed-1_sample-0	Y176	A	2.94
 c	seed-1_sample-0	Y176	B	2.97
 c	seed-1_sample-0	Y176	C	2.97

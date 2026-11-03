@@ -29,11 +29,12 @@ for cond in "cd":
                 x = np.array(cmd.get_coords(sel))
                 dmin = min_distance(x, fn)
                 rows.append({"condition": cond, "sample": os.path.basename(d), "tweak_site": lab,
-                             "tweak_chain": t, "dmin_to_fn14_A": round(dmin, 2)})
+                             "tweak_chain_observation": t, "dmin_to_fn14_A": round(dmin, 2)})
         cmd.delete("m")
 with open(OUT, "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), delimiter="\t"); w.writeheader(); w.writerows(rows)
 for cond in "cd":
     for s in ("Y176", "W231"):
         v = [r["dmin_to_fn14_A"] for r in rows if r["condition"] == cond and r["tweak_site"] == s]
-        print(cond, s, f"n={len(v)} min={min(v)} median={np.median(v):.2f} max={max(v)} <=5A: {sum(x <= 5 for x in v)}/{len(v)}")
+        print(cond, s, f"TWEAK-chain observations n={len(v)} (25 models x 3 chains; not independent experiments) "
+                       f"min={min(v)} median={np.median(v):.2f} max={max(v)} <=5A: {sum(x <= 5 for x in v)}/{len(v)}")

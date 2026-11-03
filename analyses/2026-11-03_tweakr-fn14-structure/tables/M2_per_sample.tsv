@@ -1,4 +1,4 @@
-condition	seed	sample	ranking_score	iptm	ptm	tweak_pair_iptm_min	c1_trimer	c2_all_fn14_bound	c3_copies_with_>=3_sites	c4_crd_intact	meets_all	mean_interface_fraction	chance_P(>=3of4)	copies_in_groove(2 TWEAK chains)
+condition	seed	sample	ranking_score	iptm	ptm	tweak_pair_iptm_min	c1_trimer	c2_all_fn14_bound	c3_copies_with_>=3_sites	c4_crd_intact	meets_all	mean_interface_fraction	geometric_reference_fraction_ge3of4	copies_in_groove(2 TWEAK chains)
 c	1	0	0.9468918919443314	0.84	0.86	0.87	True	True	3	True	True	0.283	0.0637	3
 c	1	1	0.9523037343617516	0.84	0.86	0.87	True	True	3	True	True	0.264	0.0519	3
 c	1	2	0.9220075360751236	0.84	0.86	0.87	True	True	3	True	True	0.252	0.0415	3

@@ -18,11 +18,11 @@ C36–C49、C52–C67、C55–C64）、跨膜螺旋 81–101（21 aa）、胞质
    **PDB 2KMZ**（hFn14，溶液 NMR）。
 3. **胞质尾的 TRAF 结合 motif 在本图中仅按区段标注（110–129）。** 序列上 PIEET 113–117
    符合 TRAF2 主要结合 consensus (P/S/A/T)x(Q/E)E（Ye 1999，REF-037），Fig. TR2 已标出；
-   TRAF1/2/3/5 结合胞质尾见 Brown 2003（REF-036）。该 motif 的突变定位尚未从原文逐条核实。
+   PIEET 由 alanine scanning 确定（Han 2003，REF-039）；TRAF1/2/3/5 结合胞质尾见 Brown 2003（REF-036）。
 
 **不要用 AlphaFold 全长模型定义本图的几何。** AF-Q9NP84-F1 全局 pLDDT 仅 73.19，
 胞内尾必然低置信，不能用于确定膜平面或胞外域与尾部的相对位置。
 
 **来源：** UniProt Q9NP84 / Q9CR75（2026-11-03 取回）；PDB 2KMZ、2KN0（PubMed 23438059）；
-Winkles 2008（REF-032）；Pellegrini 2013（REF-033）；Brown 2006（REF-034）；Brown 2003（REF-036）；Ye 1999（REF-037）。
+Winkles 2008（REF-032）；Pellegrini 2013（REF-033）；Brown 2006（REF-034）；Brown 2003（REF-036）；Ye 1999（REF-037）；Han 2003（REF-039）。
 **生成：** `code/make_fig_TR1_topology.R`（R 4.5.2；ggplot2 4.0.3 / ggforce 0.5.0 / patchwork 1.3.2）。

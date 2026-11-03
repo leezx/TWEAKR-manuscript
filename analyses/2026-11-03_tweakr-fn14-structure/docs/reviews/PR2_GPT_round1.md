@@ -50,3 +50,5 @@ AF3 recapitulates a mutagenesis-consistent TWEAK–Fn14 binding interface — �
 
 全部 6 项已修改，见分析目录 README §15。审核中两条事实性陈述尚未独立核实，已如实标注：
 （a）Brown 2003 用 alanine scanning 定位 PIEET（全文未能取得）；（b）2013 年 Fn14-ΔEC 研究（出处待查）。
+
+**第 2 轮更正（2026-11-03）：**（a）用 alanine scanning 定位 PIEET 的是 Han 2003（REF-039），不是 Brown 2003——第 1 轮归属有误；（b）Fn14-ΔEC 研究为 Brown 2013（REF-040）。

@@ -642,3 +642,16 @@ P0 0、P1 3、P2 3；不要求重跑 AF3。B32、TR1、TR2、M1b 结论保留，
 **未核实（如实标注）.** 审核称 Brown 2003 用 alanine scanning 定位 PIEET（全文未取得）；审核称 2013 年有 Fn14-ΔEC 研究（未给 PMID）。
 
 **状态：** 推送后提交第 2 轮审核；未合并。
+
+## 2026-11-03 — PR #2 GPT 审核第 2 轮：APPROVE；B32 结构支线完成（WL-20261103-FN14-006）
+
+**What.** 第 2 轮审核 `ff9b7ca`：**APPROVE**（P0 0、P1 0、P2 4）。审核方独立重算了全部原始结构：M2 50/50 个模型、M1b-C 25/25 个模型通过各自判定，
+并实际运行了单元测试。允许合并，定位为 Fn14 structural reference and hypothesis-generation resource，不是 manuscript 的结构机制证据。
+
+**P2 清理.** PIEET 的 alanine scanning 出处改为 Han 2003（REF-039；第 1 轮审核误归于 Brown 2003，已更正）；`chance_P` 列改名为
+`geometric_reference_fraction_*`（数值不变）；写清两种 75/75 的分母（Fn14 拷贝 vs TWEAK 链观测，都不是独立实验）；
+`outputs.tsv` 改为当前快照（无重复路径）。登记 REF-040（Brown 2013，Fn14-ΔEC），为 isoform 2 后续支线备用。
+
+**Why it matters.** B32 交付物（坐标冻结、TR1、TR2、M1b、M2）均通过两轮外部审核；M2-C 第一名模型冻结为后续结构参考。
+
+**状态：** 等待用户批准合并 PR #2（Agent 不自行合并）。下一条分支建议为 Fn14 therapeutic epitope atlas，需用户决定。
