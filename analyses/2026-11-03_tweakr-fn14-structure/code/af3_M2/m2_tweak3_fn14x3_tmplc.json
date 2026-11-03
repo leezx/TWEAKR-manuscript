@@ -1,0 +1,34 @@
+{
+ "name": "m2_tweak3_fn14x3_tmplc",
+ "modelSeeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "sequences": [
+  {
+   "protein": {
+    "id": [
+     "A",
+     "B",
+     "C"
+    ],
+    "sequence": "SAPKGRKTRARRAIAAHYEVHPRPGQDGAQAGVDGTVSGWEEARINSSSPLRYNRQIGEFIVTRAGLYYLYCQVHFDEGKAVYLKLDLLVDGVLALRCLEEFSATAASSLGPQLRLCQVSGLLALRPGSSLRIRTLPWAHLKAAPFLTYFGLFQVH"
+   }
+  },
+  {
+   "protein": {
+    "id": [
+     "D",
+     "E",
+     "F"
+    ],
+    "sequence": "EQAPGTAPCSRGSSWSADLDKCMDCASCRARPHSDFCLGCAAAPPAPFRLLWP"
+   }
+  }
+ ],
+ "dialect": "alphafold3",
+ "version": 1
+}
