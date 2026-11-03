@@ -621,3 +621,24 @@ Fn14 链 iptm 中等；3:3 是输入设定。不涉及 CRC 生物学。
 `o2-sh` 会话，本轮没有新增 DUO。
 
 **状态：** 已推送到 PR #2，未审核。
+
+## 2026-11-03 — PR #2 GPT 审核第 1 轮：REQUEST_CHANGES，6 项全部修改（WL-20261103-FN14-005）
+
+**What.** 在 ChatGPT 项目 TWEAKR-oncoFetal 的「深入分析TWEAKR蛋白结构」会话提交 PR #2（HEAD `167a401`）。判定 REQUEST_CHANGES：
+P0 0、P1 3、P2 3；不要求重跑 AF3。B32、TR1、TR2、M1b 结论保留，M2 PASS 保留但证据解释要重新校准。
+
+**修改.**
+- P1-1：新增 TWEAK 侧事后核对。Dhruv 2013 证明 Y176 必需、W231 非必需；模型中 Y176 75/75 在界面（2.7–3.0 Å），
+  W231 也在（3.2–3.7 Å）——模型恢复了已知的重要接触区，但接触距离区分不了热点。注明已有对接模型（Lammens 2013、Dhruv 2013），
+  不能声称首次发现界面。
+- P1-2：超几何数字改为描述性几何参照，不再暗示显著性；25/25 称为采样稳定性。
+- P1-3：`m2_checks.py` + `test_m2_checks.py`（4 项通过）；空选择/错配一律报错；模板按 Fn14/TWEAK/复合物三类核对。
+  重跑后结果表除 summary 新增两列外逐字节不变。
+- P2：Fig. TR2 标出 PIEET 113–117（TRAF2 consensus）并加"Illustrative orientation only"；README 状态更新；
+  第 2 轮审核包附 M1b-C、M2 全部模型和 2KMZ。
+
+**文献.** 补登 REF-032 至 REF-038。发现首版缺了四个结合残基的一手出处（Brown 2006，REF-034，小鼠 Fn14），已补。
+
+**未核实（如实标注）.** 审核称 Brown 2003 用 alanine scanning 定位 PIEET（全文未取得）；审核称 2013 年有 Fn14-ΔEC 研究（未给 PMID）。
+
+**状态：** 推送后提交第 2 轮审核；未合并。

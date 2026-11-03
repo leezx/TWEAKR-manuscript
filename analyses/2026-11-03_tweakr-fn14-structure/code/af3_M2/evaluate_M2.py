@@ -18,6 +18,9 @@ import sys
 import numpy as np
 from pymol import cmd
 
+from m2_checks import (EvalError, check_pairing, classify_templates, kabsch_rmsd, min_distance,
+                       template_id)
+
 SRC = sys.argv[1]
 STRUCT = os.environ.get(
     "FN14_STRUCT_DIR",
@@ -28,7 +31,7 @@ TW, FN = ["A", "B", "C"], ["D", "E", "F"]
 SITES = {18: ("ASP", "D45"), 21: ("LYS", "K48"), 23: ("MET", "M50"), 35: ("ASP", "D62")}  # construct: (resn, UniProt)
 CRD = "9-40"
 DECIDING = "c"
-EXCLUDE_FN14 = {"2kmz", "2kn0", "2eqp", "2rpj"}  # all Fn14 PDB entries (RCSB, UniProt Q9NP84 + xenopus 2KN0)
+# Template exclusion lists (Fn14, TWEAK, TWEAK–Fn14 complex) live in m2_checks.py.
 
 cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr")
 cmd.remove("hydro")
@@ -37,6 +40,8 @@ assert cmd.count_states("nmr") == 20
 
 def heavy(obj, chain):
     m = cmd.get_model(f"{obj} and chain {chain} and not hydro")
+    if not m.atom:
+        raise EvalError(f"no atoms in {obj} chain {chain}")
     xyz = np.array([a.coord for a in m.atom])
     res = np.array([int(a.resi) for a in m.atom])
     return xyz, res, m
@@ -48,8 +53,7 @@ def min_dist_per_residue(obj, ch, partners):
     px = np.vstack([heavy(obj, p)[0] for p in partners])
     out = {}
     for rr in np.unique(r):
-        d = np.sqrt(((x[r == rr][:, None, :] - px[None, :, :]) ** 2).sum(-1)).min()
-        out[int(rr)] = float(d)
+        out[int(rr)] = min_distance(x[r == rr], px)
     return out
 
 
@@ -58,24 +62,15 @@ def _ca(sel, state):
     return [(int(a.resi), a.resn) for a in m.atom], np.array([a.coord for a in m.atom])
 
 
-def kabsch_rmsd(P, Q):
-    P, Q = P - P.mean(0), Q - Q.mean(0)
-    U, S, Vt = np.linalg.svd(P.T @ Q)
-    d = np.sign(np.linalg.det(U @ Vt))
-    S[-1] *= d
-    return float(np.sqrt(max((P ** 2).sum() + (Q ** 2).sum() - 2 * S.sum(), 0) / len(P)))
-
-
 def crd_rmsd_median(obj, ch):
     """Cα RMSD (Kabsch, no outlier rejection) of CRD vs each of the 20 2KMZ models; median.
     Fix 2026-11-03: cmd.rms pairs atoms by identifier incl. chain, so chains D/E/F matched nothing in
     2KMZ chain A and returned 0.0 ("No atoms selected"). Same criterion, explicit residue pairing."""
     ids_m, xm = _ca(f"{obj} and chain {ch}", 1)
-    assert len(ids_m) == 32, (obj, ch, len(ids_m))
     v = []
     for st in range(1, 21):
         ids_t, xt = _ca("nmr", st)
-        assert ids_m == ids_t, (obj, ch, st)
+        check_pairing(ids_m, ids_t, 32)   # fail closed: 32 Cα, same residue numbers and names
         v.append(kabsch_rmsd(xm, xt))
     return float(np.median(v))
 
@@ -94,11 +89,14 @@ for cond in ("c", "d"):
     for s in dj["sequences"]:
         p = s.get("protein", {})
         for t in (p.get("templates") or []):
-            pid = t.get("mmcif", "").split("\n", 1)[0].replace("data_", "").strip().lower()[:4]
+            pid = template_id(t.get("mmcif", ""))
             tids.append(pid)
             tmpl_rows.append({"condition": cond, "chain_ids": ",".join(p["id"]) if isinstance(p["id"], list) else p["id"],
                               "template_pdb": pid})
-    leaked = sorted(set(tids) & EXCLUDE_FN14)
+    cls = classify_templates(tids)
+    # BLOCKED if any Fn14, TWEAK or TWEAK–Fn14 complex template was used (stricter than the
+    # preregistered "Fn14 or complex"; added after review round 1, does not change either verdict)
+    leaked = cls["fn14"] + cls["tweak"] + cls["complex"]
     rk = {}
     for r in csv.DictReader(open(glob.glob(os.path.join(base, "**", "ranking_scores.csv"), recursive=True)[0])):
         rk[(int(r["seed"]), int(r["sample"]))] = float(r["ranking_score"])
@@ -161,11 +159,13 @@ for cond in ("c", "d"):
     cs = [r for r in per_sample if r["condition"] == cond]
     top = max(cs, key=lambda r: r["ranking_score"])
     if cond == DECIDING and leaked:
-        verdict = "BLOCKED (Fn14 template present: %s)" % ",".join(leaked)
+        verdict = "BLOCKED (Fn14/TWEAK/complex template present: %s)" % ",".join(leaked)
     else:
         verdict = "PASS" if top["meets_all"] else "FAIL"
     summary.append({"condition": cond, "templates": ",".join(sorted(set(tids))) or "none",
-                    "fn14_templates_present": ",".join(leaked) or "none",
+                    "fn14_templates_present": ",".join(cls["fn14"]) or "none",
+                    "tweak_templates_present": ",".join(cls["tweak"]) or "none",
+                    "complex_templates_present": ",".join(cls["complex"]) or "none",
                     "top_seed_sample": f'{top["seed"]}/{top["sample"]}', "top_ranking_score": round(top["ranking_score"], 3),
                     "top_iptm": top["iptm"], "c1": top["c1_trimer"], "c2": top["c2_all_fn14_bound"],
                     "c3_copies": top["c3_copies_with_>=3_sites"], "c4": top["c4_crd_intact"],
@@ -185,7 +185,9 @@ xc_all, xd_all = [], []
 for ch in TW + FN:
     ic, xc = _all_ca("top_c", ch)
     idd, xd = _all_ca("top_d", ch)
-    assert ic == idd
+    if len(ic) == 0:
+        raise EvalError(f"no CA atoms for chain {ch}")
+    check_pairing(ic, idd, len(ic))
     xc_all.append(xc); xd_all.append(xd)
     cd_rows.append({"chain": ch, "n_ca": len(xc), "rmsd_top_c_vs_top_d": round(kabsch_rmsd(xc, xd), 3)})
 cd_rows.append({"chain": "complex", "n_ca": sum(len(x) for x in xc_all),

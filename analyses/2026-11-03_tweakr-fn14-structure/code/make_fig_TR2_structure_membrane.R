@@ -22,7 +22,8 @@ stopifnot(nrow(res) == 129, paste(res$aa, collapse = "") ==
   "MARGSLRRLLRLLVLGLWLALLRSVAGEQAPGTAPCSRGSSWSADLDKCMDCASCRARPHSDFCLGCAAAPPAPFRLLWPILGGALSLTFVLGLLSGFLVWRRCRRREKFTTPIEETGGEGCPAVALIQ")
 stopifnot(res$aa[c(45, 48, 50, 62)] == c("D", "K", "M", "D"),
           all(res$aa[c(36, 49, 52, 55, 64, 67)] == "C"),
-          substr(paste(res$aa, collapse = ""), 102, 109) == "RRCRRREK")
+          substr(paste(res$aa, collapse = ""), 102, 109) == "RRCRRREK",
+          substr(paste(res$aa, collapse = ""), 113, 117) == "PIEET")   # TRAF2 major motif (Ye 1999)
 stopifnot(abs(pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_model1 - 1.737) < 0.01)  # = independent numpy Kabsch
 rr <- pj$rmsd_CA_CRD36_67_AF_vs_2KMZ_min_median_max
 
@@ -114,7 +115,7 @@ pa <- ggplot() +
   lab("Juxtamembrane basic\ncluster 102–109\nRRCRRREK", dom$txt[6], RX, jm[2] - 40, jm[1] + 90, jm[2]) +
   # left-hand callouts
   lab("Stalk 68–80", dom$txt[4], 380, stalk[2] + 140, stalk[1] - 60, stalk[2], hj = 1) +
-  lab("Cytoplasmic tail 110–129\n(TRAF-binding region)", dom$txt[7], 700, pY(2930),
+  lab("Cytoplasmic tail 110–129\nPIEET 113–117 matches the\nTRAF2 (P/S/A/T)x(Q/E)E motif", dom$txt[7], 700, pY(2840),
       tail[1] - 40, tail[2], hj = 1) +
   lab("C-terminus (Q129)*", dom$txt[7], 380, cterm[2] + 20, cterm[1] - 40, cterm[2], hj = 1) +
   # scale bar 10 Å
@@ -132,9 +133,12 @@ pa <- ggplot() +
                                   pae_crd_tm, max(pae_tab$mean_PAE_A[1:2])),
                           "\n* AlphaFold places 124–129 inside the bilayer ",
                           "(pLDDT < 50); not a physical position.")) +
-  labs(title = "AlphaFold model AF-Q9NP84-F1 (v6), mature chain 28–129") +
+  labs(title = "AlphaFold model AF-Q9NP84-F1 (v6), mature chain 28–129",
+       subtitle = "Illustrative orientation only: inter-domain geometry is not determined") +
   theme(plot.title = element_text(size = 6.5, colour = GREY, hjust = 0,
-                                  margin = margin(0, 0, 2, 0)))
+                                  margin = margin(0, 0, 1, 0)),
+        plot.subtitle = element_text(size = 6, colour = "#B2182B", face = "italic", hjust = 0,
+                                     margin = margin(0, 0, 2, 0)))
 
 # ---------------------------------------------------------------- panel b (2KMZ)
 B <- pj$nmr2kmz; W2 <- B$width; H2 <- B$height

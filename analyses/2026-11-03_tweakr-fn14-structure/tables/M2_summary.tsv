@@ -1,3 +1,3 @@
-condition	templates	fn14_templates_present	top_seed_sample	top_ranking_score	top_iptm	c1	c2	c3_copies	c4	top_chance_P	top_groove_copies	frac_samples_meeting_all	verdict
-c	1dax,1iqa,1jtz,1rj7,1rj8,1vvc,1xu1,2ebr	none	2/0	0.955	0.84	True	True	3	True	0.0519	3	25/25	PASS
-d	1rj8,2eqp,2kn0,4kt1,4zch,6zt0	2eqp,2kn0	3/1	0.956	0.84	True	True	3	True	0.0519	3	25/25	control (PASS on same criteria)
+condition	templates	fn14_templates_present	tweak_templates_present	complex_templates_present	top_seed_sample	top_ranking_score	top_iptm	c1	c2	c3_copies	c4	top_chance_P	top_groove_copies	frac_samples_meeting_all	verdict
+c	1dax,1iqa,1jtz,1rj7,1rj8,1vvc,1xu1,2ebr	none	none	none	2/0	0.955	0.84	True	True	3	True	0.0519	3	25/25	PASS
+d	1rj8,2eqp,2kn0,4kt1,4zch,6zt0	2eqp,2kn0	none	none	3/1	0.956	0.84	True	True	3	True	0.0519	3	25/25	control (PASS on same criteria)

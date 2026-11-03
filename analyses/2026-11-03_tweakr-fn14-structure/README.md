@@ -1,7 +1,8 @@
 # TWEAKR / Fn14 结构参考：拓扑图与坐标冻结
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** S1（结构图集）完成：Fig. TR1 拓扑图 + Fig. TR2 膜内三维结构参考图（2026-11-03 第二轮）；未审核、未 push、无 PR
+**状态（2026-11-03 更新）：** Fig. TR1、Fig. TR2、M1b（PASS）、M2（PASS）均已完成并推送到 PR #2。GPT 审核第 1 轮 REQUEST_CHANGES（P0 0、P1 3、P2 3），
+修改已全部完成（见 §15），等待第 2 轮审核与人工批准；未合并。
 **UDE 分支：** B32（见 `../../UDE/root-branch-history.md`）
 
 ## 1. 问题与目标
@@ -32,11 +33,17 @@
 
 ## 4. 参考文献
 
-- **REF（待登记）** Winkles JA. The TWEAK–Fn14 cytokine–receptor axis: discovery, biology and
-  therapeutic targeting. *Nat Rev Drug Discov* 2008;7(5):411–425. doi:10.1038/nrd2488（PMC3018765）
-- PubMed 23438059（2013，hFn14 与 xFn14 的 NMR 胞外结构；2KMZ、2KN0）
+以下均已登记在 `1.TWEAKR-oncoFetal/reference.md`（2026-11-03，书目经 PubMed 核验）：
 
-两条都应补进 `1.TWEAKR-oncoFetal/reference.md` 并分配 `REF-xxx`，本次未做。
+- **REF-032** Winkles 2008, *Nat Rev Drug Discov* 7:411–425（综述；长度数据）
+- **REF-033** Pellegrini 2013, *FEBS J* 280:1818–1829（PMID 23438059；2KMZ/2KN0 NMR 结构）
+- **REF-034** Brown 2006, *Biochem J* 397:297–304（PMID 16526941；**D45/K48/M50/D62 的一手突变数据**，小鼠 Fn14）
+- **REF-035** Dhruv 2013, *J Biol Chem* 288:32261–32276（PMID 24056367；TWEAK Y176 必需、W231 非必需）
+- **REF-036** Brown 2003, *Biochem J* 371:395–403（PMID 12529173；TRAF1/2/3/5 结合胞质尾）
+- **REF-037** Ye 1999, *Mol Cell* 4:321–330（PMID 10518213；TRAF2 consensus (P/S/A/T)x(Q/E)E）
+- **REF-038** Lammens 2013, *PLoS One* 8:e62697（PMID 23667509；4HT1 与 TWEAK–Fn14 对接模型）
+
+PR #2 首版只写"已报道"而没有给出四个结合残基的一手出处（REF-034），本轮补上。
 
 ## 5. 方法、软件版本与参数
 
@@ -107,15 +114,20 @@ CRD (TNFR-Cys, atypical) 36-67 · 二硫键 36-49 / 52-67 / 55-64
 
 ## 10. 未完成 / 下一步
 
-- [ ] 把 Winkles 2008 和 PubMed 23438059 登记为 `REF-xxx`
+- [x] 参考文献登记为 REF-032 至 REF-038（§4）
 - [x] M1b（ECD 28–80）AF3 预测与 2KMZ 比 RMSD：**PASS**（条件 C，见 §13 和 `docs/M1b_results.md`）
 - [x] M2（TWEAK trimer + 3×ECD）：**PASS**（M2-C，D45/K48/M50/D62 全部在预测界面上，见 §14 和 `docs/M2_results.md`）
-- [ ] isoform 2（Q9NP84-2，缺 33–67 即整个 CRD 与三对二硫键）是否纳入 —— 对应
-      "ligand-independent clustering" 问题
+- [x] GPT 审核第 1 轮的 3 项 P1、3 项 P2 全部修改（§15）
+- [ ] GPT 审核第 2 轮 + 人工批准合并（合并须用户授权）
+- 移出 B32、转为后续分支（审核第 1 轮建议，待用户决定）：
+  - **Fn14 therapeutic epitope atlas**（下一条分支的首选）：核实直接结合 Fn14 的抗体/ADC、VH/VL 序列、表位证据与激动/内吞性质，
+    再映射到 M2 模型；
+  - isoform 2（Q9NP84-2，缺 33–67）：审核指出 2013 年已有 Fn14-ΔEC 研究（出处待核实），建议先查 CRC 数据中的剪接与蛋白证据，暂不做结构模拟。
 
 ## 11. PR 与审核状态
 
-分支 `analysis/20261103-tweakr-fn14-structure`，PR https://github.com/leezx/TWEAKR-manuscript/pull/2（2026-11-03 创建，含 TR1 + TR2），**未审核**。按 AGENTS.md §4，合并前不是 canonical evidence。
+分支 `analysis/20261103-tweakr-fn14-structure`，PR https://github.com/leezx/TWEAKR-manuscript/pull/2（2026-11-03 创建，含 TR1、TR2、M1b、M2）。
+GPT 审核第 1 轮（HEAD `167a401`）：REQUEST_CHANGES，记录在 `docs/reviews/PR2_GPT_round1.md`；修改后待第 2 轮。按 AGENTS.md §4，合并前不是 canonical evidence。
 
 
 ---
@@ -210,10 +222,28 @@ A、B 结果几乎相同，说明 CRD 的恢复不依赖模板。**限制：** A
 **结果（2026-11-03）：PASS（M2-C）。** 模板里没有 Fn14，也没有 TWEAK（只有 RANKL/EDA 和 M1b-C 的同一组模板）；
 PDB 中本来也不存在 TWEAK–Fn14 复合物。排名第一的模型（seed 2/sample 0，ranking_score 0.955，iptm 0.84）中：
 TWEAK 三聚体 chain_pair_iptm ≥ 0.87；每条 Fn14 的 iptm 为 0.71–0.72、接触 12 个残基；**3 个拷贝的
-D45/K48/M50/D62 全部 ≤ 4 Å**（随机落入界面的概率：≥ 3/4 为 0.052，4/4 为 0.0034）；CRD RMSD 中位数 1.59–1.60 Å。
-25/25 个 sample 达标，75/75 个 Fn14 拷贝 4 个位点全在界面上，并且都同时接触两条 TWEAK 链。M2-D（含 Fn14 模板）
+D45/K48/M50/D62 全部 ≤ 4 Å**（描述性几何参照：随机 4 个残基 ≥ 3 个落在界面为 0.052，4/4 为 0.0034；位点是事先选定的阳性对照，不是 P 值）；CRD RMSD 中位数 1.59–1.60 Å。
+25/25 个 sample 达标（模型采样稳定性），75/75 个 Fn14 拷贝 4 个位点全在界面上，并且都同时接触两条 TWEAK 链。M2-D（含 Fn14 模板）
 与 M2-C 的第一名模型相差 1.01 Å。**限制：** 这是预测，四个位点是事先选定的阳性对照而非盲测；Fn14 链 iptm 中等；
 3:3 是输入设定。详见 `docs/M2_results.md`。
 
 **评估脚本更正（结果出来后，只改代码）：** 首次运行条件 4 的 RMSD 全为 0.0，原因是 PyMOL `rms` 按链名配对，
 D/E/F 链与 2KMZ 的 A 链配不上。已改为显式 Cα Kabsch，并与改链名后的 PyMOL `rms` 交叉核对（1.594 Å 一致）；标准不变。
+
+## 15. GPT 审核第 1 轮（HEAD `167a401`）与修改
+
+判定 **REQUEST_CHANGES**（P0 0 项，P1 3 项，P2 3 项），不要求重跑 AF3，也不要求湿实验。B32、TR1、TR2、M1b 结论保留；M2 的计算 PASS 保留，
+但证据解释需要重新校准。审核全文要点见 `docs/reviews/PR2_GPT_round1.md`。
+
+| 项 | 要求 | 修改 |
+|---|---|---|
+| P1-1 | 补 TWEAK Y176/W231 的外部功能对照 | `code/af3_M2/posthoc_tweak_sites.py` → `tables/M2_posthoc_tweak_sites.tsv`；Y176 75/75 在界面（2.7–3.0 Å），W231 也在（3.2–3.7 Å）；写入 `docs/M2_results.md`，引用 REF-035、REF-038，注明不能声称首次发现界面 |
+| P1-2 | 机会水平只作描述，删去显著性暗示 | `M2_results.md` 与 §14 改写；"界面位置是确定的"改为"给出一致预测、未经实验验证"；25/25 称为采样稳定性 |
+| P1-3 | 评估脚本 fail-closed + 失败测试 | 新增 `code/af3_M2/m2_checks.py`、`test_m2_checks.py`（4 项通过）；模板按 Fn14/TWEAK/复合物三类核对；重跑后结果表除 summary 新增两列外逐字节不变 |
+| P2-1 | 精确标注 TRAF motif | Fig. TR2 标出 PIEET 113–117（符合 TRAF2 consensus，REF-037）；R 脚本新增序列自检；图注引用 REF-036/037，并注明 alanine scanning 定位尚未从原文核实 |
+| P2-2 | TR2 panel a 标"illustrative orientation only" | 已加红色斜体副标题；图注同步 |
+| P2-3 | 更新 README 状态；提供 M1b-C 结构 | 状态行已更新；M1b/M2 全部模型的本地位置见下 |
+
+**原始结构的位置（供第三方复算）：** M1b 全部 75 个模型在 `DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M1b/frozen/`（条件 C 在
+`fn14_ecd_28_80_tmplC/`）；M2 全部 50 个模型在 `DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M2/frozen/af3_M2/`；2KMZ 在
+`DATA/HotData/TWEAKR-oncoFetal/external/structures_fn14/2kmz.pdb`。第 2 轮审核包附上了 M1b-C 与 M2 全部模型、2KMZ。
