@@ -115,7 +115,7 @@ CRD (TNFR-Cys, atypical) 36-67 · 二硫键 36-49 / 52-67 / 55-64
 
 ## 11. PR 与审核状态
 
-未 commit、未 push、无 PR、未审核。按 AGENTS.md §4，合并前不是 canonical evidence。
+分支 `analysis/20261103-tweakr-fn14-structure`，PR https://github.com/leezx/TWEAKR-manuscript/pull/2（2026-11-03 创建，含 TR1 + TR2），**未审核**。按 AGENTS.md §4，合并前不是 canonical evidence。
 
 
 ---
