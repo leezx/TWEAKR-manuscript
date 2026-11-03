@@ -228,3 +228,187 @@ the Results paragraph and legend from the actual analysis output in
 `../TWEAKR-OncoPlacental` / the DATA working dirs; build `references.bib`;
 draft Methods. Still pending: user decision on deleting root `_TEMPLATE` files
 and on whether to keep `GPT/` in-repo.
+
+## 2026-10-09 — Atlas NMF workflow packaged for review; analysis held
+
+**What**: Added `analyses/2026-10-09_atlas-nmf-workflow/` as a lightweight,
+reviewable implementation of the CRC Atlas per-sample NMF workflow. No new
+Atlas object was analysed and no SGE job was submitted.
+
+**Why**: The updated counts-only Seurat RDS inventory on Argos contains
+candidate datasets that may not be represented in the historical NMF run. The
+user requested that the workflow be committed and reviewed before any new NMF
+analysis, with every approved dataset required to have its own result.
+
+**How**:
+
+- recorded the new RDS root, legacy NMF root, proposed heavy output root and
+  absolute `argos-codex` environment in a path manifest;
+- audited the historical Atlas scripts and the upstream
+  `navinlabcode/tnbc-chemo` workflow at commit
+  `8b8e816a49881bd6a2cd6790a574fd331aa65ab4`;
+- implemented read-only Seurat inventory and legacy-coverage comparison;
+- implemented sparse raw-count preprocessing: library-size normalization,
+  `log1p`, gene-wise centring and negative truncation;
+- implemented deterministic `RcppML` NMF with strict/tolerant marker sets and
+  repeated plus non-redundant top 50/100/200 gene lists;
+- added guarded SGE array wrappers that require `EXECUTE_NMF=1` after review;
+- added hard validation requiring every approved dataset at every approved rank
+  to have at least one complete NMF result; and
+- documented method assumptions, provenance, review decisions and claim ceiling.
+
+**Validation**: Python unit tests, Python compilation, Bash syntax checks, R
+parse checks and a synthetic 40-gene by 24-cell rank-3 NMF smoke test passed.
+The synthetic test is software QA only and is not biological analysis.
+
+**Limitations**: Dataset aliases, malignant/epithelial metadata values, final
+rank range, minimum cells and disk estimate remain intentionally unresolved.
+The workflow is `HOLD_FOR_REVIEW`; the new RDS directory has not been inventoried
+by this task. Recomputing or updating the existing 21 metaprograms is outside
+this PR and requires a separate review.
+
+## 2026-10-09 — NMF review revision A1
+
+Primary ranks changed to 4:9 and minimum cells to 200, with 100/200/500
+sensitivity thresholds. Added an explicit robust-program filtering variant
+using repeated top50 genes (35 within-rank, 10 across-sample, <=10 redundancy)
+and cross-dataset support. Documented RcppML versus author NMF/snMF nrun=10
+differences and that MP clustering remains unimplemented. Analysis stays HOLD.
+
+## 2026-10-09 — Argos synthetic Gate A tests
+
+Added cohort-aware program algorithms, deterministic complete-link MP clustering,
+sample-vote consensus and dataset/patient/sample support summaries. Six tests
+passed in argos-codex on Argos. See GATE_A_ALGORITHM.md and GATE_A_TEST_REPORT.md.
+Real-data execution remains HOLD pending independent review; no pilot launched.
+
+## 2026-10-09 — Actual-code review response A3
+
+Repaired the 06-to-07 interface and removed duplicate robust filtering. Added
+explicit cohort identity validation, canonical biological sample keys, confirmed
+patient counts and separately reported unknown patient samples. Consensus now
+selects one representative GEP per biological sample. Preprocessing checks finite
+counts/parameters and applies the cell threshold after zero-library removal;
+__all__ requires a reviewed single-sample assertion. Argos ran 12 Python tests
+plus the R synthetic preprocessing test successfully; raw output and code hashes
+are in docs/A3_Argos_tests.log. Multi-seed and cell-threshold sensitivity drivers
+remain pending. Real Atlas analysis remains HOLD_FOR_REVIEW.
+
+## 2026-10-09 — Review response A4
+
+Restricted cross-rank recurrence to the exact input identity
+(dataset_id, source_id, sample_id). Biological sample IDs are used only for
+subsequent deduplication and independent support, not to let technical libraries
+rescue each other's instability. Added a regression test for cross-source and
+cross-sample-label evidence leakage. Argos raw validation is preserved in
+docs/A4_Argos_tests.log. No real cohort mapping or Atlas analysis was run.
+
+## 2026-10-09 — Gate A approved by human reviewer
+
+Human review of 5babfed concludes Gate A PASS and closes core algorithm review.
+Proceed to Gate B preparation only: pilot dataset annotations and identity
+mapping must first be checked. EXECUTE_NMF remains 0; no real-data execution or
+PR merge was performed. Multi-seed, cell-threshold sensitivity and real-data
+leave-one-dataset-out are deferred validation, not Gate A blockers.
+
+## 2026-10-09 — Gate B read-only pilot inventory
+
+Inspected actual GSE254249 RDS candidates CRC23_tissue and CRC13_tissue: RNA
+counts valid, source group=Cancer yields 506 and 514 nonzero-library cells.
+Sample/PatientID/Tissue/TimePoint agree with source metadata. Added candidate
+inventory and identity mapping for review only; original Cancer-calling evidence
+and cross-study duplicate review remain pending. No preprocessing or NMF run.
+
+## 2026-10-09 — Malignant annotation provenance access check
+
+Human review accepts pilot inventory and identity mapping. Attempted primary
+paper methods verification; publisher access returned 403 and search indexing
+did not establish the Cancer definition. Recorded unresolved status in
+MALIGNANT_PROVENANCE_CHECK.md. No claim of CNV-confirmed malignancy, no algorithm
+change, no dataset expansion, EXECUTE_NMF remains 0.
+
+## 2026-10-09 — Human-authorized two-sample pilot submitted
+
+User authorized startup; scoped runner uses original group=Cancer only, two
+approved samples, K4:9 and seed42. Submitted SGE job3654435 with pvm2 standard
+resources. Root and commands are in PILOT_EXECUTION.md. General execution guard
+remains 0; no full Atlas run is authorized. Completion/QC remain pending.
+
+## 2026-10-09 — Pilot first failure and retry
+
+Job3654435 prepared both inputs but failed on first NMF: sparse multiplication
+lost dimnames. Restored dimnames explicitly and added regression assertions.
+Shell task reader now strips trailing CR from output paths. Original failure log
+preserved as logs/pilot.first_failed.log. Retried identical scope as job3654441;
+completion still pending. No changes to algorithm parameters or sample selection.
+
+## 2026-10-09 — Pilot completed, results submitted for review
+
+Job3654441 completed all12 runs with zero output validation failures. 78 raw
+GEPs yielded11 robust GEPs and5 pilot MPs, all from one dataset. Runtime98s,
+maximum recorded processRSS470620KiB. Added PILOT_RESULTS_REVIEW.md, validation
+table and raw run log. Full gene tables remain on Argos; no biological claims
+or full Atlas execution approval inferred. Original annotation limits retained.
+
+## 2026-10-09 — Full preparation first inventory checkpoint
+
+Recorded human pilot PASS. Read-only audit of updated RDS manifests found7
+datasets/333 objects/2171819 cells. Four sources lack cell-level annotations
+in the build; two have Epi labels needing malignant adjudication; GSE254249
+separates Cancer/Epi. Dataset-level summaries committed; disabled identity draft
+stays remote. Complete legacy Atlas reconciliation and mapping review pending.
+No full execution or algorithm optimization.
+
+## 2026-10-09 — Sample preparation checkpoint
+
+Source metadata identifies26 GSE254249 Cancer and27 GSE236581 c91_Epi_Tumor
+candidate inputs with >=200 annotated cells. Source PatientID/Patient retained
+remotely; no guessed or approved identities. BioProject evidence links two
+datasets to legacy names, with exact sample matching and W-file checks kept
+separate from full QC/biological identity review. Existing downloaded annotations
+are missing in four cohorts; no CNV or NMF was launched. Final gate remains open.
+
+## 2026-10-09 — Actual53-input QC and historical correction
+
+All53 actual RDS passed counts/source/sample/post-zero-library QC:27
+GSE236581 with20412 target cells and26 GSE254249 with28645; zero libraries0.
+Public QC excludes patient identifiers/paths; full mapping remains Argos.
+Truncated historical manifest superseded by real task master:21 name-candidate
+matches with K5 required files;32 unmatched/unverified. Biological crosswalk
+and reuse unresolved. All53 pending/enabled0; no NMF/CNV or algorithm changes.
+
+## 2026-10-09 — Identity and historical artifact review
+
+Accepted human53-sample QC PASS; no rerun. Source identity crosswalk yields39
+study-local patient groups as aggregate only; full crosswalk stays private. Four N samples
+have explicit Tissue=Normal, held for annotation review. Read21 historical K5
+artifacts: all readable/finite/nonnegative/dimensions consistent; CRC02-T-I
+has absent gene/cell names and empty markers. Historical cell counts differ
+from current in21/21; regex vs exact selectors not established equivalent.
+No reuse approval or new NMF. Publisher annotation definition still unverified.
+
+## 2026-10-09 — Public/private separation approved
+
+Human decision prohibits public anonymous patient linkage. Removed the unpushed
+crosswalk commit from the publication branch and replaced it with a status-only
+53-sample table. Four Normal samples not approved;49 require final review;
+21 old K5 outputs not approved for direct reuse. All enabled0/EXECUTE_NMF0.
+No patient IDs, grouping aliases, per-patient sample counts or biological identity
+keys in the new public table. Full crosswalk stays on Argos; no QC rerun.
+
+## 2026-10-09 — Source SOFT and limited privacy assessment
+
+Read original SOFT: all53 have unique source-record candidate matches. Private
+join retained mode600, public status contains no linkage. Unique records do not
+prove technical independence. Original c91 method still inaccessible403. Old
+pilot study codes came from author-public metadata; published history remains
+OPEN pending governance assessment, no rewrite. Freeze21 old K5 direct reuse
+not approved/32 coverage unresolved. No repeated QC or analysis, execution0.
+
+## 2026-10-09 — Final eligibility proposal
+
+Metadata-only check of all92 GSE254249 source IDs:26 candidates have one
+patient/tissue/timepoint tuple and no other source sample shares it. Reasonable
+duplication check, not proof of absent unrecorded replication. Propose26 approved
+with original Cancer annotation limitation,23 c91 pending,4 Normal not approved.
+Public evidence excludes patient linkage; final review pending, all execution0.

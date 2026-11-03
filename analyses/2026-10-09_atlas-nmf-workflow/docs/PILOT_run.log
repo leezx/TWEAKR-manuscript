@@ -1,0 +1,922 @@
++ date -u
+Fri Oct  9 21:17:06 UTC 2026
++ hostname
+argos2
++ export EXECUTE_NMF=1 MIN_CELLS=200 MIN_DETECTED_CELLS=1 SCALE_FACTOR=10000
++ EXECUTE_NMF=1
++ MIN_CELLS=200
++ MIN_DETECTED_CELLS=1
++ SCALE_FACTOR=10000
++ for row in 1 2
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/02_prepare_seurat_nmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/config/pilot_plan.tsv 1 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009
+Wrote preparation manifest: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/prepare_manifest.row1.tsv
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/02_prepare_seurat_nmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/config/pilot_plan.tsv 1 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009"
+	User time (seconds): 7.58
+	System time (seconds): 1.05
+	Percent of CPU this job got: 66%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 470620
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 43
+	Minor (reclaiming a frame) page faults: 259218
+	Voluntary context switches: 5758
+	Involuntary context switches: 1257
+	Swaps: 0
+	File system inputs: 429116
+	File system outputs: 36143
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ for row in 1 2
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/02_prepare_seurat_nmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/config/pilot_plan.tsv 2 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009
+Wrote preparation manifest: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/prepare_manifest.row2.tsv
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/02_prepare_seurat_nmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/config/pilot_plan.tsv 2 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009"
+	User time (seconds): 6.01
+	System time (seconds): 0.73
+	Percent of CPU this job got: 66%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 456332
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 43
+	Minor (reclaiming a frame) page faults: 152721
+	Voluntary context switches: 5703
+	Involuntary context switches: 1108
+	Swaps: 0
+	File system inputs: 423166
+	File system outputs: 15687
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ /home/zz950/softwares/miniforge3/envs/argos-codex/bin/python /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/04_build_nmf_tasks.py --prepared-root /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared --ranks 4,5,6,7,8,9 --output-root /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009 --prepared-manifest /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared_manifest.tsv --tasks /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/tasks.tsv
+Prepared rows: 2
+NMF tasks: 12
+Wrote: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/tasks.tsv
++ IFS='	'
++ read -r task dataset source sample matrix rank output
+++ tail -n +2 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/tasks.tsv
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K4
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 4 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K4 42
+
+iter |      tol 
+---------------
+   1 | 9.41e-01
+   2 | 1.70e-01
+   3 | 3.59e-02
+   4 | 1.38e-02
+   5 | 6.08e-03
+   6 | 3.11e-03
+   7 | 1.79e-03
+   8 | 1.16e-03
+   9 | 8.87e-04
+  10 | 7.82e-04
+  11 | 7.29e-04
+  12 | 6.70e-04
+  13 | 6.05e-04
+  14 | 5.52e-04
+  15 | 5.19e-04
+  16 | 5.22e-04
+  17 | 5.69e-04
+  18 | 6.64e-04
+  19 | 8.15e-04
+  20 | 9.96e-04
+  21 | 1.17e-03
+  22 | 1.28e-03
+  23 | 1.28e-03
+  24 | 1.18e-03
+  25 | 9.81e-04
+  26 | 7.59e-04
+  27 | 5.46e-04
+  28 | 3.77e-04
+  29 | 2.57e-04
+  30 | 1.75e-04
+  31 | 1.18e-04
+  32 | 7.78e-05
+  33 | 5.12e-05
+  34 | 3.42e-05
+  35 | 2.27e-05
+  36 | 1.51e-05
+  37 | 1.02e-05
+  38 | 6.84e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 4 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K4 42"
+	User time (seconds): 4.67
+	System time (seconds): 0.45
+	Percent of CPU this job got: 105%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 217028
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 95393
+	Voluntary context switches: 2969
+	Involuntary context switches: 1169
+	Swaps: 0
+	File system inputs: 403910
+	File system outputs: 1741
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K5
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 5 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K5 42
+
+iter |      tol 
+---------------
+   1 | 9.38e-01
+   2 | 1.78e-01
+   3 | 3.90e-02
+   4 | 1.32e-02
+   5 | 6.58e-03
+   6 | 4.13e-03
+   7 | 3.06e-03
+   8 | 2.41e-03
+   9 | 1.85e-03
+  10 | 1.35e-03
+  11 | 9.46e-04
+  12 | 6.43e-04
+  13 | 4.32e-04
+  14 | 2.95e-04
+  15 | 2.05e-04
+  16 | 1.43e-04
+  17 | 1.00e-04
+  18 | 6.99e-05
+  19 | 4.89e-05
+  20 | 3.42e-05
+  21 | 2.47e-05
+  22 | 1.82e-05
+  23 | 1.36e-05
+  24 | 1.01e-05
+  25 | 7.52e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 5 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K5 42"
+	User time (seconds): 4.37
+	System time (seconds): 0.46
+	Percent of CPU this job got: 101%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.78
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 217092
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 93058
+	Voluntary context switches: 2947
+	Involuntary context switches: 784
+	Swaps: 0
+	File system inputs: 403910
+	File system outputs: 2050
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K6
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 6 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K6 42
+
+iter |      tol 
+---------------
+   1 | 9.34e-01
+   2 | 1.89e-01
+   3 | 3.55e-02
+   4 | 7.78e-03
+   5 | 2.92e-03
+   6 | 1.68e-03
+   7 | 1.21e-03
+   8 | 9.69e-04
+   9 | 8.11e-04
+  10 | 6.88e-04
+  11 | 5.83e-04
+  12 | 4.94e-04
+  13 | 4.28e-04
+  14 | 3.76e-04
+  15 | 3.35e-04
+  16 | 3.04e-04
+  17 | 2.73e-04
+  18 | 2.46e-04
+  19 | 2.19e-04
+  20 | 1.89e-04
+  21 | 1.58e-04
+  22 | 1.31e-04
+  23 | 1.07e-04
+  24 | 8.88e-05
+  25 | 7.30e-05
+  26 | 5.95e-05
+  27 | 4.83e-05
+  28 | 3.94e-05
+  29 | 3.20e-05
+  30 | 2.60e-05
+  31 | 2.14e-05
+  32 | 1.79e-05
+  33 | 1.51e-05
+  34 | 1.29e-05
+  35 | 1.10e-05
+  36 | 9.38e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 6 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K6 42"
+	User time (seconds): 5.16
+	System time (seconds): 0.44
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 217872
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 93089
+	Voluntary context switches: 2892
+	Involuntary context switches: 915
+	Swaps: 0
+	File system inputs: 403910
+	File system outputs: 2325
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K7
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 7 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K7 42
+
+iter |      tol 
+---------------
+   1 | 9.31e-01
+   2 | 1.82e-01
+   3 | 4.01e-02
+   4 | 1.14e-02
+   5 | 4.65e-03
+   6 | 2.49e-03
+   7 | 1.58e-03
+   8 | 1.17e-03
+   9 | 9.32e-04
+  10 | 7.55e-04
+  11 | 6.06e-04
+  12 | 4.96e-04
+  13 | 4.12e-04
+  14 | 3.43e-04
+  15 | 2.85e-04
+  16 | 2.40e-04
+  17 | 2.02e-04
+  18 | 1.69e-04
+  19 | 1.37e-04
+  20 | 1.12e-04
+  21 | 8.96e-05
+  22 | 7.11e-05
+  23 | 5.42e-05
+  24 | 4.15e-05
+  25 | 3.15e-05
+  26 | 2.42e-05
+  27 | 1.86e-05
+  28 | 1.45e-05
+  29 | 1.16e-05
+  30 | 9.58e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 7 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K7 42"
+	User time (seconds): 5.21
+	System time (seconds): 0.51
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 219148
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 94776
+	Voluntary context switches: 2931
+	Involuntary context switches: 995
+	Swaps: 0
+	File system inputs: 403910
+	File system outputs: 2588
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K8
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 8 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K8 42
+
+iter |      tol 
+---------------
+   1 | 9.34e-01
+   2 | 1.86e-01
+   3 | 4.40e-02
+   4 | 1.15e-02
+   5 | 4.61e-03
+   6 | 2.35e-03
+   7 | 1.39e-03
+   8 | 9.20e-04
+   9 | 7.35e-04
+  10 | 6.50e-04
+  11 | 6.01e-04
+  12 | 5.75e-04
+  13 | 5.87e-04
+  14 | 6.06e-04
+  15 | 6.30e-04
+  16 | 6.23e-04
+  17 | 5.74e-04
+  18 | 4.80e-04
+  19 | 3.62e-04
+  20 | 2.53e-04
+  21 | 1.70e-04
+  22 | 1.17e-04
+  23 | 8.44e-05
+  24 | 6.45e-05
+  25 | 5.19e-05
+  26 | 4.24e-05
+  27 | 3.67e-05
+  28 | 3.27e-05
+  29 | 2.99e-05
+  30 | 2.52e-05
+  31 | 2.17e-05
+  32 | 1.89e-05
+  33 | 1.66e-05
+  34 | 1.47e-05
+  35 | 1.09e-05
+  36 | 8.55e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 8 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K8 42"
+	User time (seconds): 7.26
+	System time (seconds): 0.51
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 220204
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 96166
+	Voluntary context switches: 3555
+	Involuntary context switches: 1267
+	Swaps: 0
+	File system inputs: 403910
+	File system outputs: 2824
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K9
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 9 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K9 42
+
+iter |      tol 
+---------------
+   1 | 9.31e-01
+   2 | 1.89e-01
+   3 | 4.95e-02
+   4 | 1.28e-02
+   5 | 5.20e-03
+   6 | 2.50e-03
+   7 | 1.51e-03
+   8 | 1.04e-03
+   9 | 6.40e-04
+  10 | 4.79e-04
+  11 | 3.74e-04
+  12 | 2.85e-04
+  13 | 2.36e-04
+  14 | 1.96e-04
+  15 | 1.85e-04
+  16 | 1.90e-04
+  17 | 2.07e-04
+  18 | 2.37e-04
+  19 | 2.63e-04
+  20 | 3.07e-04
+  21 | 3.54e-04
+  22 | 3.80e-04
+  23 | 2.88e-04
+  24 | 2.29e-04
+  25 | 2.08e-04
+  26 | 1.96e-04
+  27 | 1.89e-04
+  28 | 1.83e-04
+  29 | 1.77e-04
+  30 | 1.66e-04
+  31 | 1.52e-04
+  32 | 1.33e-04
+  33 | 1.13e-04
+  34 | 9.20e-05
+  35 | 7.35e-05
+  36 | 5.78e-05
+  37 | 4.57e-05
+  38 | 3.68e-05
+  39 | 3.03e-05
+  40 | 2.48e-05
+  41 | 2.09e-05
+  42 | 1.81e-05
+  43 | 1.62e-05
+  44 | 1.51e-05
+  45 | 1.45e-05
+  46 | 1.44e-05
+  47 | 1.46e-05
+  48 | 1.50e-05
+  49 | 1.57e-05
+  50 | 1.66e-05
+  51 | 1.79e-05
+  52 | 1.92e-05
+  53 | 2.05e-05
+  54 | 2.17e-05
+  55 | 2.31e-05
+  56 | 2.41e-05
+  57 | 2.57e-05
+  58 | 2.74e-05
+  59 | 2.92e-05
+  60 | 3.13e-05
+  61 | 3.34e-05
+  62 | 3.51e-05
+  63 | 3.67e-05
+  64 | 3.79e-05
+  65 | 3.82e-05
+  66 | 3.70e-05
+  67 | 3.58e-05
+  68 | 3.44e-05
+  69 | 3.19e-05
+  70 | 2.96e-05
+  71 | 2.72e-05
+  72 | 2.47e-05
+  73 | 2.21e-05
+  74 | 1.98e-05
+  75 | 1.78e-05
+  76 | 1.60e-05
+  77 | 1.40e-05
+  78 | 1.25e-05
+  79 | 1.12e-05
+  80 | 1.02e-05
+  81 | 9.24e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0001/CRC23_tissue.gc.NonNegCenterMat.rds 9 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0001/CRC23_tissue/K9 42"
+	User time (seconds): 12.42
+	System time (seconds): 0.41
+	Percent of CPU this job got: 143%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 219684
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 114948
+	Voluntary context switches: 2921
+	Involuntary context switches: 1527
+	Swaps: 0
+	File system inputs: 403910
+	File system outputs: 3079
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K4
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 4 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K4 42
+
+iter |      tol 
+---------------
+   1 | 9.43e-01
+   2 | 1.55e-01
+   3 | 1.64e-02
+   4 | 3.66e-03
+   5 | 1.50e-03
+   6 | 8.41e-04
+   7 | 5.94e-04
+   8 | 5.02e-04
+   9 | 4.71e-04
+  10 | 4.54e-04
+  11 | 4.33e-04
+  12 | 3.99e-04
+  13 | 3.54e-04
+  14 | 3.05e-04
+  15 | 2.64e-04
+  16 | 2.25e-04
+  17 | 1.92e-04
+  18 | 1.64e-04
+  19 | 1.40e-04
+  20 | 1.21e-04
+  21 | 1.08e-04
+  22 | 9.75e-05
+  23 | 8.83e-05
+  24 | 7.96e-05
+  25 | 7.01e-05
+  26 | 6.02e-05
+  27 | 5.21e-05
+  28 | 4.48e-05
+  29 | 3.89e-05
+  30 | 3.40e-05
+  31 | 2.98e-05
+  32 | 2.64e-05
+  33 | 2.29e-05
+  34 | 1.99e-05
+  35 | 1.73e-05
+  36 | 1.48e-05
+  37 | 1.28e-05
+  38 | 1.10e-05
+  39 | 9.62e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 4 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K4 42"
+	User time (seconds): 4.52
+	System time (seconds): 0.49
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 229528
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 36
+	Minor (reclaiming a frame) page faults: 83070
+	Voluntary context switches: 2842
+	Involuntary context switches: 996
+	Swaps: 0
+	File system inputs: 383862
+	File system outputs: 1616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K5
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 5 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K5 42
+
+iter |      tol 
+---------------
+   1 | 9.36e-01
+   2 | 1.76e-01
+   3 | 1.98e-02
+   4 | 4.12e-03
+   5 | 1.55e-03
+   6 | 8.61e-04
+   7 | 5.94e-04
+   8 | 4.40e-04
+   9 | 3.29e-04
+  10 | 2.54e-04
+  11 | 2.10e-04
+  12 | 1.83e-04
+  13 | 1.71e-04
+  14 | 1.71e-04
+  15 | 1.77e-04
+  16 | 1.94e-04
+  17 | 2.20e-04
+  18 | 2.56e-04
+  19 | 2.97e-04
+  20 | 3.41e-04
+  21 | 3.79e-04
+  22 | 4.05e-04
+  23 | 4.24e-04
+  24 | 4.32e-04
+  25 | 4.14e-04
+  26 | 3.75e-04
+  27 | 3.26e-04
+  28 | 2.71e-04
+  29 | 2.17e-04
+  30 | 1.69e-04
+  31 | 1.30e-04
+  32 | 1.01e-04
+  33 | 7.54e-05
+  34 | 5.61e-05
+  35 | 4.14e-05
+  36 | 3.10e-05
+  37 | 2.33e-05
+  38 | 1.75e-05
+  39 | 1.32e-05
+  40 | 9.97e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 5 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K5 42"
+	User time (seconds): 4.49
+	System time (seconds): 0.44
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 225576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 90291
+	Voluntary context switches: 2950
+	Involuntary context switches: 971
+	Swaps: 0
+	File system inputs: 383454
+	File system outputs: 1912
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K6
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 6 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K6 42
+
+iter |      tol 
+---------------
+   1 | 9.30e-01
+   2 | 2.11e-01
+   3 | 2.75e-02
+   4 | 4.14e-03
+   5 | 1.77e-03
+   6 | 1.22e-03
+   7 | 9.02e-04
+   8 | 6.44e-04
+   9 | 4.45e-04
+  10 | 3.08e-04
+  11 | 2.15e-04
+  12 | 1.55e-04
+  13 | 1.14e-04
+  14 | 8.55e-05
+  15 | 6.62e-05
+  16 | 5.36e-05
+  17 | 4.55e-05
+  18 | 4.04e-05
+  19 | 3.72e-05
+  20 | 3.54e-05
+  21 | 3.48e-05
+  22 | 3.45e-05
+  23 | 3.41e-05
+  24 | 3.37e-05
+  25 | 3.31e-05
+  26 | 3.22e-05
+  27 | 3.13e-05
+  28 | 3.01e-05
+  29 | 2.88e-05
+  30 | 2.74e-05
+  31 | 2.58e-05
+  32 | 2.41e-05
+  33 | 2.23e-05
+  34 | 2.04e-05
+  35 | 1.87e-05
+  36 | 1.69e-05
+  37 | 1.53e-05
+  38 | 1.38e-05
+  39 | 1.23e-05
+  40 | 1.10e-05
+  41 | 9.82e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 6 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K6 42"
+	User time (seconds): 4.44
+	System time (seconds): 0.39
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 231756
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 92889
+	Voluntary context switches: 2863
+	Involuntary context switches: 1561
+	Swaps: 0
+	File system inputs: 383454
+	File system outputs: 2167
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K7
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 7 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K7 42
+
+iter |      tol 
+---------------
+   1 | 9.25e-01
+   2 | 1.95e-01
+   3 | 3.13e-02
+   4 | 6.57e-03
+   5 | 2.80e-03
+   6 | 1.46e-03
+   7 | 1.00e-03
+   8 | 8.90e-04
+   9 | 9.81e-04
+  10 | 1.29e-03
+  11 | 1.81e-03
+  12 | 2.48e-03
+  13 | 2.90e-03
+  14 | 2.80e-03
+  15 | 2.28e-03
+  16 | 1.78e-03
+  17 | 1.51e-03
+  18 | 1.45e-03
+  19 | 1.46e-03
+  20 | 1.46e-03
+  21 | 1.35e-03
+  22 | 1.15e-03
+  23 | 9.15e-04
+  24 | 6.83e-04
+  25 | 4.95e-04
+  26 | 3.53e-04
+  27 | 2.46e-04
+  28 | 1.69e-04
+  29 | 1.17e-04
+  30 | 8.10e-05
+  31 | 5.68e-05
+  32 | 4.08e-05
+  33 | 3.05e-05
+  34 | 2.41e-05
+  35 | 1.97e-05
+  36 | 1.66e-05
+  37 | 1.44e-05
+  38 | 1.28e-05
+  39 | 1.15e-05
+  40 | 1.04e-05
+  41 | 9.55e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 7 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K7 42"
+	User time (seconds): 6.43
+	System time (seconds): 0.48
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 230640
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 110651
+	Voluntary context switches: 2851
+	Involuntary context switches: 1143
+	Swaps: 0
+	File system inputs: 383454
+	File system outputs: 2455
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K8
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 8 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K8 42
+
+iter |      tol 
+---------------
+   1 | 9.27e-01
+   2 | 1.83e-01
+   3 | 3.24e-02
+   4 | 9.98e-03
+   5 | 6.66e-03
+   6 | 4.91e-03
+   7 | 2.66e-03
+   8 | 1.24e-03
+   9 | 6.36e-04
+  10 | 4.06e-04
+  11 | 2.93e-04
+  12 | 2.26e-04
+  13 | 1.80e-04
+  14 | 1.47e-04
+  15 | 1.23e-04
+  16 | 1.05e-04
+  17 | 9.07e-05
+  18 | 7.88e-05
+  19 | 6.94e-05
+  20 | 6.17e-05
+  21 | 5.52e-05
+  22 | 4.89e-05
+  23 | 4.32e-05
+  24 | 3.79e-05
+  25 | 3.31e-05
+  26 | 2.84e-05
+  27 | 2.39e-05
+  28 | 2.01e-05
+  29 | 1.67e-05
+  30 | 1.39e-05
+  31 | 1.15e-05
+  32 | 9.48e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 8 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K8 42"
+	User time (seconds): 5.24
+	System time (seconds): 0.40
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 228172
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 84389
+	Voluntary context switches: 2876
+	Involuntary context switches: 866
+	Swaps: 0
+	File system inputs: 383454
+	File system outputs: 2710
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ output=/home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K9
++ /usr/bin/time -v /home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 9 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K9 42
+
+iter |      tol 
+---------------
+   1 | 9.24e-01
+   2 | 1.76e-01
+   3 | 3.65e-02
+   4 | 1.14e-02
+   5 | 4.39e-03
+   6 | 2.22e-03
+   7 | 1.50e-03
+   8 | 1.28e-03
+   9 | 1.16e-03
+  10 | 1.07e-03
+  11 | 9.76e-04
+  12 | 8.93e-04
+  13 | 8.00e-04
+  14 | 6.96e-04
+  15 | 6.12e-04
+  16 | 5.36e-04
+  17 | 4.95e-04
+  18 | 4.87e-04
+  19 | 5.20e-04
+  20 | 5.89e-04
+  21 | 6.72e-04
+  22 | 7.38e-04
+  23 | 7.64e-04
+  24 | 7.32e-04
+  25 | 6.39e-04
+  26 | 5.54e-04
+  27 | 4.99e-04
+  28 | 4.61e-04
+  29 | 4.24e-04
+  30 | 3.76e-04
+  31 | 3.21e-04
+  32 | 2.60e-04
+  33 | 1.98e-04
+  34 | 1.43e-04
+  35 | 1.02e-04
+  36 | 7.27e-05
+  37 | 5.15e-05
+  38 | 3.59e-05
+  39 | 2.54e-05
+  40 | 1.83e-05
+  41 | 1.35e-05
+  42 | 1.02e-05
+  43 | 7.91e-06
+	Command being timed: "/home/zz950/softwares/miniforge3/envs/argos-codex/bin/Rscript /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/prepared/GSE254249/source_0002/CRC13_tissue.gc.NonNegCenterMat.rds 9 /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/nmf/GSE254249/source_0002/CRC13_tissue/K9 42"
+	User time (seconds): 8.28
+	System time (seconds): 0.50
+	Percent of CPU this job got: 86%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 230448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 36
+	Minor (reclaiming a frame) page faults: 83984
+	Voluntary context switches: 2864
+	Involuntary context switches: 1501
+	Swaps: 0
+	File system inputs: 383862
+	File system outputs: 2979
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
++ IFS='	'
++ read -r task dataset source sample matrix rank output
++ /home/zz950/softwares/miniforge3/envs/argos-codex/bin/python /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/05_validate_nmf_outputs.py --plan /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/config/pilot_plan.tsv --tasks /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/tasks.tsv --ranks 4,5,6,7,8,9 --output /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/validation.tsv
+Validated tasks: 12
+Approved datasets: 1
+Failures: 0
+Wrote: /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/validation.tsv
++ /home/zz950/softwares/miniforge3/envs/argos-codex/bin/python /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/06_filter_robust_programs.py --tasks /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/tasks.tsv --cohort /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/docs/cohort_identity_mapping.tsv --output /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/robust.tsv
++ /home/zz950/softwares/miniforge3/envs/argos-codex/bin/python /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/07_discover_metaprograms.py --programs /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/robust.tsv --cohort /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/analyses/2026-10-09_atlas-nmf-workflow/docs/cohort_identity_mapping.tsv --output /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/MPs.json
++ date -u
+Fri Oct  9 21:18:44 UTC 2026
++ echo PILOT_COMPLETE
+PILOT_COMPLETE
++ touch /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_pilot_GSE254249_20261009/PILOT_COMPLETE

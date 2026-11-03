@@ -1,0 +1,63 @@
+Fri Oct  9 20:31:29 UTC 2026
+argos-qsub1
+Environment: /home/zz950/softwares/miniforge3/envs/argos-codex
+Synthetic tests only; no real Atlas input
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._00_inventory_seurat_rds.R
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._01_compare_legacy_coverage.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._02_prepare_seurat_nmf.R
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._03_run_fastnmf.R
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._04_build_nmf_tasks.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._05_validate_nmf_outputs.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._06_filter_robust_programs.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._07_discover_metaprograms.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._program_algorithms.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._qsub_nmf_array.sh
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._qsub_prepare_array.sh
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/._submit_reviewed_workflow.sh
+44b90423f9e2f630fff6f0f28676124007d8ab5899e894653672afd4b9166743  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/00_inventory_seurat_rds.R
+f286e15e8c07efcfaed163edcd499b647619880efded15995a570a04295716a0  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/01_compare_legacy_coverage.py
+449bfefc487004448c20700453b7665804da101dd4232299181d53f36edf66d6  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/02_prepare_seurat_nmf.R
+cac7e46a4c56ff27a30b7d28f34e789ad782b96c3f4e03c267315dc2ffe7ac35  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/03_run_fastnmf.R
+1e75b2301b27b173b955b7fa3142b051a45658340a6419c8446f4361ec6f37b3  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/04_build_nmf_tasks.py
+5839ecf68a9b9cd90488e81f30fef0ed9a85ad75fc9d509c9f31e47e250eef18  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/05_validate_nmf_outputs.py
+49b506c866f35d7b77b33dc7204c9978d61f2ee35963cbf0c0310fbee0f30bd0  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/06_filter_robust_programs.py
+e228edcbb0b599ffa31d631fd6aa83b207fbb5ca86aff8de84962b5ca389f1e0  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/07_discover_metaprograms.py
+975c85fcb1b93482d4e926a2ef8cb30001e5331370e4fd9d31dc6738062a324e  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/program_algorithms.py
+49f01d06190f79cad7282a79bd99103823aa50c802f2879cb663ea32e56465eb  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/qsub_nmf_array.sh
+e4d0adc2b783bc5014a1b0ec3409a5b95d5de7ca1a9e2bd803823a7c14171c36  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/qsub_prepare_array.sh
+e7e57bbf7d73e9dae9803d87035903f2448374d45714a6c55751f1005615f8a1  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/code/submit_reviewed_workflow.sh
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/._test_program_algorithms.py
+abe21b79de78b63e22ceda18f92123670ce469a471dad0296f1f5328126c6817  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/._test_workflow.py
+03998d6295e9ea85c870fdbf002a40d473c9c3baf02bad7861fe40ca13338a88  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/run_argos_synthetic.sh
+6a18ce109de5898018bb5085da0ccabbb66978201edf236617dcc0ac3c3479e6  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/test_end_to_end.py
+a52bc6fab15edec6652d69a5985ea406399d61708477ae010c49a3847aeb5a1c  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/test_preprocessing.R
+f7dbc3738459c0daaa20c852f514fa5a5ffa7f6ce36a1215a72d194a980b7e6e  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/test_program_algorithms.py
+443b120502f7decb39e34ffc9b5245ac1214a9721ddce3ce2f9185a7d629c408  /home/zz950/DATA/HotData/TWEAKR-oncoFetal/analysis/nmf_algorithm_gate_a_20261009/analyses/2026-10-09_atlas-nmf-workflow/tests/test_workflow.py
+test_06_to_07_preserves_deduplicated_programs (test_end_to_end.InterfaceTests.test_06_to_07_preserves_deduplicated_programs) ... ok
+test_clustering_and_noise (test_program_algorithms.AlgorithmTests.test_clustering_and_noise) ... ok
+test_consensus_does_not_union_sample_geps (test_program_algorithms.AlgorithmTests.test_consensus_does_not_union_sample_geps) ... ok
+test_cross_dataset_sample_collision (test_program_algorithms.AlgorithmTests.test_cross_dataset_sample_collision) ... ok
+test_many_to_one_recurrence (test_program_algorithms.AlgorithmTests.test_many_to_one_recurrence) ... ok
+test_patient_and_dataset_denominators (test_program_algorithms.AlgorithmTests.test_patient_and_dataset_denominators) ... ok
+test_threshold_and_cross_rank (test_program_algorithms.AlgorithmTests.test_threshold_and_cross_rank) ... ok
+test_threshold_and_leave_one_dataset_out (test_program_algorithms.AlgorithmTests.test_threshold_and_leave_one_dataset_out) ... ok
+test_unknown_and_technical_replicates (test_program_algorithms.AlgorithmTests.test_unknown_and_technical_replicates) ... ok
+test_coverage_comparison (test_workflow.WorkflowTests.test_coverage_comparison) ... Wrote coverage audit: /tmp/tmps1wdlayh/coverage.tsv
+ok
+test_task_expansion (test_workflow.WorkflowTests.test_task_expansion) ... Prepared rows: 1
+NMF tasks: 1
+Wrote: /tmp/tmp6lgfznwb/tasks.tsv
+ok
+test_validation_requires_every_dataset_rank (test_workflow.WorkflowTests.test_validation_requires_every_dataset_rank) ... Validated tasks: 1
+Approved datasets: 1
+Failures: 1
+Wrote: /tmp/tmpw0kv9ood/validation.tsv
+ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.413s
+
+OK
+Wrote preparation manifest: /tmp/RtmpwAF3CG/nmf_synthetic_5ab2606656df/prepared/SYNTHETIC/source_0001/prepare_manifest.row1.tsv
+PASS: finite/parameter checks, sparse normalization, post-QC 200-cell gate; synthetic only
+ALL SYNTHETIC TESTS PASSED

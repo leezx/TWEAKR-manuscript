@@ -1,0 +1,8 @@
+dataset_id	n_rds	bioproject	legacy_alias	exact_input_matches	not_exactly_matched	samples_with_W_file	completion_status
+GSE155953	4	PRJNA656202		0	4	0	full_output_QC_and_identity_review_pending
+GSE178318	15			0	15	0	full_output_QC_and_identity_review_pending
+GSE205506	40	PRJNA846169	Li_2023	0	40	0	full_output_QC_and_identity_review_pending
+GSE222300	3	PRJNA919183		0	3	0	full_output_QC_and_identity_review_pending
+GSE236581	169	PRJNA991601	Chen_2024	0	169	0	full_output_QC_and_identity_review_pending
+GSE254249	92	PRJNA1069074		0	92	0	full_output_QC_and_identity_review_pending
+GSE285873	10	PRJNA1206688		0	10	0	full_output_QC_and_identity_review_pending
