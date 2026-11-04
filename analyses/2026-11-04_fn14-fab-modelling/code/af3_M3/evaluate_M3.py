@@ -222,4 +222,29 @@ print(f"  W42 split: VH {sp['H'][0]:.2f} A (VH res within {CUT} A: {sp['H'][1]})
 l1 = [r for r in PATENT_CDR_L1 if r in sp["L"][1]]
 print(f"  patent CDR-L1 residues {PATENT_CDR_L1} contacting W42 in the model: {l1} "
       f"({len(l1)}/{len(PATENT_CDR_L1)})")
+
+
+def pair_distance(obj, uniprot_res, fab_chain, fab_res):
+    """Min heavy-atom distance between one named Fn14 residue and one named Fab residue.
+    Added 2026-11-04 (PR #5 review round 2, P2-1): a per-chain minimum and a 5 A neighbour list
+    do NOT establish the distance of the specific pair the patent names. Report the pair itself."""
+    x, r = heavy(obj, FN)
+    y, ry = heavy(obj, fab_chain)
+    xa, ya = x[r == uniprot_res - OFF], y[ry == fab_res]
+    if not len(xa) or not len(ya):
+        raise EvalError(f"missing {uniprot_res} / {fab_chain}{fab_res}")
+    return float(np.sqrt(((xa[:, None, :] - ya[None, :, :]) ** 2).sum(-1)).min())
+
+
+# TABLE 2 pairs each Fn14 residue with a named antibody residue. Check the ones the model could
+# plausibly reach, i.e. those whose Fn14 partner is inside the model's epitope.
+print("  explicit Table 2 pairs (Fn14 <-> P4A8 residue named in the patent):")
+for fn, ch, fr, note in ((42, "L", 34, "W42-Y34, CDR-L1"),
+                         (42, "L", 36, "W42-Y36 (patent pairs Y36 with K48, not W42)"),
+                         (48, "L", 36, "K48-Y36, CDR-L1"),
+                         (49, "L", 32, "C49-S32, CDR-L1"),
+                         (46, "H", 101, "L46-Y101, CDR-H3"),
+                         (50, "H", 105, "M50-Y105, CDR-H3")):
+    d = pair_distance("m3_f2_hup4a8", fn, ch, fr)
+    print(f"      {note:48s} {d:6.2f} A  {'<=5A' if d <= CUT else ''}")
 print(f"\ntables written to {TAB}")

@@ -1,0 +1,8 @@
+antibody	construct	fn14_region	binding_result	source	evidence_tier	notes
+P4A8 (TPP-1324)	TPP-2202	ECD 28-80 (full)	saturated binding	WO2014198817A1 (Bayer), Fig 3 & 4	B	"P4A8(TPP-1324) does only bind to the full extracellular domain (TPP-2202)."
+P4A8 (TPP-1324)	TPP-2203	ECD 34-68 (N+C truncated)	impaired	WO2014198817A1, Fig 3 & 4	B	CRD disulfides C36-C49, C52-C67, C55-C64 left intact
+P4A8 (TPP-1324)	monomeric C-term deletion	ECD 28-68 (69-80 deleted)	impaired	WO2014198817A1	B	isolates the requirement to the C-terminal stalk 69-80
+P3G5 (TPP-2195)	TPP-2203 / C-term deletion	ECD 34-68 / 28-68	impaired	WO2014198817A1	B	same lineage behaviour as P4A8
+ITEM-4	TPP-2203	ECD 34-68	impaired	WO2014198817A1	B	also needs regions outside 34-68
+PDL-192 (TPP-1104)	TPP-2203 / TPP-1984	ECD 34-68 / 28-68	comparable binding	WO2014198817A1, Fig 2 legend	B	PDL-192 does NOT depend on the C-terminal stalk; contrast with P4A8
+TPP-2090 and other Bayer mAbs	TPP-2202 / TPP-2203	ECD 28-80 / 34-68	saturated binding to both	WO2014198817A1	B	basis for Bayer's claim that their epitope lies within 34-68
