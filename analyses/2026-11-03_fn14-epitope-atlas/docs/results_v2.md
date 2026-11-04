@@ -1,108 +1,179 @@
 # 结果 v2：Fn14 治疗性抗体 / ADC 表位清单与结构映射
 
-**2026-11-04，按 GPT 审核第 1 轮（PR #3，HEAD `55bb9ed`）修订。** v1 见 `results_v1.md`（保留，不改写，便于对照）。
-规则见 `design.md`（commit `afd15b4`，早于任何检索）。审核记录见 `reviews/PR3_GPT_round1.md`。
+**2026-11-03 初版（按 PR #3 审核第 1 轮修订）；2026-11-04 修订 2（按 PR #4 审核第 2 轮修订）。**
+v1 见 `results_v1.md`（保留，不改写）。规则见 `design.md`（commit `afd15b4`，早于任何检索）。
+审核记录：`reviews/PR3_GPT_round1.md`、`reviews/PR4_GPT_round2.md`。
 
-## 0. v1 的三处实质错误（本版已改）
+## 0. 两轮修订改掉的错误
 
-| v1 的说法 | 实际情况 | 后果 |
+### v1 → v2（第 1 轮审核）
+
+| v1 的说法 | 实际情况 |
+|---|---|
+| W42 与 R56 同属 enavatuzumab/P4A8 的表位约束 | **两者分属不同抗体** |
+| "没有 enavatuzumab 与 TWEAK 的竞争实验" | **已有直接竞争实验** |
+| 清单中没有 Fn14 ADC | **Bayer TWEAKR-KSPi-ADC 存在**（检索未覆盖 TWEAKR 这个名字） |
+
+### v2 修订 2（第 2 轮审核）——**本项目的一处判断错误**
+
+v2 初版说三篇关键文献"非开放获取、无法独立核实"，并据此把审核转述的结论标为 `review(figure)`。
+**这个判断是错的，审核方是对的。** Europe PMC 的 `isOpenAccess: N` 与 PMC **API**（efetch）只返回摘要，
+**不等于** PMC 网站没有可读全文。改用 PMC 网站页面抓取后，三篇正文全部取到：
+
+| 文献 | PMC | 本项目取到的正文 |
 |---|---|---|
-| W42 与 R56 同属 enavatuzumab/P4A8 的表位约束 | **两者分属不同抗体**：PDL192（enavatuzumab）对 R56P 敏感、仍结合 W42A；P4A8 相反 | v1 把两个残基当作同一个 Fab 足迹的两个锚点，据此做的"非竞争性"推论不成立 |
-| "没有任何文献报告 enavatuzumab 与 TWEAK 的竞争实验" | **已有直接竞争实验**：PDL192 几乎不阻断 TWEAK 结合，P4A8 有效阻断，BIIB036 剂量依赖阻断 | v1 把一个已有实验答案的问题当成了空白 |
-| 清单中没有 Fn14 ADC | **Bayer 的 TWEAKR-KSPi-ADC1/ADC2 存在**，且在 CT26 结肠癌模型中有效 | v1 检索只用了 Fn14/TNFRSF12A，漏掉以 **TWEAKR** 命名的工作 |
+| Salzmann 2013 | PMC3650383 | 199,785 B（提取正文 58,901 字符） |
+| Michaelson 2011 | PMC3218533 | 226,003 B（75,527 字符） |
+| Trebing 2014 | PMC3929451 | 194,477 B（58,127 字符） |
 
-第三条是方法问题：这个靶点有四个名字（Fn14、TWEAKR、TNFRSF12A、CD266），v1 的查询式没有系统覆盖。
-本版补做了同义词完整检索（`manifests/queries.tsv` 末尾）。
+因此本版**所有关键结论都已由本项目直接核对原文**，不再依赖转述。教训记在第 8 节。
 
-## 1. 清单（14 条，`tables/fn14_binders.tsv`）
+## 1. 清单（13 条抗体及抗体衍生物，`tables/fn14_binders.tsv`）
 
-新增 `binder_lineage_id` 列，避免把同一抗体的不同开发形式当成独立的表位发现：
+`binder_lineage_id` 把同一抗体的不同开发形式归并，避免当成独立的表位发现：
 
-| lineage | 成员 | 说明 |
+| lineage | 成员 | 依据 |
 |---|---|---|
-| LIN-19.2.1 | enavatuzumab/PDL192 | 鼠源母本 19.2.1 人源化 |
-| LIN-P4A8 | P4A8、**BIIB036**、PE38-P4A8、STX2a-PE15-P4A8 | BIIB036 是 P4A8 的人源化衍生（审核引 Michaelson 2011） |
-| LIN-ITEM4 | ITEM-4、ITEM4-rGel、hSGZ、GrB-Fc-IT4 | 同一 scaffold 的多种偶联形式 |
-| LIN-llama | 18D1、4G5、5B6 | arGEN-X 羊驼来源 |
-| （未说明） | TWEAKR-KSPi-ADC1/ADC2 | Bayer，抗体身份未在摘要中给出 |
+| LIN-19.2.1 | enavatuzumab/PDL192 | 鼠源 19.2.1 人源化 |
+| LIN-P4A8 | P4A8 = mBIIB036、**BIIB036**、PE38-P4A8、STX2a-PE15-P4A8 | **Michaelson 2011 原文**："The murine antibody mBIIB036 (P4A8) … was subsequently humanized by CDR grafting to generate a drug candidate, BIIB036, with a human IgG1 backbone." |
+| LIN-ITEM4 | ITEM-4、ITEM4-rGel、hSGZ、GrB-Fc-IT4 | Cheng 2013 综述（开放获取） |
+| LIN-18D1 / LIN-4G5 / LIN-5B6 | 各自独立（共享 `discovery_campaign_id` = ARGENX-LLAMA） | 三者是不同克隆，功能也不同（5B6 不阻断 TWEAK），不能因同一发现平台就并为一个 lineage |
+| （未说明） | TWEAKR-KSPi-ADC1/ADC2 | Bayer，抗体身份未公开 |
 
-证据分级仍为 E1 = **0**（没有任何 Fn14–抗体复合物实验结构），E2 = 2（两条，现已正确拆分到两个抗体），
-E3 = 3，其余 E4。
+E1 = **0**（仍没有任何 Fn14–抗体复合物实验结构），E2 = 2，E3 = 3，其余 E4。
+`verification_status` 只用事先冻结的两个取值 `verified` / `unverified`，不再出现自造的中间状态。
 
-## 2. 竞争性：已有实验答案（不再是空白）
+另有三张关联表：`other_fn14_targeted_constructs.tsv`（配体类构建体，如 GrB-TWEAK、Fn14-Fc，不含抗体表位）、
+`tweak_ligand_binders_excluded.tsv`（靶向 TWEAK 配体的药物）、`patent_disclosed_binders.tsv`（见第 7 节）。
 
-| 抗体 | 是否阻断 TWEAK 结合 | 敏感突变 | 该残基在 M2 模型中是否被 TWEAK 埋藏 |
+## 2. 残基归属与竞争性：已全部核对原文
+
+**Salzmann 2013（JBC 288:13455，PMC3650383）正文原话：**
+
+> "…two mutants of human Fn14 (W42A and R56P) **that do not interfere with ligand binding** but either
+> fail to interact with P4A8 (W42A) or with PDL192 (R56P)"
+>
+> "PDL192 failed to interact with murine Fn14 and the R56P variant but significantly bound to the W42A
+> mutant of human Fn14. In contrast, P4A8 did not interact with the latter but recognized murine Fn14 as
+> well as R56P variant (Fig. 1A). In conclusion, this confirmed that **PDL192 and P4A8 recognize two
+> different epitopes**."
+>
+> 小节标题："The Anti-Fn14 mAb P4A8 **Efficiently Blocks** TWEAK-induced Cellular Reactions whereas the
+> Anti-Fn14 PDL192 **Barely Interferes** with TWEAK Binding"
+>
+> "Although P4A8 inhibited binding of the GpL-TWEAK fusion protein efficiently, there was **practically no
+> competition** between the TWEAK variant and PDL192 for Fn14 binding (Fig. 1F)."
+
+**Michaelson 2011（PMC3218533）：** "binding of TWEAK to Fn14 can be blocked by BIIB036 in a
+dose-dependent fashion. Likewise, binding of BIIB036 can be blocked by TWEAK" —— WiDr **结肠癌**细胞，互为竞争。
+
+| 抗体 | 敏感突变 | 是否阻断 TWEAK | 跨物种 |
 |---|---|---|---|
-| enavatuzumab / PDL192 | **几乎不阻断** | R56P | **否**（0 Å²，距 TWEAK 6.86–6.89 Å） |
-| P4A8 | **有效阻断** | W42A | **否**（0 Å²，距 TWEAK 6.28–6.35 Å） |
-| BIIB036（P4A8 人源化） | 剂量依赖阻断 | 未单独定位 | — |
-| 18D1 / 4G5 | 阻断 | 不受 W42A/R56P 影响 | — |
-| 5B6 | 不阻断 | 不受 W42A/R56P 影响 | — |
+| enavatuzumab / PDL192 | **R56P**（仍结合 W42A） | **几乎不阻断** | 不结合小鼠 Fn14 |
+| P4A8 = mBIIB036 | **W42A**（仍结合 R56P） | **有效阻断** | 结合小鼠 Fn14 |
+| BIIB036（P4A8 人源化） | 未单独定位 | 剂量依赖阻断（双向） | 人/鼠/大鼠/食蟹猴 |
+| 18D1 / 4G5 | 均能结合两个突变体 | 阻断（0.2–2 µg/ml） | 人鼠交叉 |
+| 5B6 | 均能结合 | 不阻断 | 人鼠交叉 |
 
-来源：Salzmann 2013 Fig 1A/1F、Michaelson 2011 Fig 2B，均由 GPT 审核引用。
-**本项目未能独立核实**：三篇原文（Salzmann 2013、Michaelson 2011、Trebing 2014）在 Europe PMC 均标为非开放获取，
-PMC efetch 只返回题录与摘要。摘要不含图级结果。
+**一个关键的实验事实：W42A 与 R56P 本身都不影响 TWEAK 结合。** 这与结构模型独立吻合——
+下一节显示这两个残基都没有被 TWEAK 埋藏。
 
-## 3. 结构映射：数值不变，解释改变
+## 3. 结构映射：方位（而非埋藏或距离）解释了竞争性差异
 
-几何量与 v1 完全一致（审核方用 Biopython Shrake–Rupley 独立复算，结论相同）：
+几何量（三个 Fn14 拷贝；审核方用 Biopython Shrake–Rupley 独立复算，数值一致）：
 
-| 残基 | 敏感的抗体 | 到 TWEAK 最短距离 | 在 ≤5 Å 界面内 | 游离 SASA | 被 TWEAK 埋藏 |
+| 残基 | 对应抗体（竞争性） | 到 TWEAK 距离 | 被 TWEAK 埋藏 | **相对足迹方位角** | **到足迹中心距离** |
 |---|---|---|---|---|---|
-| **W42** | P4A8（**阻断** TWEAK） | 6.28–6.35 Å | 0/3 | 84 Å² | **0 Å²** |
-| **R56** | enavatuzumab（**几乎不阻断**） | 6.86–6.89 Å | 0/3 | 225 Å² | **0 Å²** |
-| D45 | （TWEAK 结合参照） | 2.74–2.75 Å | 3/3 | 132 Å² | 111 Å² |
-| K48 | （TWEAK 结合参照） | 2.54–2.55 Å | 3/3 | 102 Å² | 61 Å² |
-| M50 | （TWEAK 结合参照） | 3.71–3.77 Å | 3/3 | 50 Å² | 27 Å² |
-| D62 | （TWEAK 结合参照） | 3.05–3.09 Å | 3/3 | 49 Å² | 9 Å² |
+| D45 | （TWEAK 结合参照） | 2.74–2.75 Å | 111 Å² | 22° | 5 Å |
+| K48 | （参照） | 2.54–2.55 Å | 61 Å² | 32° | 5 Å |
+| M50 | （参照） | 3.71–3.77 Å | 27 Å² | 56° | 5 Å |
+| D62 | （参照） | 3.05–3.09 Å | 9 Å² | 50° | 5 Å |
+| **W42** | **P4A8（阻断）** | 6.28–6.35 Å | **0 Å²** | **47°** | **6 Å** |
+| **R56** | **PDL192（几乎不阻断）** | 6.86–6.89 Å | **0 Å²** | **139°** | **18 Å** |
 
-**v1 的推论为什么不成立：** v1 说"两个残基都没被埋 → 这类抗体可能非竞争性"。但 W42 没被埋，而对 W42A 敏感的
-P4A8 **确实阻断** TWEAK。所以：
+方位角 = 以 CRD 核心（36–67 的 Cα 质心）为原点，该残基质心方向与四个 TWEAK 结合残基质心方向的夹角。
 
-> **单个残基不被配体埋藏，并不能推出该抗体不与配体竞争。** 完整 Fab（足迹约 800 Å²、跨度 20–30 Å）可以从一个
-> 未被埋藏的残基出发，仍然在空间上压住配体结合面。P4A8 就是这个反例。
+**结论：埋藏面积和最短距离都分不开这两个残基**（都是 0 Å²，6.3 vs 6.9 Å），**但方位分得很开**：
 
-这正是 v1 限制清单里写过的风险（"Fab 足迹仍可能与 TWEAK 空间冲突"），现在有了实证反例，应当从"限制"升级为
-**已证伪的推论**。
+- **W42（竞争性抗体 P4A8）落在 TWEAK 结合面内**：47°、距足迹中心 6 Å，与四个 TWEAK 结合残基
+  （22–56°、5 Å）完全处于同一区域。围绕 W42 结合的 Fab 必然压住 TWEAK 的结合面 → **竞争**。
+- **R56（非竞争性抗体 PDL192）在受体的另一侧**：139°、距足迹中心 18 Å。从该方向接近的 Fab 不必与
+  TWEAK 冲突 → **不竞争**。
 
-## 4. 更有价值的问题（取代 v1 的假说）
+三个拷贝高度一致（W42 47.3/47.3/47.3°；R56 138.9/138.9/139.0°）。
 
-两个敏感残基在模型中都**没有**被 TWEAK 埋藏，距离也相近（6.3 vs 6.9 Å），但对应的抗体一个竞争、一个几乎不竞争：
+**这是本清单最有价值的结果：M2 预测模型的几何与两个抗体已被实验测定的竞争表型相符，且给出了机制解释——
+差别不在于关键残基是否被配体埋藏，而在于表位位于受体的哪一面。** v1 的推论（"未被埋藏 → 非竞争"）
+之所以错，正是因为它用了错的判据。
 
-> **为什么 R56（enavatuzumab，不竞争）与 W42（P4A8，竞争）在受体表面的局部环境如此相似，
-> 却对应相反的竞争表型？**
+**措辞收敛（第 2 轮审核要求）：** 不应说两个残基"局部环境相似"——本项目自己的数据就不支持
+（W42 距 D62 仅 4.9 Å，R56 距 D45/D62 有 11–16 Å）。准确的问法是：
 
-可能的方向（都待检验）：两者相对 TWEAK 足迹的**方位**不同（W42 紧贴足迹边缘，距 D62 4.9 Å；R56 远得多，
-距 D45/D62 11–16 Å，却反而不竞争——与朴素的"越近越竞争"预期相反）；或者真实表位中心并不在这两个残基上；
-或者竞争来自 Fab 的角度与膜的几何约束，而不是单纯的足迹重叠。
+> 两个都保持溶剂暴露、且到 TWEAK 最短距离相近（6.3 vs 6.9 Å）的突变敏感残基，为什么对应相反的竞争表型？
 
-**这个问题适合用 Fn14–Fab 建模来检验**，而且它检验的是**已观察到的竞争性差异**（有实验标准答案），
-不是去预测一个未知结果。这比 v1 的用法可靠得多。
+本节给出的方位角差异（47° vs 139°）是对这个问题的一个**候选解释**，仍需 Fab 层面的验证。
+另外两个待检验的解释是：两个抗体的完整 Fab 足迹不同；Fab 接近角度不同造成不同的空间干涉。
+受体在膜上的取向也可能施加额外约束（但 B32 已说明膜取向本身未被确定）。
 
-## 5. ADC / 内吞（v1 严重低估）
+**仍是预测，不是证明：** 三个拷贝由对称性关联，不是独立观测；两个残基不等于完整表位；Fab 的真实接近角度
+未知。要确证需要 Fn14–Fab 复合物结构或建模。
 
-- **TWEAKR-KSPi-ADC1 / ADC2（Bayer）**：真正的小分子 payload ADC，在 **CT26 结肠癌**模型中有效；
-  次优剂量下只在免疫健全小鼠中有效，提示存在免疫机制。**与 CRC 最相关的一条。**（本项目已核实摘要。）
-- **GrB-Fc-IT4**：以人源化抗 Fn14 单链抗体为靶向部分的颗粒酶 B 融合物（本项目已核实摘要）；
-  内吞数据由审核引用，本项目未独立核实。
-- **ITEM4-rGel**：2 小时内特异内吞（本项目已核实摘要）。
-- 因此 v1 说"ITEM-4 是唯一有内吞证据的抗体"**不成立**。
-- 临床方面：仍未找到已进入临床试验的 Fn14 ADC；enavatuzumab 的 Phase 1 是唯一确认的临床记录。
+## 4. ADC / 内吞
+
+- **TWEAKR-KSPi-ADC1 / ADC2（Bayer）**：小分子 payload ADC，在 **CT26 结肠癌**模型中有效；次优剂量下只在
+  免疫健全小鼠有效，提示免疫机制参与。**与 CRC 最相关。**
+- **GrB-Fc-IT4**：人源化抗 Fn14 单链抗体 + 颗粒酶 B。
+- **ITEM4-rGel**：2 小时内特异内吞；ITEM4 针对人 Fn14 胞外区制备，结合人与小鼠 Fn14，具弱激动活性（Cheng 2013）。
+- v1 说"ITEM-4 是唯一有内吞证据的抗体"**不成立**。
+- 临床：**在本轮检索范围内**未找到已进入临床试验的 Fn14 ADC（这是检索范围内的结论，不是对未公开研发的否定）；enavatuzumab Phase 1（NCT00738764，Abbott，2008-07 至 2011-10）是唯一确认的临床记录。
+
+## 5. 一个被修掉的计算 bug
+
+`dist_to_nearest_interface_residue_A` 原先对所有残基都返回约 1.33 Å——那是肽键长度：代码只排除了残基自身，
+没有排除序列上相邻的残基，于是当 c±1 在界面内时测到的是共价键长。该列不含任何信息。
+已改为排除序列相邻残基（|i−j| ≥ 2），改名 `dist_to_nearest_nonadjacent_interface_residue_A`。
+修正后 W42 = 3.11 Å、R56 = 3.19 Å——**这个指标同样分不开两者**，真正有区分力的是第 3 节的方位角。
+其余列不受影响。
 
 ## 6. 限制（claim ceiling）
 
-1. 继承 B32 全部限制：M2-C 是**预测模型**。
-2. **本版的关键证据（竞争实验、W42/R56 归属、P4A8→BIIB036 lineage）来自 GPT 审核转述的图级结果，
-   本项目未能独立核实**（三篇原文非开放获取）。在取得原文之前，这些条目在表中标为
-   `verified(abstract) + review(figure)`，不应作为一手证据引用。
-3. 单个残基的埋藏情况不能预测抗体竞争性（本版第 3 节已证伪）。
-4. 突变导致结合丧失 ≠ 直接接触；W42 仅约 1/3 暴露，W42A 可能通过局部折叠间接起作用。
-5. 专利未检索，"VH/VL 未公开"仍应读作"本轮未在文献中找到"。
+1. 继承 B32 全部限制：M2-C 是**预测模型**，不是实验测定的复合物结构。
+2. 第 2 节的实验结论现已全部核对原文；**第 3 节的几何与机制解释仍是模型推断**。
+3. 单个残基的埋藏情况不能预测抗体竞争性（v1 已被证伪）；方位角能分开本例的两个抗体，但只有 n = 2，
+   不能当作普遍规则。
+4. 突变导致结合丧失 ≠ 直接接触。W42 仅约 1/3 暴露（84 Å²），W42A 可能通过局部折叠间接起作用；
+   R56 高度暴露（225 Å²），更可能是直接接触。
+5. 专利未检索，"VH/VL 未公开"应读作"本轮未在文献中找到"。
 6. 不含 CRC 数据；不支持任何关于抗体在 CRC 中效果的主张；不涉及正常组织表达与安全窗口。
 
-## 7. 下一步
+## 7. 专利：VH/VL 序列确实存在（本轮新增）
 
-1. **取得三篇原文**（Salzmann 2013、Michaelson 2011、Trebing 2014）的图级数据，把第 2 节从 `review(figure)`
-   升级为本项目核实。这是当前最高优先级——本版最重要的结论都压在这三篇上。
-2. 检索专利找 VH/VL；若有序列，用 Fn14–Fab 建模检验第 4 节的问题。
-3. 补充 Bayer ADC 的抗体身份（摘要未给出）。
+第 2 轮审核做了专利检索，本项目逐条核对了 Google Patents 记录（标题、受让人、权利要求文字），
+结果见 `tables/patent_disclosed_binders.tsv`：
+
+| 专利 | 受让人 | 序列披露 |
+|---|---|---|
+| **US20210388096A1** | Astellas Pharma | VH/VL 的 CDR 以 SEQ ID NO: 2 / 4 的残基区间明确定义 |
+| WO2020128927A1 | Kyowa Kirin | VH CDR3 = SGWFTY（SEQ ID NO: 121）；审核称权利要求涉及 subdomain 1（aa 30–50，含 W42），**本项目未核对该条** |
+| WO2022155705A1 / WO2016061632A1 | La Trobe University | VH 为 SEQ ID NO: 8 等 |
+| WO2012122513A2 | Omeros | VH 为 SEQ ID NO: 82 |
+| WO2015189143A1 | Bayer Pharma | 可能是 TWEAKR-KSPi ADC 的抗体来源 |
+
+**这改变了 v1/v2 初版的结论。** v1 说"没有公开的 VH/VL，因此暂不具备建模条件"——那只对**文献**成立；
+**专利里有**。Fn14–Fab 建模现在是可行的。
+
+专利披露**不升级**为 E2/E3 实验证据，单列一表。
+
+## 8. 下一步
+
+1. **用专利序列做 Fn14–Fab 建模**，检验第 3 节的方位解释。这是一个**有实验标准答案**的检验
+   （PDL192 不竞争、P4A8 竞争），不是预测未知结果。Astellas 的 US20210388096A1 序列最明确。
+2. 核对 Kyowa Kirin WO2020128927A1 是否真的主张 aa 30–50（若是，与 W42 表位直接可比）。
+3. 补 Bayer 2018 年系列 ADC（ADC 1.1–1.4、2.1、2.2），目前只记录了 2022 年的 ADC1/ADC2。
+4. 本轮一手文献登记 REF 编号。
+
+## 9. 方法教训（记入项目规范）
+
+**不要用 Europe PMC 的 `isOpenAccess` 标志或 PMC API 的返回长度来判断全文是否可得。**
+本项目因此误判三篇关键文献"无法核实"，把已经可以核对的一手结论降级为转述。
+正确做法：API 只返回题录/摘要时，再抓 `https://pmc.ncbi.nlm.nih.gov/articles/PMC<id>/` 页面确认。

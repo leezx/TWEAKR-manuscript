@@ -1,3 +1,5 @@
-agent_id	name	aliases	modality	target	sponsor	highest_phase	why_excluded_from_Fn14_table	primary_refs	verification_status
-TWB-001	RG7212	RO5458640	humanized mAb	TWEAK (TNFSF12) ligand	Roche	clinical (phase 1 reported)	binds the ligand, not Fn14, so it yields no Fn14 epitope	not yet verified in this project	unverified
-TWB-002	BIIB023	-	anti-TWEAK neutralising mAb	TWEAK (TNFSF12) ligand	Biogen Idec	clinical	binds the ligand, not Fn14	not yet verified in this project	unverified
+agent_id	name	aliases	modality	target	sponsor	highest_phase	clinical_trial_ids	why_excluded_from_Fn14_table	primary_refs	verification_status
+TWB-001	BIIB023	-	neutralising mAb	TWEAK (TNFSF12) ligand	Biogen Idec	Phase 2 (lupus nephritis); Phase 1 (RA) completed	NCT00771329 (RA, 2008-10 to 2011-04); NCT01499355 (lupus nephritis, from 2012-07)	binds the ligand, not Fn14, so it yields no Fn14 epitope	PMID 24391646 (Cheng 2013 review, open access)	verified (open-access review)
+TWB-002	RG7212	RO5458640	humanized mAb	TWEAK (TNFSF12) ligand	Roche	Phase 1	NCT01383733 (2011-07 to 2013-03)	binds the ligand, not Fn14	PMID 24391646	verified (open-access review)
+TWB-003	Fn14-Fc	-	decoy receptor fusion	TWEAK (sequesters the ligand)	Emory / Univ. Maryland	preclinical	-	uses Fn14 as the binding moiety but targets TWEAK; not an antibody and gives no antibody epitope	PMID 24391646	verified (open-access review)
+TWB-004	Fn14-TRAIL	KAHR-101	signal-converter fusion protein	TWEAK (sequesters it) + TRAIL delivery	KAHR Medical	preclinical	-	same reason as TWB-003: Fn14 is the binder, not the target	PMID 24391646	verified (open-access review)

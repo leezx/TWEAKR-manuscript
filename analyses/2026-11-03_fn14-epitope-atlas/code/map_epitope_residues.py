@@ -21,6 +21,7 @@ M2 = os.environ.get("FN14_M2_MODEL", "/Volumes/Stelligen_SSD/Stelligen/DATA/HotD
                     "analysis/af3_M2/frozen/af3_M2/m2_tweak3_fn14x3_tmplc/m2_tweak3_fn14x3_tmplc_model.cif")
 OUT = os.path.join(os.getcwd(), "..", "tables", "epitope_residue_geometry.tsv")
 TW, FN = "ABC", "DEF"
+CRD = "9-40"      # construct numbering for the CRD core (UniProt 36-67), used as the local frame
 # residue -> (expected one-letter, why it is here, evidence level per docs/design.md)
 SITES = {
     # Corrected after GPT review round 1: the two residues separate between the two antibodies.
@@ -77,20 +78,32 @@ for ch in FN:
         d_tweak = min_dist(x, partner)
         sasa = cmd.get_area(f"solo and resi {c}")          # isolated receptor
         sasa_cplx = cmd.get_area(sel)                       # within the complex
-        # distance from this residue to the nearest residue that does contact TWEAK
-        if iface:
-            d_iface = min(min_dist(x, coords(f"m and chain {ch} and resi {r} and not hydro"))
-                          for r in iface if r != c)
-        else:
-            d_iface = float("nan")
+        # Distance from this residue to the nearest TWEAK-contacting residue, EXCLUDING sequence
+        # neighbours. Fix 2026-11-04: the first version excluded only the residue itself, so when
+        # c-1 or c+1 was in the interface it returned the peptide-bond length (~1.33 A) for every
+        # residue and carried no information. |i - j| >= 2 is required.
+        # Where does this residue sit relative to the TWEAK footprint, as seen from the CRD core?
+        # Burial and minimum distance do NOT separate W42 from R56 (both 0 A buried, both ~3 A from
+        # the patch), but the direction does. foot = centroid of the four TWEAK-binding residues.
+        crd_core = coords(f"m and chain {ch} and name CA and resi {CRD}").mean(0)
+        foot = np.vstack([coords(f"m and chain {ch} and resi {k - 27} and not hydro") for k in SITES
+                          if SITES[k][2] == "reference"]).mean(0)
+        v1, v2 = x.mean(0) - crd_core, foot - crd_core
+        angle = float(np.degrees(np.arccos(np.clip(v1 @ v2 / np.linalg.norm(v1) / np.linalg.norm(v2), -1, 1))))
+        d_foot = float(np.linalg.norm(x.mean(0) - foot))
+        far = [r for r in iface if abs(r - c) >= 2]
+        d_iface = min((min_dist(x, coords(f"m and chain {ch} and resi {r} and not hydro")) for r in far),
+                      default=float("nan"))
         rows.append({
             "fn14_chain": ch, "uniprot_resi": uni, "resn": aa, "evidence_level": lvl, "basis": why,
             "min_dist_to_TWEAK_A": round(d_tweak, 2),
             "in_TWEAK_interface_5A": c in iface,
-            "dist_to_nearest_interface_residue_A": round(d_iface, 2),
+            "dist_to_nearest_nonadjacent_interface_residue_A": round(d_iface, 2),
             "sasa_isolated_receptor_A2": round(sasa, 1),
             "sasa_in_complex_A2": round(sasa_cplx, 1),
             "sasa_buried_by_TWEAK_A2": round(sasa - sasa_cplx, 1),
+            "angle_to_TWEAK_footprint_deg": round(angle, 1),
+            "dist_to_footprint_centroid_A": round(d_foot, 1),
         })
     cmd.delete("solo")
 
@@ -105,4 +118,6 @@ for uni in sorted(SITES):
           f"dist->TWEAK {min(r['min_dist_to_TWEAK_A'] for r in rr):.2f}-{max(r['min_dist_to_TWEAK_A'] for r in rr):.2f} A | "
           f"in interface {sum(r['in_TWEAK_interface_5A'] for r in rr)}/3 | "
           f"SASA free {np.mean([r['sasa_isolated_receptor_A2'] for r in rr]):.0f} A2 | "
-          f"buried by TWEAK {np.mean([r['sasa_buried_by_TWEAK_A2'] for r in rr]):.0f} A2")
+          f"buried {np.mean([r['sasa_buried_by_TWEAK_A2'] for r in rr]):.0f} A2 | "
+          f"angle {np.mean([r['angle_to_TWEAK_footprint_deg'] for r in rr]):.0f} deg, "
+          f"{np.mean([r['dist_to_footprint_centroid_A'] for r in rr]):.0f} A from footprint centre")

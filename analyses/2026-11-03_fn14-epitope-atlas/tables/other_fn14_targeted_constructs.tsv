@@ -1,0 +1,5 @@
+construct_id	name	modality	targeting_moiety	payload	sponsor	why_not_in_the_antibody_table	primary_refs	verification_status
+OFC-001	GrB-TWEAK	ligand-payload fusion	TWEAK ligand (not an antibody)	granzyme B	academic (MD Anderson)	targets Fn14 through its natural ligand, so it engages the TWEAK site by definition and yields no antibody epitope	PMID 25239934	verified
+OFC-002	Fn14-Fc	decoy receptor fusion	Fn14 ectodomain	-	Emory / Univ. Maryland	Fn14 is the binder here, not the target	PMID 24391646	verified
+OFC-003	Fn14-TRAIL (KAHR-101)	signal-converter fusion	Fn14 ectodomain	TRAIL	KAHR Medical	same as OFC-002	PMID 24391646	verified
+OFC-004	Fn14-targeted nanoparticles	targeted delivery vehicle	varies (antibody, scFv or peptide)	varies	academic (Univ. Maryland)	delivery vehicles whose targeting moiety varies; no single antibody epitope	PMID 34371763; PMID 37812740; PMID 28887134	unverified
