@@ -708,3 +708,11 @@ P0 0、P1 3、P2 3；不要求重跑 AF3。B32、TR1、TR2、M1b 结论保留，
 **流程教训.** 本轮是先合并后审核（用户授权），结果带错误的 v1 进入了 main。PR #2 是审核通过后才合并，没有这个问题。
 
 **状态：** 修订在 PR #4，未合并。
+
+**补记（2026-11-04，第 3 轮提交后）：** 自行核实了两条待办中的一条，并得到第三条独立证据。
+Kyowa Kirin WO2020128927A1 的权利要求原文已读：该抗体是 **antagonist 且明示不是 agonist**，
+"attenuates the binding of TWEAK to Fn14"，表位为 subdomain 1（`APGTAPCSRGSSWSADLDKCM`，本项目按 Q9NP84
+核对正好是 30–50）中的 Gly32/Thr33/Ala34/Pro35/**Trp42**/Ala44/**Asp45**/Leu46/Asp47/**Lys48**/Cys49。
+映射到 M2 模型：11 个残基方位角 9–84°（均值 44°），整片在 TWEAK 结合面上，6/11 与 TWEAK ≤ 5 Å；
+而不阻断的 enavatuzumab 所依赖的 R56 在 139°，在区间外。**至此三个相互独立的抗体都符合方位规律**
+（P4A8 47° 阻断、Kyowa 9–84° 阻断、enavatuzumab 139° 不阻断）。

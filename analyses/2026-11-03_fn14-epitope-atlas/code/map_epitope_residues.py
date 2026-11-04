@@ -23,6 +23,11 @@ OUT = os.path.join(os.getcwd(), "..", "tables", "epitope_residue_geometry.tsv")
 TW, FN = "ABC", "DEF"
 CRD = "9-40"      # construct numbering for the CRD core (UniProt 36-67), used as the local frame
 # residue -> (expected one-letter, why it is here, evidence level per docs/design.md)
+# Kyowa Kirin WO2020128927A1 claims an ANTAGONIST (explicitly "not an agonist") that "attenuates the
+# binding of TWEAK to Fn14" and interacts with these human Fn14 residues (claim text read 2026-11-04).
+# Subdomain 1 = APGTAPCSRGSSWSADLDKCM, which this project mapped to Q9NP84 30-50 exactly.
+KYOWA_EPITOPE = [32, 33, 34, 35, 42, 44, 45, 46, 47, 48, 49]
+
 SITES = {
     # Corrected after GPT review round 1: the two residues separate between the two antibodies.
     # Salzmann 2013 Fig 1A (cited by the review; paywalled, NOT independently verified here):
@@ -121,3 +126,33 @@ for uni in sorted(SITES):
           f"buried {np.mean([r['sasa_buried_by_TWEAK_A2'] for r in rr]):.0f} A2 | "
           f"angle {np.mean([r['angle_to_TWEAK_footprint_deg'] for r in rr]):.0f} deg, "
           f"{np.mean([r['dist_to_footprint_centroid_A'] for r in rr]):.0f} A from footprint centre")
+
+
+# ---------------------------------------------------------------------------------------------
+# Third test of the orientation model: a patent-claimed epitope of a TWEAK-blocking antagonist.
+# If orientation (not burial) tracks competition, this whole epitope should sit on the TWEAK face.
+print()
+ch = "D"
+crd_core = coords(f"m and chain {ch} and name CA and resi {CRD}").mean(0)
+foot = np.vstack([coords(f"m and chain {ch} and resi {k - 27} and not hydro")
+                  for k in SITES if SITES[k][2] == "reference"]).mean(0)
+tw_all = coords(f"m and chain {'+'.join(TW)} and not hydro")
+
+
+def angle_of(uni):
+    x = coords(f"m and chain {ch} and resi {uni - 27} and not hydro")
+    v1, v2 = x.mean(0) - crd_core, foot - crd_core
+    return float(np.degrees(np.arccos(np.clip(v1 @ v2 / np.linalg.norm(v1) / np.linalg.norm(v2), -1, 1)))), \
+        min_dist(x, tw_all)
+
+
+ang = [angle_of(u) for u in KYOWA_EPITOPE]
+with open(os.path.join(os.getcwd(), "..", "tables", "kyowa_epitope_geometry.tsv"), "w") as f:
+    f.write("uniprot_resi\tangle_to_TWEAK_footprint_deg\tmin_dist_to_TWEAK_A\n")
+    for u, (a, d) in zip(KYOWA_EPITOPE, ang):
+        f.write(f"{u}\t{a:.1f}\t{d:.2f}\n")
+print("Kyowa Kirin antagonist epitope (WO2020128927A1), chain D: "
+      f"angles {min(a for a, _ in ang):.0f}-{max(a for a, _ in ang):.0f} deg "
+      f"(mean {np.mean([a for a, _ in ang]):.0f}); "
+      f"{sum(d <= 5 for _, d in ang)}/{len(ang)} residues within 5 A of TWEAK")
+print(f"  R56 (enavatuzumab, does NOT block TWEAK) is at {angle_of(56)[0]:.0f} deg - outside that range")

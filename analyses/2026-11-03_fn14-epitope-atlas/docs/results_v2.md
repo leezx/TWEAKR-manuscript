@@ -106,6 +106,27 @@ dose-dependent fashion. Likewise, binding of BIIB036 can be blocked by TWEAK" �
 差别不在于关键残基是否被配体埋藏，而在于表位位于受体的哪一面。** v1 的推论（"未被埋藏 → 非竞争"）
 之所以错，正是因为它用了错的判据。
 
+### 第三条独立证据：Kyowa Kirin 专利声明的拮抗抗体表位
+
+WO2020128927A1（Kyowa Kirin）权利要求明确（本项目已读权利要求原文）：该抗体是 **antagonist，且不是 agonist**，
+"attenuates the binding of TWEAK to Fn14"，并 "interacts with ... Gly32, Thr33, Ala34, Pro35, **Trp42**,
+Ala44, **Asp45**, Leu46, Asp47, **Lys48**, Cys49"。专利定义 subdomain 1 = `APGTAPCSRGSSWSADLDKCM`，
+本项目按 Q9NP84 序列核对，正好是 **30–50**。
+
+把这 11 个残基映射到同一个模型（`tables/kyowa_epitope_geometry.tsv`）：
+
+- 方位角 **9–84°，均值 44°**——整片落在 TWEAK 结合面上；
+- 11 个中有 6 个与 TWEAK 距离 ≤ 5 Å，其中 D45、D46、K48 被埋 112 / 91 / 62 Å²（D45 与 K48 本身就是 TWEAK 结合残基）；
+- 对照：R56（enavatuzumab，**不**阻断）在 139°，完全在这个区间之外。
+
+于是三个相互独立的抗体都落在同一条规律上：
+
+| 抗体 | 表位所在方位 | 是否阻断 TWEAK | 证据 |
+|---|---|---|---|
+| P4A8 / mBIIB036 | W42，47° | **阻断** | Salzmann 2013 Fig 1F（已读原文） |
+| Kyowa Kirin 拮抗抗体 | 32–49，9–84°（均值 44°） | **阻断**（权利要求明示） | WO2020128927A1（已读权利要求） |
+| enavatuzumab / PDL192 | R56，139° | **不阻断** | Salzmann 2013 Fig 1F（已读原文） |
+
 **措辞收敛（第 2 轮审核要求）：** 不应说两个残基"局部环境相似"——本项目自己的数据就不支持
 （W42 距 D62 仅 4.9 Å，R56 距 D45/D62 有 11–16 Å）。准确的问法是：
 
@@ -154,7 +175,7 @@ dose-dependent fashion. Likewise, binding of BIIB036 can be blocked by TWEAK" �
 | 专利 | 受让人 | 序列披露 |
 |---|---|---|
 | **US20210388096A1** | Astellas Pharma | VH/VL 的 CDR 以 SEQ ID NO: 2 / 4 的残基区间明确定义 |
-| WO2020128927A1 | Kyowa Kirin | VH CDR3 = SGWFTY（SEQ ID NO: 121）；审核称权利要求涉及 subdomain 1（aa 30–50，含 W42），**本项目未核对该条** |
+| WO2020128927A1 | Kyowa Kirin | VH CDR3 = SGWFTY（SEQ ID NO: 121）；**本项目已核对权利要求**：antagonist 且非 agonist，attenuates TWEAK binding，表位 = subdomain 1（aa 30–50）中的 Gly32/Thr33/Ala34/Pro35/Trp42/Ala44/Asp45/Leu46/Asp47/Lys48/Cys49 |
 | WO2022155705A1 / WO2016061632A1 | La Trobe University | VH 为 SEQ ID NO: 8 等 |
 | WO2012122513A2 | Omeros | VH 为 SEQ ID NO: 82 |
 | WO2015189143A1 | Bayer Pharma | 可能是 TWEAKR-KSPi ADC 的抗体来源 |
@@ -168,9 +189,8 @@ dose-dependent fashion. Likewise, binding of BIIB036 can be blocked by TWEAK" �
 
 1. **用专利序列做 Fn14–Fab 建模**，检验第 3 节的方位解释。这是一个**有实验标准答案**的检验
    （PDL192 不竞争、P4A8 竞争），不是预测未知结果。Astellas 的 US20210388096A1 序列最明确。
-2. 核对 Kyowa Kirin WO2020128927A1 是否真的主张 aa 30–50（若是，与 W42 表位直接可比）。
-3. 补 Bayer 2018 年系列 ADC（ADC 1.1–1.4、2.1、2.2），目前只记录了 2022 年的 ADC1/ADC2。
-4. 本轮一手文献登记 REF 编号。
+2. 补 Bayer 2018 年系列 ADC（ADC 1.1–1.4、2.1、2.2），目前只记录了 2022 年的 ADC1/ADC2。
+3. 本轮一手文献登记 REF 编号。
 
 ## 9. 方法教训（记入项目规范）
 
