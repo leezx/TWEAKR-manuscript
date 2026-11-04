@@ -1,9 +1,10 @@
 # Fn14 治疗性抗体 / ADC 表位清单（epitope atlas）
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** v2 修订 2。13 条抗体及抗体衍生物 + 3 张关联表（配体类构建体、TWEAK 靶向、专利披露）+ 结构映射。
-v1 已合并（`cb4ba95`）后两轮 GPT 审核均为 REQUEST_CHANGES，修订在 **PR #4（未合并）**。现行结论以 `docs/results_v2.md` 为准；
-审核记录 `docs/reviews/PR3_GPT_round1.md`、`docs/reviews/PR4_GPT_round2.md`
+**状态：** **GPT 审核 APPROVE（第 5 轮，HEAD `329fcec`），定位 Fn14 therapeutic epitope atlas v1 candidate，允许合并；
+等待用户授权合并 PR #4。** 13 条抗体及抗体衍生物 + 4 张关联表（配体类构建体、TWEAK 靶向、13 个专利族、方位敏感性）+ 结构映射。
+现行结论以 `docs/results_v2.md` 为准；冻结标准 `docs/freeze_criteria.md`（六项条件已全部满足）；
+审核记录 `docs/reviews/`（PR3 第 1 轮、PR4 第 2–5 轮）
 **UDE 分支：** B32 之后的新支线（见 `../../UDE/root-branch-history.md`；B32 已于 PR #2 合并，merge `762efb1`）
 
 ## 1. 问题与目标
@@ -90,8 +91,11 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 - [x] 检索专利：**6 个专利族含 VH/VL 序列**（`tables/patent_disclosed_binders.tsv`），建模可行
 - [x] 取得三篇关键文献全文并逐条核对（经 PMC 网页，不是 API）
-- [ ] 用专利序列做 Fn14–Fab 建模，检验方位解释
-- [ ] 补 Bayer 2018 系列 ADC；核对 Kyowa Kirin 的 aa 30–50 权利要求
+- [x] 核对 Kyowa Kirin 的 aa 30–50 权利要求（已读权利要求原文）
+- [x] 冻结标准写定并满足（`docs/freeze_criteria.md`）
+- [ ] **下一阶段：用 PDL192（VH/VL = SEQ ID 3/4）与 P4A8（2/5）建 Fn14–Fab 模型，检验方位解释**——
+      这是有实验标准答案的检验（PDL192 不竞争、P4A8 竞争）
+- [ ] 补 Bayer 2018 系列 ADC（ADC 1.1–1.4、2.1、2.2）
 - [ ] 本轮一手文献登记 REF 编号
 - [ ] 若有序列：AF3 Fn14–Fab 预测（E5，虚线，不得与 E1/E2 混用）
 
@@ -103,6 +107,6 @@ atlas — literature and patent evidence through 2026-11-04*，而不是"穷尽�
 
 ## 11. PR 与审核状态
 
-分支 `analysis/20261103-fn14-epitope-atlas`，PR https://github.com/leezx/TWEAKR-manuscript/pull/3 —— **已由用户授权合并**（merge `cb4ba95`，2026-11-04 00:38 UTC）。
+分支 `analysis/20261103-fn14-epitope-atlas`。**PR #4 经 5 轮审核后 APPROVE，未合并（待用户授权）。** PR https://github.com/leezx/TWEAKR-manuscript/pull/3 —— **已由用户授权合并**（merge `cb4ba95`，2026-11-04 00:38 UTC）。
 
 **注意：合并时 GPT 审核尚未返回。** 审核请求已提交到项目的指定审核会话（ChatGPT「深入分析TWEAKR蛋白结构」），回复后再以后续 commit 处理。因此本目录目前是**已合并但未经外部审核**的状态，与 PR #2（两轮审核 + final-head 核对后才合并）不同；按 AGENTS.md §5，其结论在审核完成前不应视为 manuscript canonical evidence。
