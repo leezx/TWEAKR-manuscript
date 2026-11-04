@@ -1,7 +1,9 @@
-# Fn14 治疗性抗体 / ADC 表位清单（epitope atlas v1）
+# Fn14 治疗性抗体 / ADC 表位清单（epitope atlas）
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** v2（14 条 + lineage 列 + 结构映射）。v1 已合并（`cb4ba95`）后 GPT 审核返回 **REQUEST_CHANGES**，发现 3 处实质错误；修订见 PR #4 与 `docs/results_v2.md`、`docs/reviews/PR3_GPT_round1.md`
+**状态：** v2 修订 2。13 条抗体及抗体衍生物 + 3 张关联表（配体类构建体、TWEAK 靶向、专利披露）+ 结构映射。
+v1 已合并（`cb4ba95`）后两轮 GPT 审核均为 REQUEST_CHANGES，修订在 **PR #4（未合并）**。现行结论以 `docs/results_v2.md` 为准；
+审核记录 `docs/reviews/PR3_GPT_round1.md`、`docs/reviews/PR4_GPT_round2.md`
 **UDE 分支：** B32 之后的新支线（见 `../../UDE/root-branch-history.md`；B32 已于 PR #2 合并，merge `762efb1`）
 
 ## 1. 问题与目标
@@ -44,7 +46,9 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 6. 产出文件
 
-- `tables/fn14_binders.tsv` — 主表，11 条直接结合 Fn14 的药物
+- `tables/fn14_binders.tsv` — 主表，13 条抗体及抗体衍生物（含 `binder_lineage_id`、`discovery_campaign_id`）
+- `tables/other_fn14_targeted_constructs.tsv` — 配体类构建体（GrB-TWEAK、Fn14-Fc 等），不产生抗体表位
+- `tables/patent_disclosed_binders.tsv` — 6 个专利族，含 VH/VL 序列披露
 - `tables/tweak_ligand_binders_excluded.tsv` — 靶向 TWEAK 配体的药物（单独列，避免混淆）
 - `tables/epitope_residue_geometry.tsv` — E2 表位残基在 M2 模型中的几何量（3 个拷贝 × 6 个残基）
 - `code/map_epitope_residues.py` — 结构映射脚本
@@ -53,10 +57,11 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 7. 主要结果
 
-> **v2 更正（2026-11-04）：** 下面第 2、3、4 条是 v1 的说法，审核后已被推翻或修正。请以
-> `docs/results_v2.md` 为准。要点：W42 与 R56 分属两个不同抗体（P4A8 / enavatuzumab）；
-> 直接竞争实验**已经存在**（PDL192 几乎不阻断，P4A8 阻断）；Bayer 的 TWEAKR-KSPi-ADC 是真实存在的
-> Fn14 ADC，v1 因只检索 Fn14/TNFRSF12A 而漏掉；ITEM-4 不是唯一有内吞证据的抗体。
+> **本节是 v1 的说法，多条已被两轮审核推翻。请以 `docs/results_v2.md` 为准。** 要点：
+> W42 与 R56 分属两个不同抗体（P4A8 / enavatuzumab）；直接竞争实验**已经存在**（PDL192 几乎不阻断、P4A8 阻断）；
+> Bayer 的 TWEAKR-KSPi-ADC 是真实存在的 Fn14 ADC（v1 漏掉是因为没检索 **TWEAKR** 这个名字）；
+> ITEM-4 的内吞证据属于偶联物 ITEM4-rGel 而非裸抗体；**VH/VL 序列在专利中是公开的**，
+> 所以 v1「暂不具备建模条件」也不成立。新结果：**方位角（47° vs 139°）解释了两个抗体相反的竞争表型**。
 
 
 1. **没有任何 Fn14–抗体复合物的实验结构（E1 = 0）。** 公开文献中唯一的残基级表位约束是
@@ -83,8 +88,10 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 10. 未完成 / 下一步
 
-- [ ] 检索专利，确认 enavatuzumab / BIIB036 / P4A8 的 VH/VL 是否公开（决定能否进入 AF3 建模）
-- [ ] 取得 Trebing 2014 全文，分开 PDL192 与 P4A8 的 W42A/R56P 数据
+- [x] 检索专利：**6 个专利族含 VH/VL 序列**（`tables/patent_disclosed_binders.tsv`），建模可行
+- [x] 取得三篇关键文献全文并逐条核对（经 PMC 网页，不是 API）
+- [ ] 用专利序列做 Fn14–Fab 建模，检验方位解释
+- [ ] 补 Bayer 2018 系列 ADC；核对 Kyowa Kirin 的 aa 30–50 权利要求
 - [ ] 本轮一手文献登记 REF 编号
 - [ ] 若有序列：AF3 Fn14–Fab 预测（E5，虚线，不得与 E1/E2 混用）
 
