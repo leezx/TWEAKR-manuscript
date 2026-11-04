@@ -716,3 +716,25 @@ Kyowa Kirin WO2020128927A1 的权利要求原文已读：该抗体是 **antagoni
 映射到 M2 模型：11 个残基方位角 9–84°（均值 44°），整片在 TWEAK 结合面上，6/11 与 TWEAK ≤ 5 Å；
 而不阻断的 enavatuzumab 所依赖的 R56 在 139°，在区间外。**至此三个相互独立的抗体都符合方位规律**
 （P4A8 47° 阻断、Kyowa 9–84° 阻断、enavatuzumab 139° 不阻断）。
+
+## 2026-11-04 — PR #4 审核第 3 轮：Bayer 专利用实验独立证实了方位结论（WL-20261104-FN14-010）
+
+**判定 REQUEST_CHANGES**（P0 0 / P1 4 / P2 3）。审核方用同一个 CIF 复算，方位角与本项目一致
+（W42 47.3°、R56 138.9°），并补做了原点敏感性分析（本项目已自行复算，数值相同）：角度随原点变化
+（W42 47/46/30°、R56 139/145/108°），但**方向分离不变**；到参考区域质心的距离（6.0 vs 17.9 Å）不依赖原点。
+
+**最重要的新证据：Bayer WO2015189143A1。** 该专利对 CRD 做了完整丙氨酸扫描，正文写明
+"TWEAK binding depends on L46 …, TPP-2090 binding on D47 and PDL-192 binding on R56.
+**PDL-192 binds opposite of the TWEAK ligand binding site**, TPP-2090 binds directly to the TWEAK ligand site."
+这是**用实验方法、独立于本项目**得到的同一结论。本模型的距离与之吻合：L46 3.5 Å、D47 6.9 Å（结合面上）
+vs R56 17.9 Å（另一侧）。至此四条独立证据（TWEAK 本身、TPP-2090、P4A8、Kyowa 拮抗抗体 vs enavatuzumab）
+指向同一几何。
+
+**决定性检验现在可做.** 审核找到 PDL192 的 VH/VL（WO2009020933A2，Facet Biotech）与 P4A8 的 VH/VL
+（WO2009140177A2，Biogen）——正是方位分析中的两个抗体。建两个 Fab 模型即可直接检验它们是否落在两个面上。
+
+**其他修改.** BIIB036 由 E4 改为 E3（它自己有双向竞争实验，Michaelson 2011 Fig 2B，WiDr 结肠癌细胞）；
+专利表补到 10 个族；术语按审核改为 "four-residue TWEAK-binding reference patch"，并说明方位角是径向夹角、
+不是抗体接近角；补各偶联物的内吞记录并标明哪些尚未核实。
+
+**状态：** PR #4 未合并，待第 4 轮审核。

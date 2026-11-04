@@ -28,6 +28,14 @@ CRD = "9-40"      # construct numbering for the CRD core (UniProt 36-67), used a
 # Subdomain 1 = APGTAPCSRGSSWSADLDKCM, which this project mapped to Q9NP84 30-50 exactly.
 KYOWA_EPITOPE = [32, 33, 34, 35, 42, 44, 45, 46, 47, 48, 49]
 
+# Bayer WO2015189143A1 alanine-scanned the whole CRD and concluded (patent text, read 2026-11-04):
+# "TWEAK binding depends on L46 ..., TPP-2090 binding on D47 and PDL-192 binding on R56. PDL-192 binds
+#  opposite of the TWEAK ligand binding site, TPP-2090 binds directly to the TWEAK ligand site."
+# That is an independent, experiment-based statement of the same geometry this script measures.
+BAYER_DETERMINANTS = {46: "TWEAK ligand itself (Pellegrini, via Bayer patent)",
+                      47: "TPP-2090 - patent says it binds directly AT the TWEAK ligand site",
+                      56: "PDL-192 - patent says it binds OPPOSITE the TWEAK ligand site"}
+
 SITES = {
     # Corrected after GPT review round 1: the two residues separate between the two antibodies.
     # Salzmann 2013 Fig 1A (cited by the review; paywalled, NOT independently verified here):
@@ -156,3 +164,36 @@ print("Kyowa Kirin antagonist epitope (WO2020128927A1), chain D: "
       f"(mean {np.mean([a for a, _ in ang]):.0f}); "
       f"{sum(d <= 5 for _, d in ang)}/{len(ang)} residues within 5 A of TWEAK")
 print(f"  R56 (enavatuzumab, does NOT block TWEAK) is at {angle_of(56)[0]:.0f} deg - outside that range")
+
+
+# ---------------------------------------------------------------------------------------------
+# Robustness: the angle depends on the chosen origin, so report it under three definitions, plus
+# the distance to the reference-patch centroid, which needs no origin at all.
+print()
+patch = foot
+origins = {"CRD CA centroid (reported)": coords(f"m and chain {ch} and name CA and resi {CRD}").mean(0),
+           "CRD heavy-atom centroid": coords(f"m and chain {ch} and resi {CRD} and not hydro").mean(0),
+           "full ECD heavy-atom centroid": coords(f"m and chain {ch} and not hydro").mean(0)}
+
+
+def ang_from(uni, origin):
+    x = coords(f"m and chain {ch} and resi {uni - 27} and not hydro")
+    v1, v2 = x.mean(0) - origin, patch - origin
+    return float(np.degrees(np.arccos(np.clip(v1 @ v2 / np.linalg.norm(v1) / np.linalg.norm(v2), -1, 1))))
+
+
+shown = [46, 47, 42, 56]
+with open(os.path.join(os.getcwd(), "..", "tables", "orientation_sensitivity.tsv"), "w") as f:
+    f.write("origin_definition\t" + "\t".join(f"angle_{u}_deg" for u in shown) + "\n")
+    for n, o in origins.items():
+        f.write(n + "\t" + "\t".join(f"{ang_from(u, o):.1f}" for u in shown) + "\n")
+    f.write("dist_to_patch_centroid_A (origin-free)\t" +
+            "\t".join(f"{np.linalg.norm(coords(f'm and chain {ch} and resi {u - 27} and not hydro').mean(0) - patch):.1f}"
+                      for u in shown) + "\n")
+print("Orientation vs the four-residue TWEAK-binding reference patch (chain D):")
+for u in shown:
+    d = np.linalg.norm(coords(f"m and chain {ch} and resi {u - 27} and not hydro").mean(0) - patch)
+    tag = BAYER_DETERMINANTS.get(u, "P4A8 - blocks TWEAK" if u == 42 else "")
+    print(f"  {u:>3}: angle {'/'.join(f'{ang_from(u, o):.0f}' for o in origins.values()):>14} deg "
+          f"| {d:5.1f} A from patch centroid | {tag}")
+print("  The angle shifts with the origin; the on-site vs opposite-side split does not.")

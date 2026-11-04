@@ -78,7 +78,11 @@ dose-dependent fashion. Likewise, binding of BIIB036 can be blocked by TWEAK" �
 **一个关键的实验事实：W42A 与 R56P 本身都不影响 TWEAK 结合。** 这与结构模型独立吻合——
 下一节显示这两个残基都没有被 TWEAK 埋藏。
 
-## 3. 结构映射：方位（而非埋藏或距离）解释了竞争性差异
+## 3. 结构映射：表位在受体的哪一面，解释了竞争性差异
+
+**术语（按第 3 轮审核更正）：** 下文的"参考区域"指 **D45/K48/M50/D62 四个残基的质心**
+（four-residue TWEAK-binding reference patch），**不是**已解析的 TWEAK–Fn14 原子接触面。
+"方位角"是从指定的 CRD 几何中心向外的径向夹角，**不是**抗体的接近角度，也不是表面测地角。
 
 几何量（三个 Fn14 拷贝；审核方用 Biopython Shrake–Rupley 独立复算，数值一致）：
 
@@ -101,6 +105,17 @@ dose-dependent fashion. Likewise, binding of BIIB036 can be blocked by TWEAK" �
   TWEAK 冲突 → **不竞争**。
 
 三个拷贝高度一致（W42 47.3/47.3/47.3°；R56 138.9/138.9/139.0°）。
+
+**对原点选择的稳健性（第 3 轮审核要求，本项目已复算；`tables/orientation_sensitivity.tsv`）：**
+
+| 原点定义 | L46 | D47 | W42 | R56 |
+|---|---|---|---|---|
+| CRD Cα 质心（正文所用） | 9° | 22° | 47° | 139° |
+| CRD 重原子质心 | 11° | 20° | 46° | 145° |
+| 全 ECD 重原子质心 | 6° | 18° | 30° | 108° |
+| **到参考区域质心的距离（不依赖原点）** | **3.5 Å** | **6.9 Å** | **6.0 Å** | **17.9 Å** |
+
+角度的绝对值随原点变化，**但"在结合面上 vs 在另一侧"的区分不变**。不依赖原点的距离指标更适合直接引用。
 
 **这是本清单最有价值的结果：M2 预测模型的几何与两个抗体已被实验测定的竞争表型相符，且给出了机制解释——
 差别不在于关键残基是否被配体埋藏，而在于表位位于受体的哪一面。** v1 的推论（"未被埋藏 → 非竞争"）
@@ -127,12 +142,37 @@ Ala44, **Asp45**, Leu46, Asp47, **Lys48**, Cys49"。专利定义 subdomain 1 = `
 | Kyowa Kirin 拮抗抗体 | 32–49，9–84°（均值 44°） | **阻断**（权利要求明示） | WO2020128927A1（已读权利要求） |
 | enavatuzumab / PDL192 | R56，139° | **不阻断** | Salzmann 2013 Fig 1F（已读原文） |
 
+### 第四条独立证据：Bayer 专利的丙氨酸扫描，结论与本模型一致
+
+WO2015189143A1（Bayer）对 CRD 做了完整丙氨酸扫描（S37A、R38A、S40A、W42A、S43A、D45A、D47A、K48A、
+D51A、S54A、R56A、R58A、P59A、H60A、S61A、D62A、F63A、L46A），**专利正文原话**（本项目已读）：
+
+> "TWEAK binding depends on L46 (Pellegrini et al), TPP-2090 binding on D47 and PDL-192 binding on R56.
+> **PDL-192 binds opposite of the TWEAK ligand binding site, TPP-2090 binds directly to the TWEAK ligand site.**"
+>
+> "PDL-192 shows moderate agonistic activity and binds dependent of R56 to the cysteine rich domain
+> **but opposite to the TWEAK ligand site**."
+
+**这是独立于本项目、用实验方法（丙氨酸扫描 + Pellegrini NMR 结构）得到的同一结论。** 本模型给出的
+到参考区域质心距离与之完全吻合：L46 3.5 Å、D47 6.9 Å（都在结合面上）vs R56 17.9 Å（另一侧）。
+
+于是四条相互独立的证据指向同一几何：
+
+| 决定簇 | 对应分子 | 文献/专利的定位 | 本模型：到参考区域质心 |
+|---|---|---|---|
+| L46 | TWEAK 配体本身 | 配体结合位点 | 3.5 Å |
+| D47 | TPP-2090（Bayer） | "binds directly to the TWEAK ligand site" | 6.9 Å |
+| W42 | P4A8 | 实验上阻断 TWEAK | 6.0 Å |
+| 32–49 | Kyowa Kirin 拮抗抗体 | 权利要求：attenuates TWEAK binding | 整片在结合面上 |
+| **R56** | **PDL192 / enavatuzumab** | **"binds opposite of the TWEAK ligand binding site"** | **17.9 Å** |
+
 **措辞收敛（第 2 轮审核要求）：** 不应说两个残基"局部环境相似"——本项目自己的数据就不支持
 （W42 距 D62 仅 4.9 Å，R56 距 D45/D62 有 11–16 Å）。准确的问法是：
 
 > 两个都保持溶剂暴露、且到 TWEAK 最短距离相近（6.3 vs 6.9 Å）的突变敏感残基，为什么对应相反的竞争表型？
 
-本节给出的方位角差异（47° vs 139°）是对这个问题的一个**候选解释**，仍需 Fab 层面的验证。
+本节给出的空间分离（到参考区域质心 6.0 vs 17.9 Å）是对这个问题的一个**候选解释**，仍需 Fab 层面的验证；
+但它已经与 Bayer 用实验独立得到的"PDL-192 binds opposite"相符，所以不只是模型内部自洽。
 另外两个待检验的解释是：两个抗体的完整 Fab 足迹不同；Fab 接近角度不同造成不同的空间干涉。
 受体在膜上的取向也可能施加额外约束（但 B32 已说明膜取向本身未被确定）。
 
@@ -145,7 +185,9 @@ Ala44, **Asp45**, Leu46, Asp47, **Lys48**, Cys49"。专利定义 subdomain 1 = `
   免疫健全小鼠有效，提示免疫机制参与。**与 CRC 最相关。**
 - **GrB-Fc-IT4**：人源化抗 Fn14 单链抗体 + 颗粒酶 B。
 - **ITEM4-rGel**：2 小时内特异内吞；ITEM4 针对人 Fn14 胞外区制备，结合人与小鼠 Fn14，具弱激动活性（Cheng 2013）。
-- v1 说"ITEM-4 是唯一有内吞证据的抗体"**不成立**。
+- v1 说"ITEM-4 是唯一有内吞证据的抗体"**不成立**：第 3 轮审核指出 hSGZ、GrB-Fc-IT4、GrB-TWEAK、BAY-356
+  都有直接内吞数据（分别为 Zhou 2013 Fig 1A/2F、Zhou 2014 Fig 2B、Fig 2A、2018 KSPi 研究 Fig S6）。
+  这些是**审核转述的图级结果，本项目尚未逐条核实**，已在表中逐条标注。
 - 临床：**在本轮检索范围内**未找到已进入临床试验的 Fn14 ADC（这是检索范围内的结论，不是对未公开研发的否定）；enavatuzumab Phase 1（NCT00738764，Abbott，2008-07 至 2011-10）是唯一确认的临床记录。
 
 ## 5. 一个被修掉的计算 bug
@@ -187,10 +229,14 @@ Ala44, **Asp45**, Leu46, Asp47, **Lys48**, Cys49"。专利定义 subdomain 1 = `
 
 ## 8. 下一步
 
-1. **用专利序列做 Fn14–Fab 建模**，检验第 3 节的方位解释。这是一个**有实验标准答案**的检验
-   （PDL192 不竞争、P4A8 竞争），不是预测未知结果。Astellas 的 US20210388096A1 序列最明确。
-2. 补 Bayer 2018 年系列 ADC（ADC 1.1–1.4、2.1、2.2），目前只记录了 2022 年的 ADC1/ADC2。
-3. 本轮一手文献登记 REF 编号。
+1. **用专利序列做 Fn14–Fab 建模，检验第 3 节的解释。** 第 3 轮审核找到了决定性的两份专利：
+   **WO2009020933A2（Facet Biotech）含 PDL192 的 VH/VL，WO2009140177A2（Biogen）含 P4A8 的 VH/VL**——
+   正是本节用到的那两个抗体。因此可以直接建模这两个 Fab，看它们是否真的落在受体的两个面上。
+   这是一个**有实验标准答案**的检验（PDL192 不竞争、P4A8 竞争），不是预测未知结果。
+   本项目已核实两份专利存在并披露序列，但**尚未确认具体 SEQ ID 的对应关系**。
+2. 核实各偶联物的内吞原始图（hSGZ、GrB-Fc-IT4、GrB-TWEAK、BAY-356）。
+3. 补 Bayer 2018 年系列 ADC（ADC 1.1–1.4、2.1、2.2），目前只记录了 2022 年的 ADC1/ADC2。
+4. 本轮一手文献登记 REF 编号。
 
 ## 9. 方法教训（记入项目规范）
 
