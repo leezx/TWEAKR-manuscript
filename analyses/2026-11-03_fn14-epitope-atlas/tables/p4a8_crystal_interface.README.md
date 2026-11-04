@@ -35,5 +35,6 @@ the four known TWEAK-binding determinants. Angular span over the full set: **9.4
 L1 `RASKSVSTSSYSYMH`, L2 `YASNLES`, L3 `SRELPFT`, H1 `GYTFTDYGMH`, H2 `VISTYNGYTNYNQKFKG`,
 H3 `AYYGNLYYAMDY`. **All six occur exactly** in the huP4A8 VH/VL recorded in
 `../2026-11-04_fn14-fab-modelling/tables/fab_sequences.tsv`, which this project had read from scanned page
-images and checked by translating the nucleotide sequence on the same page. That is a third, independent
-confirmation of the sequence used for M3.
+images and checked by translating the nucleotide sequence on the same page. US20090324602A1 and
+WO2009140177A2 are **the same patent family**, so this is **a third cross-check within that family**, not a
+third independent source. It still rules out a misreading of the sequence used for M3.
