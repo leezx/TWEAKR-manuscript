@@ -83,4 +83,4 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 11. PR 与审核状态
 
-分支 `analysis/20261103-fn14-epitope-atlas`，PR 待建。按 AGENTS.md §4，合并前不是 canonical evidence。
+分支 `analysis/20261103-fn14-epitope-atlas`，PR https://github.com/leezx/TWEAKR-manuscript/pull/3（2026-11-03 创建），**未审核**。按 AGENTS.md §4，合并前不是 canonical evidence。
