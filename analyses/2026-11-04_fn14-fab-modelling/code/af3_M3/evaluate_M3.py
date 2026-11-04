@@ -57,6 +57,30 @@ TABLE2_HEAVY_SUBSET = [46, 50, 56, 57, 58, 60]
 TABLE2_FULL = [42, 46, 48, 49, 50, 51, 56, 57, 58, 60]
 # Same source, antibody side: CDR-L1 residues the patent names as Fn14-interacting.
 PATENT_CDR_L1 = [32, 34, 36]
+# Every pair TABLE 2 names, transcribed from the text layer of US20090324602A1 (Example 21).
+# (fn14_uniprot, fn14_resn, fab_chain, fab_resi, fab_resn, cdr, patent_marks_h_bond)
+TABLE2_PAIRS = [
+    (42, "TRP", "L", 34, "TYR", "CDR L1", False),
+    (48, "LYS", "L", 36, "TYR", "CDR L1", False),
+    (48, "LYS", "L", 54, "TYR", "CDR L2", True),
+    (49, "CYS", "L", 32, "SER", "CDR L1", True),
+    (51, "ASP", "L", 96, "ARG", "CDR L3", False),
+    (46, "LEU", "H", 101, "TYR", "CDR H3", False),
+    (50, "MET", "H", 105, "TYR", "CDR H3", False),
+    (56, "ARG", "H", 57, "TYR", "CDR H2", False),
+    (56, "ARG", "H", 59, "ASN", "CDR H2", True),
+    (57, "ALA", "H", 52, "SER", "CDR H2", True),
+    (57, "ALA", "H", 55, "ASN", "CDR H2", True),
+    (58, "ARG", "H", 31, "ASP", "CDR H1", True),
+    (58, "ARG", "H", 32, "TYR", "CDR H1", False),
+    (58, "ARG", "H", 106, "TYR", "CDR H3", False),
+    (60, "HIS", "H", 54, "TYR", "CDR H2", False),
+]
+# Diagnostic only, NOT a Table 2 pair: the patent assigns Y36 to K48, not to W42. It is the atom
+# that makes W42's 2.69 A contact with VL, so naming it prevents that number being read as W42-Y34.
+DIAGNOSTIC_PAIRS = [(42, "TRP", "L", 36, "TYR", "CDR L1 - patent pairs Y36 with K48, not W42", None)]
+# The crystal resolved only Fn14 50-67; residues outside it are hybrid-modelled in Table 2.
+RESOLVED_WINDOW = range(50, 68)
 
 cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr")
 cmd.remove("hydro")
@@ -236,15 +260,48 @@ def pair_distance(obj, uniprot_res, fab_chain, fab_res):
     return float(np.sqrt(((xa[:, None, :] - ya[None, :, :]) ** 2).sum(-1)).min())
 
 
-# TABLE 2 pairs each Fn14 residue with a named antibody residue. Check the ones the model could
-# plausibly reach, i.e. those whose Fn14 partner is inside the model's epitope.
-print("  explicit Table 2 pairs (Fn14 <-> P4A8 residue named in the patent):")
-for fn, ch, fr, note in ((42, "L", 34, "W42-Y34, CDR-L1"),
-                         (42, "L", 36, "W42-Y36 (patent pairs Y36 with K48, not W42)"),
-                         (48, "L", 36, "K48-Y36, CDR-L1"),
-                         (49, "L", 32, "C49-S32, CDR-L1"),
-                         (46, "H", 101, "L46-Y101, CDR-H3"),
-                         (50, "H", 105, "M50-Y105, CDR-H3")):
+def resn_at(obj, chain, resi):
+    m = cmd.get_model(f"{obj} and chain {chain} and resi {resi}")
+    if not m.atom:
+        raise EvalError(f"{obj} chain {chain} resi {resi} is empty")
+    return m.atom[0].resn
+
+
+# Every pair TABLE 2 names, computed exhaustively -- not a sample. Each row also re-checks the
+# residue identity at both ends, so a numbering offset cannot masquerade as agreement.
+pair_rows = []
+for fn, fnn, ch, fr, frn, cdr, hb in TABLE2_PAIRS + DIAGNOSTIC_PAIRS:
+    got_fn = resn_at("m3_f2_hup4a8", FN, fn - OFF)
+    got_fab = resn_at("m3_f2_hup4a8", ch, fr)
+    if got_fn != fnn or got_fab != frn:
+        raise EvalError(f"numbering mismatch at Fn14 {fn}/{ch}{fr}: "
+                        f"model has {got_fn}/{got_fab}, patent says {fnn}/{frn}")
     d = pair_distance("m3_f2_hup4a8", fn, ch, fr)
-    print(f"      {note:48s} {d:6.2f} A  {'<=5A' if d <= CUT else ''}")
+    pair_rows.append({
+        "fn14_residue_uniprot": fn, "fn14_resn": got_fn, "fab_chain": ch,
+        "fab_residue": fr, "fab_resn": got_fab, "patent_cdr": cdr,
+        "patent_specified_pair": "yes" if hb is not None else "no - diagnostic only",
+        "patent_h_bond": ("yes" if hb else "no") if hb is not None else "n/a",
+        "fn14_in_resolved_window_50_67": "yes" if fn in RESOLVED_WINDOW else "no - hybrid-modelled",
+        "min_heavy_atom_distance_A": round(d, 2), "within_5A": "yes" if d <= CUT else "no"})
+
+named = [r for r in pair_rows if r["patent_specified_pair"] == "yes"]
+hitp = [r for r in named if r["within_5A"] == "yes"]
+print(f"  Table 2 named pairs reproduced within {CUT} A: {len(hitp)}/{len(named)} "
+      f"(all identities matched the patent)")
+for side in ("L", "H"):
+    sub = [r for r in named if r["fab_chain"] == side]
+    print(f"      {'VL' if side == 'L' else 'VH'}: "
+          f"{sum(1 for r in sub if r['within_5A'] == 'yes')}/{len(sub)}")
+inw = [r for r in named if r["fn14_in_resolved_window_50_67"] == "yes"]
+print(f"      of the pairs whose Fn14 residue is INSIDE the resolved window 50-67: "
+      f"{sum(1 for r in inw if r['within_5A'] == 'yes')}/{len(inw)}")
+for r in pair_rows:
+    print(f"      {r['fn14_resn']}{r['fn14_residue_uniprot']:<4}- {r['fab_chain']}{r['fab_residue']:<4}"
+          f"{r['fab_resn']} {r['patent_cdr'][:10]:11s}{r['min_heavy_atom_distance_A']:7.2f} A"
+          f"{'  <=5A' if r['within_5A'] == 'yes' else ''}")
+with open(os.path.join(TAB, "M3_pairwise_contacts.tsv"), "w", newline="") as fh:
+    w = csv.DictWriter(fh, fieldnames=list(pair_rows[0].keys()), delimiter="\t")
+    w.writeheader()
+    w.writerows(pair_rows)
 print(f"\ntables written to {TAB}")

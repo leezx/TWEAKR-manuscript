@@ -1,7 +1,7 @@
 # M3：Fn14–Fab 建模，检验"表位重叠解释竞争性"
 
 **对话日期：** 2026-11-04 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** 已完成，PR #5 审核第 1 轮已处理（REQUEST_CHANGES，P0 = 0，P1 = 2，均已修改）。
+**状态：** 已完成；PR #5 审核已处理到**第 4 轮**（历轮 P0 均为 0）。科学结论四轮未变。
 **判定：TEST NOT DECIDABLE** —— 假说 H 未被检验，既未被支持也未被推翻。见 `docs/M3_results.md`
 **UDE 分支：** epitope atlas（PR #4，merge `c7360e8`）之后的下一步
 
@@ -40,7 +40,7 @@ P4A8 阻断 TWEAK、PDL192 几乎不阻断（均已读原文确认）。**模型
 | F2 huP4A8 | **25 / 25** 个样本 | Table 2 所列 Fn14 残基 **1 / 10**（仅 W42）；事先注册的重链 CDR 子集 **0 / 6**；Table 2 的 **15 组指定配对只对上 W42–Y34**（3.45 Å） |
 
 Fn14 自身折叠在两个条件下都正确（CRD RMSD 1.62 / 1.67 Å），不可用的只是 Fab 相对抗原的位置。
-huP4A8 的状态是 **HIGH CONFIDENCE / PARTIALLY CONSISTENT / NOT VALIDATED**——
+huP4A8 的状态是 **PRE-REGISTERED ipTM GATE PASSED / PARTIALLY CONSISTENT / NOT VALIDATED**——
 若不做外部核对会被整体当成可信表位模型，但它也**不是全错**：
 - **W42–Y34（CDR-L1）这一对被重现**（3.45 Å），而 W42 正是 P4A8 功能上最关键的残基（W42A 失去结合）；
 - 其**柄区接触 68–73** 与 Bayer WO2014198817A1 的截短实验方向一致（P4A8 需要 CRD 之外的 69–80）；
