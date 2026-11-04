@@ -40,7 +40,20 @@ v2 初版说三篇关键文献"非开放获取、无法独立核实"，并据此
 | LIN-18D1 / LIN-4G5 / LIN-5B6 | 各自独立（共享 `discovery_campaign_id` = ARGENX-LLAMA） | 三者是不同克隆，功能也不同（5B6 不阻断 TWEAK），不能因同一发现平台就并为一个 lineage |
 | （未说明） | TWEAKR-KSPi-ADC1/ADC2 | Bayer，抗体身份未公开 |
 
-E1 = **0**（仍没有任何 Fn14–抗体复合物实验结构），E2 = 2，E3 = 3，其余 E4。
+证据分级计数（13 条）：**E1 = 0，E2 = 2，E3 = 4，E4 = 7**。
+（第 4 轮审核指出此处原先漏改 E3 计数——BIIB036 改为 E3 后应为 4，不是 3。）
+
+**E1 = 0 需要加一句限定（第 4 轮新发现）：** PDB 中确实没有 Fn14–抗体复合物结构，但
+**Biogen 专利 WO2009140177A2 的 Example 21 报告了鼠源 P4A8 Fab 与人 Fn14 胞外区的晶体**
+（3.5 Å，P21，每个不对称单位 2 个复合物）。本项目读了该段原文，发现**审核转述省略了几个决定性的限定**：
+
+> "Only residues **50-67** of Fn14's cysteine rich domain could be accounted for in the electron density maps."
+> R-factor **46%**；"Missing from the density were H3 CDR and the N-terminal residues of Fn14 ectodomain."
+> 界面表是把 NMR 结构叠合上去、再用 ROSETTA 建 H3 CDR 并做约束优化之后得到的。
+
+所以这是一次真实的晶体学实验，但**不是精修完成、完整可解析的复合物结构**；R-factor 46% 属于未精修水平。
+**尤其关键：P4A8 所依赖的 W42 落在未被解析的 50–67 区间之外**，因此这块密度既不能证实也不能推翻 W42 表位归属。
+按事先冻结的分级，它不计为 E1；在表中单列并写明上述限定。
 `verification_status` 只用事先冻结的两个取值 `verified` / `unverified`，不再出现自造的中间状态。
 
 另有三张关联表：`other_fn14_targeted_constructs.tsv`（配体类构建体，如 GrB-TWEAK、Fn14-Fc，不含抗体表位）、
@@ -217,6 +230,7 @@ D51A、S54A、R56A、R58A、P59A、H60A、S61A、D62A、F63A、L46A），**专�
 | 专利 | 受让人 | 序列披露 |
 |---|---|---|
 | **US20210388096A1** | Astellas Pharma | VH/VL 的 CDR 以 SEQ ID NO: 2 / 4 的残基区间明确定义 |
+| **WO2009020933A2 / WO2009140177A2** | Facet Biotech / Biogen | **PDL192 与 P4A8 的 VH/VL**（审核确认 PDL192 VH=3、VL=4；P4A8 VH=2、VL=5）。本项目此前看到的 SEQ ID NO: 25 是 PDL192 的重链 CDR3，不是完整 VH——审核的解释与本项目所见一致 |
 | WO2020128927A1 | Kyowa Kirin | VH CDR3 = SGWFTY（SEQ ID NO: 121）；**本项目已核对权利要求**：antagonist 且非 agonist，attenuates TWEAK binding，表位 = subdomain 1（aa 30–50）中的 Gly32/Thr33/Ala34/Pro35/Trp42/Ala44/Asp45/Leu46/Asp47/Lys48/Cys49 |
 | WO2022155705A1 / WO2016061632A1 | La Trobe University | VH 为 SEQ ID NO: 8 等 |
 | WO2012122513A2 | Omeros | VH 为 SEQ ID NO: 82 |
