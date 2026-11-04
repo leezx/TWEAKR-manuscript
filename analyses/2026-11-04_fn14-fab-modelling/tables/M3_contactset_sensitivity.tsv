@@ -1,0 +1,5 @@
+variant	definition	n_residues	overlap_PDL192	overlap_huP4A8	direction
+frozen_prereg	M2-C rank-1 model (seed 2/sample 0), Fn14 chain D, <=5 A	15	9	6	PDL192 > huP4A8
+intersection	residues in the contact set of ALL 75 M2-C Fn14 chain observations	13	9	4	PDL192 > huP4A8
+majority_50pct	residues present in >=50% of the 75 observations	14	9	5	PDL192 > huP4A8
+union	residues present in ANY of the 75 observations	16	9	7	PDL192 > huP4A8

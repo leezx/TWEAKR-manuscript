@@ -45,8 +45,18 @@ IPTM_MIN = 0.50        # chain_pair_iptm, Fab chain vs Fn14
 SUPPORT_RATIO = 2.0    # P4A8 overlap >= 2x PDL192 overlap
 SUPPORT_P4A8_MIN = 4   # and P4A8 >= 4
 SUPPORT_PDL_MAX = 3    # and PDL192 <= 3
-# Report-only: Table 2 of WO2009140177A2 Example 21 (patent-reported crystal interface, tier B).
-TABLE2 = [46, 50, 56, 57, 58, 60]
+# Report-only: WO2009140177A2 (patent-reported, tier B).
+# TABLE2 is the set named in the pre-registration and is NOT changed after the fact: it is the
+# heavy-chain-CDR-associated subset that this project transcribed from Example 21 Table 2.
+TABLE2_HEAVY_SUBSET = [46, 50, 56, 57, 58, 60]
+# Correction 2026-11-04 (PR #5 review): that transcription was incomplete. The patent's own
+# description text states the antibody "interacts with one or more of residues C49, W42, K48, D51,
+# R58, A57, H60, R56, L46, and M50 of human Fnl4" -- 10 residues, verified by this project directly
+# in the Google Patents text of WO2009140177A2. The four missed ones pair with light-chain CDRs.
+# Reported in addition to, not in place of, the pre-registered subset.
+TABLE2_FULL = [42, 46, 48, 49, 50, 51, 56, 57, 58, 60]
+# Same source, antibody side: CDR-L1 residues the patent names as Fn14-interacting.
+PATENT_CDR_L1 = [32, 34, 36]
 
 cmd.load(os.path.join(STRUCT, "2kmz.pdb"), "nmr")
 cmd.remove("hydro")
@@ -182,6 +192,34 @@ print("\n=== criterion 3: report-only residue checks ===")
 d_pdl, d_p4a8 = epitope("m3_f1_pdl192"), epitope("m3_f2_hup4a8")
 print(f"  R56 in PDL192 epitope: {56 in q['ep']} (dmin {d_pdl[56]:.2f} A)")
 print(f"  W42 in P4A8 epitope:   {42 in p['ep']} (dmin {d_p4a8[42]:.2f} A)")
-hit = [r for r in TABLE2 if r in p["ep"]]
-print(f"  Table 2 residues {TABLE2} reproduced by P4A8 model: {hit} ({len(hit)}/{len(TABLE2)})")
+
+hit_h = [r for r in TABLE2_HEAVY_SUBSET if r in p["ep"]]
+hit_f = [r for r in TABLE2_FULL if r in p["ep"]]
+print(f"  pre-registered heavy-chain-CDR subset {TABLE2_HEAVY_SUBSET}: "
+      f"{hit_h} ({len(hit_h)}/{len(TABLE2_HEAVY_SUBSET)})")
+print(f"  full patent epitope set {TABLE2_FULL}: {hit_f} ({len(hit_f)}/{len(TABLE2_FULL)})")
+for r in TABLE2_FULL:
+    print(f"      {r:3d}  {d_p4a8[r]:6.2f} A  {'<=5A' if d_p4a8[r] <= CUT else ''}")
+
+
+def chain_split(obj, uniprot_res):
+    """Min heavy-atom distance from one Fn14 residue to VH and to VL separately, plus the Fab
+    residues within CUT. The pooled per-residue distance cannot tell VH from VL."""
+    x, r = heavy(obj, FN)
+    xr = x[r == uniprot_res - OFF]
+    out = {}
+    for c in FAB:
+        y, ry = heavy(obj, c)
+        dm = np.sqrt(((xr[:, None, :] - y[None, :, :]) ** 2).sum(-1))
+        near = sorted({int(ry[k]) for k in range(len(ry)) if dm[:, k].min() <= CUT})
+        out[c] = (float(dm.min()), near)
+    return out
+
+
+sp = chain_split("m3_f2_hup4a8", 42)
+print(f"  W42 split: VH {sp['H'][0]:.2f} A (VH res within {CUT} A: {sp['H'][1]}); "
+      f"VL {sp['L'][0]:.2f} A (VL res within {CUT} A: {sp['L'][1]})")
+l1 = [r for r in PATENT_CDR_L1 if r in sp["L"][1]]
+print(f"  patent CDR-L1 residues {PATENT_CDR_L1} contacting W42 in the model: {l1} "
+      f"({len(l1)}/{len(PATENT_CDR_L1)})")
 print(f"\ntables written to {TAB}")
