@@ -1,7 +1,10 @@
-# Fn14 治疗性抗体 / ADC 表位清单（epitope atlas v1）
+# Fn14 治疗性抗体 / ADC 表位清单（epitope atlas）
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** v1 清单完成（11 条直接结合 Fn14 的药物 + 结构映射），未审核
+**状态：** **GPT 审核 APPROVE（第 5 轮，HEAD `329fcec`），定位 Fn14 therapeutic epitope atlas v1 candidate，允许合并；
+等待用户授权合并 PR #4。** 13 条抗体及抗体衍生物 + 4 张关联表（配体类构建体、TWEAK 靶向、13 个专利族、方位敏感性）+ 结构映射。
+现行结论以 `docs/results_v2.md` 为准；冻结标准 `docs/freeze_criteria.md`（六项条件已全部满足）；
+审核记录 `docs/reviews/`（PR3 第 1 轮、PR4 第 2–5 轮）
 **UDE 分支：** B32 之后的新支线（见 `../../UDE/root-branch-history.md`；B32 已于 PR #2 合并，merge `762efb1`）
 
 ## 1. 问题与目标
@@ -44,15 +47,25 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 6. 产出文件
 
-- `tables/fn14_binders.tsv` — 主表，11 条直接结合 Fn14 的药物
+- `tables/fn14_binders.tsv` — 主表，13 条抗体及抗体衍生物（含 `binder_lineage_id`、`discovery_campaign_id`）
+- `tables/other_fn14_targeted_constructs.tsv` — 配体类构建体（GrB-TWEAK、Fn14-Fc 等），不产生抗体表位
+- `tables/patent_disclosed_binders.tsv` — 6 个专利族，含 VH/VL 序列披露
 - `tables/tweak_ligand_binders_excluded.tsv` — 靶向 TWEAK 配体的药物（单独列，避免混淆）
 - `tables/epitope_residue_geometry.tsv` — E2 表位残基在 M2 模型中的几何量（3 个拷贝 × 6 个残基）
 - `code/map_epitope_residues.py` — 结构映射脚本
-- `docs/design.md`（事先规则）、`docs/results_v1.md`（结果与限制）
+- `docs/design.md`（事先规则）、`docs/results_v1.md`（第一版，保留备查）、`docs/results_v2.md`（**现行结论**）、
+  `docs/reviews/PR3_GPT_round1.md`（审核记录）
 
 ## 7. 主要结果
 
-1. **没有任何 Fn14–抗体复合物的实验结构（E1 = 0）。** 公开文献中唯一的残基级表位约束是
+> **本节是 v1 的说法，多条已被两轮审核推翻。请以 `docs/results_v2.md` 为准。** 要点：
+> W42 与 R56 分属两个不同抗体（P4A8 / enavatuzumab）；直接竞争实验**已经存在**（PDL192 几乎不阻断、P4A8 阻断）；
+> Bayer 的 TWEAKR-KSPi-ADC 是真实存在的 Fn14 ADC（v1 漏掉是因为没检索 **TWEAKR** 这个名字）；
+> ITEM-4 的内吞证据属于偶联物 ITEM4-rGel 而非裸抗体；**VH/VL 序列在专利中是公开的**，
+> 所以 v1「暂不具备建模条件」也不成立。新结果：**方位角（47° vs 139°）解释了两个抗体相反的竞争表型**。
+
+
+1. **PDB 中没有 Fn14–抗体复合物结构（E1 = 0）**，但 Biogen 专利 WO2009140177A2 Example 21 报告过 P4A8 Fab–Fn14 晶体（3.5 Å，仅解析 50–67，R-factor 46%，界面为混合建模；W42 未被解析）。 公开文献中唯一的残基级表位约束是
    Trebing 2014：PDL192（enavatuzumab）与 P4A8 不能有效结合 **W42A** 和 **R56P** 突变体。
 2. **映射到 M2 模型：** W42、R56 都不在 TWEAK 接触面上（6.3–6.9 Å），且 TWEAK 结合后它们的 SASA
    **一点也没有被遮住（0 Å²）**；作为对照，D45/K48/M50/D62 被埋掉 9–111 Å²。
@@ -76,11 +89,24 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 10. 未完成 / 下一步
 
-- [ ] 检索专利，确认 enavatuzumab / BIIB036 / P4A8 的 VH/VL 是否公开（决定能否进入 AF3 建模）
-- [ ] 取得 Trebing 2014 全文，分开 PDL192 与 P4A8 的 W42A/R56P 数据
+- [x] 检索专利：**6 个专利族含 VH/VL 序列**（`tables/patent_disclosed_binders.tsv`），建模可行
+- [x] 取得三篇关键文献全文并逐条核对（经 PMC 网页，不是 API）
+- [x] 核对 Kyowa Kirin 的 aa 30–50 权利要求（已读权利要求原文）
+- [x] 冻结标准写定并满足（`docs/freeze_criteria.md`）
+- [ ] **下一阶段：用 PDL192（VH/VL = SEQ ID 3/4）与 P4A8（2/5）建 Fn14–Fab 模型，检验方位解释**——
+      这是有实验标准答案的检验（PDL192 不竞争、P4A8 竞争）
+- [ ] 补 Bayer 2018 系列 ADC（ADC 1.1–1.4、2.1、2.2）
 - [ ] 本轮一手文献登记 REF 编号
 - [ ] 若有序列：AF3 Fn14–Fab 预测（E5，虚线，不得与 E1/E2 混用）
 
+## 10b. 冻结标准
+
+见 `docs/freeze_criteria.md`。范围定义为 *Publicly disclosed Fn14-targeting therapeutic binder and construct
+atlas — literature and patent evidence through 2026-11-04*，而不是"穷尽所有曾研究过 Fn14 的抗体"（后者不可验收）。
+冻结需连续两轮定向查询无新增**独立** binder lineage；同一抗体的另一个专利文本不算。
+
 ## 11. PR 与审核状态
 
-分支 `analysis/20261103-fn14-epitope-atlas`，PR https://github.com/leezx/TWEAKR-manuscript/pull/3（2026-11-03 创建），**未审核**。按 AGENTS.md §4，合并前不是 canonical evidence。
+分支 `analysis/20261103-fn14-epitope-atlas`。**PR #4 经 5 轮审核后 APPROVE，未合并（待用户授权）。** PR https://github.com/leezx/TWEAKR-manuscript/pull/3 —— **已由用户授权合并**（merge `cb4ba95`，2026-11-04 00:38 UTC）。
+
+**注意：合并时 GPT 审核尚未返回。** 审核请求已提交到项目的指定审核会话（ChatGPT「深入分析TWEAKR蛋白结构」），回复后再以后续 commit 处理。因此本目录目前是**已合并但未经外部审核**的状态，与 PR #2（两轮审核 + final-head 核对后才合并）不同；按 AGENTS.md §5，其结论在审核完成前不应视为 manuscript canonical evidence。
