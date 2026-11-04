@@ -1,7 +1,7 @@
 # Fn14 治疗性抗体 / ADC 表位清单（epitope atlas v1）
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** v1 清单完成（11 条直接结合 Fn14 的药物 + 结构映射）；已合并（`cb4ba95`），**GPT 审核待回**
+**状态：** v2（14 条 + lineage 列 + 结构映射）。v1 已合并（`cb4ba95`）后 GPT 审核返回 **REQUEST_CHANGES**，发现 3 处实质错误；修订见 PR #4 与 `docs/results_v2.md`、`docs/reviews/PR3_GPT_round1.md`
 **UDE 分支：** B32 之后的新支线（见 `../../UDE/root-branch-history.md`；B32 已于 PR #2 合并，merge `762efb1`）
 
 ## 1. 问题与目标
@@ -48,9 +48,16 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 - `tables/tweak_ligand_binders_excluded.tsv` — 靶向 TWEAK 配体的药物（单独列，避免混淆）
 - `tables/epitope_residue_geometry.tsv` — E2 表位残基在 M2 模型中的几何量（3 个拷贝 × 6 个残基）
 - `code/map_epitope_residues.py` — 结构映射脚本
-- `docs/design.md`（事先规则）、`docs/results_v1.md`（结果与限制）
+- `docs/design.md`（事先规则）、`docs/results_v1.md`（第一版，保留备查）、`docs/results_v2.md`（**现行结论**）、
+  `docs/reviews/PR3_GPT_round1.md`（审核记录）
 
 ## 7. 主要结果
+
+> **v2 更正（2026-11-04）：** 下面第 2、3、4 条是 v1 的说法，审核后已被推翻或修正。请以
+> `docs/results_v2.md` 为准。要点：W42 与 R56 分属两个不同抗体（P4A8 / enavatuzumab）；
+> 直接竞争实验**已经存在**（PDL192 几乎不阻断，P4A8 阻断）；Bayer 的 TWEAKR-KSPi-ADC 是真实存在的
+> Fn14 ADC，v1 因只检索 Fn14/TNFRSF12A 而漏掉；ITEM-4 不是唯一有内吞证据的抗体。
+
 
 1. **没有任何 Fn14–抗体复合物的实验结构（E1 = 0）。** 公开文献中唯一的残基级表位约束是
    Trebing 2014：PDL192（enavatuzumab）与 P4A8 不能有效结合 **W42A** 和 **R56P** 突变体。

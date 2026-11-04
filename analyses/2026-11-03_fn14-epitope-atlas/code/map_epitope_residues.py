@@ -6,6 +6,10 @@ Run from code/. Writes ../tables/epitope_residue_geometry.tsv.
 Residues are UniProt Q9NP84 precursor numbering; the M2 Fn14 chains (D,E,F) are construct 1-53 = UniProt - 27.
 This measures geometry only. Whether an antibody actually competes with TWEAK is an experimental question;
 a residue far from the TWEAK contact surface does not rule out steric competition by the whole Fab.
+
+That caveat is not hypothetical: P4A8 is sensitive to W42A, W42 is not buried by TWEAK in this model, and
+P4A8 nevertheless blocks TWEAK binding experimentally (Salzmann 2013, via GPT review). So these numbers
+describe single-residue burial, and cannot by themselves predict whether an antibody competes.
 """
 import csv
 import os
@@ -19,8 +23,11 @@ OUT = os.path.join(os.getcwd(), "..", "tables", "epitope_residue_geometry.tsv")
 TW, FN = "ABC", "DEF"
 # residue -> (expected one-letter, why it is here, evidence level per docs/design.md)
 SITES = {
-    42: ("W", "PDL192/P4A8 binding lost on W42A (Trebing 2014, abstract)", "E2"),
-    56: ("R", "PDL192/P4A8 binding lost on R56P (Trebing 2014, abstract)", "E2"),
+    # Corrected after GPT review round 1: the two residues separate between the two antibodies.
+    # Salzmann 2013 Fig 1A (cited by the review; paywalled, NOT independently verified here):
+    # PDL192 is sensitive to R56P but still binds W42A; P4A8 is the mirror image.
+    42: ("W", "P4A8 binding lost on W42A; PDL192 still binds (Salzmann 2013 Fig 1A, via review)", "E2"),
+    56: ("R", "PDL192/enavatuzumab binding lost on R56P; P4A8 still binds (Salzmann 2013 Fig 1A, via review)", "E2"),
     45: ("D", "TWEAK binding (Brown 2006)", "reference"),
     48: ("K", "TWEAK binding (Brown 2006)", "reference"),
     50: ("M", "TWEAK binding (Brown 2006)", "reference"),

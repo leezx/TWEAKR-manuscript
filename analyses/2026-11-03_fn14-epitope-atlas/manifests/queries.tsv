@@ -13,3 +13,7 @@ PubMed	Fn14 nanobody	2026-11-03
 PubMed	TNFRSF12A antibody therapeutic	2026-11-03
 PubMed	P4A8 Fn14 antibody	2026-11-03
 ClinicalTrials.gov	query.intr=enavatuzumab	2026-11-03
+PubMed	(Fn14 OR TWEAKR OR TNFRSF12A OR CD266) AND (antibody-drug conjugate OR ADC OR immunotoxin OR immunoconjugate)	2026-11-04 (v2, synonym-complete)
+PubMed	(Fn14 OR TWEAKR OR TNFRSF12A) AND (monoclonal antibody) AND (tumor OR cancer)	2026-11-04 (v2, synonym-complete)
+PubMed	TWEAKR KSP inhibitor antibody drug conjugate	2026-11-04 (v2)
+PubMed	GrB-Fc-IT4 Fn14	2026-11-04 (v2)
