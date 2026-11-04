@@ -1,0 +1,32 @@
+{
+  "name": "m3_fn14_fab_f1_pdl192",
+  "modelSeeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "dialect": "alphafold3",
+  "version": 1,
+  "sequences": [
+    {
+      "protein": {
+        "id": "A",
+        "sequence": "EQAPGTAPCSRGSSWSADLDKCMDCASCRARPHSDFCLGCAAAPPAPFRLLWP"
+      }
+    },
+    {
+      "protein": {
+        "id": "H",
+        "sequence": "EVQLVESGGGLVQPGGSLRLSCAASGFTFSSYWMSWVRQAPGKGLEWVAEIRLKSDNYATHYAESVKGRFTISRDDSKNSLYLQMNSLRAEDTAVYYCTGYYADAMDYWGQGTLVTVSS"
+      }
+    },
+    {
+      "protein": {
+        "id": "L",
+        "sequence": "DIQMTQSPSSLSASVGDRVTITCRASQSVSTSSYSYMHWYQQKPGKAPKLLIKYASNLESGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQHSWEIPYTFGGGTKVEIK"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+key	value
+o2_run_dir	/n/scratch/users/z/zhl595/projects/TWEAKR-oncoFetal/af3_M3
+o2_frozen_dir	/n/data1/dfci/medonc/sethi/lab/zhixin/TWEAKR-oncoFetal/af3_M3
+input_f1_pdl192_sha256	9e8b20705318d4bc0bbd24b59b7a70705f2d71c68ef03d78df7c0b496ec466a5
+input_f2_hup4a8_sha256	e360701bcd53aa884ce592a776f2f41bf723f79b892c1f4b62a095afe104811c
+slurm_J1_data_pipeline	58489030 (short)
+slurm_J2_inference	58489031 (gpu l40s; afterok:58489030)
+submitted	2026-11-03T21:55-0500
+submitted_via	o2-sh persistent session (no new DUO; session started 16:09)
+template_cutoff	2007-12-31 (both conditions, as pre-registered)
