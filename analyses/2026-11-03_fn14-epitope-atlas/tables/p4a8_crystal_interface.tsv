@@ -1,0 +1,7 @@
+fn14_resi_Q9NP84	fn14_resn	p4a8_cdr	p4a8_residue	h_bond	min_dist_to_TWEAK_A_in_M2C	angle_to_reference_patch_deg	dist_to_patch_centroid_A
+46	L	CDR H3	Y101	no	3.54	9.4	3.5
+50	M	CDR H3	Y105	no	3.71	55.8	5.0
+56	R	CDR H2	Y57, N59	yes (N59)	6.86	138.9	17.9
+57	A	CDR H2	S52, N55	yes (both)	3.84	114.1	15.1
+58	R	CDR H1 / H3	D31, Y32, Y106	yes (D31)	2.52	89.5	12.0
+60	H	CDR H2	Y54	no	3.37	93.6	12.8
