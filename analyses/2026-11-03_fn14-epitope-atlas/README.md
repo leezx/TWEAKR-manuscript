@@ -1,7 +1,7 @@
 # Fn14 治疗性抗体 / ADC 表位清单（epitope atlas v1）
 
 **对话日期：** 2026-11-03 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** v1 清单完成（11 条直接结合 Fn14 的药物 + 结构映射），未审核
+**状态：** v1 清单完成（11 条直接结合 Fn14 的药物 + 结构映射）；已合并（`cb4ba95`），**GPT 审核待回**
 **UDE 分支：** B32 之后的新支线（见 `../../UDE/root-branch-history.md`；B32 已于 PR #2 合并，merge `762efb1`）
 
 ## 1. 问题与目标
@@ -83,4 +83,6 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 
 ## 11. PR 与审核状态
 
-分支 `analysis/20261103-fn14-epitope-atlas`，PR https://github.com/leezx/TWEAKR-manuscript/pull/3（2026-11-03 创建），**未审核**。按 AGENTS.md §4，合并前不是 canonical evidence。
+分支 `analysis/20261103-fn14-epitope-atlas`，PR https://github.com/leezx/TWEAKR-manuscript/pull/3 —— **已由用户授权合并**（merge `cb4ba95`，2026-11-04 00:38 UTC）。
+
+**注意：合并时 GPT 审核尚未返回。** 审核请求已提交到项目的指定审核会话（ChatGPT「深入分析TWEAKR蛋白结构」），回复后再以后续 commit 处理。因此本目录目前是**已合并但未经外部审核**的状态，与 PR #2（两轮审核 + final-head 核对后才合并）不同；按 AGENTS.md §5，其结论在审核完成前不应视为 manuscript canonical evidence。
