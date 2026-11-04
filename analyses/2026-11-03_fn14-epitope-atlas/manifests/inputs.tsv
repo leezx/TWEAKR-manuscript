@@ -1,0 +1,5 @@
+input	path_or_id	sha256_or_version	retrieved
+M2-C top model (B32 frozen)	/Volumes/Stelligen_SSD/Stelligen/DATA/HotData/TWEAKR-oncoFetal/analysis/af3_M2/frozen/af3_M2/m2_tweak3_fn14x3_tmplc/m2_tweak3_fn14x3_tmplc_model.cif	b8f0633ce6ba8118d7d6059763d100199e916bf4d1696a066ea0088786b50138	2026-11-03
+UniProt Q9NP84 (human Fn14 precursor, 129 aa)	https://rest.uniprot.org/uniprotkb/Q9NP84	sequence verified in script asserts	2026-11-03
+PubMed / Europe PMC	E-utilities esearch+esummary+efetch	abstract level	2026-11-03
+ClinicalTrials.gov	API v2 query.intr=enavatuzumab	NCT00738764	2026-11-03

@@ -1,0 +1,3 @@
+agent_id	name	aliases	modality	target	sponsor	highest_phase	why_excluded_from_Fn14_table	primary_refs	verification_status
+TWB-001	RG7212	RO5458640	humanized mAb	TWEAK (TNFSF12) ligand	Roche	clinical (phase 1 reported)	binds the ligand, not Fn14, so it yields no Fn14 epitope	not yet verified in this project	unverified
+TWB-002	BIIB023	-	anti-TWEAK neutralising mAb	TWEAK (TNFSF12) ligand	Biogen Idec	clinical	binds the ligand, not Fn14	not yet verified in this project	unverified
