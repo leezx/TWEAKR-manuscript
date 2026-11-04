@@ -95,6 +95,12 @@ Lam 2018（29054986）、Keshtvarz 2022（35978517）。
 - [ ] 本轮一手文献登记 REF 编号
 - [ ] 若有序列：AF3 Fn14–Fab 预测（E5，虚线，不得与 E1/E2 混用）
 
+## 10b. 冻结标准
+
+见 `docs/freeze_criteria.md`。范围定义为 *Publicly disclosed Fn14-targeting therapeutic binder and construct
+atlas — literature and patent evidence through 2026-11-04*，而不是"穷尽所有曾研究过 Fn14 的抗体"（后者不可验收）。
+冻结需连续两轮定向查询无新增**独立** binder lineage；同一抗体的另一个专利文本不算。
+
 ## 11. PR 与审核状态
 
 分支 `analysis/20261103-fn14-epitope-atlas`，PR https://github.com/leezx/TWEAKR-manuscript/pull/3 —— **已由用户授权合并**（merge `cb4ba95`，2026-11-04 00:38 UTC）。
