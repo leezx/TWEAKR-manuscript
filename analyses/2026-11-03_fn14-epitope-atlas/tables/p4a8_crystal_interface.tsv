@@ -1,11 +1,11 @@
-fn14_resi_Q9NP84	fn14_resn	chain_side	p4a8_cdr	p4a8_residue	h_bond	min_dist_to_TWEAK_A_in_M2C	within_5A_of_TWEAK	angle_to_reference_patch_deg	dist_to_patch_centroid_A	pairing_provenance
-42	W	light	CDR L1 (not independently verified)	not verified	unknown	6.28	no	47.3	6.0	residue listed in the patent description's 10-residue epitope set (verified); its CDR pairing read from Example 21 Table 2 by the PR #5 review, not re-verified by this project
-46	L	heavy	CDR H3	Y101	no	3.54	yes	9.4	3.5	transcribed from Example 21 Table 2 by this project
-48	K	light	CDR L1 (not independently verified)	not verified	unknown	2.54	yes	32.4	4.9	as row 42
-49	C	light	CDR L1 (not independently verified)	not verified	unknown	6.87	no	59.6	6.5	as row 42
-50	M	heavy	CDR H3	Y105	no	3.71	yes	55.8	5.0	transcribed from Example 21 Table 2 by this project
-51	D	light	CDR L1 (not independently verified)	not verified	unknown	6.34	no	111.3	10.0	as row 42
-56	R	heavy	CDR H2	Y57, N59	yes (N59)	6.86	no	138.9	17.9	transcribed from Example 21 Table 2 by this project
-57	A	heavy	CDR H2	S52, N55	yes (both)	3.84	yes	114.1	15.1	transcribed from Example 21 Table 2 by this project
-58	R	heavy	CDR H1 / H3	D31, Y32, Y106	yes (D31)	2.52	yes	89.5	12.0	transcribed from Example 21 Table 2 by this project
-60	H	heavy	CDR H2	Y54	no	3.37	yes	93.6	12.8	transcribed from Example 21 Table 2 by this project
+fn14_resi_Q9NP84	fn14_resn	chain_side	p4a8_cdr	p4a8_residue	h_bond	min_dist_to_TWEAK_A_in_M2C	within_5A_of_TWEAK	angle_to_reference_patch_deg	dist_to_patch_centroid_A
+42	W	light	CDR L1	Y34	no	6.28	no	47.3	6.0
+46	L	heavy	CDR H3	Y101	no	3.54	yes	9.4	3.5
+48	K	light	CDR L1 / CDR L2	Y36; Y54	yes (Y54)	2.54	yes	32.4	4.9
+49	C	light	CDR L1	S32	yes	6.87	no	59.6	6.5
+50	M	heavy	CDR H3	Y105	no	3.71	yes	55.8	5.0
+51	D	light	CDR L3	R96	no	6.34	no	111.3	10.0
+56	R	heavy	CDR H2	Y57; N59	yes (N59)	6.86	no	138.9	17.9
+57	A	heavy	CDR H2	S52; N55	yes (both)	3.84	yes	114.1	15.1
+58	R	heavy	CDR H1 / CDR H3	D31; Y32; Y106	yes (D31)	2.52	yes	89.5	12.0
+60	H	heavy	CDR H2	Y54	no	3.37	yes	93.6	12.8

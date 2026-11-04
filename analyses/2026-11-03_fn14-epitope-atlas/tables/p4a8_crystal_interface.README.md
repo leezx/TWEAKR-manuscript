@@ -1,33 +1,39 @@
 # `p4a8_crystal_interface.tsv` — provenance and the 2026-11-04 correction
 
-**Source:** WO2009140177A2 (Biogen). Evidence tier **B** (patent-reported experiment, not peer reviewed),
-per `docs/design.md` amendment 1.
+**Source:** Example 21, TABLE 2 ("Amino Acid Interactions at the P4A8/Fn14 Interface") of the Biogen
+anti-Fn14 patent family. Evidence tier **B** (patent-reported experiment, not peer reviewed), per
+`docs/design.md` amendment 1.
 
-**Correction, 2026-11-04 (raised by the PR #5 review):** the first version of this table had **6 rows**.
-Those 6 are the heavy-chain-CDR-associated contacts this project transcribed from Example 21 Table 2.
-They are **not** the complete P4A8 epitope. The patent's own description text states that the antibody
+**Which document was read.** The WO member (WO2009140177A2) is a 180-page scan with no text layer, and
+this project originally transcribed Table 2 from its page images. The US family member
+**US20090324602A1** ("Anti-fn14 antibodies and uses thereof") carries the **same Example 21 and TABLE 2
+as machine-readable text**, and that is the source now used. Reading it resolved the error below and
+allowed every pairing to be verified first-hand.
+
+**Correction, 2026-11-04 (raised by the PR #5 review).** The first version of this table had **6 rows** —
+the heavy-chain-CDR half of Table 2 — and this project treated them as the complete epitope. They are not.
+Table 2 has a light-chain block as well, and the patent's description independently states the antibody
 
 > "interacts with one or more of residues C49, W42, K48, D51, R58, A57, H60, R56, L46, and M50 of human Fnl4"
 
-— **10 residues**. This project verified that sentence directly in the Google Patents full text of
-WO2009140177A2 (it appears twice, in the summary and in the detailed description), so the 10-residue set
-is first-hand. The table now has all 10 rows.
+— **10 residues**, which is exactly the set of distinct Fn14 residues in Table 2. The table now has all 10.
+The 6 heavy-chain pairings transcribed earlier were themselves **correct**; the omission was the
+light-chain block, not an error within it.
 
-**What is and is not verified per row:**
+**Verification status.** Every row's CDR and antibody residue is now read directly from the TABLE 2 text in
+US20090324602A1 — nothing in this table is second-hand. `*` in the source marks H-bonds and is recorded in
+`h_bond`. The geometric columns (`min_dist_to_TWEAK_A_in_M2C`, `angle_*`, `dist_to_patch_centroid_A`) are
+computed by this project on the frozen M2-C rank-1 model, Fn14 chain D, and inherit B32's claim ceiling —
+they describe a *predicted* TWEAK interface, not an experimental one.
 
-- The 10 Fn14 residue identities: **verified** by this project from the patent text.
-- The CDR pairing for the 6 heavy-chain rows: transcribed by this project from the Example 21 Table 2
-  page images.
-- The CDR pairing for W42 / K48 / C49 / D51: **not independently verified.** The PR #5 review reports
-  them as light-chain CDR contacts in Table 2. The patent description separately names light-chain
-  **S32, Y34, Y36 (CDR L1)**, Y54 (CDR L2) and R96 (CDR L3) as Fn14-interacting residues — this project
-  verified that sentence — but it does not pair them with specific Fn14 residues. Re-reading the scanned
-  Example 21 page would be needed to confirm the pairing.
-- `min_dist_to_TWEAK_A_in_M2C`, `angle_*`, `dist_to_patch_centroid_A`: computed by this project on the
-  frozen M2-C rank-1 model, Fn14 chain D. Inherits B32's claim ceiling — it is a predicted interface.
+**Consequence for the atlas claim.** "5 of the 6 contact residues lie within 5 Å of TWEAK" becomes
+**6 of 10** (L46, K48, M50, A57, R58, H60), identical in Fn14 chains D, E and F. The overlap is therefore
+**a smaller fraction than previously written (60% vs 83%)**, though it now includes **K48**, itself one of
+the four known TWEAK-binding determinants. Angular span over the full set: **9.4–138.9°**.
 
-**Consequence for the atlas claim.** The earlier statement "5 of the 6 contact residues are within 5 Å of
-TWEAK" becomes **6 of 10** (L46, K48, M50, A57, R58, H60), identical in Fn14 chains D, E and F.
-The overlap is therefore **smaller in fraction (60% vs 83%)** than previously written, but it now
-includes **K48**, which is itself one of the four known TWEAK-binding determinants.
-The angular span over the full set is **9.4–138.9°**, unchanged in direction from the earlier correction.
+**Bonus cross-check of the Fab sequences.** Table 2 prints the six P4A8 CDR strings:
+L1 `RASKSVSTSSYSYMH`, L2 `YASNLES`, L3 `SRELPFT`, H1 `GYTFTDYGMH`, H2 `VISTYNGYTNYNQKFKG`,
+H3 `AYYGNLYYAMDY`. **All six occur exactly** in the huP4A8 VH/VL recorded in
+`../2026-11-04_fn14-fab-modelling/tables/fab_sequences.tsv`, which this project had read from scanned page
+images and checked by translating the nucleotide sequence on the same page. That is a third, independent
+confirmation of the sequence used for M3.
