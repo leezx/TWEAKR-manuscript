@@ -1,7 +1,8 @@
 # M3：Fn14–Fab 建模，检验"表位重叠解释竞争性"
 
 **对话日期：** 2026-11-04 · **执行者：** Claude Opus 5 for Zhixin Li
-**状态：** 已完成；PR #5 审核已处理到**第 5 轮**（历轮 P0 均为 0）。科学结论五轮未变。
+**状态：** 已完成。**PR #5 经 6 轮 ChatGPT 审核于 `5ba6f8b` 获 APPROVE（P0 = 0，P1 = 0）**；
+未合并——审核通过不等于授权合并，待用户决定。科学结论全程未变。
 **判定：TEST NOT DECIDABLE** —— 假说 H 未被检验，既未被支持也未被推翻。见 `docs/M3_results.md`
 **UDE 分支：** epitope atlas（PR #4，merge `c7360e8`）之后的下一步
 
