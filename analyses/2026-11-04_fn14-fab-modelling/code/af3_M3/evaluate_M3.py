@@ -296,6 +296,14 @@ for side in ("L", "H"):
 inw = [r for r in named if r["fn14_in_resolved_window_50_67"] == "yes"]
 print(f"      of the pairs whose Fn14 residue is INSIDE the resolved window 50-67: "
       f"{sum(1 for r in inw if r['within_5A'] == 'yes')}/{len(inw)}")
+# CDR-H3 conformation is AF3's known weak point and was named as a risk in the pre-registration,
+# so misses OUTSIDE H3 cannot be attributed to it. Report that split explicitly.
+for cdr in sorted({r["patent_cdr"] for r in named}):
+    sub = [r for r in named if r["patent_cdr"] == cdr]
+    print(f"      {cdr}: {sum(1 for r in sub if r['within_5A'] == 'yes')}/{len(sub)}")
+nh3 = [r for r in named if r["fab_chain"] == "H" and r["patent_cdr"] != "CDR H3"]
+print(f"      VH pairs outside CDR-H3 (not attributable to H3 modelling): "
+      f"{sum(1 for r in nh3 if r['within_5A'] == 'yes')}/{len(nh3)}")
 for r in pair_rows:
     print(f"      {r['fn14_resn']}{r['fn14_residue_uniprot']:<4}- {r['fab_chain']}{r['fab_residue']:<4}"
           f"{r['fab_resn']} {r['patent_cdr'][:10]:11s}{r['min_heavy_atom_distance_A']:7.2f} A"
