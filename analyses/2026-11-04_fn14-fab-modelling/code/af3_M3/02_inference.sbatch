@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH -J m3_inf
+#SBATCH -p gpu
+#SBATCH --gres=gpu:l40s:1
+#SBATCH -t 0-03:00
+#SBATCH -c 4
+#SBATCH --mem=48G
+#SBATCH -o /n/scratch/users/z/zhl595/projects/TWEAKR-oncoFetal/af3_M3/logs/%x_%j.out
+#SBATCH -e /n/scratch/users/z/zhl595/projects/TWEAKR-oncoFetal/af3_M3/logs/%x_%j.err
+set -euo pipefail
+R=/n/scratch/users/z/zhl595/projects/TWEAKR-oncoFetal/af3_M3
+L=/n/data1/dfci/medonc/sethi/lab/zhixin/TWEAKR-oncoFetal/af3_M3
+module load alphafold/3.0.1
+nvidia-smi --query-gpu=name,memory.total --format=csv
+date "+%FT%T"
+for N in m3_fn14_fab_f1_pdl192 m3_fn14_fab_f2_hup4a8; do
+  run_alphafold.py --json_path=$R/out/$N/${N}_data.json --output_dir=$R/out_inf --norun_data_pipeline
+done
+date "+%FT%T"
+mkdir -p $L
+echo "slurm_job_inference=$SLURM_JOB_ID" > $L/run_metadata.txt
+for N in m3_fn14_fab_f1_pdl192 m3_fn14_fab_f2_hup4a8; do
+  D=$(ls -d $R/out_inf/${N}* | head -1)
+  mkdir -p $L/$N
+  cp $R/out/$N/${N}_data.json $L/$N/
+  (cd $D && find . \( -name "*.cif" -o -name "*summary_confidences.json" -o -name "ranking_scores.csv" -o -name "*confidences.json" \) -print0 | cpio -0pdm $L/$N/ 2>/dev/null)
+done
+(cd $L && find . -type f ! -name manifest_sha256.txt -exec sha256sum {} \; | sort -k2 > manifest_sha256.txt)

@@ -1,0 +1,17 @@
+fn14_residue_uniprot	fn14_resn	fab_chain	fab_residue	fab_resn	patent_cdr	patent_specified_pair	patent_h_bond	fn14_in_resolved_window_50_67	min_heavy_atom_distance_A	within_5A
+42	TRP	L	34	TYR	CDR L1	yes	no	no - hybrid-modelled	3.45	yes
+48	LYS	L	36	TYR	CDR L1	yes	no	no - hybrid-modelled	6.46	no
+48	LYS	L	54	TYR	CDR L2	yes	yes	no - hybrid-modelled	10.96	no
+49	CYS	L	32	SER	CDR L1	yes	yes	no - hybrid-modelled	10.77	no
+51	ASP	L	96	ARG	CDR L3	yes	no	yes	16.35	no
+46	LEU	H	101	TYR	CDR H3	yes	no	no - hybrid-modelled	13.9	no
+50	MET	H	105	TYR	CDR H3	yes	no	yes	10.0	no
+56	ARG	H	57	TYR	CDR H2	yes	no	yes	8.05	no
+56	ARG	H	59	ASN	CDR H2	yes	yes	yes	14.82	no
+57	ALA	H	52	SER	CDR H2	yes	yes	yes	16.6	no
+57	ALA	H	55	ASN	CDR H2	yes	yes	yes	13.03	no
+58	ARG	H	31	ASP	CDR H1	yes	yes	yes	18.85	no
+58	ARG	H	32	TYR	CDR H1	yes	no	yes	18.88	no
+58	ARG	H	106	TYR	CDR H3	yes	no	yes	17.88	no
+60	HIS	H	54	TYR	CDR H2	yes	no	yes	15.72	no
+42	TRP	L	36	TYR	CDR L1 - patent pairs Y36 with K48, not W42	no - diagnostic only	n/a	no - hybrid-modelled	2.69	yes

@@ -1,0 +1,18 @@
+key	value
+o2_run_dir	/n/scratch/users/z/zhl595/projects/TWEAKR-oncoFetal/af3_M3
+o2_frozen_dir	/n/data1/dfci/medonc/sethi/lab/zhixin/TWEAKR-oncoFetal/af3_M3
+input_f1_pdl192_sha256	9e8b20705318d4bc0bbd24b59b7a70705f2d71c68ef03d78df7c0b496ec466a5
+input_f2_hup4a8_sha256	e360701bcd53aa884ce592a776f2f41bf723f79b892c1f4b62a095afe104811c
+slurm_J1_data_pipeline	58489030 (short)
+slurm_J2_inference	58489031 (gpu l40s; afterok:58489030)
+submitted	2026-11-03T21:55-0500
+submitted_via	o2-sh persistent session (no new DUO; session started 16:09)
+template_cutoff	2007-12-31 (both conditions, as pre-registered)
+j1_state	COMPLETED (elapsed 02:31:09)
+j2_state	COMPLETED (elapsed 00:07:40)
+finished	2026-11-04T00:40-0500
+fetched_via	o2-sh persistent session, tar+base64 (no new DUO)
+output_f1_pdl192_model_cif_sha256	a3237e54b9e2feb30a78a6160bc755b089d914f79683ba56e33d3ee0cf2f85a8
+output_f2_hup4a8_model_cif_sha256	707bbc4216d31a2ec197a8a6a44650864425a644f9b084916b9587ec7d588f2c
+checksum_check	both match the remote manifest_sha256.txt byte for byte
+verdict	TEST NOT DECIDABLE (F1 failed criterion 1: 0/25 samples reach chain_pair_iptm 0.50)
