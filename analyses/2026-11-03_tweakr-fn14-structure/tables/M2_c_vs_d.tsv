@@ -1,0 +1,8 @@
+chain	n_ca	rmsd_top_c_vs_top_d
+A	156	0.808
+B	156	0.578
+C	156	0.56
+D	53	0.935
+E	53	0.987
+F	53	1.107
+complex	627	1.007

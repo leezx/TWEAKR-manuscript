@@ -500,3 +500,158 @@ patient/tissue/timepoint tuple and no other source sample shares it. Reasonable
 duplication check, not proof of absent unrecorded replication. Propose26 approved
 with original Cancer annotation limitation,23 c91 pending,4 Normal not approved.
 Public evidence excludes patient linkage; final review pending, all execution0.
+
+## 2026-11-03 — B32 立项：Fn14 结构坐标冻结与 Fig. TR1（WL-20261103-FN14-001）
+
+**做了什么。** 用户决定把 `UDE/TWEAKR-AF3.md`（GPT 的 TWEAKR 结构/信号转导方案）立为 UDE
+分支 **B32**（新主干 T8）。立项前先把方案依赖的结构事实逐条核实，再据此建图。
+
+**为什么。** 该方案的数字和文献引用没经过核对就要被用作建模与制图依据。核实发现两处错误
+（见下），说明这一步不能跳。
+
+**核实（向权威库取回，非转述）。**
+- UniProt Q9NP84：SIGNAL 1–27 · CHAIN 28–129（102 aa）· 胞外 28–80（53）·
+  TRANSMEM 81–101（21，helical）· 胞内 102–129（28）· REPEAT 36–67「TNFR-Cys; atypical」·
+  DISULFID 36–49/52–67/55–64 · 无 CARBOHYD。小鼠 Q9CR75 边界相同。
+- 脚本硬编码的 129 aa 与 UniProt FASTA **逐字符一致**。这步必做：脚本自检是拿序列验位点，
+  序列若抄错，自检会在错序列上全部通过。
+- D45/K48/M50/D62 身份正确且全在 CRD 内；CRD 内六个 Cys 位置为 36/49/52/55/64/67。
+
+**更正两处既有记录错误（已在 `UDE/TWEAKR-AF3.md` 内标注）。**
+1. **2KN1 不是 Fn14。** PDBe 条目标题为 "Solution NMR Structure of BCMA"。只用 2KMZ（hFn14）
+   和 2KN0（xFn14）。
+2. **TM = 21 aa 来自 UniProt，不是 Winkles 2008。** 该综述给 129/102/53/28，未给 TM 长度；
+   其讨论的 N-glycosylation 是 TWEAK 的。引用补全为 Nat Rev Drug Discov 2008;7(5):411–425。
+
+**新发现。** isoform 2（Q9NP84-2）缺失 33–67，即整个 CRD 与三对二硫键，但保留 TM 和完整
+胞内尾 —— 天然的「无配体结合域但可跨膜并保留 TRAF 区」变体，对应方案中
+ligand-independent clustering 的问题。原方案未提。
+
+**产出。** `analyses/2026-11-03_tweakr-fn14-structure/`：README、
+`code/make_fig_TR1_topology.R`（R 4.5.2，11 项 stopifnot 自检）、Fig. TR1（PDF/SVG/PNG 600 dpi）、
+图注、source data、`manifests/outputs.tsv`（sha256）。渲染后目视检查两轮，修掉标签重叠、
+D45 骑在域边界上（代入椭圆方程 ≈ 0.994）、以及 36/67 标注位置与链的进出方向相反。
+
+**claim ceiling。** 拓扑示意图，非结构渲染；膜平面是人工参考；二硫键连线与四个点是示意位置，
+故不逐点标注；TRAF motif 精确坐标未核实，只标区段；不得用 AF 全长模型（pLDDT 73.19）定义几何。
+本目录不含任何 CRC 数据，不支持任何关于 TWEAKR 在 CRC 中功能的主张。
+
+**UDE。** `root-branch-history.md` 升至 v1.1：新增 T8/B32，思维导图与登记表已校验一致（32=32）；
+核实记录存于 `UDE/design/history/2026-11-03_fn14-structure-verification.md`；
+`CURRENT.yaml`/`CURRENT.md`/`design`/`execution` 已同步；§7 待决事项增至 11 项。
+
+**O2。** 按用户指示写入 `~/AGENTS.md`（72 行）：DUO 硬限制、文件系统分区、计算规则、AF3、
+可追溯性。写前 `ssh -O check o2` 返回 `Master running (pid=52408)`，全程复用该通道，
+**未触发 DUO**；写前确认 home 无同名文件，未覆盖任何内容。第 4 节的 AF3 可用性
+（`hpc_alphafold3_users` 组、`alphafold/3.0.1` wrapper、权重可读、数据库清单）当场核实。
+
+**状态：** 未 commit、未 push、无 PR、未审核。AF3 建模（M1–M4）未授权、未执行。
+
+## 2026-11-03 — Fig. TR2：Fn14 三维结构在膜参考系中的位置与功能域（WL-20261103-FN14-002）
+
+**What.** 用户要一张「TWEAKR 与细胞膜的参考图」：显示真实蛋白结构，不同 domain 用不同颜色。
+TR1 是手画的拓扑示意，TR2 改用真实坐标：a 为 AF-Q9NP84-F1 v6 成熟链 28–129，嵌在按 TM 螺旋轴
+放置的双分子层中；b 为实验 ECD 结构 2KMZ（NMR model 1），以 CRD 叠合到 AF 模型后同向显示；
+c 为线性 domain 图 + pLDDT。配色沿用 TR1。产出在
+`analyses/2026-11-03_tweakr-fn14-structure/figures/Fig_TR2_*`（README §12）。
+
+**Why this design.** 只有 AF 模型覆盖全长，但 TR1 已经限定不能用它定义域间几何。
+所以 TR2 只取两样可信的东西：AF 的域内折叠（CRD 与 2KMZ 的 Cα RMSD：对 model 1 为 1.74 Å，对 20 个 model 为 1.30–2.14 Å；
+首版误写为 1.25 Å，原因及更正见 README §12），
+以及 TM 螺旋轴（pLDDT 87.5，域内 PAE 2.8 Å），用后者放膜。
+CRD↔TM 的 PAE 为 22–24 Å，图上直接注明「CRD 相对膜的位置未确定」。
+
+**How.** 用开源 PyMOL 3.2 做无头渲染：先 PCA 求 TM 轴并刚体对齐，再正交投影，同时导出像素↔Å 映射；
+R 负责画膜、标注和拼版。输入是 AF 模型与 PAE、2KMZ、UniProt FASTA，
+存放于 `DATA/HotData/TWEAKR-oncoFetal/external/structures_fn14/`，sha256 记在 `manifests/inputs.tsv`。
+
+**负结果。** PyMOL.app 2.5.7 的许可证已于 2024-07-01 过期，每张图都带 "License expired" 水印，已弃用。
+改装开源 PyMOL 到 `SOFTWARES/tools/pymol-open-source/.venv`，并登记 TOOL_INDEX；
+必须固定 numpy 1.26.4，因为 numpy 2.x 下 `get_coords` 报 ABI 错误。
+AF 把 124–129 放进了疏水核心，属低置信伪影，图中以星号标出。
+
+**claim ceiling.** 参考/示意用途。域内折叠可引用；域间几何（CRD 高度、倾角、结合面「朝外」）不可引用，
+不得据此讨论 TWEAK 接近方向或抗体可及性。TRAF motif 坐标仍未核实。不含 CRC 数据。
+
+**状态：** 未 commit、未 push、无 PR、未审核。
+
+## 2026-11-03 — M1b：AF3 不用 Fn14 模板也能恢复 CRD 折叠（WL-20261103-FN14-003）
+
+**What.** 用 AF3 3.0.1（O2）预测 Fn14 胞外区 28–80，与实验结构 2KMZ 比较。共三个模板条件，各 5 seed × 5 sample。
+**判定条件 C**（模板截止 2007-12-31）：排名第一的模型 CRD Cα RMSD 为 1.31 Å（对最接近的 NMR 模型）、
+1.62 Å（对 20 个模型的中位数），三对二硫键全部形成，25/25 达标 → **PASS**。A、B 结果与 C 几乎相同。
+
+**Why it matters.** 这是 M2（TWEAK₃–Fn14₃）的前置校验：AF3 能正确给出 Fn14 CRD 的折叠，M2 的界面才值得解读。
+
+**How / 过程中的修正（均在看到结构结果之前）。**
+- 发现 A 的模板里有 **2EQP**（人 Fn14 TNFR 结构域，NMR，2008），原定判定条件 B 排除不了它。
+  为此新增 C 作为判定条件（事先注册的修订 1，有时间戳的 commit）。
+- 第一次推理作业失败：AF3 会把输出名转成小写，脚本按原大小写找文件。修复后重新提交。
+- 写评估脚本时，用独立的 numpy Kabsch 交叉核对，发现 TR2 首版的 RMSD（1.25 Å）是多 state 对象造成的错误值，
+  已更正为 1.74 Å。
+
+**负结果 / 限制。** AF3 训练集包含 2KMZ/2EQP，不能排除"记住"了这个结构。M1b 证明的是"不输入 Fn14 模板也能重现"，
+不是从头预测。另外，冻结目录里的 `run_metadata.txt` 是在 manifest 生成之后才写入的，所以 checksum 对不上，其余 165 个文件一致。
+
+**O2 / DUO.** 本轮在约 1 小时内触发了约 5–6 次 DUO。原因有两层：复用请求失败时 ssh 会悄悄重新登录；
+而且 O2 对每个新会话都会发 DUO 推送，复用连接也不例外。为此建了两个工具：`o2-agent` 别名和 `o2-run`
+（永远不会新登录），以及 `o2-sh`（只开一个常驻会话，所有命令都从这里发）。
+此后取回 M1b 结果、写入 O2 文件都走同一个会话，只在建立时触发 1 次 DUO。
+
+**状态：** PR #2 未审核。下一步 M2 需要用户确认。
+
+
+## 2026-11-03 — M2：AF3 的 TWEAK₃–Fn14₃ 界面包含全部四个已知结合位点（WL-20261103-FN14-004）
+
+**What.** AF3 3.0.1（O2）预测 3 条 TWEAK 94–249 加 3 条 Fn14 28–80 的复合物，5 seed × 5 sample，两个模板条件。
+**判定条件 M2-C**（模板截止 2007-12-31，没有 Fn14 和 TWEAK 模板）：排名第一的模型中，TWEAK 三聚体 iptm ≥ 0.87；
+每条 Fn14 与 TWEAK 的 iptm 为 0.71–0.72；3 个拷贝的 D45/K48/M50/D62 全部 ≤ 4 Å；CRD RMSD 1.59–1.60 Å → **PASS**。
+25/25 个 sample 达标；对照 M2-D 结果相同（两者第一名模型相差 1.01 Å）。
+
+**Why it matters.** 有了一个与已知突变数据相符的 TWEAK–Fn14 界面工作模型，可以作为后续表位解读和突变设计的结构底图。
+
+**How / 修正.** 评估脚本第一次运行时，CRD RMSD 全为 0.0：PyMOL `rms` 按链名配对，复合物的 D/E/F 链配不上 2KMZ 的 A 链。
+改为显式 Cα Kabsch，并与改链名后的 PyMOL `rms` 交叉核对；判定标准没有变。RCSB 检索确认 PDB 中没有 TWEAK–Fn14 复合物
+（Fn14 只有 2EQP/2KMZ/2RPJ，TWEAK 只有 4HT1 Fab 复合物）。
+
+**限制.** 这是预测；四个位点是事先选定的阳性对照，不是盲测；AF3 可能从 TNF/TNFR 同源复合物学到结合几何。
+Fn14 链 iptm 中等；3:3 是输入设定。不涉及 CRC 生物学。
+
+**O2 / DUO.** 提交、轮询（每 15 分钟一次）、取回结果（30 MB，分 3 段，sha256 逐段核对，manifest 161/161）都走同一个
+`o2-sh` 会话，本轮没有新增 DUO。
+
+**状态：** 已推送到 PR #2，未审核。
+
+## 2026-11-03 — PR #2 GPT 审核第 1 轮：REQUEST_CHANGES，6 项全部修改（WL-20261103-FN14-005）
+
+**What.** 在 ChatGPT 项目 TWEAKR-oncoFetal 的「深入分析TWEAKR蛋白结构」会话提交 PR #2（HEAD `167a401`）。判定 REQUEST_CHANGES：
+P0 0、P1 3、P2 3；不要求重跑 AF3。B32、TR1、TR2、M1b 结论保留，M2 PASS 保留但证据解释要重新校准。
+
+**修改.**
+- P1-1：新增 TWEAK 侧事后核对。Dhruv 2013 证明 Y176 必需、W231 非必需；模型中 Y176 75/75 在界面（2.7–3.0 Å），
+  W231 也在（3.2–3.7 Å）——模型恢复了已知的重要接触区，但接触距离区分不了热点。注明已有对接模型（Lammens 2013、Dhruv 2013），
+  不能声称首次发现界面。
+- P1-2：超几何数字改为描述性几何参照，不再暗示显著性；25/25 称为采样稳定性。
+- P1-3：`m2_checks.py` + `test_m2_checks.py`（4 项通过）；空选择/错配一律报错；模板按 Fn14/TWEAK/复合物三类核对。
+  重跑后结果表除 summary 新增两列外逐字节不变。
+- P2：Fig. TR2 标出 PIEET 113–117（TRAF2 consensus）并加"Illustrative orientation only"；README 状态更新；
+  第 2 轮审核包附 M1b-C、M2 全部模型和 2KMZ。
+
+**文献.** 补登 REF-032 至 REF-038。发现首版缺了四个结合残基的一手出处（Brown 2006，REF-034，小鼠 Fn14），已补。
+
+**未核实（如实标注）.** 审核称 Brown 2003 用 alanine scanning 定位 PIEET（全文未取得）；审核称 2013 年有 Fn14-ΔEC 研究（未给 PMID）。
+
+**状态：** 推送后提交第 2 轮审核；未合并。
+
+## 2026-11-03 — PR #2 GPT 审核第 2 轮：APPROVE；B32 结构支线完成（WL-20261103-FN14-006）
+
+**What.** 第 2 轮审核 `ff9b7ca`：**APPROVE**（P0 0、P1 0、P2 4）。审核方独立重算了全部原始结构：M2 50/50 个模型、M1b-C 25/25 个模型通过各自判定，
+并实际运行了单元测试。允许合并，定位为 Fn14 structural reference and hypothesis-generation resource，不是 manuscript 的结构机制证据。
+
+**P2 清理.** PIEET 的 alanine scanning 出处改为 Han 2003（REF-039；第 1 轮审核误归于 Brown 2003，已更正）；`chance_P` 列改名为
+`geometric_reference_fraction_*`（数值不变）；写清两种 75/75 的分母（Fn14 拷贝 vs TWEAK 链观测，都不是独立实验）；
+`outputs.tsv` 改为当前快照（无重复路径）。登记 REF-040（Brown 2013，Fn14-ΔEC），为 isoform 2 后续支线备用。
+
+**Why it matters.** B32 交付物（坐标冻结、TR1、TR2、M1b、M2）均通过两轮外部审核；M2-C 第一名模型冻结为后续结构参考。
+
+**状态：** 等待用户批准合并 PR #2（Agent 不自行合并）。下一条分支建议为 Fn14 therapeutic epitope atlas，需用户决定。
